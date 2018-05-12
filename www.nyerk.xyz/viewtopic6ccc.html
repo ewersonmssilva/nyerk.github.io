@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?p=1721 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>AionInterface.dll Crash Fix 18.09.2017 - Nyerk</title>
+
+
+	<link rel="canonical" href="viewtopic03ef.html?t=271">
+
+<!--
+	phpBB style name: we_universal
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      nextgen ( http://xeronix.org/ )
+-->
+
+
+<link href="styles/prosilver/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="assets/css/font-awesome.min5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/prosilver/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=25" rel="stylesheet">
+<![endif]-->
+
+
+<link href="ext/gfksx/ThanksForPosts/styles/prosilver/theme/thanks5d79.css?assets_version=25" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="./styles/we_universal/template/html5shiv.min.js"></script>
+<![endif]-->
+
+</head>
+<body id="phpbb" class="nojs notouch section-viewtopic ltr  logged-out">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div class="inventea-headerbar">
+		<nav class="inventea-wrapper inventea-userbar">
+			<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="icon fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+		
+														
+							<li>
+								<a href="index-2.html" role="menuitem">
+									<i class="icon fa fa-fw fa-home" aria-hidden="true"></i><span>Board index</span>
+								</a>
+							</li>		
+							
+							<li data-skip-responsive="true">
+								<a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">
+									<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+								</a>
+							</li>
+							
+													<li>
+								<a href="search.html" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+							
+														
+														
+								
+						
+							<li>
+								<a href="search33a7.html?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="search526f.html?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+	
+						
+							
+            																			<li>
+								<a href="memberlist4bfd.html?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+						            
+				                    </ul>
+    </div>
+</div>
+
+			
+			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+										<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp26c3.html?mode=login" title="Login" accesskey="x" role="menuitem"><i class="icon fa-fw fa-sign-in" aria-hidden="true"></i>Login</a></li>
+											<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp8319.html?mode=register" role="menuitem"><i class="icon fa-fw fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										
+										
+							</ul>
+		</nav>
+	</div>
+
+	<header class="inventea-header">
+			
+		<div class="inventea-dashboard" role="banner">
+						<nav role="navigation">
+	<div class="inventea-posts-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+																			<li><a href="search33a7.html?search_id=unanswered" role="menuitem">Unanswered topics</a></li>
+				<li><a href="search526f.html?search_id=active_topics" role="menuitem">Active topics</a></li>
+			
+					</ul>
+	</div>
+
+	<div class="inventea-forum-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+			<li><a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+			<li><a href="search.html" role="menuitem">Search</a></li>
+											<li><a href="memberlist4bfd.html?mode=team" role="menuitem">The team</a></li>			
+						
+					</ul>
+	</div>
+</nav>
+
+			<div class="inventea-sitename">
+				<h1><a href="index-2.html" title="Board index">Nyerk</a></h1>
+				<span>An Forum about Aion</span>
+			</div>
+		</div>
+			</header>
+
+	<div class="inventea-wrapper inventea-content" role="main">
+		
+		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+			
+									<li class="small-icon breadcrumbs">
+												<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index-2.html" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">Board index</span></a></span>
+														<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="3"><a href="viewforum4d6b.html?f=3" itemprop="url"><span itemprop="title">AionScript</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="4"><a href="viewforum31e6.html?f=4" itemprop="url"><span itemprop="title">Downloads</span></a></span>
+																</li>
+					</ul>
+
+		
+		
+<h2 class="topic-title"><a href="viewtopic482e.html?f=4&amp;t=271">AionInterface.dll Crash Fix 18.09.2017</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+
+
+
+<div class="action-bar bar-top">
+	
+			<a href="posting7538.html?mode=reply&amp;f=4&amp;t=271" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic0fde.html?f=4&amp;t=271&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://www.nyerk.xyz/search.php">
+			<fieldset>
+				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…" />
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="search.html" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="271" />
+<input type="hidden" name="sf" value="msgonly" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			14 posts
+							<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="viewtopic37fd.html?f=4&amp;t=271&amp;start=10" role="button">2</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="viewtopic37fd.html?f=4&amp;t=271&amp;start=10" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+					</div>
+		</div>
+
+
+
+
+			<div id="p1529" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1529">
+			<dt class="has-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" class="avatar"><img class="avatar" src="download/filea2fd.jpg?avatar=2_1484075720.jpg" width="150" height="135" alt="User avatar" /></a>														</div>
+								<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>							</dt>
+
+						<dd class="profile-rank">Site Admin</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search51e1.html?author_id=2&amp;sr=posts">260</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Jan 07, 2017 9:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="2"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/true.html">27 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="2"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/false.html">388 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1529">
+
+						<h3 class="first"><a href="#p1529">AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting11a9.html?mode=quote&amp;f=4&amp;p=1529" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic0f90.html?p=1529#p1529" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a></strong> &raquo; </span>Mon Sep 18, 2017 5:55 pm
+			</p>
+			
+			
+			
+			<div class="content">Fixed Wrong Offset which caused Aion to Crash.</div>
+
+							<dl class="attachbox">
+					<dt>
+						Attachments
+					</dt>
+											<dd>
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="download/file0641.php?id=88">AS.zip</a></dt>
+						<dd>(499.52 KiB) Downloaded 212 times</dd>
+		</dl>
+		
+		
+			</dd>
+									</dl>
+			
+									
+						<div id='list_thanks1529'>
+</div>
+<div id='div_post_reput1529'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1530" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1530">
+			<dt class="has-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist30b7.html?mode=viewprofile&amp;u=128" style="color: #0000FF;" class="username-coloured">pawelgbw</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search6096.html?author_id=128&amp;sr=posts">47</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Fri Feb 10, 2017 8:10 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="128"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/128/true.html">111 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="128"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/128/false.html">14 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1530">
+
+						<h3 ><a href="#p1530">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingdc2c.html?mode=quote&amp;f=4&amp;p=1530" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic60da.html?p=1530#p1530" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist30b7.html?mode=viewprofile&amp;u=128" style="color: #0000FF;" class="username-coloured">pawelgbw</a></strong> &raquo; </span>Mon Sep 18, 2017 10:58 pm
+			</p>
+			
+			
+			
+			<div class="content">Thank You.</div>
+
+			
+									
+						<div id='list_thanks1530'>
+</div>
+<div id='div_post_reput1530'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1531" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1531">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist7a1d.html?mode=viewprofile&amp;u=499" class="username">robertgigant</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search7223.html?author_id=499&amp;sr=posts">28</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jul 09, 2017 11:07 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="499"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/499/true.html">16 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="499"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/499/false.html">2 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1531">
+
+						<h3 ><a href="#p1531">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingd2b5.html?mode=quote&amp;f=4&amp;p=1531" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicb781.html?p=1531#p1531" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist7a1d.html?mode=viewprofile&amp;u=499" class="username">robertgigant</a></strong> &raquo; </span>Tue Sep 19, 2017 9:37 am
+			</p>
+			
+			
+			
+			<div class="content"><img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+
+			
+									
+						<div id='list_thanks1531'>
+</div>
+<div id='div_post_reput1531'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1538" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1538">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="avatar"><img class="avatar" src="download/filec486.jpg?avatar=370_1509356020.jpg" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searcheb9d.html?author_id=370&amp;sr=posts">83</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Apr 25, 2017 12:11 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="370"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/370/true.html">42 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="370"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/370/false.html">16 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1538">
+
+						<h3 ><a href="#p1538">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting2601.html?mode=quote&amp;f=4&amp;p=1538" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic652b.html?p=1538#p1538" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a></strong> &raquo; </span>Tue Sep 19, 2017 11:48 pm
+			</p>
+			
+			
+			
+			<div class="content">This bug was killing me, thank you so much, you are the best!</div>
+
+			
+									
+						<div id='list_thanks1538'>
+</div>
+<div id='div_post_reput1538'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1590" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1590">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlistb7e0.html?mode=viewprofile&amp;u=182" class="username">maq2285</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searcha108.html?author_id=182&amp;sr=posts">10</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Feb 22, 2017 9:12 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="182"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/182/true.html">7 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="182"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1590">
+
+						<h3 ><a href="#p1590">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting5bf2.html?mode=quote&amp;f=4&amp;p=1590" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicaf75.html?p=1590#p1590" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182" class="username">maq2285</a></strong> &raquo; </span>Tue Sep 26, 2017 6:35 pm
+			</p>
+			
+			
+			
+			<div class="content">- [string "GrinderFramework.lua"]:206: attempt to call method 'BuffManager' (a nil value)<br>
+<br>
+Anyone can explane to me why i get this when i try to start boting?</div>
+
+			
+									
+						<div id='list_thanks1590'>
+</div>
+<div id='div_post_reput1590'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1595" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1595">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlist09a9.html?mode=viewprofile&amp;u=571" class="avatar"><img class="avatar" src="download/filee04a.png?avatar=571_1503261469.png" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberlist09a9.html?mode=viewprofile&amp;u=571" class="username">Quirunerk</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search84ef.html?author_id=571&amp;sr=posts">65</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Aug 20, 2017 3:06 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="571"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/571/true.html">24 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="571"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/571/false.html">1 time</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1595">
+
+						<h3 ><a href="#p1595">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingd40b.html?mode=quote&amp;f=4&amp;p=1595" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicdd87.html?p=1595#p1595" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist09a9.html?mode=viewprofile&amp;u=571" class="username">Quirunerk</a></strong> &raquo; </span>Wed Sep 27, 2017 7:20 pm
+			</p>
+			
+			
+			
+			<div class="content">still crashing is it only for me ?</div>
+
+			
+									
+						<div id='list_thanks1595'>
+</div>
+<div id='div_post_reput1595'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1629" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1629">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberliste0b9.html?mode=viewprofile&amp;u=134" class="username">Player</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchdad1.html?author_id=134&amp;sr=posts">8</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Fri Feb 10, 2017 8:16 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="134"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/134/true.html">1 time</a></dd>
+    <dd class="profile-posts" data-user-receive-id="134"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1629">
+
+						<h3 ><a href="#p1629">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting33b0.html?mode=quote&amp;f=4&amp;p=1629" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicd010.html?p=1629#p1629" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberliste0b9.html?mode=viewprofile&amp;u=134" class="username">Player</a></strong> &raquo; </span>Wed Oct 04, 2017 4:31 pm
+			</p>
+			
+			
+			
+			<div class="content">still crash time to time, mostly in special locations <br>
+<br>
+The name of the failed application: aion.bin, version: 5617.302.829.12124, time stamp: 0x59a4f591<br>
+The name of the failed module: CryAnimation.dll, version: 0.0.0.0, time stamp: 0x59a4f596<br>
+Exception code: 0xc0000005<br>
+Error offset: 0x0002be56<br>
+Id of the failed process: 0x2d8<br>
+The time to start a failed application: 0x01d33d2dec343b33<br>
+The path of the failed application: C: \ AION Free-to-Play \ bin32 \ aion.bin<br>
+The path of the failed module: C: \ AION Free-to-Play \ bin32 \ CryAnimation.dll<br>
+Report ID: d2fd1b0b-5cad-4ffe-bc35-5e3234221b7d<br>
+---------------------------------------------------------------<br>
+The name of the failed application: aion.bin, version: 5617.302.829.12124, time stamp: 0x59a4f591<br>
+The name of the failed module: Game.dll, version: 5617.302.829.12124, time stamp: 0x59a4f946<br>
+Exception code: 0xc0000005<br>
+Error offset: 0x0006e27d<br>
+Id of the failed process: 0x1ca0<br>
+The time to start the failed application: 0x01d33d2a7ea6629f<br>
+The path of the failed application: C: \ AION Free-to-Play \ bin32 \ aion.bin<br>
+The path of the failed module: C: \ AION Free-to-Play \ bin32 \ Game.dll<br>
+Report ID: f16018c0-1f2f-4a81-bc66-df50b7a1f3d9</div>
+
+			
+									
+						<div id='list_thanks1629'>
+</div>
+<div id='div_post_reput1629'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1660" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1660">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="avatar"><img class="avatar" src="download/file3e75.png?avatar=468_1509356961.png" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search47f1.html?author_id=468&amp;sr=posts">96</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jun 13, 2017 10:44 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="468"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/468/true.html">26 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="468"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/468/false.html">10 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1660">
+
+						<h3 ><a href="#p1660">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting39ff.html?mode=quote&amp;f=4&amp;p=1660" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicb83b.html?p=1660#p1660" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a></strong> &raquo; </span>Fri Oct 13, 2017 5:15 pm
+			</p>
+			
+			
+			
+			<div class="content">EU stop working 12.10 update</div>
+
+			
+									
+						<div id='list_thanks1660'>
+</div>
+<div id='div_post_reput1660'>
+</div>
+			<div id="sig1660" class="signature">EU Thor - Gameforge | NA - Danaria</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1721" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1721">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlist6dd0.html?mode=viewprofile&amp;u=626" class="avatar"><img class="avatar" src="download/file5d8d.jpg?avatar=626_1509362021.jpg" width="150" height="124" alt="User avatar" /></a>														</div>
+								<a href="memberlist6dd0.html?mode=viewprofile&amp;u=626" class="username">Mandy</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search76fe.html?author_id=626&amp;sr=posts">11</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Oct 03, 2017 6:50 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="626"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/626/true.html">3 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="626"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/626/false.html">1 time</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1721">
+
+						<h3 ><a href="#p1721">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting20c9.html?mode=quote&amp;f=4&amp;p=1721" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic6ccc.html?p=1721#p1721" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist6dd0.html?mode=viewprofile&amp;u=626" class="username">Mandy</a></strong> &raquo; </span>Sat Oct 21, 2017 12:35 pm
+			</p>
+			
+			
+			
+			<div class="content">Not working on NA too.</div>
+
+			
+									
+						<div id='list_thanks1721'>
+</div>
+<div id='div_post_reput1721'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1725" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1725">
+			<dt class="has-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchc0bd.html?author_id=161&amp;sr=posts">218</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Fri Feb 17, 2017 2:01 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="161"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/161/true.html">58 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="161"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/161/false.html">85 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1725">
+
+						<h3 ><a href="#p1725">Re: AionInterface.dll Crash Fix 18.09.2017</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting084a.html?mode=quote&amp;f=4&amp;p=1725" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic6d4c.html?p=1725#p1725" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a></strong> &raquo; </span>Sat Oct 21, 2017 2:13 pm
+			</p>
+			
+			
+			
+			<div class="content">Guys why are you download old version? <img class="smilies" src="images/smilies/icon_e_confused.gif" width="15" height="17" alt=":?" title="Confused"></div>
+
+			
+									
+						<div id='list_thanks1725'>
+</div>
+<div id='div_post_reput1725'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+	
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="posting7538.html?mode=reply&amp;f=4&amp;t=271" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+	
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic0fde.html?f=4&amp;t=271&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<form method="post" action="https://www.nyerk.xyz/viewtopic.php?f=4&amp;t=271">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed" />
+				<input type="submit" class="button2" name="sort" value="Go" />
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			14 posts
+							<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="viewtopic37fd.html?f=4&amp;t=271&amp;start=10" role="button">2</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="viewtopic37fd.html?f=4&amp;t=271&amp;start=10" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="viewforum31e6.html?f=4" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Downloads”</span>
+		</a>
+	</p>
+	
+		<br /><br />
+	</div>
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 0 guests</p>
+	</div>
+
+				
+			</div>
+
+	<div class="inventea-footer-wrapper">
+		<div id="page-footer" class="inventea-footer" role="contentinfo">
+			<nav role="navigation">
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index-2.html" data-navbar-reference="index"><span>Board index</span></a></span>					</li>
+
+						<li class="small-icon" data-last-responsive="true"><a href="memberlist8733.html?mode=contactadmin" role="menuitem">Contact us</a></li>
+				
+		<li class="small-icon"><a href="ucp033a.html?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+				<li>All times are <span title="UTC">UTC</span></li>
+			</ul>
+</nav>
+
+			<footer class="inventea-credits">
+								Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited<br />
+								Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a> & <a href="http://xeronix.org/" title="phpBB styles and much more">nextgen</a>
+											</footer>
+		</div>
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+	<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="assets/javascript/core5d79.js?assets_version=25"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax5d79.js?assets_version=25"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?p=1721 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:49 GMT -->
+</html>

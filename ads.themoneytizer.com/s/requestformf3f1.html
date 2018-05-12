@@ -1,0 +1,869 @@
+if (nugg != 1) {
+   function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
+}
+
+var tagsObject = {"26323":{"user_id":"125","ad_id":"3","form_rtb_floor":"0.19","form_appnexus_floor":"0.21","form_id_sticky":null,"form_rubicon_floor":"0.26","tag_appnexus":"6099370","form_id_rubicon":"184022","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108966","tag_spotx":null,"ad_smart_id":"26323","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"26300":{"user_id":"125","ad_id":"2","form_rtb_floor":"0.12","form_appnexus_floor":"0.59","form_id_sticky":null,"form_rubicon_floor":"0.03","tag_appnexus":"6099369","form_id_rubicon":"184022","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108965","tag_spotx":null,"ad_smart_id":"26300","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"26322":{"user_id":"125","ad_id":"1","form_rtb_floor":"0.12","form_appnexus_floor":"0.06","form_id_sticky":null,"form_rubicon_floor":"0.09","tag_appnexus":"6099368","form_id_rubicon":"184022","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108964","tag_spotx":null,"ad_smart_id":"26322","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"26324":{"user_id":"125","ad_id":"4","form_rtb_floor":"0.18","form_appnexus_floor":"0.04","form_id_sticky":null,"form_rubicon_floor":"0.23","tag_appnexus":"6099371","form_id_rubicon":"184022","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108967","tag_spotx":null,"ad_smart_id":"26324","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"26711":{"user_id":"125","ad_id":"19","form_rtb_floor":"0.26","form_appnexus_floor":"0.05","form_id_sticky":null,"form_rubicon_floor":"0.04","tag_appnexus":"6099372","form_id_rubicon":"260502","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108968","tag_spotx":null,"ad_smart_id":"26711","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"26706":{"user_id":"125","ad_id":"20","form_rtb_floor":null,"form_appnexus_floor":null,"form_id_sticky":null,"form_rubicon_floor":null,"tag_appnexus":"6099373","form_id_rubicon":"184022","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108969","tag_spotx":null,"ad_smart_id":"26706","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"30012":{"user_id":"125","ad_id":"28","form_rtb_floor":"0.11","form_appnexus_floor":"0.08","form_id_sticky":null,"form_rubicon_floor":"0.1","tag_appnexus":"6099374","form_id_rubicon":"260502","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108970","tag_spotx":null,"ad_smart_id":"30012","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"26755":{"user_id":"125","ad_id":"15","form_rtb_floor":"0.26","form_appnexus_floor":"0.3","form_id_sticky":null,"form_rubicon_floor":"0.22","tag_appnexus":"6180987","form_id_rubicon":"392562","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":null,"tag_spotx":null,"ad_smart_id":"26755","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"},"39287":{"user_id":"125","ad_id":"31","form_rtb_floor":null,"form_appnexus_floor":null,"form_id_sticky":null,"form_rubicon_floor":null,"tag_appnexus":"11422926","form_id_rubicon":"184022","tag_pulsepoint":null,"tag_aol":null,"tag_aol_mobile":null,"tag_sovrn":null,"tag_sovrn_mobile":null,"tag_breal":null,"tag_criteo":null,"tag_index":null,"tag_index2":null,"tag_adyoulike":null,"tag_rhythmone":null,"tag_vertoz":null,"tag_improve":"1108971","tag_spotx":null,"ad_smart_id":"39287","site_id":"216","site_id_smart":"63535\/493237","site_pulsepoint":null,"site_imonomy":"14567721418","site_responsive":null,"site_blocklist":"0","site_id_rubicon_ATF":"184022","site_id_rubicon_MTF":"0","site_id_rubicon_BTF":"260502","site_id_rubicon_MOBILE":"392562","site_aol_server":"FR","site_theme":"20","site_true_url":"https:\/\/hostingpics.net","site_refresh":"1","site_capping":"9","theme_name_english":"technologyandcomputing","subtheme_name_english":"Web Technology","part_google":"2","site_confiant":"0"}};
+window._qevents = window._qevents || [];
+window.confiant = false;
+window.moneycaching = false;
+
+(function() {
+    var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+window._qevents.push({
+	qacct:"p-6Fv0cGNfc_bw8",
+	labels:"Categories.technologyandcomputing"
+});
+var website = (window.location != window.parent.location) ? document.referrer: document.location.href;
+  params = {
+    "cat":"technologyandcomputing",
+    "sscat":"Web Technology"
+  };
+
+var nugg = document.createElement("script");
+nugg.setAttribute("type", "text/javascript");
+nugg.setAttribute("src", ('https:' == document.location.protocol ? 'https:' : 'http:')+"//ads.themoneytizer.com/nugg.js?theme=671230351");
+nugg.setAttribute("async", "true");
+document.head.appendChild(nugg);
+var nugg = 1;
+     var pbjs = (typeof pbjs != "undefined")? pbjs : {} ;
+            pbjs.que = pbjs.que || [];
+        
+        var d = document, pbs = d.createElement('script');
+        pbs.setAttribute("type","text/javascript");
+        pbs.setAttribute("src","https://ads.themoneytizer.com/moneybid346/build3/dist/prebid.js");
+        pbs.setAttribute("async", "true");
+        var target = document.getElementsByTagName('head')[0];
+        target.insertBefore(pbs, target.firstChild);
+
+                 var format_size = {"1":[[728,90]],"2":[[300,250]],"3":[[300,600]],"4":[[120,600]],"19":[[300,250]],"20":[[160,600]],"26":[[300,250]],"28":[[728,90]],"15":[[250,300],[336,280],[320,50],[300,100],[320,480],[300,50],[320,100]],"31":[[970,250]],"35":[[160,600]],"11":[[640,320]]};
+		  var format_size_rubicon = {"26322":"2","26300":"15","26323":"10","26324":"8","26711":"15","26706":"9","28108":"15","30012":"2","26755":"2,43,67,44,59,117,16","39287":"57","50677":"9"};
+          var format_criteo = {"1":"1085567","2":"1085565","3":"1095714","31":"1085641","4":"1085632","19":"1085566","20":"1085636","28":"1085567","15":"1085643"};
+					var format_pulsepoint = {"1":"728x90","2":"300x250","3":"300x600","4":"120x600","19":"300x250","20":"160x600","26":"300x250","28":"728x90","15":"320x50","31":"970x250","35":"160x600"};
+            function Getsize(format){
+               if(format == 1 || format == 28){
+                 if(typeof window.md !== 'undefined' && window.md.phone() !== null){
+                       var my_sizes = [[320,50],[300,50],[320,100],[300,100]];
+                   }else{
+                       var my_sizes = [[728,90]];
+                   }
+                }else if(format == 31){
+								if(typeof window.md !== 'undefined' && window.md.phone() !== null){
+                       var my_sizes = [[300,250]];
+                   }else{
+                       var my_sizes = [[970,250]];
+                   }
+								}else{
+                    var my_sizes = format_size[format];
+                  }
+                  return my_sizes;
+             }
+			 function GetsizeRubicon(format){
+               if(format == 26322 || format == 30012){
+                  if(typeof window.md !== 'undefined' && window.md.phone() !== null){
+                       var my_sizes = '43,67,44,59,117,16';
+                   }else{
+                       var my_sizes = '2';
+                   }
+                }else if(format == 39287){
+									if(typeof window.md !== 'undefined' && window.md.phone() !== null){
+												 var my_sizes = '15';
+										 }else{
+												 var my_sizes = '57';
+										 }
+									}else{
+                    var my_sizes = format_size_rubicon[format];
+                  }
+                  return my_sizes;
+             }
+						 function GetPulseSize(format){
+               if(format == 1 || format == 28){
+                  if(typeof window.md !== 'undefined' && window.md.phone() !== null){
+                       var my_sizes = '320x50';
+                   }else{
+                       var my_sizes = '728x90';
+                   }
+                }else if(format == 31){
+									if(typeof window.md !== 'undefined' && window.md.phone() !== null){
+												 var my_sizes = '300x250';
+										 }else{
+												 var my_sizes = '970x250';
+										 }
+									}else{
+                    var my_sizes = format_pulsepoint[format];
+                  }
+                  return my_sizes;
+             }
+        pbjs.que.push(function(){
+               
+         var videoAdUnit = []
+         var nativeAdUnit = []
+         var adUnits = [            {
+             code: '26323',
+             timeout: 900,
+             sizes: Getsize(3),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:3,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1095714'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '6099370'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'184022',
+                           sizes:[GetsizeRubicon(26323)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108966'
+                        }
+            },
+                                                ]
+         },            {
+             code: '26300',
+             timeout: 900,
+             sizes: Getsize(2),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:2,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1085565'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '6099369'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'184022',
+                           sizes:[GetsizeRubicon(26300)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108965'
+                        }
+            },
+                                                ]
+         },            {
+             code: '26322',
+             timeout: 900,
+             sizes: Getsize(1),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:1,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1085567'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '6099368'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'184022',
+                           sizes:[GetsizeRubicon(26322)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108964'
+                        }
+            },
+                                                ]
+         },            {
+             code: '26324',
+             timeout: 900,
+             sizes: Getsize(4),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:4,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1085632'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '6099371'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'184022',
+                           sizes:[GetsizeRubicon(26324)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108967'
+                        }
+            },
+                                                ]
+         },            {
+             code: '26711',
+             timeout: 900,
+             sizes: Getsize(19),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:19,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1085566'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '6099372'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'260502',
+                           sizes:[GetsizeRubicon(26711)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108968'
+                        }
+            },
+                                                ]
+         },            {
+             code: '26706',
+             timeout: 900,
+             sizes: Getsize(20),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:20,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1085636'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '6099373'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'184022',
+                           sizes:[GetsizeRubicon(26706)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108969'
+                        }
+            },
+                                                ]
+         },            {
+             code: '30012',
+             timeout: 900,
+             sizes: Getsize(28),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:28,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1085567'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '6099374'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'260502',
+                           sizes:[GetsizeRubicon(30012)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108970'
+                        }
+            },
+                                                ]
+         },            {
+             code: '39287',
+             timeout: 900,
+             sizes: Getsize(31),
+          bids: [
+          {bidder: 'secondchance',
+                        params:{
+                           siteId:216,
+                           adId:31,
+                        }
+            },
+						{bidder: 'criteo',
+             params:{
+              zoneId: '1085641'
+             }
+            },
+			                        {bidder: 'appnexusAst',
+             params:{
+              placementId: '11422926'
+             }
+            },
+                                     {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: '38332',
+                           zoneId:'184022',
+                           sizes:[GetsizeRubicon(39287)],
+						                              inventory:'{siteid:216}',
+                           keywords:'siteid:216'
+
+                        }
+            },
+                                    			 												            {bidder: 'improvedigital',
+                        params:{
+                           placementId: '1108971'
+                        }
+            },
+                                                ]
+         },];
+
+            pbjs.addAdUnits(videoAdUnit);
+            pbjs.addAdUnits(nativeAdUnit);
+         pbjs.addAdUnits(adUnits);
+           if(window.moneytizergeo != "FR" && window.moneytizergeo != "GB" && window.moneytizergeo != "BE" && window.moneytizergeo != "US" && window.moneytizergeo != "CA" && window.moneytizergeo != "AT" && window.moneytizergeo != "DE" && window.moneytizergeo != "CH" && window.moneytizergeo != "IT" && window.moneytizergeo != "ES" && window.moneytizergeo != "AU" && window.moneytizergeo != "NL" && window.moneytizergeo != "MX" && window.moneytizergeo != "MX" && window.moneytizergeo != "SE" && window.moneytizergeo != "SG" && window.moneytizergeo != "DK" && window.moneytizergeo != "FI" && window.moneytizergeo != "IE" && window.moneytizergeo != "CL"){
+           for (var i = 0; i < pbjs.adUnits.length; i++) {
+                 for(var j = pbjs.adUnits[i].bids.length -1; j >= 0 ; j--){
+                   if (pbjs.adUnits[i].bids[j].bidder == "improvedigital") {
+                      pbjs.adUnits[i].bids.splice(j, 1);
+                   }
+                 }
+           }
+           }
+        });
+            pbjs.bidderSettings = {
+            aol: {
+             bidCpmAdjustment : function(bidCpm){
+                 return bidCpm * 1.1;
+             },
+            },
+            brealtime: {
+             bidCpmAdjustment : function(bidCpm){
+                 return bidCpm * .8;
+             },
+            },
+			smartadserver: {
+             bidCpmAdjustment : function(bidCpm){
+                 return bidCpm * .85;
+             },
+            },
+			rubicon: {
+             bidCpmAdjustment : function(bidCpm){
+                 return bidCpm * .875;
+             },
+            },
+            standard: {
+              adserverTargeting: [{
+                key: "hb_bidder",
+                val: function(bidResponse) {
+                  if(bidResponse.bidderCode=="rubiconLite"){
+                  return "rubicon";
+                  }else{
+                  return bidResponse.bidderCode;
+                  }
+                }
+              }, {
+                key: "hb_adid",
+                val: function(bidResponse) {
+                  return bidResponse.adId;
+                }
+              },{
+                key: "hb_height",
+                val: function(bidResponse) {
+                  return bidResponse.height;
+                }
+              },
+              {
+                key: "hb_bid",
+                val: function(bidResponse) {
+                var cpm = bidResponse.cpm*1.1;
+                  if (cpm < 0.10) {
+                    return (Math.floor(cpm * 50) / 50).toFixed(2);
+                  } else if (cpm < 5.00) {
+                    return (Math.floor(cpm * 20) / 20).toFixed(2);
+                  } else if (cpm < 10.00) {
+                    return (Math.floor(cpm * 2) / 2).toFixed(2);
+                  } else {
+                    return '10.00';
+                  }
+                }
+              }]
+            }
+    };
+    pbjs.que.push(function(){
+        pbjs.requestBids({
+            // This callback gets triggered when all bids for this
+            // ad unit come back. 
+            bidsBackHandler: function(bidResponses) {
+			
+                  window.targetingParams = pbjs.getAdserverTargeting();
+				  bid = pbjs.getHighestCpmBids('video')[0];
+				  window.vastUrl = bid && bid.vastUrl;
+            }
+        });
+        pbjs.setConfig({
+            userSync: {
+                iframeEnabled: true,
+                syncsPerBidder: 10
+        }});
+    });
+	var counter_refresh = [];
+function checkVisibility(formatid,capping,creatediv){
+	  var visibility = VisSense(creatediv);
+	  if(visibility.percentage() > 0.49) {
+		 setTimeout(refreshSlot(formatid,capping),1000);
+	  }
+}
+function checkVisibility2(formatid,capping,creatediv){
+	  visibility = VisSense(creatediv);
+		 visibility.onPercentageTimeTestPassed(function() {
+		  refreshSlot(formatid,capping);
+		 }, {
+		   percentageLimit: 0.5,
+		   timeLimit: 14000,
+		   interval: 200
+		 });
+}
+    function refreshSlot(formatid,capping) {
+	if(window.moneytizergeo == "FR" || window.moneytizergeo == "US" || window.moneytizergeo == "AT" || window.moneytizergeo == "DE" || window.moneytizergeo == "CH" || window.moneytizergeo == "IT" || window.moneytizergeo == "ES" || window.moneytizergeo == "US" || window.moneytizergeo == "MQ" || window.moneytizergeo == "GP" || window.moneytizergeo == "RE" || window.moneytizergeo == "NC"){
+	  var bidder_geo = window.moneytizergeo;
+	}else{
+	  var bidder_geo = 0;
+	}
+	
+    var strformatid = formatid.toString();
+    var arr_width = {26322:728,26300:300,26323:300,26324:120,26711:300,26706:160,28108:300,30012:728,39287:970,35:50677,51410:728,28108:300};
+    var arr_height = {26322:90,26300:250,26323:600,26324:600,26711:250,26706:600,28108:150,30012:90,39287:250,35:50677,51410:90,28108:250};
+    var rubicon_theme = {"18":"38324","12":"38330","20":"38332","1":"39528","2":"39530","3":"39532","4":"39534","5":"39536","6":"39538","7":"39540","8":"39542","9":"39544","10":"39546","11":"39548","13":"39550","14":"39552","15":"39554","16":"39556","17":"39558","19":"39560","21":"39562"};
+var smart_prebid2 = {"26322":"55794","26300":"55789","26323":"55792","26324":"55798","26711":"55790","26706":"55795","30012":"55793","39287":"55791","50677":"55796","28108":"55797"};
+    if(counter_refresh[formatid] == null ){
+        counter_refresh[formatid] = 0;
+    }else{
+    	counter_refresh[formatid] = counter_refresh[formatid]+1;
+    }
+    if(counter_refresh[formatid] < capping){
+    pbjs.removeAdUnit(strformatid);
+    if(tagsObject[formatid]['tag_appnexus'] !== null){
+	
+    var appnexus = {bidder: 'appnexusAst',
+             params:{
+              placementId: tagsObject[formatid]['tag_appnexus']
+             }
+            };
+    }else{
+    var appnexus ="";
+    }
+    
+    if(tagsObject[formatid]['site_id_rubicon_ATF'] !== null || tagsObject[formatid]['site_id_rubicon_BTF'] !== null){
+    if(tagsObject[formatid]['ad_id'] == 35 || tagsObject[formatid]['ad_id'] == 28){
+      var zone_id = tagsObject[formatid]['site_id_rubicon_BTF'];
+    }else{
+      var zone_id = tagsObject[formatid]['site_id_rubicon_ATF'];
+    }
+
+    var rubicon = {bidder: 'rubicon',
+                        params:{
+                           accountId:'11740',
+                           siteId: rubicon_theme[tagsObject[formatid]['site_theme']],
+                           zoneId:zone_id,
+                           sizes:[GetsizeRubicon(formatid)],
+                           inventory:'{siteid:'+tagsObject[formatid]["site_id"]+'}',
+                           keywords:'siteid:'+tagsObject[formatid]["site_id"]
+                        }
+            };
+    }else{
+    var rubicon ="";
+    }
+    
+    if(tagsObject[formatid]['tag_pulsepoint'] !== null){
+    var pulsepoint=     {bidder: 'pulseLite',
+                        params:{
+                           cf: GetPulseSize(tagsObject[formatid]['ad_id']),
+                           cp: tagsObject[formatid]['site_pulsepoint'],
+                           ct: tagsObject[formatid]['tag_pulsepoint']
+                        }
+            };
+    }else{
+    var pulsepoint ="";
+    }
+    
+    if(tagsObject[formatid]['tag_breal'] !== null){
+    var breal={bidder: 'brealtime',
+                        params:{
+                           placementId: tagsObject[formatid]['tag_breal']
+                        }
+            };
+    }else{
+    var breal ="";
+    }
+	
+   if(tagsObject[formatid]['tag_criteo'] !== null){
+    var criteo={bidder: 'criteo',
+                        params:{
+                           zoneId: tagsObject[formatid]['tag_criteo']
+                        }
+            };
+    }else{
+	  if(typeof format_criteo[tagsObject[formatid]['ad_id']] !== 'undefined' && tagsObject[formatid]['site_blocklist'] == 0 ){
+		  var criteo={bidder: 'criteo',
+                        params:{
+                           zoneId: format_criteo[tagsObject[formatid]['ad_id']]
+                        }
+            };
+	  }else{
+		 var criteo ="";
+	  }
+    }
+    
+    if(tagsObject[formatid]['tag_aol'] !== null){
+    if(typeof window.md !== 'undefined' && window.md.phone() !== null && tagsObject[formatid]['tag_aol_mobile']){
+      tagsObject[formatid]['tag_aol'] = tagsObject[formatid]['tag_aol_mobile'];
+    }
+    if(tagsObject[formatid]['site_aol_server'] == "US"){
+    var aol={bidder: 'aol',
+                        params:{
+                           placement:tagsObject[formatid]["tag_aol"],
+                           network: '10979.1',
+                           server: "adserver-us.adtech.advertising.com"
+                        }
+            };
+    }else{
+    var aol={bidder: 'aol',
+                        params:{
+                           placement:tagsObject[formatid]["tag_aol"],
+                           network: '4658.1',
+                           server: "adserver-eu.adtech.advertising.com"
+                        }
+            };
+    }}else{
+    var aol ="";
+    }
+    
+    if(tagsObject[formatid]['tag_sovrn'] !== null){
+    if(typeof window.md !== 'undefined' && window.md.phone() !== null && tagsObject[formatid]['tag_sovrn_mobile']){
+	tagsObject[formatid]['tag_sovrn'] = tagsObject[formatid]['tag_sovrn_mobile'];
+	}
+     var sovrn ={bidder: 'sovrn',
+                        params:{
+                           tagid:tagsObject[formatid]['tag_sovrn']
+                        }
+            };
+    }else{
+    var sovrn ="";
+    }
+    
+		if(tagsObject[formatid]['tag_rhythmone'] !== null){
+     var rhythmone ={bidder: 'rhythmone',
+                        params:{
+                           tagid:tagsObject[formatid]['tag_rhythmone']
+                        }
+            };
+    }else{
+    var rhythmone ="";
+    }
+	
+		if(tagsObject[formatid]['tag_index'] !== null){
+     var index ={bidder: 'indexExchange',
+                        params:{
+                           id:tagsObject[formatid]['tag_index2'],
+						   siteID:tagsObject[formatid]['tag_index']
+                        }
+            };
+    }else{
+    var index ="";
+    }
+		
+	 if(tagsObject[formatid]['tag_vertoz'] !== null){
+     var vertoz ={bidder: 'vertoz',
+                        params:{
+                           placementId: tagsObject[formatid]['tag_vertoz']
+                        }
+            };
+    }else{
+    var vertoz ="";
+    }
+	if(tagsObject[formatid]['tag_adyoulike'] !== null){
+     var adyoulike ={bidder: 'adyoulike',
+                        params:{
+                           placement: tagsObject[formatid]['tag_adyoulike']
+                        }
+            };
+    }else{
+    var adyoulike ="";
+    }
+	if(tagsObject[formatid]['site_imonomy'] !== null && tagsObject[formatid]['site_blocklist'] == 0){
+     var imonomy ={bidder: 'imonomy',
+                        params:{
+                           publisher_id: tagsObject[formatid]['site_imonomy'],
+						   site_id: tagsObject[formatid]["site_id"]
+                        }
+            };
+    }else{
+    var imonomy ="";
+    }
+	
+	if(tagsObject[formatid]['tag_improve'] !== null){
+        if(window.moneytizergeo == "FR" || window.moneytizergeo == "GB" || window.moneytizergeo == "BE" || window.moneytizergeo == "US" || window.moneytizergeo == "CA" || window.moneytizergeo == "AT" || window.moneytizergeo == "DE" || window.moneytizergeo == "CH" || window.moneytizergeo == "IT" || window.moneytizergeo == "ES" || window.moneytizergeo == "AU" || window.moneytizergeo == "NL" || window.moneytizergeo == "MX" || window.moneytizergeo == "MX" || window.moneytizergeo == "SE" || window.moneytizergeo == "SG" || window.moneytizergeo == "DK" || window.moneytizergeo == "FI" || window.moneytizergeo == "IE" || window.moneytizergeo == "CL"){
+     var improvedigital = {bidder: 'improvedigital',
+                        params:{
+                           placementId: tagsObject[formatid]['tag_improve']
+                        }
+            };
+            }
+    }else{
+    var improvedigital ="";
+    }
+	
+	if(tagsObject[formatid]['form_rtb_floor'] === null){
+	  tagsObject[formatid]['form_rtb_floor'] = 0.01;
+	}
+     var smart_id = tagsObject[formatid]['site_id_smart'].split("/");
+             var NewadUnits = [
+            {
+             code: strformatid,
+             sizes: Getsize(tagsObject[formatid]['ad_id']),
+          bids: [
+          {bidder: 'moneytizer',
+                        params:{
+                           siteId:tagsObject[formatid]['site_id'],
+                           adId:tagsObject[formatid]['ad_id'],
+						   country: bidder_geo
+                        }
+            },
+            {bidder: 'secondchance',
+                        params:{
+                            siteId:tagsObject[formatid]['site_id'],
+                           adId:tagsObject[formatid]['ad_id'],
+                        }
+            },
+            {bidder: 'smartadserver',
+                        params:{
+                           domain:('https:' == document.location.protocol ? 'https:' : 'http:')+'//ww1097.smartadserver.com',
+                           siteId:smart_id[0],
+                           pageId:smart_id[1],
+                           formatId:smart_prebid2[strformatid],
+						   bidfloor: tagsObject[formatid]['form_rtb_floor']
+                        }
+            },
+            appnexus,
+			criteo,
+            rubicon,
+            pulsepoint,
+			adyoulike,
+            breal,
+			rhythmone,
+			index,
+            aol,
+			improvedigital,
+           sovrn
+            ]
+         }];
+
+         pbjs.addAdUnits(NewadUnits);
+		 document.getElementById("sas_"+formatid).innerHTML = "";
+        pbjs.que.push(function() {
+			
+         pbjs.requestBids({
+           timeout: 900,
+		   adUnitCodes:[strformatid],
+           bidsBackHandler: function() {
+		   sas.clean(formatid);
+           window.targetingParams = pbjs.getAdserverTargeting();
+		   (function roo(){
+			if (window.targetingParams && !isEmpty(window.targetingParams[formatid])  || window.RefreshisReady == 1){
+		   window.targetingParams = window.targetingParams || [];
+		   	if (typeof window.targetingParams[formatid] === 'undefined' || window.targetingParams[formatid] == 0) {
+			   sas.refresh(formatid);
+		   }else{
+           var myiframe = document.createElement('iframe');
+					 var browser_size = {width: window.innerWidth || document.body.clientWidth};
+            myiframe.frameBorder=0;
+            myiframe.width=arr_width[formatid]+"px";
+            myiframe.height=arr_height[formatid]+"px";
+            myiframe.id="sas_iframe_"+formatid;
+            myiframe.setAttribute("scrolling", "no");
+            myiframe.setAttribute("marginheight", 0);
+            myiframe.setAttribute("marginwidth", 0);
+            myiframe.setAttribute("topmargin", 0);
+						if(typeof window.md !== 'undefined' && window.md.phone() !== null){
+             myiframe.setAttribute("sandbox","allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-popups");
+              }
+            myiframe.setAttribute("leftmargin", 0);
+            myiframe.setAttribute("allowtransparency", true);
+            document.getElementById("sas_"+formatid).appendChild(myiframe);
+            var hb_adid = window.targetingParams[formatid].hb_adid;
+           var iframeDoc = myiframe.contentWindow.document;
+if(tagsObject[formatid]['site_confiant'] == 1){var confiant = true;}else{var confiant = false;}
+			pbjs.renderAd(iframeDoc, hb_adid,confiant,window.moneycaching);
+      window.moneycaching = false;
+      var secondbid = {};
+            var http = new XMLHttpRequest();
+            if(pbjs.getSecondHighestCpmBids(formatid).length == 1){
+            if(pbjs.getSecondHighestCpmBids(formatid)[0].bidder != "moneytizer" && pbjs.getSecondHighestCpmBids(formatid)[0].bidder != "secondchance"){
+             var url = (%27https_%27.html == document.location.protocol ? 'https:' : 'http:')+'//c.tmyzer.com/c/?s=216&f='+tagsObject[formatid]['ad_id']+'&fi=1&cpm='+Number((pbjs.getSecondHighestCpmBids(formatid)[0].cpm).toFixed(2));
+             secondbid['bids'] =[{bidId:"schance"+tagsObject[formatid]['site_id']+"-"+tagsObject[formatid]['ad_id'],placementCode:strformatid,bidder:pbjs.getSecondHighestCpmBids(formatid)[0].bidder,cpm:pbjs.getSecondHighestCpmBids(formatid)[0].cpm,width:pbjs.getSecondHighestCpmBids(formatid)[0].width,height:pbjs.getSecondHighestCpmBids(formatid)[0].height,ad:pbjs.getSecondHighestCpmBids(formatid)[0].ad}];
+             }else{
+             var url = (%27https_%27.html == document.location.protocol ? 'https:' : 'http:')+'//c.tmyzer.com/c/?s=216&f='+tagsObject[formatid]['ad_id']+'&fi=1';
+             }
+             }else{
+             var url = (%27https_%27.html == document.location.protocol ? 'https:' : 'http:')+'//c.tmyzer.com/c/?s=216&f='+tagsObject[formatid]['ad_id']+'&fi=1';
+             }
+             http.open("POST", url, true); 
+             http.setRequestHeader("Content-type", "text/plain");
+             var param = JSON.stringify(secondbid);
+             http.send(param);
+		   }
+			 }else{
+			   setTimeout(function(){
+					   roo();
+					  },50);
+				  }
+			 })();
+			 setTimeout(function(){window.RefreshisReady = 1;}, 1500);
+           }
+         });
+          pbjs.setConfig({
+            userSync: {
+                iframeEnabled: true,
+                syncsPerBidder: 10
+          }});
+        });
+      }
+	}
+}
+
+if(typeof crtg_content === 'undefined'){var crtg_content = "";}
+var mydiv = document.getElementById("216-15");
+var creatediv = document.createElement("div");
+creatediv.id = "sas_26755";
+mydiv.appendChild(creatediv);
+var sc = document.createElement("script");
+sc.type = "text/javascript";
+sc.async = true;
+(function foo(){
+if(typeof ar_display === 'undefined'){var arianelab = "";}else if(ar_display == true){var arianelab = "ar_display=1";}else{var arianelab = "ar_display=0";}
+ if (window.targetingParams && typeof ar_display !== 'undefined' && !isEmpty(window.targetingParams[26755]) || window.isReady == 1){
+           window.targetingParams = window.targetingParams || [];
+           window.targetingParams[26755] = window.targetingParams[26755] || 0;
+           if(window.targetingParams[26755] == 0){
+            var moneybid = "";
+           }else{
+           var hb_adid = "hb_adid="+window.targetingParams[26755].hb_adid;
+           var hb_pb = "hb_pb="+window.targetingParams[26755].hb_bid;
+           var hb_bidder = "hb_bidder="+window.targetingParams[26755].hb_bidder;
+           if(window.targetingParams[26755].hb_height == "480"){
+           var hb_format = "hb_format="+26755+"-1";
+           }else if(window.targetingParams[26755].hb_height == "250" || window.targetingParams[26755].hb_height == "280"){
+		   var hb_format = "hb_format="+26755+"-2";
+		   }else{
+           var hb_format = "hb_format="+26755;
+           }
+           var moneybid = ";"+hb_adid+";"+hb_pb+";"+hb_bidder+";"+hb_format+";"+arianelab;
+           }
+           sc.text = sas.cmd.push(function() { sas.call("std", {siteId: 63535, pageId: 493237, formatId: 26755, target: crtg_content+moneybid});});;
+           creatediv.appendChild(sc);
+ }else{
+  setTimeout(function(){
+          foo();
+         },50);
+     }
+})();
+setTimeout(function(){window.isReady = 1;}, 1500);

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=18&t=111&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Gunslinger.lua by mnwaxep EU version</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Gunslinger.lua by mnwaxep EU version</h2>
+		<p><a href="viewtopicc6f8.html?f=18&amp;t=111">https://www.nyerk.xyz/viewtopic.php?f=18&amp;t=111</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Fri Mar 17, 2017 8:58 pm</strong></div>
+				<div class="author">by <strong>mnwaxep</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+        --------------------------------------------------
+        Copyright (C) 2017 mnwaxep
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+        --------------------------------------------------
+
+]]--
+
+--- Perform the attack routine on the selected target.
+--
+-- @param       Entity  Contains the entity we have targeted.
+-- @param       double  Contains the distance to the target
+-- @param       bool    Indicates whether or not the target is stunned.
+-- @return      bool
+function Attack( Entity, Range, Stunned )
+
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local Position = Player:GetPosition();
+
+	local EntityState = Entity:GetState();
+
+	local AttackRange = Player:GetAttackRange();
+
+	local EntityState = Entity:GetState();
+
+	----------------------------------------------
+	---------Check For Enemy do somethink---------
+	----------------------------------------------
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) and Entity:GetSkillID() ~= 0 and SkillList[Entity:GetSkillID()]:IsMagical() and Entity:GetSkillTime() &gt;= 500 then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+
+	----------------------------------------------
+	-----------------Remove Shock-----------------
+	----------------------------------------------
+
+	-- Remove Shock -&gt; Steal Health
+	if Helper:CheckAvailable( "Seizure Projectile" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Seizure Projectile" );
+		return false;
+	end
+
+	-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		
+		return false;
+	end
+
+	----------------------------------------------
+	---------------------Buffs--------------------
+	----------------------------------------------
+
+	-- Buff: Promise of Magic Power 
+	if Helper:CheckAvailable( "Promise of Magic Power" ) and EntityState:GetState( Helper:CheckName( "Promise of Magic Power II" )) == nil then
+	Helper:CheckExecute( "Promise of Magic Power" );
+		return false;
+	end
+
+	-- Buff: Gift of Magic Power I 
+	if Helper:CheckAvailable( "Gift of Magic Power II" ) and EntityState:GetState( Helper:CheckName( "Gift of Magic Power I" )) == nil then
+		Helper:CheckExecute( "Gift of Magic Power I" );
+		return false;
+	end
+
+	-- Buff: Enhance Magic Projectile 
+	if Helper:CheckAvailable( "Enhance Magic Projectile IV" ) and EntityState:GetState( Helper:CheckName( "Enhance Magic Projectile IV" )) == nil then
+		Helper:CheckExecute( "Enhance Magic Projectile IV" );
+		return false;
+	end
+	
+	if Helper:CheckAvailable( "Magic Force" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Magic Force");
+		return false;
+	end
+
+	----------------------------------------------
+	---------------Recovery Skills----------------
+	----------------------------------------------
+
+	-- Anti-Enemy Fire
+	if Helper:CheckAvailable( "Restoration Volley" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Restoration Volley" );
+		return false;
+	end
+
+	-- Soul Extractor Shot III (Normal Stigma)
+	if Helper:CheckAvailable( "Soulsucker Shot" ) and Player:GetHealth() &lt; 80 then
+		Helper:CheckExecute( "Soulsucker Shot" );
+		return false;
+	end
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+	
+-- Pistol shot -&gt; Repeated Volley -&gt; Repeated Rapid  Fire
+	if Helper:CheckAvailable( "Pistol shot" ) then
+	    Helper:CheckExecute( "Pistol shot" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		return false;
+	end
+-- Soul Shot -&gt; Soul Volley -&gt; Rapid Soul Fire
+	if Helper:CheckAvailable( "Soul Shot" ) then
+	    Helper:CheckExecute( "Soul Shot" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		return false;
+	end
+	if	Entity:GetHealth() &lt; 60 and Entity:GetHealth() &gt; 30 and Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	--Initial Attack : Rapid Volley II (Greater Stigma)
+	if Helper:CheckAvailable( "Rapid Volley" ) then
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley " );
+		Helper:CheckExecute( "Rapid Volley" );
+		return false;
+	end
+
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	
+	--Initial Attack Immobilize : Encircling Bomb
+	if Helper:CheckAvailable( "Encircling Bomb" ) then
+		Helper:CheckExecute( "Encircling Bomb");
+		return false;
+	end
+	--Initial Attack : Pistol Shot
+	if Helper:CheckAvailable( "Pistol Shot" ) then
+	Helper:CheckExecute( "Pistol Shot" );
+    return false;
+	end
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+	--Initial Attack : Soul Shot
+	if Helper:CheckAvailable( "Sighting Shot" ) then
+		Helper:CheckExecute( "Sighting Shot" );
+		return false;
+	end
+
+	--Initial Attack : Lifeline Penetration II 
+	if Helper:CheckAvailable( "Lifeline Penetration V" ) then
+		Helper:CheckExecute( "Lifeline Penetration V" );
+		return false;
+	end
+
+	--Initial Attack : Between the Eyes I 
+	if Helper:CheckAvailable( "Between the Eyes II" ) then
+		Helper:CheckExecute( "Between the Eyes II" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Shot
+	if Helper:CheckAvailable( "Aimed Shot" ) then
+		Helper:CheckExecute( "Aimed Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Wing Shot
+	if Helper:CheckAvailable( "Aimed Wing Shot" ) then
+		Helper:CheckExecute( "Aimed Wing Shot" );
+		return false;
+	end
+
+	--Initial Attack : Disrupter Shot
+	if Helper:CheckAvailable( "Disrupter Shot" ) then
+		Helper:CheckExecute( "Disrupter Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Weakpoint Shot
+	if Helper:CheckAvailable( "Aimed Weakpoint Shot" ) then
+	Helper:CheckExecute( "Aimed Weakpoint Shot" );
+	return false;
+    end
+
+	
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+end
+
+
+--- Perform the required pause checks.
+--
+-- @return	bool
+
+function Pause()
+
+local PlayerState = Player:GetState();
+
+	--Mana healing boost (Normal stigma)
+	if Helper:CheckAvailable( "Breath of Magic Power" ) and PlayerState:GetState( Helper:CheckName( "Breath of Magic Power" )) == nil then
+		Helper:CheckExecute( "Breath of Magic Power" );
+		return false;
+	end
+	if	Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+</code></pre></div>
+
+1.0.0 test version.<br>
+<br>
+Any bugs = PM me  <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Sun Mar 19, 2017 9:55 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">Why do you use the skill levels like Between the Eyes "II", Lifeline Penetration "V" ? It was old system of aion.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Mon Mar 20, 2017 5:35 am</strong></div>
+				<div class="author">by <strong>ugel</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic46de.html?p=551#p551" data-post-id="551" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Mar 19, 2017 9:55 pm</div></cite>
+Why do you use the skill levels like Between the Eyes "II", Lifeline Penetration "V" ? It was old system of aion.
+</div></blockquote>
+
+Script base coat on an old script from VaanC &amp; Macrokor "(C) 2013"  <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Mon Mar 20, 2017 11:40 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist3cd9.html?mode=viewprofile&amp;u=63">ugel</a> wrote: <a href="viewtopic960c.html?p=555#p555" data-post-id="555" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Mar 20, 2017 5:35 am</div></cite>
+<blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic46de.html?p=551#p551" data-post-id="551" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Mar 19, 2017 9:55 pm</div></cite>
+Why do you use the skill levels like Between the Eyes "II", Lifeline Penetration "V" ? It was old system of aion.
+</div></blockquote>
+
+Script base coat on an old script from VaanC &amp; Macrokor "(C) 2013"  <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink">
+</div></blockquote>
+But it says "Copyright (C) 2017 mnwaxep" <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Mon Jul 24, 2017 1:51 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">made some small fixes and improvements: <br>
+- fixed some spell names<br>
+- no mana chain unless char is under 30% mana <br>
+- no pistol chain if the target is below 40% health<br>
+- added focused evasion if targed cast something<br>
+<br>
+only testet the script with lvl 30 gunner.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+        --------------------------------------------------
+        Copyright (C) 2017 mnwaxep
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+        --------------------------------------------------
+
+]]--
+
+--- Perform the attack routine on the selected target.
+--
+-- @param       Entity  Contains the entity we have targeted.
+-- @param       double  Contains the distance to the target
+-- @param       bool    Indicates whether or not the target is stunned.
+-- @return      bool
+function Attack( Entity, Range, Stunned )
+
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local Position = Player:GetPosition();
+
+	local EntityState = Entity:GetState();
+
+	local AttackRange = Player:GetAttackRange();
+
+	local EntityState = Entity:GetState();
+
+	----------------------------------------------
+	---------Check For Enemy do somethink---------
+	----------------------------------------------
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) and Entity:GetSkillID() ~= 0 and SkillList[Entity:GetSkillID()]:IsMagical() and Entity:GetSkillTime() &gt;= 500 then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+
+	----------------------------------------------
+	-----------------Remove Shock-----------------
+	----------------------------------------------
+
+	-- Remove Shock -&gt; Steal Health
+	if Helper:CheckAvailable( "Seizure Projectile" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Seizure Projectile" );
+		return false;
+	end
+
+	-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		
+		return false;
+	end
+	-------------------------------------
+	--------------Evade------------------
+	-------------------------------------
+	if Entity:GetSkillID() ~= 0 then
+	
+		-- Attack 5: Focused Evasion
+		if Helper:CheckAvailable( "Focused Evasion" ) then
+			Helper:CheckExecute( "Focused Evasion" );
+			return false;
+		end
+	end
+
+	----------------------------------------------
+	---------------------Buffs--------------------
+	----------------------------------------------
+
+	-- Buff: Promise of Magic Power 
+	if Helper:CheckAvailable( "Promise of Magic Power" ) and EntityState:GetState( Helper:CheckName( "Promise of Magic Power" )) == nil then
+	Helper:CheckExecute( "Promise of Magic Power" );
+		return false;
+	end
+
+	-- Buff: Gift of Magic Power I 
+	if Helper:CheckAvailable( "Gift of Magic Power" ) and EntityState:GetState( Helper:CheckName( "Gift of Magic Power" )) == nil then
+		Helper:CheckExecute( "Gift of Magic Power" );
+		return false;
+	end
+
+	-- Buff: Enhance Magic Projectile 
+	if Helper:CheckAvailable( "Enhance Magic Projectile" ) and EntityState:GetState( Helper:CheckName( "Enhance Magic Projectile" )) == nil then
+		Helper:CheckExecute( "Enhance Magic Projectile" );
+		return false;
+	end
+	
+	if Helper:CheckAvailable( "Magic Force" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Magic Force");
+		return false;
+	end
+
+	----------------------------------------------
+	---------------Recovery Skills----------------
+	----------------------------------------------
+
+	-- Anti-Enemy Fire
+	if Helper:CheckAvailable( "Restoration Volley" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Restoration Volley" );
+		return false;
+	end
+
+	-- Soul Extractor Shot III (Normal Stigma)
+	if Helper:CheckAvailable( "Soulsucker Shot" ) and Player:GetHealth() &lt; 80 then
+		Helper:CheckExecute( "Soulsucker Shot" );
+		return false;
+	end
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+	
+-- Pistol shot -&gt; Repeated Volley -&gt; Repeated Rapid  Fire
+	if Helper:CheckAvailable( "Pistol Shot" ) and Entity:GetHealth() &lt; 40 then
+	    Helper:CheckExecute( "Pistol Shot" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		return false;
+	end
+-- Soul Shot -&gt; Soul Volley -&gt; Rapid Soul Fire
+	if Helper:CheckAvailable( "Soul Shot" ) and Player:GetManaCurrent() &lt; Player:GetManaMaximum() * 0.3 then
+	    Helper:CheckExecute( "Soul Shot" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		return false;
+	end
+	if	Entity:GetHealth() &lt; 60 and Entity:GetHealth() &gt; 30 and Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	--Initial Attack : Rapid Volley II (Greater Stigma)
+	if Helper:CheckAvailable( "Rapid Volley" ) then
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley " );
+		Helper:CheckExecute( "Rapid Volley" );
+		return false;
+	end
+
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	
+	--Initial Attack Immobilize : Encircling Bomb
+	if Helper:CheckAvailable( "Encircling Bomb" ) then
+		Helper:CheckExecute( "Encircling Bomb");
+		return false;
+	end
+	--Initial Attack : Pistol Shot
+	if Helper:CheckAvailable( "Pistol Shot" ) then
+	Helper:CheckExecute( "Pistol Shot" );
+    return false;
+	end
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+	--Initial Attack : Soul Shot
+	if Helper:CheckAvailable( "Sighting Shot" ) then
+		Helper:CheckExecute( "Sighting Shot" );
+		return false;
+	end
+
+	--Initial Attack : Lifeline Penetration 
+	if Helper:CheckAvailable( "Lifeline Penetration" ) then
+		Helper:CheckExecute( "Lifeline Penetration" );
+		return false;
+	end
+
+	--Initial Attack : Between the Eyes
+	if Helper:CheckAvailable( "Between the Eyes" ) then
+		Helper:CheckExecute( "Between the Eyes" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Shot
+	if Helper:CheckAvailable( "Aimed Shot" ) then
+		Helper:CheckExecute( "Aimed Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Wing Shot
+	if Helper:CheckAvailable( "Aimed Wing Shot" ) then
+		Helper:CheckExecute( "Aimed Wing Shot" );
+		return false;
+	end
+
+	--Initial Attack : Disrupter Shot
+	if Helper:CheckAvailable( "Disrupter Shot" ) then
+		Helper:CheckExecute( "Disrupter Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Weakpoint Shot
+	if Helper:CheckAvailable( "Aimed Weakpoint Shot" ) then
+	Helper:CheckExecute( "Aimed Weakpoint Shot" );
+	return false;
+    end
+
+	
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+end
+
+
+--- Perform the required pause checks.
+--
+-- @return	bool
+
+function Pause()
+
+local PlayerState = Player:GetState();
+
+	--Mana healing boost (Normal stigma)
+	if Helper:CheckAvailable( "Breath of Magic Power" ) and PlayerState:GetState( Helper:CheckName( "Breath of Magic Power" )) == nil then
+		Helper:CheckExecute( "Breath of Magic Power" );
+		return false;
+	end
+	if	Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Sat Sep 23, 2017 8:18 am</strong></div>
+				<div class="author">by <strong>maq2285</strong></div>
+				<div class="content">- Unable to find a class or player controller!<br>
+- invalid arguments to method call<br>
+<br>
+What am i doing wrong?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Sun Sep 24, 2017 8:28 am</strong></div>
+				<div class="author">by <strong>maq2285</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste9a7.html?mode=viewprofile&amp;u=60">unkn0wnus3r</a> wrote: <a href="viewtopicce64.html?p=1075#p1075" data-post-id="1075" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jul 24, 2017 1:51 pm</div></cite>
+made some small fixes and improvements: <br>
+- fixed some spell names<br>
+- no mana chain unless char is under 30% mana <br>
+- no pistol chain if the target is below 40% health<br>
+- added focused evasion if targed cast something<br>
+<br>
+only testet the script with lvl 30 gunner.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+        --------------------------------------------------
+        Copyright (C) 2017 mnwaxep
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+        --------------------------------------------------
+
+]]--
+
+--- Perform the attack routine on the selected target.
+--
+-- @param       Entity  Contains the entity we have targeted.
+-- @param       double  Contains the distance to the target
+-- @param       bool    Indicates whether or not the target is stunned.
+-- @return      bool
+function Attack( Entity, Range, Stunned )
+
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local Position = Player:GetPosition();
+
+	local EntityState = Entity:GetState();
+
+	local AttackRange = Player:GetAttackRange();
+
+	local EntityState = Entity:GetState();
+
+	----------------------------------------------
+	---------Check For Enemy do somethink---------
+	----------------------------------------------
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) and Entity:GetSkillID() ~= 0 and SkillList[Entity:GetSkillID()]:IsMagical() and Entity:GetSkillTime() &gt;= 500 then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+
+	----------------------------------------------
+	-----------------Remove Shock-----------------
+	----------------------------------------------
+
+	-- Remove Shock -&gt; Steal Health
+	if Helper:CheckAvailable( "Seizure Projectile" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Seizure Projectile" );
+		return false;
+	end
+
+	-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		
+		return false;
+	end
+	-------------------------------------
+	--------------Evade------------------
+	-------------------------------------
+	if Entity:GetSkillID() ~= 0 then
+	
+		-- Attack 5: Focused Evasion
+		if Helper:CheckAvailable( "Focused Evasion" ) then
+			Helper:CheckExecute( "Focused Evasion" );
+			return false;
+		end
+	end
+
+	----------------------------------------------
+	---------------------Buffs--------------------
+	----------------------------------------------
+
+	-- Buff: Promise of Magic Power 
+	if Helper:CheckAvailable( "Promise of Magic Power" ) and EntityState:GetState( Helper:CheckName( "Promise of Magic Power" )) == nil then
+	Helper:CheckExecute( "Promise of Magic Power" );
+		return false;
+	end
+
+	-- Buff: Gift of Magic Power I 
+	if Helper:CheckAvailable( "Gift of Magic Power" ) and EntityState:GetState( Helper:CheckName( "Gift of Magic Power" )) == nil then
+		Helper:CheckExecute( "Gift of Magic Power" );
+		return false;
+	end
+
+	-- Buff: Enhance Magic Projectile 
+	if Helper:CheckAvailable( "Enhance Magic Projectile" ) and EntityState:GetState( Helper:CheckName( "Enhance Magic Projectile" )) == nil then
+		Helper:CheckExecute( "Enhance Magic Projectile" );
+		return false;
+	end
+	
+	if Helper:CheckAvailable( "Magic Force" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Magic Force");
+		return false;
+	end
+
+	----------------------------------------------
+	---------------Recovery Skills----------------
+	----------------------------------------------
+
+	-- Anti-Enemy Fire
+	if Helper:CheckAvailable( "Restoration Volley" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Restoration Volley" );
+		return false;
+	end
+
+	-- Soul Extractor Shot III (Normal Stigma)
+	if Helper:CheckAvailable( "Soulsucker Shot" ) and Player:GetHealth() &lt; 80 then
+		Helper:CheckExecute( "Soulsucker Shot" );
+		return false;
+	end
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+	
+-- Pistol shot -&gt; Repeated Volley -&gt; Repeated Rapid  Fire
+	if Helper:CheckAvailable( "Pistol Shot" ) and Entity:GetHealth() &lt; 40 then
+	    Helper:CheckExecute( "Pistol Shot" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		return false;
+	end
+-- Soul Shot -&gt; Soul Volley -&gt; Rapid Soul Fire
+	if Helper:CheckAvailable( "Soul Shot" ) and Player:GetManaCurrent() &lt; Player:GetManaMaximum() * 0.3 then
+	    Helper:CheckExecute( "Soul Shot" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		return false;
+	end
+	if	Entity:GetHealth() &lt; 60 and Entity:GetHealth() &gt; 30 and Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	--Initial Attack : Rapid Volley II (Greater Stigma)
+	if Helper:CheckAvailable( "Rapid Volley" ) then
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley " );
+		Helper:CheckExecute( "Rapid Volley" );
+		return false;
+	end
+
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	
+	--Initial Attack Immobilize : Encircling Bomb
+	if Helper:CheckAvailable( "Encircling Bomb" ) then
+		Helper:CheckExecute( "Encircling Bomb");
+		return false;
+	end
+	--Initial Attack : Pistol Shot
+	if Helper:CheckAvailable( "Pistol Shot" ) then
+	Helper:CheckExecute( "Pistol Shot" );
+    return false;
+	end
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+	--Initial Attack : Soul Shot
+	if Helper:CheckAvailable( "Sighting Shot" ) then
+		Helper:CheckExecute( "Sighting Shot" );
+		return false;
+	end
+
+	--Initial Attack : Lifeline Penetration 
+	if Helper:CheckAvailable( "Lifeline Penetration" ) then
+		Helper:CheckExecute( "Lifeline Penetration" );
+		return false;
+	end
+
+	--Initial Attack : Between the Eyes
+	if Helper:CheckAvailable( "Between the Eyes" ) then
+		Helper:CheckExecute( "Between the Eyes" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Shot
+	if Helper:CheckAvailable( "Aimed Shot" ) then
+		Helper:CheckExecute( "Aimed Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Wing Shot
+	if Helper:CheckAvailable( "Aimed Wing Shot" ) then
+		Helper:CheckExecute( "Aimed Wing Shot" );
+		return false;
+	end
+
+	--Initial Attack : Disrupter Shot
+	if Helper:CheckAvailable( "Disrupter Shot" ) then
+		Helper:CheckExecute( "Disrupter Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Weakpoint Shot
+	if Helper:CheckAvailable( "Aimed Weakpoint Shot" ) then
+	Helper:CheckExecute( "Aimed Weakpoint Shot" );
+	return false;
+    end
+
+	
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+end
+
+
+--- Perform the required pause checks.
+--
+-- @return	bool
+
+function Pause()
+
+local PlayerState = Player:GetState();
+
+	--Mana healing boost (Normal stigma)
+	if Helper:CheckAvailable( "Breath of Magic Power" ) and PlayerState:GetState( Helper:CheckName( "Breath of Magic Power" )) == nil then
+		Helper:CheckExecute( "Breath of Magic Power" );
+		return false;
+	end
+	if	Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end</code></pre></div>
+</div></blockquote>
+
+- Unable to find a class or player controller!<br>
+- invalid arguments to method call<br>
+<br>
+What am i doing wrong?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunslinger.lua by mnwaxep EU version</h3>
+				<div class="date">Posted: <strong>Mon Sep 25, 2017 12:46 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopic7329.html?p=1563#p1563" data-post-id="1563" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Sep 24, 2017 8:28 am</div></cite>
+<blockquote><div><cite><a href="memberliste9a7.html?mode=viewprofile&amp;u=60">unkn0wnus3r</a> wrote: <a href="viewtopicce64.html?p=1075#p1075" data-post-id="1075" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jul 24, 2017 1:51 pm</div></cite>
+made some small fixes and improvements: <br>
+- fixed some spell names<br>
+- no mana chain unless char is under 30% mana <br>
+- no pistol chain if the target is below 40% health<br>
+- added focused evasion if targed cast something<br>
+<br>
+only testet the script with lvl 30 gunner.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+        --------------------------------------------------
+        Copyright (C) 2017 mnwaxep
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+        --------------------------------------------------
+
+]]--
+
+--- Perform the attack routine on the selected target.
+--
+-- @param       Entity  Contains the entity we have targeted.
+-- @param       double  Contains the distance to the target
+-- @param       bool    Indicates whether or not the target is stunned.
+-- @return      bool
+function Attack( Entity, Range, Stunned )
+
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local Position = Player:GetPosition();
+
+	local EntityState = Entity:GetState();
+
+	local AttackRange = Player:GetAttackRange();
+
+	local EntityState = Entity:GetState();
+
+	----------------------------------------------
+	---------Check For Enemy do somethink---------
+	----------------------------------------------
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) and Entity:GetSkillID() ~= 0 and SkillList[Entity:GetSkillID()]:IsMagical() and Entity:GetSkillTime() &gt;= 500 then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+
+	----------------------------------------------
+	-----------------Remove Shock-----------------
+	----------------------------------------------
+
+	-- Remove Shock -&gt; Steal Health
+	if Helper:CheckAvailable( "Seizure Projectile" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Seizure Projectile" );
+		return false;
+	end
+
+	-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		
+		return false;
+	end
+	-------------------------------------
+	--------------Evade------------------
+	-------------------------------------
+	if Entity:GetSkillID() ~= 0 then
+	
+		-- Attack 5: Focused Evasion
+		if Helper:CheckAvailable( "Focused Evasion" ) then
+			Helper:CheckExecute( "Focused Evasion" );
+			return false;
+		end
+	end
+
+	----------------------------------------------
+	---------------------Buffs--------------------
+	----------------------------------------------
+
+	-- Buff: Promise of Magic Power 
+	if Helper:CheckAvailable( "Promise of Magic Power" ) and EntityState:GetState( Helper:CheckName( "Promise of Magic Power" )) == nil then
+	Helper:CheckExecute( "Promise of Magic Power" );
+		return false;
+	end
+
+	-- Buff: Gift of Magic Power I 
+	if Helper:CheckAvailable( "Gift of Magic Power" ) and EntityState:GetState( Helper:CheckName( "Gift of Magic Power" )) == nil then
+		Helper:CheckExecute( "Gift of Magic Power" );
+		return false;
+	end
+
+	-- Buff: Enhance Magic Projectile 
+	if Helper:CheckAvailable( "Enhance Magic Projectile" ) and EntityState:GetState( Helper:CheckName( "Enhance Magic Projectile" )) == nil then
+		Helper:CheckExecute( "Enhance Magic Projectile" );
+		return false;
+	end
+	
+	if Helper:CheckAvailable( "Magic Force" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Magic Force");
+		return false;
+	end
+
+	----------------------------------------------
+	---------------Recovery Skills----------------
+	----------------------------------------------
+
+	-- Anti-Enemy Fire
+	if Helper:CheckAvailable( "Restoration Volley" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Restoration Volley" );
+		return false;
+	end
+
+	-- Soul Extractor Shot III (Normal Stigma)
+	if Helper:CheckAvailable( "Soulsucker Shot" ) and Player:GetHealth() &lt; 80 then
+		Helper:CheckExecute( "Soulsucker Shot" );
+		return false;
+	end
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+
+	----------------------------------------------
+	-------------------Chain----------------------
+	----------------------------------------------
+	
+-- Pistol shot -&gt; Repeated Volley -&gt; Repeated Rapid  Fire
+	if Helper:CheckAvailable( "Pistol Shot" ) and Entity:GetHealth() &lt; 40 then
+	    Helper:CheckExecute( "Pistol Shot" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+	elseif Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Volley" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		Helper:CheckExecute( "Repeated Rapid  Fire" );
+		return false;
+	end
+-- Soul Shot -&gt; Soul Volley -&gt; Rapid Soul Fire
+	if Helper:CheckAvailable( "Soul Shot" ) and Player:GetManaCurrent() &lt; Player:GetManaMaximum() * 0.3 then
+	    Helper:CheckExecute( "Soul Shot" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+	elseif Helper:CheckAvailable( "Soul Volley" ) then
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Soul Volley" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		Helper:CheckExecute( "Rapid Soul Fire" );
+		return false;
+	end
+	if	Entity:GetHealth() &lt; 60 and Entity:GetHealth() &gt; 30 and Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	--Initial Attack : Rapid Volley II (Greater Stigma)
+	if Helper:CheckAvailable( "Rapid Volley" ) then
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley" );
+		Helper:CheckExecute( "Rapid Volley " );
+		Helper:CheckExecute( "Rapid Volley" );
+		return false;
+	end
+
+
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+
+	
+	--Initial Attack Immobilize : Encircling Bomb
+	if Helper:CheckAvailable( "Encircling Bomb" ) then
+		Helper:CheckExecute( "Encircling Bomb");
+		return false;
+	end
+	--Initial Attack : Pistol Shot
+	if Helper:CheckAvailable( "Pistol Shot" ) then
+	Helper:CheckExecute( "Pistol Shot" );
+    return false;
+	end
+
+	-- Bullet of Silence 
+	if Helper:CheckAvailable( "Projectile of Silence" ) then
+		Helper:CheckExecute( "Projectile of Silence" );
+		return false;
+	end
+	--Initial Attack : Soul Shot
+	if Helper:CheckAvailable( "Sighting Shot" ) then
+		Helper:CheckExecute( "Sighting Shot" );
+		return false;
+	end
+
+	--Initial Attack : Lifeline Penetration 
+	if Helper:CheckAvailable( "Lifeline Penetration" ) then
+		Helper:CheckExecute( "Lifeline Penetration" );
+		return false;
+	end
+
+	--Initial Attack : Between the Eyes
+	if Helper:CheckAvailable( "Between the Eyes" ) then
+		Helper:CheckExecute( "Between the Eyes" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Shot
+	if Helper:CheckAvailable( "Aimed Shot" ) then
+		Helper:CheckExecute( "Aimed Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Wing Shot
+	if Helper:CheckAvailable( "Aimed Wing Shot" ) then
+		Helper:CheckExecute( "Aimed Wing Shot" );
+		return false;
+	end
+
+	--Initial Attack : Disrupter Shot
+	if Helper:CheckAvailable( "Disrupter Shot" ) then
+		Helper:CheckExecute( "Disrupter Shot" );
+		return false;
+	end
+
+	--Initial Attack : Aimed Weakpoint Shot
+	if Helper:CheckAvailable( "Aimed Weakpoint Shot" ) then
+	Helper:CheckExecute( "Aimed Weakpoint Shot" );
+	return false;
+    end
+
+	
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+end
+
+
+--- Perform the required pause checks.
+--
+-- @return	bool
+
+function Pause()
+
+local PlayerState = Player:GetState();
+
+	--Mana healing boost (Normal stigma)
+	if Helper:CheckAvailable( "Breath of Magic Power" ) and PlayerState:GetState( Helper:CheckName( "Breath of Magic Power" )) == nil then
+		Helper:CheckExecute( "Breath of Magic Power" );
+		return false;
+	end
+	if	Helper:CheckAvailable( "Insert Magic Projectile" ) then
+		Helper:CheckExecute( "Insert Magic Projectile" );
+		return false;
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end</code></pre></div>
+</div></blockquote>
+
+- Unable to find a class or player controller!<br>
+- invalid arguments to method call<br>
+<br>
+What am i doing wrong?
+</div></blockquote>
+
+Rename the Gunslinger.lua to Gunner.lua or vise versa depands on which server u play (NA or EU)</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=18&t=111&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:22 GMT -->
+</html>

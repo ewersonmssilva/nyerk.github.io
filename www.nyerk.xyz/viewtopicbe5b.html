@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=195&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; AionScript Crash - MSVCR120.dll Access Violation</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>AionScript Crash - MSVCR120.dll Access Violation</h2>
+		<p><a href="viewtopic93f3.html?f=6&amp;t=195">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=195</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>AionScript Crash - MSVCR120.dll Access Violation</h3>
+				<div class="date">Posted: <strong>Wed Jul 19, 2017 1:45 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">Right, this only happens RANDOMLY AFTER 2-3 hours after using AS, I did some research for the error code:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Faulting application name: aion.bin, version: 5317.1019.519.11829, time stamp: 0x591e9599
+Faulting module name: MSVCR120.dll, version: 12.0.21005.1, time stamp: 0x524f7ce6
+Exception code: 0xc0000005
+Fault offset: 0x0000ee2c
+Faulting process ID: 0xf3c
+Faulting application start time: 0x01d30011958801f5
+Faulting application path: C:\Games\AIONEU\bin32\aion.bin
+Faulting module path: C:\Games\AIONEU\bin32\MSVCR120.dll
+Report ID: 50e540d5-d8b8-42b5-855c-b72f52421e08</code></pre></div>
+
+It took me AGES to even understand it was AS at all, I found this: <br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>https://social.technet.microsoft.com/Forums/windowsserver/en-US/c9f2357f-46c4-4da9-9346-66b1d406aa00/faulting-module-path-cwindowssystem32msvcr120dll?forum=w7itproappcompat</code></pre></div>
+
+Maybe it's relevant or I smoked too much? <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Crash - MSVCR120.dll Access Violation</h3>
+				<div class="date">Posted: <strong>Wed Jul 19, 2017 6:45 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Well Aion crashes. If AionScript is responsible don't know.<br>
+My AionScript/Aion runs 16 Hours repeatedly without any crashes.<br>
+Maybe you are using something in your lua script which is responsible for the crashing.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Crash - MSVCR120.dll Access Violation</h3>
+				<div class="date">Posted: <strong>Sun Jul 23, 2017 9:59 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">My client also crashes after some time with AS. It doesn't crash without AS, at least I never seen it.<br>
+<br>
+It usually crashes if I change map while using AS for too long (like 2 hours of usage, then use return skill, my client crashes). Sometimes I close AS before I change map for this purpose, I am not sure it works but I rarely ever get crashes like this.<br>
+<br>
+AS seems to have issues with the client ever since the beginning. And aethertapping is problematic some times. It is weird that previous and older games had more successful bots (like Lineage II with l2walker) and with Aion we kinda have to work with beta-type of bots that run into all sorts of problems and their functionality is kinda limited, like die and be able to go back to where you were to being again.<br>
+<br>
+But I am glad AS exists, even with all the problems it is the only bot Aion has at the moment. So thumbs up for AS.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Crash - MSVCR120.dll Access Violation</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 9:24 pm</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicf4ae.html?p=1049#p1049" data-post-id="1049" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Jul 19, 2017 6:45 am</div></cite>
+Well Aion crashes. If AionScript is responsible don't know.<br>
+My AionScript/Aion runs 16 Hours repeatedly without any crashes.<br>
+Maybe you are using something in your lua script which is responsible for the crashing.
+</div></blockquote>
+
+Aha, thanks for the tip! I'll take a look. Sorry I was VERY high when I posted this <img class="smilies" src="images/smilies/icon_razz.gif" width="15" height="17" alt=":P" title="Razz"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=195&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+</html>

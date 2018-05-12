@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=25&p=106 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:51:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Securing your Client from Telemetry (ncdiagS32.exe) - Nyerk</title>
+
+
+	<link rel="canonical" href="viewtopic4551.html?t=25">
+
+<!--
+	phpBB style name: we_universal
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      nextgen ( http://xeronix.org/ )
+-->
+
+
+<link href="styles/prosilver/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="assets/css/font-awesome.min5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/prosilver/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=25" rel="stylesheet">
+<![endif]-->
+
+
+<link href="ext/gfksx/ThanksForPosts/styles/prosilver/theme/thanks5d79.css?assets_version=25" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="./styles/we_universal/template/html5shiv.min.js"></script>
+<![endif]-->
+
+</head>
+<body id="phpbb" class="nojs notouch section-viewtopic ltr  logged-out">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div class="inventea-headerbar">
+		<nav class="inventea-wrapper inventea-userbar">
+			<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="icon fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+		
+														
+							<li>
+								<a href="index-2.html" role="menuitem">
+									<i class="icon fa fa-fw fa-home" aria-hidden="true"></i><span>Board index</span>
+								</a>
+							</li>		
+							
+							<li data-skip-responsive="true">
+								<a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">
+									<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+								</a>
+							</li>
+							
+													<li>
+								<a href="search.html" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+							
+														
+														
+								
+						
+							<li>
+								<a href="search33a7.html?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="search526f.html?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+	
+						
+							
+            																			<li>
+								<a href="memberlist4bfd.html?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+						            
+				                    </ul>
+    </div>
+</div>
+
+			
+			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+										<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp26c3.html?mode=login" title="Login" accesskey="x" role="menuitem"><i class="icon fa-fw fa-sign-in" aria-hidden="true"></i>Login</a></li>
+											<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp8319.html?mode=register" role="menuitem"><i class="icon fa-fw fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										
+										
+							</ul>
+		</nav>
+	</div>
+
+	<header class="inventea-header">
+			
+		<div class="inventea-dashboard" role="banner">
+						<nav role="navigation">
+	<div class="inventea-posts-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+																			<li><a href="search33a7.html?search_id=unanswered" role="menuitem">Unanswered topics</a></li>
+				<li><a href="search526f.html?search_id=active_topics" role="menuitem">Active topics</a></li>
+			
+					</ul>
+	</div>
+
+	<div class="inventea-forum-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+			<li><a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+			<li><a href="search.html" role="menuitem">Search</a></li>
+											<li><a href="memberlist4bfd.html?mode=team" role="menuitem">The team</a></li>			
+						
+					</ul>
+	</div>
+</nav>
+
+			<div class="inventea-sitename">
+				<h1><a href="index-2.html" title="Board index">Nyerk</a></h1>
+				<span>An Forum about Aion</span>
+			</div>
+		</div>
+			</header>
+
+	<div class="inventea-wrapper inventea-content" role="main">
+		
+		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+			
+									<li class="small-icon breadcrumbs">
+												<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index-2.html" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">Board index</span></a></span>
+														<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="3"><a href="viewforum4d6b.html?f=3" itemprop="url"><span itemprop="title">AionScript</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="7"><a href="viewforumd42b.html?f=7" itemprop="url"><span itemprop="title">Tutorials</span></a></span>
+																</li>
+					</ul>
+
+		
+		
+<h2 class="topic-title"><a href="viewtopic870a.html?f=7&amp;t=25">Securing your Client from Telemetry (ncdiagS32.exe)</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+
+
+
+<div class="action-bar bar-top">
+	
+			<a href="posting3ee4.html?mode=reply&amp;f=7&amp;t=25" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic0835.html?f=7&amp;t=25&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://www.nyerk.xyz/search.php">
+			<fieldset>
+				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…" />
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="search.html" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="25" />
+<input type="hidden" name="sf" value="msgonly" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			9 posts
+							&bull; Page <strong>1</strong> of <strong>1</strong>
+					</div>
+		</div>
+
+
+
+
+			<div id="p63" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile63">
+			<dt class="has-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistd942.html?mode=viewprofile&amp;u=49" class="avatar"><img class="avatar" src="download/file6acc.png?avatar=49_1484091983.png" width="80" height="107" alt="User avatar" /></a>														</div>
+								<a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchc003.html?author_id=49&amp;sr=posts">105</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jan 10, 2017 11:40 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="49"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/true.html">10 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="49"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/false.html">23 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content63">
+
+						<h3 class="first"><a href="#p63">Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingd185.html?mode=quote&amp;f=7&amp;p=63" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic2cce.html?p=63#p63" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a></strong> &raquo; </span>Thu Feb 02, 2017 2:55 am
+			</p>
+			
+			
+			
+			<div class="content">Good morning all,<br>
+<br>
+During my messind around and editing AION files, I came to notice a constant creation of ZIP files. Having done some research I found out the following:
+<ul>
+<li>1. ncdiagS64.exe &amp; ncdiagS32.exe is a diagnostics tool used to collect your PCs info. It is used to create a common &amp; compatable profile for clients tweaking sake. It also sends any Injected DLLs and a log of accessed offsets. <br>
+2. It sends the info to NCSoft in Korea (dev IP) and to a Gameforge IP (can't pinpoint the exact server pool).<br>
+3. We do not want this - chances are your tweaking your system.cfg and editing PAK files anyway, so I doubt your gonna need a diagnostics log to send for support.</li>
+</ul>
+
+<strong class="text-strong"><span style="font-size: 120%; line-height: normal">PLEASE DO NOT apply these rules to <span style="text-decoration: underline">AwesomiumProcess.exe</span> - this is the HTML backend of the Aion interface!</span></strong><br>
+<br>
+<span style="text-decoration: underline">How to prevent this:</span><br>
+<br>
+In order to prevent anything from being sent to anywhere through telematry services, we are going to block the two EXEs in the Windows firewall:<br>
+<br>
+1. Navigate to the Control Panel and select Windows Firewall to bring up the basic Firewall interface<br>
+<img src="../i.imgur.com/vICliht.png" class="postimage" alt="Image"><br>
+<br>
+2. Click on “Advanced settings” to access the advanced Firewall interface (Left hand side menu)<br>
+<img src="../i.imgur.com/zqiPX6q.png" class="postimage" alt="Image"><br>
+<br>
+(<span style="font-size: 85%; line-height: normal">I’d encourage you follow along closely, leaving anything outside the scope of the tutorial and your experience level alone; mucking up your firewall rules is a surefire way to a big headache</span>)<br>
+<br>
+3. In the far left navigation pane, select “Outbound Rules”. This will pull up all the existing outbound firewall rules.<br>
+<img src="../i.imgur.com/SUCHv4H.png" class="postimage" alt="Image"><br>
+<br>
+4. In the far right navigation pane select “New Rule…” <br>
+<img src="../i.imgur.com/JtlP7eh.png" class="postimage" alt="Image"><br>
+<br>
+5. By default the rule type selection should be “Program”, but confirm that it is before clicking “Next”.<br>
+<img src="../i.imgur.com/yGzeaZqd41d.png?" class="postimage" alt="Image"><br>
+<br>
+6. Here you will insert the path to the program you wish to block.<br>
+eg.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>C:\games\aioneu\bin32\ncdiagS32.exe</code></pre></div>
+and repeat for the following program paths:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>bin32\ncdiagS32.exe
+bin32\ncdiagS64.exe
+bin64\ncdiagS32.exe
+bin64\ncdiagS64.exe
+</code></pre></div>
+
+For easiness sake, just repeat the process from step <strong class="text-strong">4.</strong><br>
+<br>
+7. Once you’ve selected your application and confirmed the path, click “Next” &amp; on the next screen confirm that “Block the connection” is selected. Click “Next”.<br>
+<img src="../i.imgur.com/WN0zKQ2.png" class="postimage" alt="Image"><br>
+<br>
+8. On the next page you’ll be asked to select when the rule applies (by default all three items are checked). It’s important to <strong class="text-strong">CHECK ALL OF THEM!</strong><br>
+<img src="../i.imgur.com/0KZ4IKq.png" class="postimage" alt="Image"><br>
+<br>
+9. Name the rule! This can be anything (I usually name it after the EXE), just make sure you its something you recognise and remember!<br>
+<img src="../i.imgur.com/b9W0ZMf.png" class="postimage" alt="Image"><br>
+<br>
+10. When you’ve filled the appropriate information in, click “<strong class="text-strong">Finish</strong>”.</div>
+
+			
+									
+						<div id='list_thanks63'>
+</div>
+<div id='div_post_reput63'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p103" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile103">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist6f62.html?mode=viewprofile&amp;u=61" class="username">creatine</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search9f23.html?author_id=61&amp;sr=posts">120</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 18, 2017 4:12 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="61"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/61/true.html">19 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="61"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/61/false.html">5 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content103">
+
+						<h3 ><a href="#p103">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingc678.html?mode=quote&amp;f=7&amp;p=103" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopice6f0.html?p=103#p103" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist6f62.html?mode=viewprofile&amp;u=61" class="username">creatine</a></strong> &raquo; </span>Mon Feb 06, 2017 5:41 pm
+			</p>
+			
+			
+			
+			<div class="content">I just did this. I dunno why I did it, but I did it lol. telemetries might explains why GM's kept popping in the instance that im in every 30 seconds or a few minutes, regardless of instances lol<br>
+<br>
+Anybody else have GM checking them out in instances other than me? ^^</div>
+
+			
+									
+						<div id='list_thanks103'>
+</div>
+<div id='div_post_reput103'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p106" class="post has-profile bg2 online">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile106">
+			<dt class="has-profile-rank has-avatar">
+									<div class="inventea-online"><i class="fa fa-power-off"></i> Online</div>
+				
+				<div class="avatar-container">
+																<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" class="avatar"><img class="avatar" src="download/filea2fd.jpg?avatar=2_1484075720.jpg" width="150" height="135" alt="User avatar" /></a>														</div>
+								<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>							</dt>
+
+						<dd class="profile-rank">Site Admin</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search51e1.html?author_id=2&amp;sr=posts">260</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Jan 07, 2017 9:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="2"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/true.html">27 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="2"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/false.html">388 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content106">
+
+						<h3 ><a href="#p106">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting3483.html?mode=quote&amp;f=7&amp;p=106" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic153d.html?p=106#p106" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a></strong> &raquo; </span>Mon Feb 06, 2017 9:22 pm
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopice6f0.html?p=103#p103" data-post-id="103" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Feb 06, 2017 5:41 pm</div></cite>
+I just did this. I dunno why I did it, but I did it lol. telemetries might explains why GM's kept popping in the instance that im in every 30 seconds or a few minutes, regardless of instances lol<br>
+<br>
+Anybody else have GM checking them out in instances other than me? ^^
+</div></blockquote>
+
+Do you play on EU or NA?</div>
+
+			
+									
+						<div id='list_thanks106'>
+</div>
+<div id='div_post_reput106'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p110" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile110">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist6f62.html?mode=viewprofile&amp;u=61" class="username">creatine</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search9f23.html?author_id=61&amp;sr=posts">120</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 18, 2017 4:12 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="61"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/61/true.html">19 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="61"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/61/false.html">5 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content110">
+
+						<h3 ><a href="#p110">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingcb93.html?mode=quote&amp;f=7&amp;p=110" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic5f87.html?p=110#p110" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist6f62.html?mode=viewprofile&amp;u=61" class="username">creatine</a></strong> &raquo; </span>Tue Feb 07, 2017 5:29 am
+			</p>
+			
+			
+			
+			<div class="content">I play in NA... obviously im the only one who can see the GM of course. the other day there was a level 84 spiritmaster next to me lmao</div>
+
+			
+									
+						<div id='list_thanks110'>
+</div>
+<div id='div_post_reput110'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p127" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile127">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlistd179.html?mode=viewprofile&amp;u=59" class="username">HollyGR</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search4b32.html?author_id=59&amp;sr=posts">21</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 18, 2017 10:30 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="59"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/59/true.html">9 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="59"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content127">
+
+						<h3 ><a href="#p127">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting79fb.html?mode=quote&amp;f=7&amp;p=127" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic9751.html?p=127#p127" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd179.html?mode=viewprofile&amp;u=59" class="username">HollyGR</a></strong> &raquo; </span>Wed Feb 08, 2017 7:49 pm
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopice6f0.html?p=103#p103" data-post-id="103" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Feb 06, 2017 5:41 pm</div></cite>
+I just did this. I dunno why I did it, but I did it lol. telemetries might explains why GM's kept popping in the instance that im in every 30 seconds or a few minutes, regardless of instances lol<br>
+<br>
+Anybody else have GM checking them out in instances other than me? ^^
+</div></blockquote>
+
+do u mean that after doing this you got GM sticked on you xD? I had some check like this some months ago but they gived up after 2 days of checking lol</div>
+
+			
+									
+						<div id='list_thanks127'>
+</div>
+<div id='div_post_reput127'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p135" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile135">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist6f62.html?mode=viewprofile&amp;u=61" class="username">creatine</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search9f23.html?author_id=61&amp;sr=posts">120</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 18, 2017 4:12 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="61"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/61/true.html">19 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="61"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/61/false.html">5 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content135">
+
+						<h3 ><a href="#p135">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting9e2f.html?mode=quote&amp;f=7&amp;p=135" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic86fa.html?p=135#p135" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist6f62.html?mode=viewprofile&amp;u=61" class="username">creatine</a></strong> &raquo; </span>Thu Feb 09, 2017 4:52 am
+			</p>
+			
+			
+			
+			<div class="content">nah. i mean before I did that, GM was sticking to me. maybe they did that cuz the data was transmitted to them lol<br>
+now they dun visit me as much anymore XD</div>
+
+			
+									
+						<div id='list_thanks135'>
+</div>
+<div id='div_post_reput135'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p139" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile139">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlistd179.html?mode=viewprofile&amp;u=59" class="username">HollyGR</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search4b32.html?author_id=59&amp;sr=posts">21</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Jan 18, 2017 10:30 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="59"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/59/true.html">9 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="59"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content139">
+
+						<h3 ><a href="#p139">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting2f6a.html?mode=quote&amp;f=7&amp;p=139" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicb4d2.html?p=139#p139" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd179.html?mode=viewprofile&amp;u=59" class="username">HollyGR</a></strong> &raquo; </span>Thu Feb 09, 2017 10:13 am
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic86fa.html?p=135#p135" data-post-id="135" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Feb 09, 2017 4:52 am</div></cite>
+nah. i mean before I did that, GM was sticking to me. maybe they did that cuz the data was transmitted to them lol<br>
+now they dun visit me as much anymore XD
+</div></blockquote>
+
+ah yeah, everytime that my client was crashing due to any error the ncdiag.exe file was popping out into process list so I was instantly killing it right after  <img class="smilies" src="images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Laughing"></div>
+
+			
+									
+						<div id='list_thanks139'>
+</div>
+<div id='div_post_reput139'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p319" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile319">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberliste1f4.html?mode=viewprofile&amp;u=200" class="username">Delahan</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchb19a.html?author_id=200&amp;sr=posts">4</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Feb 27, 2017 10:47 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="200"></dd>
+    <dd class="profile-posts" data-user-receive-id="200"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content319">
+
+						<h3 ><a href="#p319">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingabb4.html?mode=quote&amp;f=7&amp;p=319" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic63fb.html?p=319#p319" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberliste1f4.html?mode=viewprofile&amp;u=200" class="username">Delahan</a></strong> &raquo; </span>Sun Mar 05, 2017 10:28 pm
+			</p>
+			
+			
+			
+			<div class="content">What it would give us?</div>
+
+			
+									
+						<div id='list_thanks319'>
+</div>
+<div id='div_post_reput319'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p336" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile336">
+			<dt class="has-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistd942.html?mode=viewprofile&amp;u=49" class="avatar"><img class="avatar" src="download/file6acc.png?avatar=49_1484091983.png" width="80" height="107" alt="User avatar" /></a>														</div>
+								<a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchc003.html?author_id=49&amp;sr=posts">105</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jan 10, 2017 11:40 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="49"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/true.html">10 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="49"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/false.html">23 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content336">
+
+						<h3 ><a href="#p336">Re: Securing your Client from Telemetry (ncdiagS32.exe)</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting9ec3.html?mode=quote&amp;f=7&amp;p=336" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic71fc.html?p=336#p336" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a></strong> &raquo; </span>Tue Mar 07, 2017 9:44 am
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberliste1f4.html?mode=viewprofile&amp;u=200">Delahan</a> wrote: <a href="viewtopic63fb.html?p=319#p319" data-post-id="319" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Mar 05, 2017 10:28 pm</div></cite>
+What it would give us?
+</div></blockquote>
+
+Please expand as to what you mean.</div>
+
+			
+									
+						<div id='list_thanks336'>
+</div>
+<div id='div_post_reput336'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+	
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="posting3ee4.html?mode=reply&amp;f=7&amp;t=25" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+	
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic0835.html?f=7&amp;t=25&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<form method="post" action="https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=25">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed" />
+				<input type="submit" class="button2" name="sort" value="Go" />
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			9 posts
+							&bull; Page <strong>1</strong> of <strong>1</strong>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="viewforumd42b.html?f=7" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Tutorials”</span>
+		</a>
+	</p>
+	
+		<br /><br />
+	</div>
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 1 guest</p>
+	</div>
+
+				
+			</div>
+
+	<div class="inventea-footer-wrapper">
+		<div id="page-footer" class="inventea-footer" role="contentinfo">
+			<nav role="navigation">
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index-2.html" data-navbar-reference="index"><span>Board index</span></a></span>					</li>
+
+						<li class="small-icon" data-last-responsive="true"><a href="memberlist8733.html?mode=contactadmin" role="menuitem">Contact us</a></li>
+				
+		<li class="small-icon"><a href="ucp033a.html?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+				<li>All times are <span title="UTC">UTC</span></li>
+			</ul>
+</nav>
+
+			<footer class="inventea-credits">
+								Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited<br />
+								Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a> & <a href="http://xeronix.org/" title="phpBB styles and much more">nextgen</a>
+											</footer>
+		</div>
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+	<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="assets/javascript/core5d79.js?assets_version=25"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax5d79.js?assets_version=25"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=25&p=106 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:51:11 GMT -->
+</html>

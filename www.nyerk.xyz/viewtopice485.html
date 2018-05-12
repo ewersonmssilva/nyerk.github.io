@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=321&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; AION 5.8 EU Kinah[Updated] - Page 2</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>AION 5.8 EU Kinah[Updated]</h2>
+		<p><a href="viewtopic8f95.html?f=6&amp;t=321">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=321</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Mon Dec 25, 2017 4:01 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic427f.html?p=1997#p1997" data-post-id="1997" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Dec 25, 2017 2:02 pm</div></cite>
+AS keep working in character select. My problem is how to recognize pin number? Need a program to detect every number. Any idea? <img class="smilies" src="images/smilies/icon_neutral.gif" width="15" height="17" alt=":|" title="Neutral">
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>                    foreach (char k in Pin) {
+                        for (int i = 0; i &lt; 10; i++) {
+                            var numdlg = Game.DialogList.GetDialog("second_password_dialog/ctn_numpad/num" + i.ToString());
+                            if (numdlg == null || !numdlg.IsVisible() || !numdlg.IsEnabled()) continue;
+                            char key = Game.Process.GetChar(numdlg.GetAddress() + 0x300);
+                            if (key == k) {
+                                DoDlgClick("second_password_dialog/ctn_numpad/num" + i.ToString());
+                                Thread.Sleep(350);
+                            }
+                        }
+                        Thread.Sleep(350);
+                        Game.DialogList.Update();
+                        DoDlgClick("second_password_dialog/ok");
+                    }
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Mon Dec 25, 2017 6:20 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic6752.html?p=1999#p1999" data-post-id="1999" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Dec 25, 2017 4:01 pm</div></cite>
+<blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic427f.html?p=1997#p1997" data-post-id="1997" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Dec 25, 2017 2:02 pm</div></cite>
+AS keep working in character select. My problem is how to recognize pin number? Need a program to detect every number. Any idea? <img class="smilies" src="images/smilies/icon_neutral.gif" width="15" height="17" alt=":|" title="Neutral">
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>                    foreach (char k in Pin) {
+                        for (int i = 0; i &lt; 10; i++) {
+                            var numdlg = Game.DialogList.GetDialog("second_password_dialog/ctn_numpad/num" + i.ToString());
+                            if (numdlg == null || !numdlg.IsVisible() || !numdlg.IsEnabled()) continue;
+                            char key = Game.Process.GetChar(numdlg.GetAddress() + 0x300);
+                            if (key == k) {
+                                DoDlgClick("second_password_dialog/ctn_numpad/num" + i.ToString());
+                                Thread.Sleep(350);
+                            }
+                        }
+                        Thread.Sleep(350);
+                        Game.DialogList.Update();
+                        DoDlgClick("second_password_dialog/ok");
+                    }
+</code></pre></div>
+</div></blockquote>
+
+Hi Nucular, tnx for this awesome code.<br>
+I have a little "problem". <br>
+If I using your code I get an error because <strong class="text-strong">Game.DialogList</strong> is null. After a lot of trial and error i found a "dirty" solution by using this code before your<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Game.DialogList = new DialogList(Game.Base());
+Game.DialogList.Update();
+</code></pre></div>
+
+Is this initialization a bad idea? <img class="smilies" src="images/smilies/icon_neutral.gif" width="15" height="17" alt=":|" title="Neutral"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Tue Dec 26, 2017 12:38 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic427f.html?p=1997#p1997" data-post-id="1997" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Dec 25, 2017 2:02 pm</div></cite>
+AS keep working in character select. My problem is how to recognize pin number? Need a program to detect every number. Any idea? <img class="smilies" src="images/smilies/icon_neutral.gif" width="15" height="17" alt=":|" title="Neutral">
+</div></blockquote>
+
+Vanilla can use Pin when needed but it cannot log an account using password and username because you need to be on a char logged in game to open vanilla and attach it to the client.<br>
+<br>
+Why do you need the pin? It is only needed once when you enter the account and then you would only need it if you go to panesterra and/or move to fast track server.<br>
+<br>
+To recognize the pin numbers you need AS to be able to look at specific pixels that are present in your screen. I assume vanilla does something similar because when they are about to use the pin the client gets in the foreground.<br>
+<br>
+If you can look at pixel colours in screen you can make a script to recognize the numbers and then hit them in sequence to make a pin.<br>
+<br>
+BUT you should also make sure the client has a specific size otherwise the pin and everything inside it gets different size and thus looking at a specific pixel wouldn't work. Vanilla uses the smallest client size possible always so the position of windows etc is known.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Tue Dec 26, 2017 10:59 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353">Diavolakos</a> wrote: <a href="viewtopic30ee.html?p=2007#p2007" data-post-id="2007" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Dec 26, 2017 12:38 am</div></cite>
+<blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic427f.html?p=1997#p1997" data-post-id="1997" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Dec 25, 2017 2:02 pm</div></cite>
+AS keep working in character select. My problem is how to recognize pin number? Need a program to detect every number. Any idea? <img class="smilies" src="images/smilies/icon_neutral.gif" width="15" height="17" alt=":|" title="Neutral">
+</div></blockquote>
+
+Vanilla can use Pin when needed but it cannot log an account using password and username because you need to be on a char logged in game to open vanilla and attach it to the client.<br>
+<br>
+Why do you need the pin? It is only needed once when you enter the account and then you would only need it if you go to panesterra and/or move to fast track server.<br>
+<br>
+To recognize the pin numbers you need AS to be able to look at specific pixels that are present in your screen. I assume vanilla does something similar because when they are about to use the pin the client gets in the foreground.<br>
+<br>
+If you can look at pixel colours in screen you can make a script to recognize the numbers and then hit them in sequence to make a pin.<br>
+<br>
+BUT you should also make sure the client has a specific size otherwise the pin and everything inside it gets different size and thus looking at a specific pixel wouldn't work. Vanilla uses the smallest client size possible always so the position of windows etc is known.
+</div></blockquote>
+
+Look at the posted code from above.<br>
+If you modify AionScript to run on Login Screen you can use the code i posted above.<br>
+It will enter your pin.<br>
+No pixel tracking needed.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Tue Dec 26, 2017 12:30 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">So, Where will I paste in code? Where will I write the pin in this code ? and How can I use select it? Thank you in advance <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Tue Dec 26, 2017 1:14 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic28fd.html?p=2012#p2012" data-post-id="2012" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Dec 26, 2017 12:30 pm</div></cite>
+So, Where will I paste in code? Where will I write the pin in this code ? and How can I use select it? Thank you in advance <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">
+</div></blockquote>
+
+I use Nucular code inside my script extension c# Project. I don't think is possible to use this in LUA script.<br>
+<br>
+My doubt is where initialize DialogList,  bcs in login screen could be null</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Tue Dec 26, 2017 1:52 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic77d6.html?p=2013#p2013" data-post-id="2013" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Dec 26, 2017 1:14 pm</div></cite>
+<blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic28fd.html?p=2012#p2012" data-post-id="2012" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Dec 26, 2017 12:30 pm</div></cite>
+So, Where will I paste in code? Where will I write the pin in this code ? and How can I use select it? Thank you in advance <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">
+</div></blockquote>
+
+I use Nucular code inside my script extension c# Project. I don't think is possible to use this in LUA script.<br>
+<br>
+My doubt is where initialize DialogList,  bcs in login screen could be null
+</div></blockquote>
+
+You should initialize it in your extension yourself.<br>
+<br>
+Because AionScript was not written to work on Login Screen.<br>
+There is also no simple support because on Login Screen some parts are not intialized and if AionScript tries to access it, it will crash.<br>
+For Example if you would try to toggle No Gravity Aion will crash.<br>
+<br>
+DialogList, EntitiesList is possible to use, but you have to initialize it yourself.<br>
+EntitesList contains your current characters on Character Select.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AION 5.6 EU Kinah</h3>
+				<div class="date">Posted: <strong>Tue Jan 02, 2018 8:43 pm</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic6752.html?p=1999#p1999" data-post-id="1999" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Dec 25, 2017 4:01 pm</div></cite>
+<blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic427f.html?p=1997#p1997" data-post-id="1997" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Dec 25, 2017 2:02 pm</div></cite>
+AS keep working in character select. My problem is how to recognize pin number? Need a program to detect every number. Any idea? <img class="smilies" src="images/smilies/icon_neutral.gif" width="15" height="17" alt=":|" title="Neutral">
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>                    foreach (char k in Pin) {
+                        for (int i = 0; i &lt; 10; i++) {
+                            var numdlg = Game.DialogList.GetDialog("second_password_dialog/ctn_numpad/num" + i.ToString());
+                            if (numdlg == null || !numdlg.IsVisible() || !numdlg.IsEnabled()) continue;
+                            char key = Game.Process.GetChar(numdlg.GetAddress() + 0x300);
+                            if (key == k) {
+                                DoDlgClick("second_password_dialog/ctn_numpad/num" + i.ToString());
+                                Thread.Sleep(350);
+                            }
+                        }
+                        Thread.Sleep(350);
+                        Game.DialogList.Update();
+                        DoDlgClick("second_password_dialog/ok");
+                    }
+</code></pre></div>
+</div></blockquote>
+Nice work :3</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>2</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=321&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:35 GMT -->
+</html>

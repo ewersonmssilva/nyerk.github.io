@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=240&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Question about crafting problem</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Question about crafting problem</h2>
+		<p><a href="viewtopicf433.html?f=6&amp;t=240">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=240</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Question about crafting problem</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 2:39 pm</strong></div>
+				<div class="author">by <strong>sergeas</strong></div>
+				<div class="content">I started working on crafting in a char and I found the following problem:<br>
+<br>
+I put the necessary items in the inventory.<br>
+I start OfficialCrafting.lua<br>
+<br>
+The char selects the NPC and takes the work order<br>
+The char completes the work order<br>
+The char deliver the complete work order to the NPC.<br>
+<br>
+But, He doesn't continue ... that is, he doesn't take the next work order again.<br>
+<br>
+To take the next work order again, I have to click on the crafting table ...<br>
+<br>
+Any idea how to fix it ?<br>
+How can I do in order to to make a continue cycle of taking and delivering work orders until the char run out of materials, without having to click on the crafting table?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Question about crafting problem</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 2:45 pm</strong></div>
+				<div class="author">by <strong>pawelgbw</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	--if Player:GetTargetID() == 0 then
+	--	PlayerInput:Escape()
+	--end
+</code></pre></div>
+Deselect this code</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Question about crafting problem</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 9:28 pm</strong></div>
+				<div class="author">by <strong>sergeas</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist30b7.html?mode=viewprofile&amp;u=128">pawelgbw</a> wrote: <a href="viewtopic5628.html?p=1305#p1305" data-post-id="1305" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 2:45 pm</div></cite>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	--if Player:GetTargetID() == 0 then
+	--	PlayerInput:Escape()
+	--end
+</code></pre></div>
+Deselect this code
+</div></blockquote>
+
+Thanks !!! It's working <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile">)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Question about crafting problem</h3>
+				<div class="date">Posted: <strong>Wed Aug 23, 2017 12:22 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist30b7.html?mode=viewprofile&amp;u=128">pawelgbw</a> wrote: <a href="viewtopic5628.html?p=1305#p1305" data-post-id="1305" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 2:45 pm</div></cite>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	--if Player:GetTargetID() == 0 then
+	--	PlayerInput:Escape()
+	--end
+</code></pre></div>
+Deselect this code
+</div></blockquote>
+
+I will remove this code soon.<br>
+I added this half an year ago to bypass an Bug inside Aion.<br>
+But i made an bypass since then inside AionScript itself.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Question about crafting problem</h3>
+				<div class="date">Posted: <strong>Sat Aug 26, 2017 1:16 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">i deselected it but its still same why <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=240&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:45 GMT -->
+</html>

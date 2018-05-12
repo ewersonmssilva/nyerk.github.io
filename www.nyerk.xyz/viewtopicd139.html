@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=285&start=50&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017 - Page 6</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h2>
+		<p><a href="viewtopic13ba.html?f=8&amp;t=285">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=285</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>6</strong> of <strong>7</strong></div>
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Fri Dec 01, 2017 5:01 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">interesting info, i'll try test it <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Wed Dec 27, 2017 3:18 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Hey, how do we set the char to keep the final boss in the lava area?<br>
+<br>
+Is this the code below that does it?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if newX &gt;= 233 and microTeleportStep == 0 then
+			Player:SetPosition(233, ourCurrentPos.Y, airZ);
+			microTeleportStep = 1;
+		elseif newX &lt;= 226 and microTeleportStep == 1 then
+			Player:SetPosition(226, ourCurrentPos.Y, airZ);
+			microTeleportStep = 0;
+		else</code></pre></div>
+
+I think a revamp in the position would help, the char attacks the boss while it is still in the lava area, that means he takes agro and can keep it for a while, he takes the boss to the canon area and keep the agro for a little while.<br>
+<br>
+But would it be possible to keep the boss in the lava area till it has like 90% HP (or something) so as to never lose the agro when he takes it the canon area?<br>
+<br>
+So far when I get the many mobs (you hear a lot of footsteps) it is a guarantee fail to S-rank due to many mobs.<br>
+<br>
+Other times when the boss spawns the front barricade is still up but has little HP or more. The boss eventually loses agro to the char and hits the barricate and usually the S-rank is lost for only a few seconds.<br>
+<br>
+If we can keep the boss in the lava area, away from NPC dps for a little while more, then we will never lose the agro.<br>
+<br>
+~~~~~~~~<br>
+I also always have one canon slot unused even if I have 3 aether in my inventory.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Wed Dec 27, 2017 3:10 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Move to acid pool
+function MoveToAcidPool()
+	--Write("MoveToAcidPool");
+	local tempTimer = Time();
+	local elapsedTime = tempTimer - offsetTimer;
+	
+	if elapsedTime &lt; updatePositionTime then
+		return false;
+	end
+	
+	local d = moveSpeed * updatePositionTime / 1000;
+	local ourCurrentPos = Player:GetPosition();
+	local newY = ourCurrentPos.Y + d;
+
+	if newY &gt; 250 then
+		Player:SetPosition(centerRoomX, 250, airZ);
+		return true;
+	else
+		Player:SetPosition(centerRoomX, newY, airZ);
+	end
+	offsetTimer = tempTimer;
+
+	return false;
+end</code></pre></div>
+
+Change <strong class="text-strong">250</strong> (both value) value to set your custom position. <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Thu Dec 28, 2017 10:33 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">So y=250 is the furthest it will go into the pool?<br>
+<br>
+Right now it moves from the back barricate to the front barricate positions.<br>
+<br>
+It should somehow check the smallest and the biggest values.<br>
+<br>
+Also you mean to change these two "250" here with something I want?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	if newY &gt; 250 then
+		Player:SetPosition(centerRoomX, 250, airZ);
+		return true;</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Thu Dec 28, 2017 10:49 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353">Diavolakos</a> wrote: <a href="viewtopic5b4f.html?p=2026#p2026" data-post-id="2026" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Dec 28, 2017 10:33 pm</div></cite>
+So y=250 is the furthest it will go into the pool?<br>
+<br>
+Right now it moves from the back barricate to the front barricate positions.<br>
+<br>
+It should somehow check the smallest and the biggest values.<br>
+<br>
+Also you mean to change these two "250" here with something I want?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	if newY &gt; 250 then
+		Player:SetPosition(centerRoomX, 250, airZ);
+		return true;</code></pre></div>
+</div></blockquote>
+
+Exactly, change 250 value with your custom value <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Sun Dec 31, 2017 8:44 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Well I changed it but that is not what I was asking for, when the fat boss is out the 250 changed only how in I went to grab it.<br>
+<br>
+Once I grab it my chars goes from front barrier to back barrier back and forth. I wanted him to be going in different Y positions, I wanted to eat the fat guy inside the acid pool back and forth to be away from the NPCs and barricades.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 01, 2018 2:27 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Oh ok. I'm not at home now. When i have my Pc i'll post code for you <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 01, 2018 4:49 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Change this function with this new. Set <strong class="text-strong">escapeOffsetY</strong> (100 should be good)<br>
+NOT TESTED, try it <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function EscapeAggro()
+	--Write("EscapeAggro");
+	local escapeOffsetY=0;
+	if goToStartRoom then
+		local tempTimer = Time();
+		local elapsedTime = tempTimer - offsetTimer;
+	
+		if elapsedTime &gt; updatePositionTime then
+			local d = moveSpeed * updatePositionTime / 1000;
+			
+			local ourCurrentPos = Player:GetPosition();
+			local newY = ourCurrentPos.Y - d;
+			
+			if newY &lt; 190 + escapeOffsetY then
+				Player:SetPosition(centerRoomX, 190 + escapeOffsetY, airZ);
+				weAreAtStartRoomPos = true;
+				goToStartRoom = false;
+				return true;
+			else
+				Player:SetPosition(centerRoomX, newY, airZ);
+			end
+			offsetTimer = tempTimer;
+		end
+	else
+		if MoveToBarricade(10 + escapeOffsetY) then
+			weAreAtStartRoomPos = false;
+			goToStartRoom = true;
+			return true;
+		end
+	end
+
+	return false;
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 01, 2018 8:37 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">I'll try it and I'll try to change the <strong class="text-strong">190 </strong>in this function. I'll have to give it a test tomorrow since I already afked all my lunas today.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 01, 2018 10:47 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">if you only change <strong class="text-strong">190</strong> your charater move from 190 to back barricade cause this
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>MoveToBarricade(10 + escapeOffsetY)</code></pre></div>
+this line of code mean "move to barricate position + 10 + escapeOffsetY"</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>6</strong> of <strong>7</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=285&start=50&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:03 GMT -->
+</html>

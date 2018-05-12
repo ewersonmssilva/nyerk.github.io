@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=27&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Change Medals</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Change Medals</h2>
+		<p><a href="viewtopicc205-2.html?f=8&amp;t=27">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=27</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Change Medals</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 3:21 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><strong class="text-strong">ChangeMedal.lua</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnLoad()
+PlayerInput:Console("/select Moterinerk");
+-- PlayerInput:Console("/select Mezirinerk");
+end
+
+function OnRun()
+	if not DialogList:GetDialog( "dlg_dialog" ):IsVisible() then
+		PlayerInput:Console( "/Attack" );
+		Timer = Time() + 400;
+		return false;
+	end
+		if Timer ~= nil and Timer &gt;= Time() then
+					return false;
+				elseif Step == 0 or Step == nil then
+						DialogList:GetDialog( "dlg_dialog/html_view/1" ):Click();
+						Step = 1;
+						Timer = Time() + 400;
+					return false; 
+			else
+	
+			if Step == 1 then
+					DialogList:GetDialog( "dlg_dialog/accept_simple" ):Click();
+					Step = 2;
+					Timer = Time() + 400;
+				return false;
+			elseif Step == 2 then
+					DialogList:GetDialog( "dlg_dialog/html_view/1" ):Click();
+					Step = 3;
+					Timer = Time() + 400;
+				return false;	 
+			elseif Step == 3 then
+					DialogList:GetDialog( "dlg_dialog/html_view/1" ):Click();
+					Step = 4;
+					Timer = Time() + 400;
+				return false;	
+			elseif Step == 4 then
+					DialogList:GetDialog( "dlg_dialog/ok" ):Click();
+					Step = 0;
+					Timer = Time() + 400;
+				return false; 
+			end
+		end
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Sun Feb 05, 2017 5:21 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">I fixed it and updated 0x00 Post. Have fun <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"><br>
+<br>
+You have to change in the beginning of the lua script the name of the npc.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Wed Feb 08, 2017 9:41 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Asmodian Coin Fountain Script<br>
+<br>
+Have fun<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnLoad()
+PlayerInput:Console("/select Nosra Coin Fountain");
+end
+
+function OnRun()
+	if not DialogList:GetDialog( "dlg_dialog" ):IsVisible() then
+		PlayerInput:Console( "/Attack" );
+		Timer = Time() + 400;
+		return false;
+	end
+		if Timer ~= nil and Timer &gt;= Time() then
+					return false;
+				elseif Step == 0 or Step == nil then
+						DialogList:GetDialog( "dlg_dialog/html_view/1" ):Click();
+						Step = 1;
+						Timer = Time() + 400;
+					return false; 
+			else
+	
+			if Step == 1 then
+					DialogList:GetDialog( "dlg_dialog/ok" ):Click();
+					Step = 2;
+					Timer = Time() + 400;
+				return false;
+			elseif Step == 2 then
+					DialogList:GetDialog( "dlg_dialog/close" ):Click();
+					Step = 0;
+					Timer = Time() + 400;
+				return false;	 
+			end
+		end
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Sat Feb 11, 2017 4:30 am</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">Is it possible to make the script faster without any crashes?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Sat Feb 11, 2017 2:05 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">so, crash when ? how ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Sat Feb 11, 2017 9:35 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">I only asked maybe i Change it to 1 and it will Crash idk so i just ask ^^</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Mon Feb 13, 2017 7:44 pm</strong></div>
+				<div class="author">by <strong>Hakairo</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic8b4e.html?p=130#p130" data-post-id="130" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Feb 08, 2017 9:41 pm</div></cite>
+Asmodian Coin Fountain Script<br>
+<br>
+Have fun<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnLoad()
+PlayerInput:Console("/select Nosra Coin Fountain");
+end
+
+function OnRun()
+	if not DialogList:GetDialog( "dlg_dialog" ):IsVisible() then
+		PlayerInput:Console( "/Attack" );
+		Timer = Time() + 400;
+		return false;
+	end
+		if Timer ~= nil and Timer &gt;= Time() then
+					return false;
+				elseif Step == 0 or Step == nil then
+						DialogList:GetDialog( "dlg_dialog/html_view/1" ):Click();
+						Step = 1;
+						Timer = Time() + 400;
+					return false; 
+			else
+	
+			if Step == 1 then
+					DialogList:GetDialog( "dlg_dialog/ok" ):Click();
+					Step = 2;
+					Timer = Time() + 400;
+				return false;
+			elseif Step == 2 then
+					DialogList:GetDialog( "dlg_dialog/close" ):Click();
+					Step = 0;
+					Timer = Time() + 400;
+				return false;	 
+			end
+		end
+end</code></pre></div>
+</div></blockquote>
+
+I often get "- [string "fountain.lua"]:14: attempt to index a nil value" which stops the script completely</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Mon Feb 13, 2017 8:48 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist68d2.html?mode=viewprofile&amp;u=130">Hakairo</a> wrote: <a href="viewtopic2586.html?p=180#p180" data-post-id="180" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Feb 13, 2017 7:44 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic8b4e.html?p=130#p130" data-post-id="130" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Feb 08, 2017 9:41 pm</div></cite>
+Asmodian Coin Fountain Script<br>
+<br>
+Have fun<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnLoad()
+PlayerInput:Console("/select Nosra Coin Fountain");
+end
+
+function OnRun()
+	if not DialogList:GetDialog( "dlg_dialog" ):IsVisible() then
+		PlayerInput:Console( "/Attack" );
+		Timer = Time() + 400;
+		return false;
+	end
+		if Timer ~= nil and Timer &gt;= Time() then
+					return false;
+				elseif Step == 0 or Step == nil then
+						DialogList:GetDialog( "dlg_dialog/html_view/1" ):Click();
+						Step = 1;
+						Timer = Time() + 400;
+					return false; 
+			else
+	
+			if Step == 1 then
+					DialogList:GetDialog( "dlg_dialog/ok" ):Click();
+					Step = 2;
+					Timer = Time() + 400;
+				return false;
+			elseif Step == 2 then
+					DialogList:GetDialog( "dlg_dialog/close" ):Click();
+					Step = 0;
+					Timer = Time() + 400;
+				return false;	 
+			end
+		end
+end</code></pre></div>
+</div></blockquote>
+
+I often get "- [string "fountain.lua"]:14: attempt to index a nil value" which stops the script completely
+</div></blockquote>
+
+Increase the Timer Value from 400 to 600 and make sure you are not clicking in the game when the script runs.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Wed Feb 15, 2017 1:47 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopic3350.html?p=167#p167" data-post-id="167" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Feb 11, 2017 9:35 pm</div></cite>
+I only asked maybe i Change it to 1 and it will Crash idk so i just ask ^^
+</div></blockquote>
+
+Can I really recommend something to EVERYONE? TEST first! Then report with problems, its so much easier!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Change Medals</h3>
+				<div class="date">Posted: <strong>Wed Mar 22, 2017 6:55 pm</strong></div>
+				<div class="author">by <strong>Max</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopic3350.html?p=167#p167" data-post-id="167" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Feb 11, 2017 9:35 pm</div></cite>
+I only asked maybe i Change it to 1 and it will Crash idk so i just ask ^^
+</div></blockquote>
+
+That moment and you wish someone was using an Albert Einstein Avatar(picture) instead of Patrick's .</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=27&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=248&start=20&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:49:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Project: Auto leveling new character - Page 3</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Project: Auto leveling new character</h2>
+		<p><a href="viewtopic0f09.html?f=8&amp;t=248">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=248</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>3</strong> of <strong>9</strong></div>
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Thu Aug 31, 2017 1:11 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">You should be ok if active potion.<br>
+In HelperFunction.lua i change this to add  Apprentice Potion<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CheckPotionRecovery()
+
+	-- Prepare the variables to contain the best item and recharge.
+	local BestInventory = nil;
+	local BestRecharge = 0;
+	local TotalRechargeHealth = Player:GetHealthMaximum() - Player:GetHealthCurrent();
+	local TotalRechargeMana = Player:GetManaMaximum() - Player:GetManaCurrent();
+	
+	-- Check if a potion is available.
+	if self._iPotionDelay == nil or self._iPotionDelay &lt; Time() then
+		
+		-- Loop through your inventory
+		for Inventory in ListIterator( InventoryList:GetList()) do
+
+			-- Check if this is a life potion
+			if string.find( Inventory:GetName(), "Design" ) == nil and string.find( Inventory:GetName(), "Recovery Potion" ) ~= nil then
+				
+				if string.find( Inventory:GetName(), "Fine" ) ~= nil then
+					if TotalRechargeHealth &gt;= 2120 and TotalRechargeMana &gt;= 1830 and BestRecharge &lt; 2120 then
+						BestInventory = Inventory;
+						BestRecharge = 2120;
+					end
+				elseif string.find( Inventory:GetName(), "Major" ) ~= nil then
+					if TotalRechargeHealth &gt;= 1540 and TotalRechargeMana &gt;= 1600 and BestRecharge &lt; 1540 then
+						BestInventory = Inventory;
+						BestRecharge = 1540;
+					end
+				elseif string.find( Inventory:GetName(), "Greater" ) ~= nil then
+					if TotalRechargeHealth &gt;= 1270 and TotalRechargeMana &gt;= 1480 and BestRecharge &lt; 1270 then
+						BestInventory = Inventory;
+						BestRecharge = 1270;
+					end
+				elseif string.find( Inventory:GetName(), "Lesser" ) ~= nil then
+					if TotalRechargeHealth &gt;= 670 and TotalRechargeMana &gt;= 980 and BestRecharge &lt; 670 then
+						BestInventory = Inventory;
+						BestRecharge = 670;
+					end
+				elseif string.find( Inventory:GetName(), "Minor" ) ~= nil then
+					if TotalRechargeHealth &gt;= 370 and TotalRechargeMana &gt;= 590 and BestRecharge &lt; 370 then
+						BestInventory = Inventory;
+						BestRecharge = 370;
+					end
+				elseif string.find( Inventory:GetName(), "Apprentice" ) ~= nil then
+				
+					if TotalRechargeHealth &gt;= 370 and BestRecharge &lt; 370 then
+				
+						BestInventory = Inventory;
+						BestRecharge = 370;
+					end
+				elseif TotalRechargeHealth &gt;= 970 and TotalRechargeMana &gt;= 1280 and BestRecharge &lt; 970 then
+					BestInventory = Inventory;
+					BestRecharge = 970;
+				end
+				
+			end
+
+		end
+		
+		-- Check if we have a positive match and see if the cooldown allows the use of it.
+		if BestInventory ~= nil and BestInventory:GetCooldown() == 0 then
+			if PlayerInput:Inventory( BestInventory:GetName()) then
+				self._iPotionDelay = Time() + BestInventory:GetReuse();
+			end
+			return false;
+		end
+		
+	end
+	
+	-- We have not executed any potion.
+	return true;
+	
+end
+</code></pre></div>
+I disable mana check, so it will used like a normal heal potion.<br>
+I hope this help you.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Fri Sep 01, 2017 6:28 pm</strong></div>
+				<div class="author">by <strong>Laudel</strong></div>
+				<div class="content">Jo cooco,<br>
+<br>
+big thx for this amazing work <img class="smilies" src="images/smilies/icon_exclaim.gif" width="15" height="17" alt=":!:" title="Exclamation">   I´ll test it out and it works really great  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">.<br>
+I hope so we will see much more scripts for the next lvling areas  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">  <img class="smilies" src="images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Laughing">   <img class="smilies" src="images/smilies/icon_exclaim.gif" width="15" height="17" alt=":!:" title="Exclamation">  <img class="smilies" src="images/smilies/icon_exclaim.gif" width="15" height="17" alt=":!:" title="Exclamation"> <br>
+If you need some decent scripts for Assa or Gladi feel free to let me know it on pm.<br>
+<br>
+Best regards Dude!!!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Sep 06, 2017 5:14 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">New script update. <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Thu Sep 07, 2017 7:11 am</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">Your scripts are awesome, they just one one of my bots, and I tried nochsana one. You know what would be wonderful? This for rift of oblivion <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Thu Sep 07, 2017 11:10 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">My goal is level 1 to 65. <br>
+Ill try to implimento Rift of oblivion too.<br>
+<br>
+Now i need to understand how level up from 41/42 to 46. Any ideas guys?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Thu Sep 07, 2017 4:13 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">can we use 2 as on same pc ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Thu Sep 07, 2017 4:30 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">Clearing the console window...<br>
+- OnLoad<br>
+- 10<br>
+- 1 10-15<br>
+- OnLoad search procedure: 10_15<br>
+- OnLoad search procedure: 1_1<br>
+- [string "LevelingNewCharacter.lua"]:292: attempt to index field '_ControllerClass' (a nil value)<br>
+<br>
+and how can i fix this</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Thu Sep 07, 2017 5:57 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Oh yes sorry guy. I change OfficialGrinderFramework to fix some problem with my script.<br>
+Ill post all as soon as possible.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Thu Sep 07, 2017 6:23 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist09a9.html?mode=viewprofile&amp;u=571">Quirunerk</a> wrote: <a href="viewtopicd8a3.html?p=1475#p1475" data-post-id="1475" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Sep 07, 2017 4:30 pm</div></cite>
+Clearing the console window...<br>
+- OnLoad<br>
+- 10<br>
+- 1 10-15<br>
+- OnLoad search procedure: 10_15<br>
+- OnLoad search procedure: 1_1<br>
+- [string "LevelingNewCharacter.lua"]:292: attempt to index field '_ControllerClass' (a nil value)<br>
+<br>
+and how can i fix this
+</div></blockquote>
+
+Try now <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Fri Sep 08, 2017 12:30 am</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">And can i use 2 aion script and client on same pc ?</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>3</strong> of <strong>9</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=248&start=20&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:49:30 GMT -->
+</html>

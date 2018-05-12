@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=219&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; AionScript Release 12.08.2017</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>AionScript Release 12.08.2017</h2>
+		<p><a href="viewtopica0a5.html?f=4&amp;t=219">https://www.nyerk.xyz/viewtopic.php?f=4&amp;t=219</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sat Aug 12, 2017 11:00 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Changes:
+<ul><li>Added Buffmanager for Botting</li></ul>
+<ul><li>Added Kisk Resurrect System for Botting</li></ul>
+
+<br>
+For existing Users the following files have been updated:
+<ul><li>AionInterface.dll</li></ul>
+<ul><li>AionScript.exe</li></ul>
+<ul><li>Extensions Folder</li></ul>
+<ul><li>Scripting/OfficialGrinderFramework/GrinderFramework.lua</li></ul>
+<ul><li>Scripting/OfficialGrinderFramework/HelperFunction.lua</li></ul>
+<ul><li>Scripting/OfficialGrinderFramework/Settings.lua</li></ul>
+<ul><li>Scripting/OfficialGrinderFramework/Settings/ExamplePlayer.lua</li></ul>
+
+<strong class="text-strong">How to use Kisk Mode:</strong><br>
+1.) Set settings in Settings.lua or Settings/YourCharname.lua correctly.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Indicates whether or not resurrecting and quitting is allowed.
+	self.AllowRessurectQuit = false;
+	-- Indicates whether or not resurrecting on Kisk is allowed.
+	self.AllowRessurectKisk = true;</code></pre></div>
+
+2.) You need obviously Kisks in your Inventory.<br>
+<br>
+3.) Setup Travellist correctly and create an Travel Node with Action Kisk.<br>
+<img src="../i.imgur.com/rvMYhLO.png" class="postimage" alt="Image"><br>
+<br>
+4.) Congrats you have setup it correctly. Now just start the bot and you are done. It will automatically place kisk bind to it and in death resurrects.<br>
+<br>
+<strong class="text-strong">How to use Buff Manager:</strong><br>
+1.) Set settings in Settings.lua or Settings/YourCharname.lua correctly.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Enable Buffmanager to keep up buffs
+      	self.BuffManager = true;
+        -- List of Buffs to Apply Item Name and Buff Name Needed (Hover over Buff to get Name of Buff)
+        self.BuffManagerList = {
+		{ Item = "Running Scroll", State = "Increase Movement Speed" },
+		{ Item = "Awakening Scroll", State = "Casting Speed Increase" },
+	};
+</code></pre></div>
+
+Item is ingame item name like you have it in your inventory.<br>
+State is the buff name which gets applied to your character.<br>
+Hover over your buff ingame and you find the state name to use.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>{ Item = "Running Scroll", State = "Increase Movement Speed" },</code></pre></div>
+<img src="../i.imgur.com/RZDcZLc.jpg" class="postimage" alt="Image"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sat Aug 12, 2017 4:37 pm</strong></div>
+				<div class="author">by <strong>buzz</strong></div>
+				<div class="content">getting crashes staying afk on arena</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sat Aug 12, 2017 9:09 pm</strong></div>
+				<div class="author">by <strong>ewerson2</strong></div>
+				<div class="content">Here working, but have this error<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>- System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em AionExtension._RunFrame()</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sun Aug 13, 2017 10:36 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb838.html?mode=viewprofile&amp;u=324">ewerson2</a> wrote: <a href="viewtopic9d31.html?p=1204#p1204" data-post-id="1204" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Aug 12, 2017 9:09 pm</div></cite>
+Here working, but have this error<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>- System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em AionExtension._RunFrame()</code></pre></div>
+</div></blockquote>
+
+Update Extension Folder !!!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sun Aug 13, 2017 10:39 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist866d.html?mode=viewprofile&amp;u=114">buzz</a> wrote: <a href="viewtopicb849.html?p=1203#p1203" data-post-id="1203" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Aug 12, 2017 4:37 pm</div></cite>
+getting crashes staying afk on arena
+</div></blockquote>
+
+This is something i cannot work with.<br>
+Please give more Informations because for me and others it works very well.<br>
+Check Aion Forums many ppl have random crashes all the time.<br>
+<br>
+For reporting bugs/crashing be more precise what you are doing otherwise i can't help you and i will not help you if i have to do random things to maybe find a bug which in the end is not a bug in AionScript but a bug in Aion or your PC.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sun Aug 13, 2017 11:49 am</strong></div>
+				<div class="author">by <strong>ewerson2</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic44fe.html?p=1206#p1206" data-post-id="1206" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Aug 13, 2017 10:36 am</div></cite>
+<blockquote><div><cite><a href="memberlistb838.html?mode=viewprofile&amp;u=324">ewerson2</a> wrote: <a href="viewtopic9d31.html?p=1204#p1204" data-post-id="1204" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Aug 12, 2017 9:09 pm</div></cite>
+Here working, but have this error<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>- System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em AionExtension._RunFrame()</code></pre></div>
+</div></blockquote>
+
+Update Extension Folder !!!
+</div></blockquote>
+
+I just left the folder classes the rest was changed!<br>
+Some time later he stopped on kisk and was disconnected by AFK</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sun Aug 13, 2017 12:03 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb838.html?mode=viewprofile&amp;u=324">ewerson2</a> wrote: <a href="viewtopica028.html?p=1210#p1210" data-post-id="1210" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Aug 13, 2017 11:49 am</div></cite>
+<blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic44fe.html?p=1206#p1206" data-post-id="1206" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Aug 13, 2017 10:36 am</div></cite>
+<blockquote><div><cite><a href="memberlistb838.html?mode=viewprofile&amp;u=324">ewerson2</a> wrote: <a href="viewtopic9d31.html?p=1204#p1204" data-post-id="1204" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Aug 12, 2017 9:09 pm</div></cite>
+Here working, but have this error<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>- System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em AionExtension._RunFrame()</code></pre></div>
+</div></blockquote>
+
+Update Extension Folder !!!
+</div></blockquote>
+
+I just left the folder classes the rest was changed!<br>
+Some time later he stopped on kisk and was disconnected by AFK
+</div></blockquote>
+
+This error comes from an Extension.<br>
+Just try again my bots are running 18 hours or so without any crash.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Sun Aug 13, 2017 7:44 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">*bump*</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Mon Aug 14, 2017 6:07 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">I notice this bug<br>
+<img src="../i.imgur.com/J93FdT6.jpg" class="postimage" alt="Image"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 12.08.2017</h3>
+				<div class="date">Posted: <strong>Mon Aug 14, 2017 7:21 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopica731.html?p=1220#p1220" data-post-id="1220" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Aug 14, 2017 6:07 pm</div></cite>
+I notice this bug<br>
+<img src="../i.imgur.com/J93FdT6.jpg" class="postimage" alt="Image">
+</div></blockquote>
+
+Thank you very very much for this detailed bug description.<br>
+I will have a look at it.  <img class="smilies" src="images/smilies/icon_cool.gif" width="15" height="17" alt="8-)" title="Cool"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=219&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:57 GMT -->
+</html>

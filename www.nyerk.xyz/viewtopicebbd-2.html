@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=97&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Flight time sustain/automorph</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Flight time sustain/automorph</h2>
+		<p><a href="viewtopic1667.html?f=6&amp;t=97">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=97</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Flight time sustain/automorph</h3>
+				<div class="date">Posted: <strong>Sun Mar 12, 2017 2:17 pm</strong></div>
+				<div class="author">by <strong>amad</strong></div>
+				<div class="content">Hi i have 2 questions : <br>
+<br>
+1)How i can sustain flight time with aethertapping script? I see in the lua folder a code for wind serum,is possible create a similar for songweaver's blue sky melody?<br>
+2)There is a script to automorph?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Flight time sustain/automorph</h3>
+				<div class="date">Posted: <strong>Tue Mar 14, 2017 3:32 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">*removed*<br>
+<br>
+See locatelli's version</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Flight time sustain/automorph</h3>
+				<div class="date">Posted: <strong>Tue Mar 14, 2017 3:50 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">When I'll be home, I can try to check if I still have my gathering. It works perfectly with char if you've more than 3 minutes fly time, and minimizes the usage of potions, but you need to copy paste the code in the new gathering</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Flight time sustain/automorph</h3>
+				<div class="date">Posted: <strong>Tue Mar 14, 2017 5:47 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">Ok put this at the start of onrun function, replace 179s with the correct amount (&gt;=65 is fine)
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	
+		-- Buff 5: Blue Sky Melody
+		if Helper:CheckAvailable( "Blue Sky Melody" ) and Player:GetFlightTimeMaximum() - Player:GetFlightTimeCurrent() &gt; 179000 then
+			Helper:CheckExecute( "Blue Sky Melody" );
+		end		
+</code></pre></div>
+
+Replace FindSerum with this
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function _FindSerum()
+
+	-- Prepare the variables to contain the best item and recharge.
+	local BestInventory = nil;
+	local BestRecharge = 0;
+	local TotalRecharge = Player:GetFlightTimeMaximum() - Player:GetFlightTimeCurrent();
+	
+	-- Check if the serum is allowed again, using a timer to avoid linked-cooldown issues.
+	if _iSerumTime == nil or _iSerumTime &lt; Time() then
+	
+		-- Loop through your inventory
+		for Inventory in ListIterator( InventoryList:GetList()) do
+
+			-- Check if this is a wind serum.
+			if not Helper:CheckAvailable( "Blue Sky Melody" ) and Inventory:GetType():ToString() == "Potion" and string.find( Inventory:GetName(), "Wind Serum" ) ~= nil and Inventory:GetCooldown() == 0 and Player:GetFlightTimeCurrent() &lt; 20000 then
+				
+				if string.find( Inventory:GetName(), "" ) ~= nil and TotalRecharge &gt;= 84000 and BestRecharge &lt; 84000 then
+					BestInventory = Inventory;
+					BestRecharge = 84000;
+				elseif string.find( Inventory:GetName(), "Lesser" ) ~= nil and TotalRecharge &gt;= 12000 and BestRecharge &lt; 12000 then
+					BestInventory = Inventory;
+					BestRecharge = 12000;
+				elseif string.find( Inventory:GetName(), "Greater" ) ~= nil and TotalRecharge &gt;= 36000 and BestRecharge &lt; 36000 then
+					BestInventory = Inventory;
+					BestRecharge = 36000;
+				elseif string.find( Inventory:GetName(), "Enhanced" ) ~= nil and TotalRecharge &gt;= 48000 and BestRecharge &lt; 48000 then
+					BestInventory = Inventory;
+					BestRecharge = 48000;
+				elseif string.find( Inventory:GetName(), "Fine" ) ~= nil and TotalRecharge &gt;= 60000 and BestRecharge &lt; 60000 then
+					BestInventory = Inventory;
+					BestRecharge = 60000;
+				elseif TotalRecharge &gt;= 24000 and BestRecharge &lt; 24000 then
+					BestInventory = Inventory;
+					BestRecharge = 24000;
+				end
+				
+			end
+
+		end
+		
+		-- Check if we have a positive match and see if the cooldown allows the use of it.
+		if BestInventory ~= nil then
+			PlayerInput:Inventory( BestInventory:GetName());
+			_iSerumTime = Time() + BestInventory:GetReuse();
+		end
+		
+	end 
+	
+	-- We have not executed any potion.
+	return true;
+	
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Flight time sustain/automorph</h3>
+				<div class="date">Posted: <strong>Wed Mar 15, 2017 3:13 pm</strong></div>
+				<div class="author">by <strong>amad</strong></div>
+				<div class="content">Locatelli can u put the full code? Cuz idk but it follow the route,it use the fly skill but it don't gather the aether.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Flight time sustain/automorph</h3>
+				<div class="date">Posted: <strong>Wed Mar 15, 2017 5:48 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+	--------------------------------------------------
+	Room For Improvement
+	--------------------------------------------------
+	Check flight time and escape to a rest node when it becomes low.
+	Check suspension and flight mode; do not stall in the air.
+	Check interruptions in a path; other people might be screwing around.
+	
+	--------------------------------------------------
+	Basic Functionality
+	--------------------------------------------------
+	1 	Check if we are currently busy or moving.
+	2 	Check if we are currently on an action node.
+	2.1	Find the best entity to gather at this position.
+	2.2	Check if we are in a flying/resting state and abort it.
+	2.3 Start gathering the entity we have found.
+	3	Check if we are currently on a resting node.
+	3.1	Check if the flight time, health and mana have been recovered.
+	3.2	When this is not the case, disable flight and start resting.
+	4	Check if we are allowed to move.
+	4.1	Move to the next node in the travel list.
+		
+]]--
+
+_iRestartTime = 0;
+_RestartAfterSeconds = 600000; -- 600 seconds
+
+
+function OnLoad()
+	_iRestartTime = Time() + _RestartAfterSeconds;
+
+	GatherSettings = {
+	
+		-- Indicates whether or not to use active gathering, which gathers interesting nodes while *YOU* are playing.
+		ActiveGathering = false,
+		-- Indicates whether or not the use of serums to increase flight time is allowed.
+		AllowSerumUsage = true,
+		-- Indicates whether or not to suspend activity with an enemy player in the area.
+		ProtectionEnemy = false,
+		-- Indicates the action when ProtectionEnemy is true and an enemy is found. Console command, i.e. "/Skill Return" or "/Use Morheim Fortress Scroll".
+		ProtectionEnemyEscape = "/Skill Return",
+		-- Indicates whether or not to suspend activity with a friendly player in the area.
+		ProtectionFriendly = false,
+		-- Indicates whether or not action nodes are restricted, thus need to be waited at for a gatherable spawn.
+		RestrictAction = false,
+		-- Contains the name(s) of the gatherable(s) to gather. Example: {"Diamond", "Hintera"}
+		RestrictGatherable = nil,
+		-- Contains the maximum range in which to search for a gatherable.
+		RestrictRange = 5,
+		-- Indicates whether or not resting should be done after defending against an aggressive monster/player.
+		RestAfterDefense = true,
+		-- Indicates whether or not to inspect the next node to see if an aether node is available.
+		SmartAetherTapping = false,
+		-- Indicates whether or not to inspect the next node to see if a travel path has been interrupted.
+		SmartGathering = false,
+		-- If flight time becomes low, move to the next resting node (in ms).
+		ReturnOnLowFighttime = 20000,
+		-- when you died, for whatever reason log out
+		LogoutOnDeath = true
+	};
+	
+	-- [OfficialGrinderFramework]: Include the OfficialGrinderFramework to defend when attacked.
+	Framework = Include( "OfficialGrinderFramework/GrinderFramework.lua" );
+	Framework:OnLoad();
+	
+	-- [OfficialGrinderFramework]: Include the OfficialGrinderFramework to set the initial travel position.
+	Helper = Include( "OfficialGrinderFramework/HelperFunction.lua" );
+	Helper:CheckTravelPosition();
+	
+	-- [OfficialGrinderFramework]: Force the boss-GatherSettings and modify the roles that are different.
+	Settings:InitializeBoss();
+	Settings.AllowAttack = true;
+	Settings.Cleric.AllowAttack = true;
+	
+end
+
+function OnFrame()
+	if not Player:IsMoving() then
+		if _IsMoving then
+			OnRun();
+			_IsMoving = false;
+		end
+	else
+		_IsMoving = true;
+	end
+end
+
+function OnRun()
+	
+	-- Buff 5: Blue Sky Melody
+	if Helper:CheckAvailable( "Blue Sky Melody" ) and Player:GetFlightTimeMaximum() - Player:GetFlightTimeCurrent() &gt; 179000 then
+		Helper:CheckExecute( "Blue Sky Melody" );
+	end	
+	
+	-- Check if the resurrect dialog is available and the button enabled, go back to town.
+	if GatherSettings.LogoutOnDeath and DialogList:GetDialog( "resurrect_dialog" ):IsVisible() and DialogList:GetDialog( "resurrect_dialog/resurrect_ok" ):IsEnabled()	then
+		DialogList:GetDialog( "resurrect_dialog/resurrect_ok" ):Click();
+		_ForceLogout = true;
+		return false;
+	elseif GatherSettings.LogoutOnDeath and Player:GetHealth() == 0 then
+		_ForceLogout = true;
+		return false;
+	end
+	
+	-- Check if the ForceLogout value has been set, in which case we have to go.
+	if _ForceLogout ~= nil and Player:GetHealth() &gt; 0 then
+	
+		-- Wait until the alert dialog is shown before closing the script.
+		if DialogList:GetDialog( "quit_alert_dialog" ):IsVisible() then
+			Close();
+			return;
+		end
+		
+		-- Use the console to logout.
+		PlayerInput:Console( "/Logout" );
+		return;
+	end
+
+	-- Perform nothing when the gathering dialog is visible, it means we are busy!
+	if DialogList:GetDialog( "gathering_dialog" ):IsVisible() or DialogList:GetDialog( "captcha_dialog" ):IsVisible() then
+		return;
+	end
+	
+	-- Check if the ForceLogout value has been set, in which case we have to go.
+	if _ForceLogout ~= nil and not Player:IsBusy() then
+		-- Wait until the alert dialog is shown before closing the script.
+		if DialogList:GetDialog( "quit_alert_dialog" ):IsVisible() then
+			Close();
+			return;
+		end
+		
+		-- Use the console to logout.
+		PlayerInput:Console( "/Logout" );
+	end
+	
+	-- [OfficialGrinderFramework]: Check if a monster has selected you, and when it did, destroy it!
+	Entity = Framework:FindTarget( true, Player:GetPosition());
+
+	-- Check if the found entity is valid.
+	if Entity ~= nil then
+		-- Stop moving, it's time to kill!
+		Player:SetMove( nil );
+		
+		-- Check if my target is correct, we have to target this enemy!
+		if Player:GetTargetID() ~= Entity:GetID() then
+			Player:SetTarget( Entity );
+			return;
+		end
+
+		-- Nuke him down (Or bash, whatever, really).
+		Framework:OnRun();
+		need_resting = true;
+		need_looting = Time() + 2000;
+		return;
+	end
+	
+	-- After a fight, resting is necessary
+	if need_resting then
+	
+		local loottarget = EntityList:GetEntity( Player:GetTargetID());
+		if loottarget ~= nil and loottarget:IsDead() and need_looting &gt;= Time() then
+			PlayerInput:Ability( "Loot" );
+			return;
+		else
+			--if need_looting then
+			--	PlayerInput:Ability( "Loot" );
+			--	need_looting = false;
+			--end
+			
+			if not GatherSettings.RestAfterDefense then
+				need_resting = false;
+			else
+				Framework._IsResting = true
+				Framework:OnRun();
+				if not Framework._IsResting then
+					need_resting = false;
+				else
+					return;
+				end
+			end
+		end
+	end
+	
+	-- go to next resting node
+	if not Player:IsMoving() and Player:IsFlying() and Player:GetFlightTimeCurrent() &lt; GatherSettings.ReturnOnLowFighttime and not TravelList:GetCurrent():IsRest() then
+		TravelList:GetNext();
+		TravelList:Move();
+	-- Check to see we are allowed to run the routine and to see if we are not currently busy.
+	elseif not Player:IsBusy() and not Player:IsMoving() and ( _iTimer == nil or _iTimer &lt; Time()) then
+		
+		-- Initialize the move variable which can be used by 
+		local Move = false;
+		-- Check if we have a wind serum that is allowed to be used at this point.
+		if GatherSettings.AllowSerumUsage and Player:IsFlying() and not _FindSerum() then
+			return;
+		end
+		_FindSerum();
+		
+		if _iRestartTime &lt; Time() then
+			Restart();
+			_iRestartTime = Time() + _RestartAfterSeconds;
+		end
+		
+		-- Check if we have either no travel list or the current node is an action node.
+		if StartAetherCheck == nil and ( GatherSettings.ActiveGathering or TravelList == nil or TravelList:GetCurrent():IsAction()) then
+
+			-- Retrieve the best gatherable entity and the suspension boolean.
+			local Entity, Suspend = _FindEntity();
+
+			-- Check if we are in the suspended state, in which case we should not be doing anything!
+			if Suspend then
+				if not Player:IsBusy() and GatherSettings.ProtectionEnemyEscape ~= nil then
+					PlayerInput:Console( GatherSettings.ProtectionEnemyEscape );
+					_ForceLogout = true;
+					return;
+				end
+				
+				_iTimer = Time() + 1000;
+				return;
+			end
+			
+			-- Reset the movement suspesion to be able to detect changes in the current action node and enforce waiting.
+			if not GatherSettings.ActiveGathering and SuspendMove == nil and TravelList ~= nil and ( GatherSettings.RestrictAction or TravelList:GetCurrent():GetParam() == "Wait" ) and SuspendMove ~= TravelList:GetCurrent() then
+				SuspendMove = true;
+			end
+			
+			-- Check if our current target is a gatherable, when using the active gathering mode!
+			if Entity == nil and GatherSettings.ActiveGathering then
+				
+				-- Check if StartTarget has been set, in which case we need to target again!
+				if StartTarget ~= nil then
+					Entity = EntityList:GetEntity( StartTarget );
+				end
+				
+				-- Check if the entity is still clear, thus the StartTarget ID failed.
+				if Entity == nil then
+				
+					-- Check if we have an entity selected.
+					Entity = EntityList:GetEntity( Player:GetTargetID());
+					
+					-- Check if the entity is valid and is a gatherable!
+					if Entity ~= nil and Entity:IsGatherable() then
+						StartTarget = Entity:GetID();
+					-- Otherwise clear the entity and StartTarget ID.
+					else
+						StartTarget = nil;
+						Entity = nil;
+					end
+					
+				end
+				
+			end
+			
+			-- Check if the retrieved entity is correct and we are not in a suspension state.
+			if Entity ~= nil then
+			
+				-- Check and abort flying state when we are currently flying but this gatherable is not.
+				if TravelList ~= nil and not TravelList:GetCurrent():IsFlying() and Player:IsFlying() then
+					PlayerInput:Ability( 'Toggle Flight/Landing' );
+					return;
+				end
+				
+				-- Check and abort resting state when we are currently resting.
+				if Player:IsResting() then
+					PlayerInput:Ability( 'Toggle Rest' );
+					return;
+				end
+			
+				if _iTime == nil or _iTime &lt; Time() then
+					-- Check if we have set the correct target for this entity.
+					if Player:GetTargetID() ~= Entity:GetID() then
+						Player:SetTarget( Entity );
+					-- Otherwise initiate gathering using the attack ability.
+					else
+						_DoGather();
+						_iTime = Time() + 2000;
+						if TravelList ~= nil then
+							SuspendMove = TravelList:GetCurrent();
+						end
+					end
+				end
+			end
+			
+			-- Check if we have gathered all the resources that are nearby, then we need to move.
+			if Entity == nil and ( SuspendMove == nil or SuspendMove == TravelList:GetCurrent()) then
+				Move = true;
+				SuspendMove = nil;
+			end
+			
+		end
+		
+		-- Check if a gathering list has been loaded!
+		if TravelList ~= nil then
+
+			-- Check if a travel list has been loaded and if this is a movement node.
+			if TravelList:GetCurrent():IsMove() or StartAetherCheck ~= nil then
+				Move = true;
+			end
+			
+			-- Check if a travel list has been loaded and if this is a resting node.
+			if TravelList:GetCurrent():IsRest() then
+				
+				-- Check if the flight time, mana and health has been completely recovered.
+				if Player:GetFlightTimeCurrent() == Player:GetFlightTimeMaximum()
+					and Player:GetManaCurrent() == Player:GetManaMaximum()
+					and Player:GetHealthCurrent() == Player:GetHealthMaximum() then
+					Move = true;
+				-- Check if flying mode is still enabled, in which case we need to land.
+				elseif Player:IsFlying() ~= TravelList:GetCurrent():IsFlying() then
+					PlayerInput:Ability( 'Toggle Flight/Landing' );
+					return;
+				-- Check if we are currently resting, otherwise sit down to rest.
+				elseif not Player:IsResting() and not TravelList:GetCurrent():IsFlying() then
+					PlayerInput:Ability( 'Toggle Rest' );
+					return;
+				-- Otherwise we must reset the movement state.
+				else
+					Move = false;
+				end
+			
+			end
+			
+			-- Check if a travel list has been loaded and we need to move.
+			if Move then
+			
+				-- Check if smart aether tapping is enabled and we are not flying.
+				if GatherSettings.SmartAetherTapping then
+				
+					-- Retrieve the next node to get the position on which we need to scan.
+					if StartAetherCheck == nil then
+						StartAetherCheck = TravelList:GetNext();
+					end
+					
+					-- Check if the next node is an action node, is flying and has no entity, in which case we need to wait for spawn.
+					if StartAetherCheck:IsAction() and StartAetherCheck:IsFlying() then
+						if Player:IsResting() then
+							PlayerInput:Ability( 'Toggle Rest' );
+							return;
+						elseif _FindEntity() == nil then
+							return;
+						elseif not Player:IsFlying() then
+							PlayerInput:Ability( 'Toggle Flight/Landing' );
+							return;
+						else
+							StartAetherCheck = nil;
+							TravelList:Move();
+						end
+					--
+					else
+						StartAetherCheck = nil;
+						TravelList:Move();
+						return;
+					end
+				
+				-- Move to the next node.
+				else
+					TravelList:GetNext();
+					TravelList:Move();
+				end
+			
+			end
+			
+		end
+		
+	end
+	
+end
+	
+function _DoGather()
+	if Player:IsFlying() then
+		return PlayerInput:Console( "/Skill Aethertapping" );
+	elseif Player:GetWorld() == 220010000 or Player:GetWorld() == 210010000 then
+		return PlayerInput:Console( "/Skill Collection" );
+	else
+		return PlayerInput:Console( "/Skill Essencetapping" );
+	end	
+end
+
+--- Finds the best gatherable entity within the configured parameters.
+--
+-- @return	Entity, boolean
+
+function _FindEntity()
+
+	-- Prepare the variables for the list and best entity match.
+	local List = EntityList:GetList();
+	local BestEntity = nil;
+	local BestDistance = 0;
+
+	-- Retrieve the position from which the maximum range is checked.
+	local CheckPosition = _FindPosition();
+	
+	-- Retrieve the name restriction (when gathering specific types of entities).
+	local CheckRestriction = _FindRestriction();
+	
+	-- Check if we should loop through the entities to find players.
+	if GatherSettings.ProtectionEnemy or GatherSettings.ProtectionFriendly then
+
+		-- Loop through the available entities to find players we want to avoid.
+		for ID, Entity in DictionaryIterator( List ) do
+
+			-- Check if this is player that is not my own character, in which case we will abort.
+			if Entity:IsPlayer() and Entity:GetID() ~= Player:GetID() and (( GatherSettings.ProtectionEnemy and Entity:IsHostile()) or ( GatherSettings.ProtectionFriendly and Entity:IsFriendly())) then
+				return nil, true;
+			end
+			
+		end
+		
+	end
+
+	-- Loop through the available entities to find gatherables entities.
+	for ID, Entity in DictionaryIterator( List ) do
+
+		-- Initialize the validation boolean for this gatherable.
+		local Valid = true;
+		
+		-- Check if this entity is a gatherable and has not been gathered yet.
+		if Entity:IsGatherable() 
+			and not Entity:IsDead() 
+			and ( CheckRestriction == nil or string.len( CheckRestriction ) == 0 or CheckRestriction ~= Entity:GetName())
+			and ( GatherSettings.RestrictGatherable == nil or in_table( Entity:GetName(), GatherSettings.RestrictGatherable )) then
+			
+			-- Loop through the available entities to find characters gathering this entity.
+			for IDCheck, EntityCheck in DictionaryIterator( List ) do
+			
+				-- Check if this is a player and is gathering the entity we are interested in.
+				if EntityCheck:IsPlayer() and Player:GetID() ~= EntityCheck:GetID() and Entity:GetID() == EntityCheck:GetTargetID() and EntityCheck:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt; 3 then -- and EntityCheck:IsBusy() then
+					Valid = false;
+				end
+				
+			end
+			
+			-- Check if this entity is valid and is close enough to start gathering on.
+			if Valid and CheckPosition:DistanceToPosition( Entity:GetPosition()) &lt; GatherSettings.RestrictRange then
+			
+				-- Calculate the distance from the player to the found entity.
+				local CurrentDistance = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+				
+				-- Check if this entity is closer to the player then the previous and save it when it is.
+				if BestEntity == nil or BestDistance &gt; CurrentDistance then
+					BestDistance = CurrentDistance;
+					BestEntity = Entity;
+				end
+
+			end
+			
+		end
+		
+	end
+
+	-- Return the best entity match we have found.
+	return BestEntity, false;
+	
+end
+
+--- Finds the position from which the maximum range is checked.
+--
+-- @return	Vector3D
+
+function _FindPosition()
+
+	-- Assign the starting position on the first request.
+	if TravelList == nil and StartPosition == nil then
+		StartPosition = Player:GetPosition();
+	end
+	
+	-- When ActiveGathering has been enabled, always use the current position.
+	if GatherSettings.ActiveGathering then
+		return Player:GetPosition();
+	end
+	
+	-- Check if a travel list has been loaded and return the current node position.
+	if TravelList ~= nil then
+		return TravelList:GetCurrent():GetPosition();
+	end
+	
+	-- Return the initial starting position.
+	return StartPosition;
+	
+end
+
+--- Finds the name restriction (when gathering specific types of entities).
+--
+-- @return	string
+
+function _FindRestriction()
+	
+	-- Check if the travel list has been loaded, otherwise use the GatherSettings.
+	--if TravelList == nil then
+	--	return GatherSettings.RestrictGatherable;
+	--end
+	
+	-- Check if this is an action node and return the parameter.
+	if TravelList ~= nil and TravelList:GetCurrent():IsAction() and TravelList:GetCurrent():GetParam() ~= "Wait" then
+		return TravelList:GetCurrent():GetParam();
+	end
+	
+	-- Nothing has applied so return nil for no restriction.
+	return nil;
+	
+end
+
+--- Finds a wind serum in the inventory and uses it when required.
+--
+-- @return	string
+
+function _FindSerum()
+
+	-- Prepare the variables to contain the best item and recharge.
+	local BestInventory = nil;
+	local BestRecharge = 0;
+	local TotalRecharge = Player:GetFlightTimeMaximum() - Player:GetFlightTimeCurrent();
+	
+	-- Check if the serum is allowed again, using a timer to avoid linked-cooldown issues.
+	if _iSerumTime == nil or _iSerumTime &lt; Time() then
+	
+		-- Loop through your inventory
+		for Inventory in ListIterator( InventoryList:GetList()) do
+
+			-- Check if this is a wind serum.
+			if not Helper:CheckAvailable( "Blue Sky Melody" ) and Inventory:GetType():ToString() == "Potion" and string.find( Inventory:GetName(), "Wind Serum" ) ~= nil and Inventory:GetCooldown() == 0 and Player:GetFlightTimeCurrent() &lt; 20000 then
+				
+				if string.find( Inventory:GetName(), "" ) ~= nil and TotalRecharge &gt;= 84000 and BestRecharge &lt; 84000 then
+					BestInventory = Inventory;
+					BestRecharge = 84000;
+				elseif string.find( Inventory:GetName(), "Lesser" ) ~= nil and TotalRecharge &gt;= 12000 and BestRecharge &lt; 12000 then
+					BestInventory = Inventory;
+					BestRecharge = 12000;
+				elseif string.find( Inventory:GetName(), "Greater" ) ~= nil and TotalRecharge &gt;= 36000 and BestRecharge &lt; 36000 then
+					BestInventory = Inventory;
+					BestRecharge = 36000;
+				elseif string.find( Inventory:GetName(), "Enhanced" ) ~= nil and TotalRecharge &gt;= 48000 and BestRecharge &lt; 48000 then
+					BestInventory = Inventory;
+					BestRecharge = 48000;
+				elseif string.find( Inventory:GetName(), "Fine" ) ~= nil and TotalRecharge &gt;= 60000 and BestRecharge &lt; 60000 then
+					BestInventory = Inventory;
+					BestRecharge = 60000;
+				elseif TotalRecharge &gt;= 24000 and BestRecharge &lt; 24000 then
+					BestInventory = Inventory;
+					BestRecharge = 24000;
+				end
+				
+			end
+
+		end
+		
+		-- Check if we have a positive match and see if the cooldown allows the use of it.
+		if BestInventory ~= nil then
+			PlayerInput:Inventory( BestInventory:GetName());
+			_iSerumTime = Time() + BestInventory:GetReuse();
+		end
+		
+	end 
+	
+	-- We have not executed any potion.
+	return true;
+	
+end
+
+function in_table( e, t )
+	if t ~= nil then
+		for _, v in pairs( t ) do
+			if ( v == e ) then
+				return true;
+			end
+		end
+	end
+	return false
+end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=97&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:28 GMT -->
+</html>

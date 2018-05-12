@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?p=669 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Basic Lua Knowledge - Page 2 - Nyerk</title>
+
+
+	<link rel="canonical" href="viewtopic74e9.html?t=9&amp;start=10">
+
+<!--
+	phpBB style name: we_universal
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      nextgen ( http://xeronix.org/ )
+-->
+
+
+<link href="styles/prosilver/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="assets/css/font-awesome.min5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/prosilver/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=25" rel="stylesheet">
+<![endif]-->
+
+
+<link href="ext/gfksx/ThanksForPosts/styles/prosilver/theme/thanks5d79.css?assets_version=25" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="./styles/we_universal/template/html5shiv.min.js"></script>
+<![endif]-->
+
+</head>
+<body id="phpbb" class="nojs notouch section-viewtopic ltr  logged-out">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div class="inventea-headerbar">
+		<nav class="inventea-wrapper inventea-userbar">
+			<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="icon fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+		
+														
+							<li>
+								<a href="index-2.html" role="menuitem">
+									<i class="icon fa fa-fw fa-home" aria-hidden="true"></i><span>Board index</span>
+								</a>
+							</li>		
+							
+							<li data-skip-responsive="true">
+								<a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">
+									<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+								</a>
+							</li>
+							
+													<li>
+								<a href="search.html" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+							
+														
+														
+								
+						
+							<li>
+								<a href="search33a7.html?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="search526f.html?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+	
+						
+							
+            																			<li>
+								<a href="memberlist4bfd.html?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+						            
+				                    </ul>
+    </div>
+</div>
+
+			
+			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+										<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp26c3.html?mode=login" title="Login" accesskey="x" role="menuitem"><i class="icon fa-fw fa-sign-in" aria-hidden="true"></i>Login</a></li>
+											<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp8319.html?mode=register" role="menuitem"><i class="icon fa-fw fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										
+										
+							</ul>
+		</nav>
+	</div>
+
+	<header class="inventea-header">
+			
+		<div class="inventea-dashboard" role="banner">
+						<nav role="navigation">
+	<div class="inventea-posts-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+																			<li><a href="search33a7.html?search_id=unanswered" role="menuitem">Unanswered topics</a></li>
+				<li><a href="search526f.html?search_id=active_topics" role="menuitem">Active topics</a></li>
+			
+					</ul>
+	</div>
+
+	<div class="inventea-forum-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+			<li><a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+			<li><a href="search.html" role="menuitem">Search</a></li>
+											<li><a href="memberlist4bfd.html?mode=team" role="menuitem">The team</a></li>			
+						
+					</ul>
+	</div>
+</nav>
+
+			<div class="inventea-sitename">
+				<h1><a href="index-2.html" title="Board index">Nyerk</a></h1>
+				<span>An Forum about Aion</span>
+			</div>
+		</div>
+			</header>
+
+	<div class="inventea-wrapper inventea-content" role="main">
+		
+		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+			
+									<li class="small-icon breadcrumbs">
+												<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index-2.html" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">Board index</span></a></span>
+														<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="3"><a href="viewforum4d6b.html?f=3" itemprop="url"><span itemprop="title">AionScript</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="7"><a href="viewforumd42b.html?f=7" itemprop="url"><span itemprop="title">Tutorials</span></a></span>
+																</li>
+					</ul>
+
+		
+		
+<h2 class="topic-title"><a href="viewtopic6672.html?f=7&amp;t=9&amp;start=10">Basic Lua Knowledge</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+
+
+
+<div class="action-bar bar-top">
+	
+			<a href="posting61a1.html?mode=reply&amp;f=7&amp;t=9" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic2dcd.html?f=7&amp;t=9&amp;start=10&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://www.nyerk.xyz/search.php">
+			<fieldset>
+				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…" />
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="search.html" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="9" />
+<input type="hidden" name="sf" value="msgonly" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			20 posts
+							<ul>
+			<li class="arrow previous"><a class="button button-icon-only" href="viewtopic7bc7.html?f=7&amp;t=9" rel="prev" role="button"><i class="icon fa-chevron-left fa-fw" aria-hidden="true"></i><span class="sr-only">Previous</span></a></li>
+				<li><a class="button" href="viewtopic7bc7.html?f=7&amp;t=9" role="button">1</a></li>
+			<li class="active"><span>2</span></li>
+	</ul>
+					</div>
+		</div>
+
+
+
+
+			<div id="p665" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile665">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlista129.html?mode=viewprofile&amp;u=153" class="username">izanami</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchb147.html?author_id=153&amp;sr=posts">7</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Feb 16, 2017 9:23 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="153"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/153/true.html">1 time</a></dd>
+    <dd class="profile-posts" data-user-receive-id="153"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content665">
+
+						<h3 class="first"><a href="#p665">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingf195.html?mode=quote&amp;f=7&amp;p=665" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic2bcd.html?p=665#p665" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlista129.html?mode=viewprofile&amp;u=153" class="username">izanami</a></strong> &raquo; </span>Fri Mar 31, 2017 5:27 pm
+			</p>
+			
+			
+			
+			<div class="content">Ty it is working great^^</div>
+
+			
+									
+						<div id='list_thanks665'>
+</div>
+<div id='div_post_reput665'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p666" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile666">
+			<dt class="has-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search9d4f.html?author_id=48&amp;sr=posts">159</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jan 10, 2017 6:39 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="48"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/48/true.html">34 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="48"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/48/false.html">112 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content666">
+
+						<h3 ><a href="#p666">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting6bc0.html?mode=quote&amp;f=7&amp;p=666" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic197a.html?p=666#p666" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a></strong> &raquo; </span>Fri Mar 31, 2017 5:28 pm
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlista129.html?mode=viewprofile&amp;u=153">izanami</a> wrote: <a href="viewtopic2bcd.html?p=665#p665" data-post-id="665" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Mar 31, 2017 5:27 pm</div></cite>
+Ty it is working great^^
+</div></blockquote>
+Yw <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+
+			
+									
+						<div id='list_thanks666'>
+</div>
+<div id='div_post_reput666'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p667" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile667">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlista129.html?mode=viewprofile&amp;u=153" class="username">izanami</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchb147.html?author_id=153&amp;sr=posts">7</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Feb 16, 2017 9:23 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="153"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/153/true.html">1 time</a></dd>
+    <dd class="profile-posts" data-user-receive-id="153"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content667">
+
+						<h3 ><a href="#p667">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingf6f6.html?mode=quote&amp;f=7&amp;p=667" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicf425.html?p=667#p667" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlista129.html?mode=viewprofile&amp;u=153" class="username">izanami</a></strong> &raquo; </span>Fri Mar 31, 2017 5:35 pm
+			</p>
+			
+			
+			
+			<div class="content">Another question XD<br>
+There is a mode to extract also wherehouse inventory, pet inventory?</div>
+
+			
+									
+						<div id='list_thanks667'>
+</div>
+<div id='div_post_reput667'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p668" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile668">
+			<dt class="has-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search9d4f.html?author_id=48&amp;sr=posts">159</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jan 10, 2017 6:39 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="48"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/48/true.html">34 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="48"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/48/false.html">112 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content668">
+
+						<h3 ><a href="#p668">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postinga72f.html?mode=quote&amp;f=7&amp;p=668" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic1cc0.html?p=668#p668" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a></strong> &raquo; </span>Fri Mar 31, 2017 5:41 pm
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlista129.html?mode=viewprofile&amp;u=153">izanami</a> wrote: <a href="viewtopicf425.html?p=667#p667" data-post-id="667" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Mar 31, 2017 5:35 pm</div></cite>
+Another question XD<br>
+There is a mode to extract also wherehouse inventory, pet inventory?
+</div></blockquote>
+
+Hard question for me... I guess if dll has their offsets, it may show them.. but not current yet</div>
+
+			
+									
+						<div id='list_thanks668'>
+</div>
+<div id='div_post_reput668'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p669" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile669">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlista129.html?mode=viewprofile&amp;u=153" class="username">izanami</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchb147.html?author_id=153&amp;sr=posts">7</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Feb 16, 2017 9:23 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="153"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/153/true.html">1 time</a></dd>
+    <dd class="profile-posts" data-user-receive-id="153"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content669">
+
+						<h3 ><a href="#p669">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting5ae9.html?mode=quote&amp;f=7&amp;p=669" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicd52c.html?p=669#p669" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlista129.html?mode=viewprofile&amp;u=153" class="username">izanami</a></strong> &raquo; </span>Fri Mar 31, 2017 6:06 pm
+			</p>
+			
+			
+			
+			<div class="content">It's ok, thanks for your help, i'm not too expert with lua language, i know a bit better c#  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> XD</div>
+
+			
+									
+						<div id='list_thanks669'>
+</div>
+<div id='div_post_reput669'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p943" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile943">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="avatar"><img class="avatar" src="download/file189c.gif?avatar=353_1503005081.gif" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search4973.html?author_id=353&amp;sr=posts">114</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Apr 20, 2017 5:05 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="353"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/true.html">31 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="353"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/false.html">13 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content943">
+
+						<h3 ><a href="#p943">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting69bc.html?mode=quote&amp;f=7&amp;p=943" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic00bf.html?p=943#p943" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a></strong> &raquo; </span>Sun Jun 11, 2017 6:58 am
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlistf8ff.html?mode=viewprofile&amp;u=51">locatelli</a> wrote: <a href="viewtopicfe50.html?p=574#p574" data-post-id="574" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Mar 21, 2017 10:13 pm</div></cite>
+I'm looking for a really deep lua guide, where I can learn all the returns calls and other advanced commands like string search and so on, if anyone can find a decent one - didn't find one yet sadly - feel free to write me
+</div></blockquote>
+
+I have programmed in many scripts in other games, like even in L2Walker and the powerful ZRanger (used in L@ again).<br>
+<br>
+I kinda find AS scripting very hard to understand or follow, it is like it has less structure than other scripts. I also specialized in C and C++ in the university, so I am pretty familiar with it and my final project was simulation (which is one of the tough things to do in programming, like AI)<br>
+<br>
+I can understand most existing scripts (understand their functionality and what do I need to change to make a different thing) and I have done a few myself, but I just find it very abstract, like the example below:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnLoad()
+    for Item in ListIterator( InventoryList:GetList() ) do
+        Write(""..Item:GetName().."  "..Item:GetAmount())
+    end
+end</code></pre></div>
+
+It looks familiar, like a C++ (simple basic example below)<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>for (i=0;i&lt;10;i++)
+{
+    if(inventory[i]=="Potion")
+        { use this or that
+        }
+}</code></pre></div>
+
+I hope you understand, this has structure and has pointers and lists, and you set your variables as single ones, or table of contents.<br>
+<br>
+I do not find these here, and there are other things like the double dots "..item:getname()" and what does "Item" stand for, is it a variable set by AS itself, do we have a pointer (like my example, "i"). I kinda find this pretty hard to follow, even for a IT graduate like me.</div>
+
+			
+													<div class="notice">
+					Last edited by <a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a> on Thu Jun 15, 2017 11:56 am, edited 1 time in total.
+									</div>
+			
+						<div id='list_thanks943'>
+</div>
+<div id='div_post_reput943'>
+</div>
+			<div id="sig943" class="signature">I play on NA Server Siel</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p947" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile947">
+			<dt class="has-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" class="avatar"><img class="avatar" src="download/filea2fd.jpg?avatar=2_1484075720.jpg" width="150" height="135" alt="User avatar" /></a>														</div>
+								<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>							</dt>
+
+						<dd class="profile-rank">Site Admin</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search51e1.html?author_id=2&amp;sr=posts">260</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Jan 07, 2017 9:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="2"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/true.html">27 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="2"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/false.html">388 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content947">
+
+						<h3 ><a href="#p947">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting297e.html?mode=quote&amp;f=7&amp;p=947" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic227a.html?p=947#p947" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a></strong> &raquo; </span>Sun Jun 11, 2017 2:48 pm
+			</p>
+			
+			
+			
+			<div class="content">Look inside the main folder of AionScript for a file named AionScript.pdf<br>
+<br>
+Item is instanced object of the Model Inventory.<br>
+For possible functions of the model look inside AionScript.pdf<br>
+If you are a graduated programmer read the manual dude really....<br>
+It tells you exactly InventoryList:GetList() returns an List of inventory objects.<br>
+<br>
+You will find all things in there.<br>
+<br>
+For your other question look inside Aionscript.lua what the function GetList actually does.</div>
+
+			
+									
+						<div id='list_thanks947'>
+</div>
+<div id='div_post_reput947'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p952" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile952">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="avatar"><img class="avatar" src="download/file189c.gif?avatar=353_1503005081.gif" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search4973.html?author_id=353&amp;sr=posts">114</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Apr 20, 2017 5:05 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="353"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/true.html">31 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="353"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/false.html">13 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content952">
+
+						<h3 ><a href="#p952">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting0426.html?mode=quote&amp;f=7&amp;p=952" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic1025.html?p=952#p952" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a></strong> &raquo; </span>Tue Jun 13, 2017 2:03 pm
+			</p>
+			
+			
+			
+			<div class="content">Yes I read the pdf but it simply has the names of functions and the names of preset variables. It doesn't say exactly how they are used.<br>
+<br>
+I am a computer programmer but I do not know all languages, I specialized in C/C++<br>
+<br>
+But you said that<br>
+
+<blockquote class="uncited"><div>InventoryList:GetList() returns an List of inventory objects</div></blockquote>
+
+returns into where, and how do I find the object I need, don't I need this to be some sort of an array that has all 90 slots so I can look into a specific inventory[ i ] slot where "i" is a pointer I use to change the cell?</div>
+
+			
+													<div class="notice">
+					Last edited by <a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a> on Thu Jun 15, 2017 11:56 am, edited 1 time in total.
+									</div>
+			
+						<div id='list_thanks952'>
+</div>
+<div id='div_post_reput952'>
+</div>
+			<div id="sig952" class="signature">I play on NA Server Siel</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p954" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile954">
+			<dt class="has-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" class="avatar"><img class="avatar" src="download/filea2fd.jpg?avatar=2_1484075720.jpg" width="150" height="135" alt="User avatar" /></a>														</div>
+								<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>							</dt>
+
+						<dd class="profile-rank">Site Admin</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search51e1.html?author_id=2&amp;sr=posts">260</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Jan 07, 2017 9:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="2"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/true.html">27 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="2"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/false.html">388 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content954">
+
+						<h3 ><a href="#p954">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting59b3.html?mode=quote&amp;f=7&amp;p=954" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic74e6.html?p=954#p954" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a></strong> &raquo; </span>Tue Jun 13, 2017 3:41 pm
+			</p>
+			
+			
+			
+			<div class="content">Nope, the C equivalent are linked lists, so you can't access it directly by defining the an key.<br>
+<a href="https://en.wikipedia.org/wiki/Linked_list" class="postlink">https://en.wikipedia.org/wiki/Linked_list</a><br>
+<a href="https://en.wikipedia.org/wiki/Doubly_linked_list" class="postlink">https://en.wikipedia.org/wiki/Doubly_linked_list</a><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>for Item in ListIterator( InventoryList:GetList() ) do ....</code></pre></div>
+would also work
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>InvList = InventoryList:GetList();
+for Item in ListIterator( InvList ) do ....</code></pre></div>
+or
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>InvList = InventoryList:GetList();
+MyInventory = ListIterator( InvList );
+for SingleItem in MyInventory do ....</code></pre></div>
+
+<blockquote class="uncited"><div>returns into where, and how do I find the object I need, don't I need this to be some sort of an array that has all 90 slots so I can look into a specific inventory slot where "i" is a pointer I use to change the cell?</div></blockquote>
+
+Just see how linked lists work.<br>
+You always have to iterate over all entries and you do exactly the same here.</div>
+
+			
+									
+						<div id='list_thanks954'>
+</div>
+<div id='div_post_reput954'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p961" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile961">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="avatar"><img class="avatar" src="download/file189c.gif?avatar=353_1503005081.gif" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search4973.html?author_id=353&amp;sr=posts">114</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Apr 20, 2017 5:05 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="353"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/true.html">31 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="353"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/false.html">13 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content961">
+
+						<h3 ><a href="#p961">Re: Basic Lua Knowledge</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting9cd1.html?mode=quote&amp;f=7&amp;p=961" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicf14d.html?p=961#p961" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a></strong> &raquo; </span>Thu Jun 15, 2017 11:58 am
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic74e6.html?p=954#p954" data-post-id="954" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Jun 13, 2017 3:41 pm</div></cite>
+Nope, the C equivalent are linked lists, so you can't access it directly by defining the an key.<br>
+<a href="https://en.wikipedia.org/wiki/Linked_list" class="postlink">https://en.wikipedia.org/wiki/Linked_list</a><br>
+<a href="https://en.wikipedia.org/wiki/Doubly_linked_list" class="postlink">https://en.wikipedia.org/wiki/Doubly_linked_list</a><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>for Item in ListIterator( InventoryList:GetList() ) do ....</code></pre></div>
+would also work
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>InvList = InventoryList:GetList();
+for Item in ListIterator( InvList ) do ....</code></pre></div>
+or
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>InvList = InventoryList:GetList();
+MyInventory = ListIterator( InvList );
+for SingleItem in MyInventory do ....</code></pre></div>
+
+<blockquote class="uncited"><div>returns into where, and how do I find the object I need, don't I need this to be some sort of an array that has all 90 slots so I can look into a specific inventory slot where "i" is a pointer I use to change the cell?</div></blockquote>
+
+Just see how linked lists work.<br>
+You always have to iterate over all entries and you do exactly the same here.
+</div></blockquote>
+
+Oh yes I am well aware of linked lists, floating in non serial way so you have to go through each cell from start so as to find the next one. Thanks for the input.<br>
+<br>
+I know I will never be good in lua since I kinda find it a little less structured than C/C++ that I am so used. But this clears things up.</div>
+
+			
+									
+						<div id='list_thanks961'>
+</div>
+<div id='div_post_reput961'>
+</div>
+			<div id="sig961" class="signature">I play on NA Server Siel</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+	
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="posting61a1.html?mode=reply&amp;f=7&amp;t=9" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+	
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic2dcd.html?f=7&amp;t=9&amp;start=10&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<form method="post" action="https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=9&amp;start=10">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed" />
+				<input type="submit" class="button2" name="sort" value="Go" />
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			20 posts
+							<ul>
+			<li class="arrow previous"><a class="button button-icon-only" href="viewtopic7bc7.html?f=7&amp;t=9" rel="prev" role="button"><i class="icon fa-chevron-left fa-fw" aria-hidden="true"></i><span class="sr-only">Previous</span></a></li>
+				<li><a class="button" href="viewtopic7bc7.html?f=7&amp;t=9" role="button">1</a></li>
+			<li class="active"><span>2</span></li>
+	</ul>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="viewforumd42b.html?f=7" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Tutorials”</span>
+		</a>
+	</p>
+	
+		<br /><br />
+	</div>
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 0 guests</p>
+	</div>
+
+				
+			</div>
+
+	<div class="inventea-footer-wrapper">
+		<div id="page-footer" class="inventea-footer" role="contentinfo">
+			<nav role="navigation">
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index-2.html" data-navbar-reference="index"><span>Board index</span></a></span>					</li>
+
+						<li class="small-icon" data-last-responsive="true"><a href="memberlist8733.html?mode=contactadmin" role="menuitem">Contact us</a></li>
+				
+		<li class="small-icon"><a href="ucp033a.html?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+				<li>All times are <span title="UTC">UTC</span></li>
+			</ul>
+</nav>
+
+			<footer class="inventea-credits">
+								Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited<br />
+								Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a> & <a href="http://xeronix.org/" title="phpBB styles and much more">nextgen</a>
+											</footer>
+		</div>
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+	<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="assets/javascript/core5d79.js?assets_version=25"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax5d79.js?assets_version=25"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?p=669 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:22 GMT -->
+</html>

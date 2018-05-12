@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=188&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Gunner</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Gunner</h2>
+		<p><a href="viewtopicf29c.html?f=6&amp;t=188">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=188</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Gunner</h3>
+				<div class="date">Posted: <strong>Thu Jun 29, 2017 10:01 am</strong></div>
+				<div class="author">by <strong>pawelgbw</strong></div>
+				<div class="content">This is a standalone script.<br>
+Settings AS: PlayerAid-&gt;AutoChain
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Entity = nil
+Weapon1H = nil
+Weapon1HCH = nil
+FlagWeaponChange = false
+
+
+function OnLoad()
+	   Write ("[Q] - use cannon")
+	   Write ("[E] - use revolver")
+	Register ("Set1HCHTrue", "Q")
+	Register ("Set1HCHFalse", "E")
+
+	CheckRealWeapon()
+	Weapon1HCH = Weapon1H
+end
+
+
+function OnRun()
+	Entity=EntityList:GetEntity(Player:GetTargetID())
+	if (Entity==nil or Entity:IsObject()==true or Entity:IsDead()==true or Entity:IsFriendly()==true or Entity:IsGatherable()==true) then
+		return
+	end
+
+	--Shock State
+	if CheckSkill_ACT_CDR("Seizure Projectile") then
+		PlayerInput:Console("/skill Seizure Projectile")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Escape") then
+		PlayerInput:Console ("/skill Escape")
+		return
+	end
+	if CheckSkill_ACT_CDR("Remove Shock") then
+		PlayerInput:Console("/skill Remove Shock")
+		return
+	end
+    -- Evasion / Resistance
+    if CheckSkill_ACT_CDR("Aimed Weakpoint Shot") then
+    	PlayerInput:Console("/skill Aimed Weakpoint Shot")
+    	return
+    end
+	-- Aether's Hold
+	if CheckSkill_ACT_CDR("Torment Cannon Ball") then
+		if Weapon1H == true then
+			PlayerInput:Console("/skill Torment Cannon Ball")
+			return
+		end
+		Weapon1HCH = true
+		return
+	end
+
+	CheckRealWeapon()
+	if Weapon1H ~= Weapon1HCH then
+		if FlagWeaponChange == false then
+			PlayerInput:Console ("/changeweaponset")
+			FlagWeaponChange = true
+			if CheckSkill_ACT_CDR("Projectile of Silence") then
+				PlayerInput:Console("/skill Projectile of Silence")
+				return
+			end
+			if CheckSkill_ACT_CDR("Gift of Magic Power") then
+				PlayerInput:Console("/skill Gift of Magic Power")
+				return
+			end
+			if CheckSkill_ACT_CDR("Retreal Shot") then
+				PlayerInput:Console("/skill Retreal Shot")
+				return
+			end
+		end
+		return
+	end
+	FlagWeaponChange = false
+
+	if Weapon1H == true then
+		Weapon1H_Attack()
+	else
+		Weapon2H_Attack()
+	end
+end
+
+function Weapon1H_Attack()
+	if Player:GetManaCurrent()&lt;404 then
+		Weapon1HCH = false
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Concentrated Cannon Shot") then
+		PlayerInput:Console("/skill Concentrated Cannon Shot")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Snow Projectile") then
+		PlayerInput:Console("/skill Snow Projectile")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Frost Cannon") then
+		PlayerInput:Console("/skill Frost Cannon")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Fire Cannon") then
+		PlayerInput:Console("/skill Fire Cannon")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Spirit Cannon") then
+		PlayerInput:Console("/skill Spirit Cannon")
+		return
+	end
+	Weapon1HCH = false
+end
+
+function Weapon2H_Attack()
+	if CheckSkill_ACT_CDR("Heavy Projectile") then
+		PlayerInput:Console ("/skill Heavy Projectile")
+		return
+	end
+	if CheckSkill_ACT_CDR("Repeated Rapid Fire") then
+		PlayerInput:Console ("/skill Repeated Rapid Fire")
+		return
+	end
+	if CheckSkill_ACT_CDR("Repeated Volley") then
+		PlayerInput:Console ("/skill Repeated Volley")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Rapid Soul Fire") then
+		PlayerInput:Console("/skill Rapid Soul Fire")
+		return
+	end
+	if CheckSkill_ACT_CDR("Soul Volley") then
+		PlayerInput:Console("/skill Soul Volley")
+		return
+	end
+	if CheckSkill_ACT_CDR("Seal Shot") then
+		PlayerInput:Console("/skill Seal Shot")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Weakpoint Shot") then
+		PlayerInput:Console("/skill Weakpoint Shot")
+		return
+	end
+	if CheckSkill_ACT_CDR("Debilitating Volley") then
+		PlayerInput:Console("/skill Debilitating Volley")
+		return
+	end
+
+	if Player:GetMana() &lt; 50 and CheckSkill_ACT_CDR("Soul Shot") then
+		PlayerInput:Console("/skill Soul Shot")
+		return
+	end
+	if CheckSkill_ACT_CDR("Pistol Shot") then
+		PlayerInput:Console("/skill Pistol Shot")
+		return
+	end
+
+	if CheckSkill_ACT_CDR("Wild Magic Projectile") then
+		PlayerInput:Console("/skill Wild Magic Projectile")
+		return
+	end
+	if CheckSkill_ACT_CDR("Restoration Volley") then
+		PlayerInput: Console("/skill Restoration Volley")
+		return
+	end
+	if CheckSkill_ACT_CDR("Lifeline Penetration") then
+		PlayerInput:Console("/skill Lifeline Penetration")
+		return
+	end
+	if CheckSkill_ACT_CDR("Aimed Wing Shot") then
+		PlayerInput:Console("/skill Aimed Wing Shot")
+		return
+	end
+	if CheckSkill_ACT_CDR("Soulsucker Shot") then
+		PlayerInput:Console("/skill Soulsucker Shot")
+		return
+	end
+	if CheckSkill_ACT_CDR("Encircling Bomb") then
+		PlayerInput:Console("/skill Encircling Bomb")
+		return
+	end
+	if CheckSkill_ACT_CDR("Disrupter Shot") then
+		PlayerInput:Console("/skill Disrupter Shot")
+		return
+	end
+	if CheckSkill_ACT_CDR("Sighting Shot") then
+		PlayerInput:Console("/skill Sighting Shot")
+		return
+	end
+	if CheckSkill_ACT_CDR("Insert Magic Projectile") then
+		PlayerInput:Console("/skill Insert Magic Projectile")
+		return
+	end
+	if CheckSkill_ACT_CDR("Load Magic Projectile") then
+		PlayerInput:Console("/skill Load Magic Projectile")
+		return
+	end
+	Weapon1HCH = true
+end
+
+
+function CheckRealWeapon()
+	Weapon1H = false
+	for Inventory in ListIterator( InventoryList:GetList()) do
+		if Inventory:GetType():ToString() == "Weapon2H" and Inventory:GetSlot():ToString() == "3" then
+			Weapon1H = true
+			break
+		end
+	end
+end
+
+function CheckSkill_ACT_CDR (Name)
+	local Ability = AbilityList:GetAbility( Name );
+	if Ability ~= nil and Ability:GetActivated()==true and Ability:GetCooldown()==0 then
+		return true
+	end
+	return false
+end
+
+function CheckSkill_ACT (Name)
+	local Ability = AbilityList:GetAbility( Name );
+	if Ability ~= nil  and Ability:GetActivated()==true then
+		return true
+	end
+	return false
+end
+
+function Set1HCHTrue()
+	Weapon1HCH = true
+end
+
+function Set1HCHFalse()
+	Weapon1HCH = false
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=188&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:27 GMT -->
+</html>

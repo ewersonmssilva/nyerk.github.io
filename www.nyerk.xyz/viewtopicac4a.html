@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=69&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Death Paths Jimmys Grinder Framework</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Death Paths Jimmys Grinder Framework</h2>
+		<p><a href="viewtopic9258.html?f=8&amp;t=69">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=69</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>4</strong></div>
+					<div class="post">
+				<h3>Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Feb 28, 2017 3:21 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">Hello nyerk community,<br>
+<br>
+Jimmy's Grinder Framework is a modified version of the official grinder framework that supports death way points. How does it work? well basically it reads the node names when it dies and only runs the ones named "Death" with a capital D, and then looks for the "Start" named node to begin the hunting path again.<br>
+<br>
+How to use it:<br>
+1. Download the Newest AionScript =&gt; <a href="viewforum31e6.html?f=4" class="postlink">viewforum.php?f=4</a> &lt;=<br>
+2. Extract AionScript<br>
+3. Download Jimmys Grinder Framework from the attachment below.<br>
+4. Extract it in your <strong class="text-strong">Aionscript/Scripting Folder</strong><br>
+    Your Aionscript/Scripting Folder now Looks like this<br>
+    <a href="http://www.directupload.net/" class="postlink"><img src="../fs5.directupload.net/images/170228/3e22zm3r.png" class="postimage" alt="Image"></a><br>
+<br>
+5. Start AionScript.<br>
+6. Then select JimmysGrinderFramework.<br>
+<a href="http://www.directupload.net/file/d/4646/7bomzpxl_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170228/temp/7bomzpxl.png" class="postimage" alt="Image"></a><br>
+<br>
+7. Create your Waypoints<br>
+<a href="http://www.directupload.net/file/d/4646/2ni24ujt_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170228/temp/2ni24ujt.png" class="postimage" alt="Image"></a><br>
+<br>
+8. Do not Forget to Put your Class Scripts u made from <strong class="text-strong"><span style="text-decoration: underline">AS\Scripting\OfficialGrinderFramework\Classes</span></strong> into <strong class="text-strong"><span style="text-decoration: underline">AS\Scripting\JimmysGrinderFramework\Classes</span></strong> Folder.<br>
+<br>
+How do you use Jimmys Grinder Framework correctly? <br>
+Once you have installed it and ready to run it click create and begin by recording or adding nodes from the obelisk to the hunting paths, Once done Rename the node names to "Death" with a capitalized D. Then Create your hunting path but name the first node of your hunting path "Start" with a capitalized S. the rest of the nodes can be named whatever you want them to be named but just don't name them Death or Start.<br>
+<br>
+Example Picture:<br>
+<a href="http://www.directupload.net/file/d/4646/388vs97g_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170228/temp/388vs97g.png" class="postimage" alt="Image"></a><br>
+<br>
+Example code:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>&lt;TravelList Reverse="False"&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1795.12&lt;/X&gt;
+    &lt;Y&gt;1974.47&lt;/Y&gt;
+    &lt;Z&gt;197.80&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1780.56&lt;/X&gt;
+    &lt;Y&gt;1981.39&lt;/Y&gt;
+    &lt;Z&gt;197.80&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1775.75&lt;/X&gt;
+    &lt;Y&gt;1983.70&lt;/Y&gt;
+    &lt;Z&gt;198.18&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1767.96&lt;/X&gt;
+    &lt;Y&gt;1987.57&lt;/Y&gt;
+    &lt;Z&gt;195.40&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1747.17&lt;/X&gt;
+    &lt;Y&gt;2000.32&lt;/Y&gt;
+    &lt;Z&gt;195.00&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1737.71&lt;/X&gt;
+    &lt;Y&gt;2007.66&lt;/Y&gt;
+    &lt;Z&gt;195.00&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1728.32&lt;/X&gt;
+    &lt;Y&gt;2020.72&lt;/Y&gt;
+    &lt;Z&gt;196.63&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1711.29&lt;/X&gt;
+    &lt;Y&gt;2031.41&lt;/Y&gt;
+    &lt;Z&gt;197.80&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1682.02&lt;/X&gt;
+    &lt;Y&gt;2045.28&lt;/Y&gt;
+    &lt;Z&gt;199.04&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1648.04&lt;/X&gt;
+    &lt;Y&gt;2061.43&lt;/Y&gt;
+    &lt;Z&gt;191.71&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Death&lt;/Name&gt;
+    &lt;X&gt;1612.44&lt;/X&gt;
+    &lt;Y&gt;2078.55&lt;/Y&gt;
+    &lt;Z&gt;184.25&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Move&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;Start&lt;/Name&gt;
+    &lt;X&gt;1612.44&lt;/X&gt;
+    &lt;Y&gt;2078.55&lt;/Y&gt;
+    &lt;Z&gt;184.25&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1612.94&lt;/X&gt;
+    &lt;Y&gt;2083.53&lt;/Y&gt;
+    &lt;Z&gt;184.40&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1613.47&lt;/X&gt;
+    &lt;Y&gt;2088.81&lt;/Y&gt;
+    &lt;Z&gt;184.91&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1613.70&lt;/X&gt;
+    &lt;Y&gt;2094.58&lt;/Y&gt;
+    &lt;Z&gt;185.18&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1612.63&lt;/X&gt;
+    &lt;Y&gt;2099.75&lt;/Y&gt;
+    &lt;Z&gt;184.72&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1610.98&lt;/X&gt;
+    &lt;Y&gt;2105.19&lt;/Y&gt;
+    &lt;Z&gt;184.24&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1608.69&lt;/X&gt;
+    &lt;Y&gt;2110.05&lt;/Y&gt;
+    &lt;Z&gt;183.67&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1605.50&lt;/X&gt;
+    &lt;Y&gt;2114.70&lt;/Y&gt;
+    &lt;Z&gt;183.16&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1600.71&lt;/X&gt;
+    &lt;Y&gt;2117.03&lt;/Y&gt;
+    &lt;Z&gt;182.92&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1595.52&lt;/X&gt;
+    &lt;Y&gt;2117.14&lt;/Y&gt;
+    &lt;Z&gt;182.84&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1589.99&lt;/X&gt;
+    &lt;Y&gt;2115.48&lt;/Y&gt;
+    &lt;Z&gt;182.47&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1585.16&lt;/X&gt;
+    &lt;Y&gt;2113.35&lt;/Y&gt;
+    &lt;Z&gt;181.78&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1579.94&lt;/X&gt;
+    &lt;Y&gt;2111.04&lt;/Y&gt;
+    &lt;Z&gt;181.31&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1574.59&lt;/X&gt;
+    &lt;Y&gt;2108.46&lt;/Y&gt;
+    &lt;Z&gt;181.13&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1569.84&lt;/X&gt;
+    &lt;Y&gt;2103.19&lt;/Y&gt;
+    &lt;Z&gt;181.13&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1569.02&lt;/X&gt;
+    &lt;Y&gt;2096.64&lt;/Y&gt;
+    &lt;Z&gt;180.85&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1570.19&lt;/X&gt;
+    &lt;Y&gt;2089.71&lt;/Y&gt;
+    &lt;Z&gt;180.76&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1574.79&lt;/X&gt;
+    &lt;Y&gt;2085.10&lt;/Y&gt;
+    &lt;Z&gt;181.22&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1580.71&lt;/X&gt;
+    &lt;Y&gt;2081.01&lt;/Y&gt;
+    &lt;Z&gt;182.23&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1585.88&lt;/X&gt;
+    &lt;Y&gt;2076.82&lt;/Y&gt;
+    &lt;Z&gt;183.19&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1591.36&lt;/X&gt;
+    &lt;Y&gt;2072.38&lt;/Y&gt;
+    &lt;Z&gt;183.41&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1597.76&lt;/X&gt;
+    &lt;Y&gt;2070.98&lt;/Y&gt;
+    &lt;Z&gt;183.55&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1604.17&lt;/X&gt;
+    &lt;Y&gt;2072.47&lt;/Y&gt;
+    &lt;Z&gt;183.98&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1609.63&lt;/X&gt;
+    &lt;Y&gt;2076.90&lt;/Y&gt;
+    &lt;Z&gt;184.10&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+  &lt;Travel&gt;
+    &lt;Name&gt;No name&lt;/Name&gt;
+    &lt;X&gt;1613.03&lt;/X&gt;
+    &lt;Y&gt;2082.44&lt;/Y&gt;
+    &lt;Z&gt;184.34&lt;/Z&gt;
+    &lt;Flying&gt;False&lt;/Flying&gt;
+    &lt;Type&gt;Action&lt;/Type&gt;
+    &lt;Param&gt;
+    &lt;/Param&gt;
+  &lt;/Travel&gt;
+&lt;/TravelList&gt;</code></pre></div>
+
+Bugs u have to deal with it;<br>
+It does a break after the last coords of your path for some seconds, but ist better then nothing ;D<br>
+<br>
+So I hope i can Help some People with this little Tutorial ;D<br>
+<br>
+greetz<br>
+<br>
+Credits flying out to Jimmy</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Feb 28, 2017 4:45 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Thank you very much for your detailed guide with pictures.<br>
+Really appreciated.<br>
+<br>
+I have to add a thanks function to the forum. <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Mon Mar 06, 2017 11:08 pm</strong></div>
+				<div class="author">by <strong>Rorret</strong></div>
+				<div class="content">Thank you very much &lt;3<br>
+Is there a way to make the script ignore all mobs on the "death path" except the ones it's attacked by? Or to ignore a special kind of mob type?<br>
+Ty in advance</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Mar 07, 2017 1:56 am</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist397d.html?mode=viewprofile&amp;u=195">Rorret</a> wrote: <a href="viewtopic834e.html?p=329#p329" data-post-id="329" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Mar 06, 2017 11:08 pm</div></cite>
+Thank you very much &lt;3<br>
+Is there a way to make the script ignore all mobs on the "death path" except the ones it's attacked by? Or to ignore a special kind of mob type?<br>
+Ty in advance
+</div></blockquote>
+
+Your Death Path are all &lt;Type&gt;Move&lt;/Type&gt; or maybe they are &lt;Type&gt;Aktion&lt;/Type&gt;? And atm there is no Option to Ignore Mobs.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Mar 07, 2017 8:41 am</strong></div>
+				<div class="author">by <strong>Rorret</strong></div>
+				<div class="content">I already tried to change the death nodes to &lt;Type&gt;Move&lt;/Type&gt; but then it just waits on the obelisk until it finally writes "Moving to Next Node" in Manager and is trying to move directly to the start node. But there are walls in between.<br>
+If I don't change the nodes to &lt;Type&gt;Move&lt;/Type&gt; it is trying to attack the marchutan teleport statue that is next to the obelisk in nosra but ofc it can't.<br>
+Was trying to find the problem myself for hours yesterday but because I don't have real programming skills I wasn't really successful.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Mar 07, 2017 10:28 am</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">I will take a look later. Send me pls your waypoints. My Bots dont have any Problems like this.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 12:23 pm</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content">i try to use this grinder framework but when i push enable my character stay afk dont make anything .  I use bard .</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Thu Mar 09, 2017 2:24 am</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopicc3ba.html?p=372#p372" data-post-id="372" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 08, 2017 12:23 pm</div></cite>
+i try to use this grinder framework but when i push enable my character stay afk dont make anything .  I use bard .
+</div></blockquote>
+Check ur Bard Settings or your Way Points. Im using Bard too and i dont have any Problems. My Problems are only the Bosses in some Areas xD. Its bad that AS dont have any MobIgnoreBlacklist.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Thu Mar 09, 2017 8:37 am</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopic42a9.html?p=388#p388" data-post-id="388" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Mar 09, 2017 2:24 am</div></cite>
+<blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopicc3ba.html?p=372#p372" data-post-id="372" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 08, 2017 12:23 pm</div></cite>
+i try to use this grinder framework but when i push enable my character stay afk dont make anything .  I use bard .
+</div></blockquote>
+Check ur Bard Settings or your Way Points. Im using Bard too and i dont have any Problems. My Problems are only the Bosses in some Areas xD. Its bad that AS dont have any MobIgnoreBlacklist.
+</div></blockquote>
+
+i check 10xtime all settings and are fine but my char stay afk</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Death Paths Jimmys Grinder Framework</h3>
+				<div class="date">Posted: <strong>Thu Mar 09, 2017 6:03 pm</strong></div>
+				<div class="author">by <strong>metsez17</strong></div>
+				<div class="content">Thank you.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>4</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=69&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:07 GMT -->
+</html>

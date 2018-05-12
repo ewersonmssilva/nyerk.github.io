@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=90&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; i have a pet , how do  summon it in script?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>i have a pet , how do  summon it in script?</h2>
+		<p><a href="viewtopic6e68.html?f=6&amp;t=90">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=90</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>i have a pet , how do  summon it in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 5:08 pm</strong></div>
+				<div class="author">by <strong>ll8082</strong></div>
+				<div class="content">i have a pet , but  when my char die   go back , how do  summon itin script?  have this function?  i look for dialog inspector , but  not find  .  and   i dont know   how do use Dialog inspector.<br>
+<br>
+i find : DialogList:GetDialog( "support_shortcut_dialog/skill_cond_1" )   <br>
+  so   can use DialogList:GetDialog( "support_shortcut_dialog/skill_cond_1" ): Click();</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i have a pet , how do  summon itin script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 10:28 pm</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	while DialogList:GetDialog( "support_shortcut_dialog/skill_cond_1" ):IsVisible() do
+		if PetBuff ~= 1 then
+		DialogList:GetDialog( "support_shortcut_dialog/skill_cond_1" ):Click();
+		PetBuff = 1;
+		
+		elseif PetBuff == 1 then
+		PetBuff = 0;
+		
+		end
+		end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i have a pet , how do  summon itin script?</h3>
+				<div class="date">Posted: <strong>Thu Mar 09, 2017 2:08 am</strong></div>
+				<div class="author">by <strong>ll8082</strong></div>
+				<div class="content">ah thangk    but  this dialog is error!     not have summon pet function   no in  dialog ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i have a pet , how do  summon it in script?</h3>
+				<div class="date">Posted: <strong>Thu Mar 09, 2017 3:16 am</strong></div>
+				<div class="author">by <strong>ll8082</strong></div>
+				<div class="content">i hava  question,   i see  Aionscript .pdf ,       i find  a lot funtion is read , what have different?  <br>
+<br>
+GetAddress  ;  SetLegion; Click;  SetAttackRange;    ......    not safe ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: i have a pet , how do  summon it in script?</h3>
+				<div class="date">Posted: <strong>Fri Mar 10, 2017 10:19 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Just read the pdf from top to bottom ....<br>
+
+<blockquote class="uncited"><div>These classes include everything that is required to interact with game. Some of these depend on additional<br>
+classes, which can be found in the Miscellaneous Classes Reference. There are some additional notes about the<br>
+game classes and the way they have been listed in the following sections. All the methods are listed in either black<br>
+or red (where you should avoid using those in red, if you can), but public variables are shown in green! Methods in<br>
+blue are deprecated and cannot be used anymore. Parameters shown in purple are optional and are not required.</div></blockquote></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=90&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:16 GMT -->
+</html>

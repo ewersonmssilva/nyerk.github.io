@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=115&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; addwaypoints.lua</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>addwaypoints.lua</h2>
+		<p><a href="viewtopic4284.html?f=8&amp;t=115">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=115</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>addwaypoints.lua</h3>
+				<div class="date">Posted: <strong>Sun Mar 19, 2017 7:45 am</strong></div>
+				<div class="author">by <strong>ugel</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Script for adding waypoints manually via hotkeys
+
+function OnLoad()
+
+	-- User Preferences
+	reversePath = "True";
+	theFileName = "Path 1.xml";
+	_createFile = "NumPad1";
+	_closeFile = "NumPad3";
+	_move = "NumPad4";
+	_action = "NumPad6";
+	_rest = "NumPad5";
+	
+	-- Write the hotkeys to the window
+	Write("HOTKEYS\nStart File = Numpad 1\nClose File = Numpad 3\nMove = NumPad 4\nRest = Numpad 5\nAction = Numpad 6");
+	
+	
+	-- Register the hotkeys
+	Register( "CreateFile", _createFile );
+	Register( "CloseFile", _closeFile );
+	Register( "WriteMove", _move );
+	Register( "WriteAction", _action );
+	Register( "WriteRest", _rest );
+	
+	-- Do not change unless continuing a previous path
+	moveCounter = 0;
+	actionCounter = 0;
+	restCounter = 0;
+end
+
+ function WriteMove()
+	if fileStarted then	
+		-- add 1 to the counter for the node number
+		moveCounter = moveCounter + 1;
+	 
+		-- check if the player is flying and set accordingly
+		if Player:IsFlying() then
+			amFlying = "True";
+		else
+			amFlying = "False";
+		end
+		
+		-- Write out the node information
+		file:write("   &lt;Travel&gt;\n" );
+		file:write("    &lt;Name&gt;Move " .. moveCounter .. "&lt;/Name&gt;\n" );
+		file:write("    &lt;X&gt;" .. Player:GetPosition().X .."&lt;/X&gt;\n" );
+		file:write("    &lt;Y&gt;" .. Player:GetPosition().Y .."&lt;/Y&gt;\n" );
+		file:write("    &lt;Z&gt;" .. Player:GetPosition().Z .."&lt;/Z&gt;\n" );
+		file:write("    &lt;Flying&gt;" .. amFlying .. "&lt;/Flying&gt;\n" );
+		file:write("    &lt;Type&gt;Move&lt;/Type&gt;\n" );
+		file:write("    &lt;Param&gt;\n" );
+		file:write("    &lt;/Param&gt;\n" );
+		file:write("  &lt;/Travel&gt;\n" );
+		
+		Write("Move " .. moveCounter .. " added.");
+	end
+	
+ end
+ 
+ function WriteAction()
+ 	if fileStarted then	
+
+		-- add 1 to the counter for the node number
+		actionCounter = actionCounter + 1;
+
+		-- check if the player is flying and set accordingly
+		if Player:IsFlying() then
+			amFlying = "True";
+		else
+			amFlying = "False";
+		end
+		
+		-- Write out the node information
+		file:write("   &lt;Travel&gt;\n" );
+		file:write("    &lt;Name&gt;Action " .. actionCounter .. "&lt;/Name&gt;\n" );
+		file:write("    &lt;X&gt;" .. Player:GetPosition().X .."&lt;/X&gt;\n" );
+		file:write("    &lt;Y&gt;" .. Player:GetPosition().Y .."&lt;/Y&gt;\n" );
+		file:write("    &lt;Z&gt;" .. Player:GetPosition().Z .."&lt;/Z&gt;\n" );
+		file:write("    &lt;Flying&gt;" .. amFlying .. "&lt;/Flying&gt;\n" );
+		file:write("    &lt;Type&gt;Action&lt;/Type&gt;\n" );
+		file:write("    &lt;Param&gt;\n" );
+		file:write("    &lt;/Param&gt;\n" );
+		file:write("  &lt;/Travel&gt;\n" );
+		
+		Write("Action " .. actionCounter .. " added.");
+
+	end
+ end
+ 
+  function WriteRest()
+  	if fileStarted then	
+
+		-- add 1 to the counter for the node number
+		restCounter = restCounter + 1;
+
+		-- check if the player is flying and set accordingly
+		if Player:IsFlying() then
+			amFlying = "True";
+		else
+			amFlying = "False";
+		end
+		
+		-- only write a rest node if not flying
+		if amFlying == "False" then
+			-- Write out the node information
+			file:write("   &lt;Travel&gt;\n" );
+			file:write("    &lt;Name&gt;Rest " .. restCounter .. "&lt;/Name&gt;\n" );
+			file:write("    &lt;X&gt;" .. Player:GetPosition().X .."&lt;/X&gt;\n" );
+			file:write("    &lt;Y&gt;" .. Player:GetPosition().Y .."&lt;/Y&gt;\n" );
+			file:write("    &lt;Z&gt;" .. Player:GetPosition().Z .."&lt;/Z&gt;\n" );
+			file:write("    &lt;Flying&gt;" .. amFlying .. "&lt;/Flying&gt;\n" );
+			file:write("    &lt;Type&gt;Rest&lt;/Type&gt;\n" );
+			file:write("    &lt;Param&gt;\n" );
+			file:write("    &lt;/Param&gt;\n" );
+			file:write("  &lt;/Travel&gt;\n" );
+			
+			Write("Rest " .. restCounter .. " added.");
+		end
+	end
+ end
+
+function CreateFile()
+	if not filestarted then
+		fileStarted = true;
+		
+		file = io.open( theFileName, "w");
+		
+		file:write("&lt;TravelList Reverse=\"" .. reversePath .. "\"&gt;\n");
+		
+		Write("File " .. theFileName .. " started.");
+	end
+
+end
+
+function CloseFile()
+	if fileStarted then
+		file:write("&lt;/TravelList&gt;");
+		file:close();
+		Write("File Closed");
+
+	end
+	Close();
+end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=115&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:12 GMT -->
+</html>

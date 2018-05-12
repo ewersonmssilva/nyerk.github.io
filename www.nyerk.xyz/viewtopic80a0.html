@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=196&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Chanter.lua</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Chanter.lua</h2>
+		<p><a href="viewtopic8f1b.html?f=6&amp;t=196">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=196</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Chanter.lua</h3>
+				<div class="date">Posted: <strong>Wed Jul 19, 2017 11:34 am</strong></div>
+				<div class="author">by <strong>amad</strong></div>
+				<div class="content">Hello i'm looking for a working chanter.lua for EU servers,atm i'm using this one but i have problems with 2k dp's and blessing of wind,anyone can share a good lua or tell me what is wrong in mine/how i can improve it 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- (Private Function) Check required healing for the entity.
+--
+-- @param	Entity		Entity to check.
+-- @param	IsPriority	Indicates only priority healing to be executed.
+-- @return	bool
+
+function _Heal( Entity, IsPriority )
+	
+	-- Retrieve the rechargeable health.
+	local HealthRecharge = Entity:GetHealthMaximum() - Entity:GetHealthMaximum();
+	
+	-- Retrieve the state.
+	local EntityState = Entity:GetState();
+	
+	-- Heal 1: Recovery Spell
+	if Helper:CheckAvailable( "Recovery Magic" ) and (( IsPriority and HealthRecharge &gt;= 2526 ) or ( not IsPriority and Entity:GetHealth() &lt; 60 )) then
+		Helper:CheckExecute( "Recovery Magic", Entity );
+		return false;
+	end
+
+	-- Heal 2: Stamina Recovery
+	if Entity:GetID() == Player:GetID() and Helper:CheckAvailable( "Stamina Restoration" ) and (( IsPriority and Entity:GetHealth() &lt; 40 ) or ( not IsPriority and Entity:GetHealth() &lt; 50 )) then
+		Helper:CheckExecute( "Stamina Restoration" );
+		return false;
+	end
+
+	-- Heal 3: Healing Burst
+	if Helper:CheckAvailable( "Healing Burst" ) and (( IsPriority and Entity:GetHealth() &lt; 40 ) or ( not IsPriority and Entity:GetHealth() &lt; 50 )) then
+		Helper:CheckExecute( "Healing Burst", Entity );
+		return false;
+	end
+	
+	-- Heal 4: Healing Light
+	if EntityState:GetState( Helper:CheckName( "Recovery Magic" )) == nil and Helper:CheckAvailable( "Healing Light" ) and (( IsPriority and Entity:GetHealth() &lt; 50 ) or ( not IsPriority and Entity:GetHealth() &lt; 60 )) then
+		Helper:CheckExecute( "Healing Light", Entity );
+		return false;
+	end
+	
+end
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned )
+
+	
+	-- Checking and using Scrolls &amp; Foods
+	-- self:CheckCritFood();
+	-- self:CheckAttackFood();
+	self:CheckNaturalHeal();
+	self:CheckAttackScroll();
+	self:CheckRunScroll();
+	
+	-- Prepare the attack timer when the target is stunned to determine when to use Soul Crush.
+	if Stunned and self.AttackTimer == nil then
+		self.AttackTimer = Time() + 750;
+	elseif not Stunned then
+		self.AttackTimer = nil;
+	end
+	
+	--
+	-- Binding Word (Physical Charged Attack)
+	--
+	
+	--------------------------------------------------
+	--                H E A L I N G                 --
+	--------------------------------------------------
+	
+	self:_Heal( Player, true );
+	
+	--------------------------------------------------
+	--         C H A I N   A T T A C K (S)          --
+	--------------------------------------------------
+
+	-- Chain Attack 1: Remove Shock
+	if not Stunned and Helper:CheckAvailable( "Backshock" ) and ( not Helper:CheckAvailable( "Retribution" ) or Range &lt;= 10 ) then
+		Helper:CheckExecute( "Backshock" );
+		return false;
+	elseif not Stunned and Helper:CheckAvailable( "Retribution" ) then
+		Helper:CheckExecute( "Retribution" );
+		return false;
+	elseif Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+	end
+	
+	-- Chain Attack 2: Meteor Strike
+	if Helper:CheckAvailable( "Pentacle Shock" ) then
+		Helper:CheckExecute( "Pentacle Shock" );
+		return false;
+	elseif Helper:CheckAvailable( "Incandescent Blow" ) then
+		Helper:CheckExecute( "Incandescent Blow" );
+		return false;
+	end
+	
+	-- Chain Attack 4 Part I: Hallowed Strike
+	if Helper:CheckAvailable( "Booming Smash" ) then
+		Helper:CheckExecute( "Booming Smash" );
+		return false;
+	elseif Helper:CheckAvailable( "Booming Assault" ) then
+		Helper:CheckExecute( "Booming Assault" );
+		return false;
+	end
+	
+	-- Chain Attack 3: Infernal Blaze (Parrying Strike, if available, is preferred).
+	if not Stunned and Helper:CheckAvailable( "Parrying Strike" ) and Helper:CheckAvailable( "Infernal Blaze" ) then
+		Helper:CheckExecute( "Parrying Strike" );
+		return false;
+	elseif not Stunned and Helper:CheckAvailable( "Infernal Blaze" ) then
+		Helper:CheckExecute( "Infernal Blaze" );
+		return false;
+	end
+	
+	-- Chain Attack 4 Part II: Hallowed Strike
+	if Helper:CheckAvailable( "Booming Strike" ) then
+		Helper:CheckExecute( "Booming Strike" );
+		return false;
+	end
+	
+	--------------------------------------------------
+	--   C O N D I T I O N A L   A T T A C K (S)    --
+	--------------------------------------------------
+		
+	-- Conditional Attack 1: Seismic Crash
+	if Helper:CheckAvailable( "Seismic Crash" ) then
+		Helper:CheckExecute( "Seismic Crash" );
+		return false;
+	end
+	
+	-- Conditional Attack 2: Resonance Haze
+	if Helper:CheckAvailable( "Resonance Attack" ) then
+		Helper:CheckExecute( "Resonance Attack" );
+		return false;
+	end
+	
+	-- Conditional Attack 3: Soul Lock
+	if Helper:CheckAvailable( "Soul Lock" ) then
+		Helper:CheckExecute( "Soul Lock" );
+		return false;
+	end	
+	
+	-- Conditional Attack 4: Parrying Strike
+	if not Stunned and Helper:CheckAvailable( "Parrying Strike" ) then
+		Helper:CheckExecute( "Parrying Strike" );
+		return false;
+	end
+	
+	-- Conditional Attack 5: Soul Crush
+	if self.AttackTimer ~= nil and self.AttackTimer &lt; Time() and Helper:CheckAvailable( "Soul Crush" ) then
+		Helper:CheckExecute( "Soul Crush" );
+		return false;
+	end
+	
+	--------------------------------------------------
+	--     P R E P A R I N G   A T T A C K (S)      --
+	--------------------------------------------------
+	
+	-- When the entity is a player ...
+	if Entity:IsPlayer() then
+	
+		-- Preparing Attack 1: Blessing of Wind
+	if Helper:CheckAvailable( "Blessing of Wind" ) and EntityState:GetState( Helper:CheckName( "Blessing of Wind" )) == nil then
+			Helper:CheckExecute( "Blessing of Wind", Player );
+			return false;
+		end	
+	
+		-- Preparing Attack 2: Protective Ward
+		if Helper:CheckAvailable( "Protective Ward" ) then
+			Helper:CheckExecute( "Protective Ward" );
+			return false;
+		end
+		
+		-- 2000DP Skill Divine Protection , Divine Protection
+	if Helper:CheckAvailable( "Divine Protection" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Divine Protection");
+		return false;
+	end
+-- 2000DP Skill Word of Wind , Word of Wind
+	if Helper:CheckAvailable( "Word of Wind" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Word of Wind");
+		return false;
+	end
+		
+	-- Otherwise when the entity is not a player ...
+	else
+
+		-- Preparing Attack 4: Focused Parry
+		if Helper:CheckAvailable( "Perfect Parry" ) then
+			Helper:CheckExecute( "Perfect Parry" );
+			return false;
+		end	
+		
+		-- Preparing Attack 4: Word of Revival (Also in Pause)
+		if Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() and Player:GetState():GetState( Helper:CheckName( "Rebirth Spell" )) == nil and Helper:CheckAvailable( "Rebirth Spell" ) then
+			Helper:CheckExecute( "Rebirth Spell", Player );
+			return false;
+		end
+		
+	end
+	
+	--------------------------------------------------
+	--                H E A L I N G                 --
+	--------------------------------------------------
+	
+	self:_Heal( Player, true );
+	
+	--------------------------------------------------
+	--        R A N G E D   A T T A C K (S)         --
+	--------------------------------------------------
+	
+	-- Ranged Attack 1: Inescapable Judgement/Soul Strike and Retribution (Chain Skill)
+	if not Stunned and Helper:CheckAvailable( "Inescapable Judgement" ) then
+		Helper:CheckExecute( "Inescapable Judgement" );
+		return false;
+	elseif not Stunned and Helper:CheckAvailable( "Soul Strike" ) then
+		Helper:CheckExecute( "Soul Strike" );
+		return false;
+	end
+	
+	--------------------------------------------------
+	--        N O R M A L   A T T A C K (S)         --
+	--------------------------------------------------
+	
+	-- Normal Attack 1: Mountain Crash
+	if Helper:CheckAvailable( "Mountain Crash" ) then
+		Helper:CheckExecute( "Mountain Crash" );
+		return false;
+	end
+	
+	-- Normal Attack 2: Inescapable Judgment
+	if Helper:CheckAvailable( "Inescapable Judgment" ) then
+		Helper:CheckExecute( "Inescapable Judgment" );
+		return false;
+	end
+	
+		-- Normal Attack 3: Annihilation
+	if Helper:CheckAvailable( "Annihilation" ) then
+		Helper:CheckExecute( "Annihilation" );
+		return false;
+	end
+	
+	-- Normal Attack 4: Disorienting Blow
+	if not Stunned and Helper:CheckAvailable( "Disorientating Blow" ) then
+		Helper:CheckExecute( "Disorientating Blow" );
+		return false;
+	end
+	
+	-- Normal Attack 5: Numbing Blow 
+	if not Stunned and Helper:CheckAvailable( "Numbing Blow" ) then
+		Helper:CheckExecute( "Numbing Blow" );
+		return false;
+	end
+
+	--------------------------------------------------
+	--       I N I T I A L   A T T A C K (S)        --
+	--------------------------------------------------
+	
+	-- Initial Attack 1: Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+	
+	-- Initial Attack 2: Meteor Strike
+	if Helper:CheckAvailable( "Meteor Strike" ) then
+		Helper:CheckExecute( "Meteor Strike" );
+		return false;
+	end
+
+	-- Initial Attack 3: Hallowed Strike
+	if Helper:CheckAvailable( "Hallowed Strike" ) then
+		Helper:CheckExecute( "Hallowed Strike" );
+		return false;
+	end
+		
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+
+--- Perform healing checks both in and our of combat.
+--
+-- @param	bool	Indicates whether or not the function is running before force checks.
+-- @return	bool
+
+function Heal( BeforeForce )
+	
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end
+
+--- Perform the safety checks before moving to the next target.
+--
+-- @return	bool
+
+function Pause()
+		
+	--------------------------------------------------
+	--                H E A L I N G                 --
+	--------------------------------------------------
+		
+	-- Heal 5: Word of Revival (Also in Attack)
+	if Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() and Player:GetState():GetState( Helper:CheckName( "Rebirth Spell" )) == nil and Helper:CheckAvailable( "Word of Revival" ) then
+		Helper:CheckExecute( "Rebirth Spell", Player );
+		return false;
+	end
+	
+	-- Heal 6: Magic Recovery
+	if Helper:CheckAvailable( "Stamina Restoration" ) and Player:GetManaCurrent() &lt; Player:GetManaMaximum() - 2500 then
+		Helper:CheckExecute( "Stamina Restoration", Player );
+		return false;
+	end
+-- Emergency!: Divine Curtain
+	if Helper:CheckAvailable( "Divine Curtain" ) and Player:GetHealth() &lt; 40 then
+		Helper:CheckExecute( "Divine Curtain" );
+		return false;
+	end
+	
+	-- Heal 0: Non-Priority Healing
+	self:_Heal( Player, false );
+	
+	--------------------------------------------------
+	--                B U F F I N G                 --
+	--------------------------------------------------
+
+	-- Check if the state checking timer has expired.
+	if ( self.StateBuffTime == nil or self.StateBuffTime &lt; Time()) then
+
+		-- Retrieve the state.
+		local EntityState = Player:GetState();
+		
+		-- Buff 0: Blessing of Health
+		if Helper:CheckAvailable( "Word of Awakening" ) and EntityState:GetState( "Word of Awakening" ) == nil and EntityState:GetState( "Word of Awakening" ) == nil then
+			Helper:CheckExecute( "Word of Awakening", Player );
+			return false;
+		end
+		
+		-- Buff 1: Blessing of Health
+		if Helper:CheckAvailable( "Prayer of Protection" ) and EntityState:GetState( "Prayer of Protection" ) == nil and EntityState:GetState( "Prayer of Protection" ) == nil then
+			Helper:CheckExecute( "Prayer of Protection", Player );
+			return false;
+		end
+		
+		-- Buff 2: Blessing of Rock/Blessing of Stone
+		if EntityState:GetState( "Blessing of Rock" ) == nil and EntityState:GetState( "Prayer of Protection" ) == nil then
+		
+			-- Buff 2: Blessing of Rock
+			if Helper:CheckAvailable( "Prayer of Protection" ) then
+				Helper:CheckExecute( "Prayer of Protection", Player );
+				return false;
+			-- Buff 2: Blessing of Stone
+			elseif Helper:CheckAvailable( "Blessing of Rock" )  then
+				Helper:CheckExecute( "Blessing of Rock", Player );
+				return false;
+			end
+
+		end
+
+		-- Buff 3: Promise of Earth
+		if Helper:CheckAvailable( "Promise of Earth" ) and EntityState:GetState( Helper:CheckName( "Promise of Earth" )) == nil  then
+			Helper:CheckExecute( "Promise of Earth", Player );
+			return false;
+		end
+
+		-- Buff 3: Rage Spell
+		if Helper:CheckAvailable( "Rage Spell" ) and EntityState:GetState( "Rage Spell" ) == nil then
+			Helper:CheckExecute( "Rage Spell", Player );
+			return false;
+		end
+		
+		-- Update the state checking timer.
+		self.StateBuffTime = Time() + 1000;
+		
+	end
+		
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end
+---------------Buff Scrolls-------------
+function CheckCritFood()
+
+stateID = {10224,10225,9976,9989,10051,10064};
+foodName = {"Calydon Meat Dumpling","Wild Ginseng Pickle","Tasty Calydon Meat Dumpling","Tasty Wild Ginseng Pickle","Innesi Herb Dumpling","Poma Wine Herb Dumpling","Tasty Innesi Herb Dumpling","Tasty Poma Wine Herb Dumpling"};
+flag = 0;
+
+for _,v in ipairs(stateID) do
+if Player:GetState():GetState( v ) ~= nil then
+flag = flag + 1;
+end
+end
+
+if flag == 0 then
+for a,b in ipairs(foodName) do
+if Helper:CheckAvailableInventory( b ) then
+PlayerInput:Inventory( b );
+break;
+end
+end
+end
+
+
+return true;
+end
+
+--------------------------------
+function CheckAttackFood()
+
+stateID = {10051,10064,10224,10225,9976,9989};
+foodName = {"Nutritious Abex Cheese Soup","Minor Focus Agent","Lesser Focus Agent","Focus Agent","Greater Focus Agent","Major Focus Agent","Fine Focus Agent"};
+flag = 0;
+
+for _,v in ipairs(stateID) do
+if Player:GetState():GetState( v ) ~= nil then
+flag = flag + 1;
+end
+end
+
+if flag == 0 then
+for a,b in ipairs(foodName) do
+if Helper:CheckAvailableInventory( b ) then
+PlayerInput:Inventory( b );
+break;
+end
+end
+end
+return true;
+
+
+end
+-----------------------------------
+function CheckNaturalHeal()
+
+stateID = {10044,10094};
+foodName = {"Minor Rally Serum","Lesser Rally Serum","Rally Serum","Greater Rally Serum","Major Rally Serum","Fine Rally Serum","Tasty Ormea Cocktail"};
+flag = 0;
+
+for _,v in ipairs(stateID) do
+if Player:GetState():GetState( v ) ~= nil then
+flag = flag + 1;
+end
+end
+
+if flag == 0 then
+for a,b in ipairs(foodName) do
+if Helper:CheckAvailableInventory( b ) then
+PlayerInput:Inventory( b );
+break;
+end
+end
+end
+return true;
+
+end
+-------------------------------------
+function CheckAttackScroll()
+
+stateID = {9959};
+foodName = {"Courage Scroll"};
+flag = 0;
+
+for _,v in ipairs(stateID) do
+if Player:GetState():GetState( v ) ~= nil then
+flag = flag + 1;
+end
+end
+
+if flag == 0 then
+for a,b in ipairs(foodName) do
+if Helper:CheckAvailableInventory( b ) then
+PlayerInput:Inventory( b );
+break;
+end
+end
+end
+return true;
+
+end
+--------------------------
+function CheckRunScroll()
+
+stateID = {9960};
+foodName = {"[Jakunerk] Icy Normal Running Scroll"};
+flag = 0;
+
+for _,v in ipairs(stateID) do
+if Player:GetState():GetState( v ) ~= nil then
+flag = flag + 1;
+end
+end
+
+if flag == 0 then
+for a,b in ipairs(foodName) do
+if Helper:CheckAvailableInventory( b ) then
+PlayerInput:Inventory( b );
+break;
+end
+end
+end
+return true;
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Chanter.lua</h3>
+				<div class="date">Posted: <strong>Wed Jul 19, 2017 11:56 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Is really simple, you have added your Wind of Blessing inside Attack.<br>
+And you check if the selected entitity is a player.<br>
+But AionScript will never call the attack function with the entity selected as yourself.<br>
+You have to add the check to the _heal function or to pause function.<br>
+Then it will work.<br>
+<br>
+If you want it inside Attack function this would work:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Helper:CheckAvailable( "Blessing of Wind" ) and Player:GetState():GetState( Helper:CheckName( "Blessing of Wind" )) == nil then
+	Helper:CheckExecute( "Blessing of Wind", Player );
+	return false;
+end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=196&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+</html>

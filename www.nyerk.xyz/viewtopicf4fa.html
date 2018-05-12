@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?p=2037 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>system.cfg - The config value master doc! - Nyerk</title>
+
+
+	<link rel="canonical" href="viewtopic8b73.html?t=202">
+
+<!--
+	phpBB style name: we_universal
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      nextgen ( http://xeronix.org/ )
+-->
+
+
+<link href="styles/prosilver/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="assets/css/font-awesome.min5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/prosilver/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=25" rel="stylesheet">
+<![endif]-->
+
+
+<link href="ext/gfksx/ThanksForPosts/styles/prosilver/theme/thanks5d79.css?assets_version=25" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="./styles/we_universal/template/html5shiv.min.js"></script>
+<![endif]-->
+
+</head>
+<body id="phpbb" class="nojs notouch section-viewtopic ltr  logged-out">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div class="inventea-headerbar">
+		<nav class="inventea-wrapper inventea-userbar">
+			<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="icon fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+		
+														
+							<li>
+								<a href="index-2.html" role="menuitem">
+									<i class="icon fa fa-fw fa-home" aria-hidden="true"></i><span>Board index</span>
+								</a>
+							</li>		
+							
+							<li data-skip-responsive="true">
+								<a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">
+									<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+								</a>
+							</li>
+							
+													<li>
+								<a href="search.html" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+							
+														
+														
+								
+						
+							<li>
+								<a href="search33a7.html?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="search526f.html?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+	
+						
+							
+            																			<li>
+								<a href="memberlist4bfd.html?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+						            
+				                    </ul>
+    </div>
+</div>
+
+			
+			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+										<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp26c3.html?mode=login" title="Login" accesskey="x" role="menuitem"><i class="icon fa-fw fa-sign-in" aria-hidden="true"></i>Login</a></li>
+											<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp8319.html?mode=register" role="menuitem"><i class="icon fa-fw fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										
+										
+							</ul>
+		</nav>
+	</div>
+
+	<header class="inventea-header">
+			
+		<div class="inventea-dashboard" role="banner">
+						<nav role="navigation">
+	<div class="inventea-posts-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+																			<li><a href="search33a7.html?search_id=unanswered" role="menuitem">Unanswered topics</a></li>
+				<li><a href="search526f.html?search_id=active_topics" role="menuitem">Active topics</a></li>
+			
+					</ul>
+	</div>
+
+	<div class="inventea-forum-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+			<li><a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+			<li><a href="search.html" role="menuitem">Search</a></li>
+											<li><a href="memberlist4bfd.html?mode=team" role="menuitem">The team</a></li>			
+						
+					</ul>
+	</div>
+</nav>
+
+			<div class="inventea-sitename">
+				<h1><a href="index-2.html" title="Board index">Nyerk</a></h1>
+				<span>An Forum about Aion</span>
+			</div>
+		</div>
+			</header>
+
+	<div class="inventea-wrapper inventea-content" role="main">
+		
+		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+			
+									<li class="small-icon breadcrumbs">
+												<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index-2.html" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">Board index</span></a></span>
+														<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="3"><a href="viewforum4d6b.html?f=3" itemprop="url"><span itemprop="title">AionScript</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="7"><a href="viewforumd42b.html?f=7" itemprop="url"><span itemprop="title">Tutorials</span></a></span>
+																</li>
+					</ul>
+
+		
+		
+<h2 class="topic-title"><a href="viewtopicf15b.html?f=7&amp;t=202">system.cfg - The config value master doc!</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+
+
+
+<div class="action-bar bar-top">
+	
+			<a href="postingd313.html?mode=reply&amp;f=7&amp;t=202" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopicd1f0.html?f=7&amp;t=202&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://www.nyerk.xyz/search.php">
+			<fieldset>
+				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…" />
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="search.html" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="202" />
+<input type="hidden" name="sf" value="msgonly" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			3 posts
+							&bull; Page <strong>1</strong> of <strong>1</strong>
+					</div>
+		</div>
+
+
+
+
+			<div id="p1088" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1088">
+			<dt class="has-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistd942.html?mode=viewprofile&amp;u=49" class="avatar"><img class="avatar" src="download/file6acc.png?avatar=49_1484091983.png" width="80" height="107" alt="User avatar" /></a>														</div>
+								<a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchc003.html?author_id=49&amp;sr=posts">105</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jan 10, 2017 11:40 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="49"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/true.html">10 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="49"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/false.html">23 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1088">
+
+						<h3 class="first"><a href="#p1088">system.cfg - The config value master doc!</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting39b4.html?mode=quote&amp;f=7&amp;p=1088" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic784f.html?p=1088#p1088" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a></strong> &raquo; </span>Thu Jul 27, 2017 9:04 pm
+			</p>
+			
+			
+			
+			<div class="content"><div class="inline-attachment">
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="download/file2fc6.php?id=61">AIONcfgEdit.rar</a></dt>
+			<dd><em>I use this to edit the encrypted system.cfg!</em></dd>			<dd>(763.79 KiB) Downloaded 33 times</dd>
+		</dl>
+		
+		
+			</div>
+<img src="../cdn.discordapp.com/attachments/297203952624336905/340241803548557312/transaionsyscfg.jpg" class="postimage" alt="Image"><br>
+I remember always having the problem of googling what these config values mean and coming across 12332 different answers. I took the liberty of finding the CryEngine documentation of the engine version used to build Aion. If you would like to add or edit any values and don't know whats what; here's the master link:<br>
+<br>
+<a href="http://docs.cryengine.com/display/CRYAUTOGEN/Home" class="postlink">CryEngine AutoGenConfig Documentation</a><br>
+<br>
+<strong class="text-strong">If you can't find the value, it's non-existant - i.e DELETE!</strong><br>
+<br>
+This is the best FPS config I managed to create, suggestions always welcome!<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>con_restricted = "0"
+sys_spec_GameEffects = "0"
+sys_spec_ObjectDetail = "0"
+sys_spec_Particles = "0"
+sys_spec_Physics = "0"
+sys_spec_PostProcessing = "0"
+sys_spec_Shading = "0"
+sys_spec_Shadows = "0"
+sys_spec_Sound = "0"
+sys_spec_Texture = "0"
+sys_spec_TextureResolution = "0"
+sys_spec_VolumetricEffects = "0"
+sys_spec_light = "0"
+sys_spec_texture = "0"
+sys_spec_sound = "0"
+sys_spec_Quality = "0"
+ac_animErrorClamp = "0"
+ac_clampTimeAnimation = "0"
+ac_clampTimeEntity = "0"
+ac_disableFancyTransitions = "1"
+ca_AnimIFrame = "30"
+ca_AnimWarningLevel = "0"
+ca_AnimationDeferredLoad = "1"
+ca_AnimationUnloadMaxPerFrame = "0"
+ca_AnimationUnloadCheckPerFrame = "0"
+ca_AnimationUnloadDelay = "0"
+ca_ClothMode = "0"
+ca_DrawBones = "0"
+ca_EnableCCG = "0"
+ca_EnableCharacterShadowVolume = "0"
+ca_EnableCubicBlending = "0"
+ca_EnableDecals = "0"
+ca_EnableLightUpdate = "0"
+ca_EnableTangentSkinning = "0"
+ca_HairAnim = "0"
+ca_KeepModels = "1"
+ca_LodBias = "5"
+ca_MemoryDefragEnabled = "0"
+ca_NoDrawShadowVolumes = "1"
+ca_NoMorph = "1"
+ca_NormalizeBases = "0"
+ca_PrecacheAnimationSets = "1"
+ca_SSEEnable = "1"
+ca_SafeReskin = "0"
+ca_UseAnimationsCache = "1"
+ca_UseDecals = "0"
+ca_UseFacialAnimation = "0"
+ca_UsePhysics = "0"
+ca_ambient_light_range = 1"
+ca_disable_thread = "0"
+ca_lod_force = "1"
+ca_lod_ratio = "0"
+ca_thread = "1"
+ca_UseDecals = "0"
+d3d9_AllowSoftware = "0"
+d3d9_PSforce11 = "0"
+d3d9_TripleBuffering = "0"
+e_CGF_Load_Lods = "1"
+e_CharLodMin = "200"
+e_CullVegActivation = "0"
+e_clouds = "0"
+e_Decals = "0"
+e_DecalsAllowGameDecals = "0"
+e_DecalsLifeTimeScale = "0"
+e_Dissolve = "0"
+e_DynamicLights = "0"
+e_GI = "0"
+e_GsmCache = "0"
+e_GsmLodsNum = "1"
+e_ParticlesMaxScreenFill = "16"
+e_HwOcclusionCullingObjects = "0"
+e_HwOcclusionCullingWater = "0"
+e_LodCompMaxSize = "1"
+e_LodMin = "1"
+e_LodMinTtris = "1"
+e_LodRatio = "0.2"
+e_LodsForceUse = "1"
+e_MaxDistanceTerrain = "55"
+e_MaxViewDistSpecLerp = "0"
+e_ObjQuality = "0"
+e_OcclusionCullingViewDistRatio = "0"
+e_ParticlesDiffCM = "0"
+e_ParticlesForceSoftParticles = "0"
+e_ParticlesGI = "0"
+e_ParticlesObjectCollisions = "0"
+e_ParticlesPreload = "1"
+e_ParticlesQuality = "0"
+e_ParticlesShadows = "0"
+e_ParticlesThread = "1"
+e_ParticlesLod = "0.2"
+e_particles_lod = "0.2"
+e_PrecacheLevel = "1"
+e_cbuffer = "2"
+e_PreloadMaterials = "1"
+e_PrepareDeformableObjectsAtLoadTime = "1"
+e_ProcVegetationMaxSectorsInCache = "64"
+e_Recursion = 0
+e_Render = "1"
+e_Shadow_Maps = "0"
+e_Shadows = "0"
+e_SkyBox = "1"
+e_SkyQuality = "0"
+e_SkyType = "0"
+e_StatObjBufferRenderTasks = "0"
+e_StatObjPreload = "1"
+e_TerrainAo = "0"
+e_TerrainLodRatio = "1"
+e_TerrainOcclusionCullingMaxDist = "0"
+e_TerrainTextureLodRatio = "0"
+e_Vegetation = "1"
+e_VegetationAlphaBlend = "0"
+e_VegetationMinSize = "1"
+e_VegetationSpritesDistanceRatio = "0"
+e_VegetationUseTerrainColor = "1"
+e_ViewDistRatio = "0"
+e_ViewDistRatioCustom = "0"
+e_ViewDistRatioDetail = "0"
+e_ViewDistRatioLights = "0"
+e_ViewDistRatioVegetation = "0"
+e_beach = "0"
+e_cgf_load_lods = "1"
+e_clouds = "0"
+e_ent_view_dist_ratio = "0.400000"
+e_flocks = "0"
+e_fog = "0"
+e_HwOcclusionCullingObjects = "0"
+e_HwOcclusionCullingparticles = "0"
+e_HwOcclusionCullingVegetation = "0"
+e_HwOcclusionCullingWater = "0"
+e_light_maps = "1"
+e_light_maps_quality = "0"
+e_lods = "1"
+e_maxdistance_ratio_entities = "0.500000"
+e_maxdistance_terrain = "0"
+e_obj_view_dist_ratio = "58"
+e_objects_fade_on_distance = "0"
+e_optimized_render_object = "0"
+e_particles_fullfx = "0"
+e_particles_max_count = "296"
+e_particles_thread = "1"
+e_proc_vegetation = "0"
+e_recursion_occlusion_culling = "0"
+e_shadow_spots = "0"
+e_skip_terrain_culling = "1"
+e_sky_box = "1"
+e_stencil_shadows = "0"
+e_streamCgf = "0"
+e_sun = "0"
+e_TerrainTextureLodRatioBias = "3"
+e_TerrainTextureLodRatio = "0"
+e_use_backup_shader = "0"
+e_VegetationBending = "0"
+e_VegetationMinSize = "1"
+e_vegetation_min_size = "1"
+e_VegetationSprites = "1"
+e_VegetationSpritesDistanceCustomRatioMin = "1"
+e_VegetationSpritesDistanceatioMin = "1"
+e_vegetation_static_instancing = "1"
+e_vegetation_update_shadow_every_frame = "0"
+e_vegetation_wind = "0"
+e_GsmLodsNum = "1"
+e_view_dist_ratio = "0.100000"
+e_view_dist_ratio_detail = "0"
+e_view_dist_ratio_vegetation = "0.100000"
+e_view_dist_vegetation = "0"
+e_water_ocean_soft_particles = "0"
+e_water_render_distance = "0"
+e_weather_fx_enable = "0"
+es_DebrisLifetimeScale = "1.0"
+es_UpdateInvisibleCharacter = "0"
+g_MaxFPS = "-1"
+g_NoWarFog = "1"
+g_blade_fx = "0"
+g_blade_time = "0.0"
+g_camMax = "22"
+g_cam_rot_ratio = "0"
+g_cfg_version = "7"
+g_cfg_video_BACKGROUND = "0"
+g_cfg_video_EFFECT = "0"
+g_cfg_video_ENTITY_DIST = "0"
+g_cfg_video_ENV_TEX = "0"
+g_cfg_video_FSAA = "0"
+g_cfg_video_GENERAL = "-2"
+g_cfg_video_GLARE = "0"
+g_cfg_video_GLOW = "0"
+g_cfg_video_MODEL_CACHE = "1"
+g_cfg_video_MRT_BACKGROUND = "0"
+g_cfg_video_MRT_BUMP = "0"
+g_cfg_video_MRT_CAMERA = "0"
+g_cfg_video_MRT_DOF = "0"
+g_cfg_video_MRT_EFFECT = "0"
+g_cfg_video_MRT_ENTITY_DIST = "0"
+g_cfg_video_MRT_ENV_TEX = "0"
+g_cfg_video_MRT_FSAA = "0"
+g_cfg_video_MRT_GENERAL = "0"
+g_cfg_video_MRT_GLARE = "0"
+g_cfg_video_MRT_GLOW = "0"
+g_cfg_video_MRT_LOWEST = "0"
+g_cfg_video_MRT_MODEL_CACHE = "0"
+g_cfg_video_MRT_SHADER = "0"
+g_cfg_video_MRT_SHADOW = "0"
+g_cfg_video_MRT_SKILLFX = "0"
+g_cfg_video_MRT_SUNSHAFT = "0"
+g_cfg_video_MRT_TERRAIN_DIST = "0"
+g_cfg_video_MRT_TEXTURE = "0"
+g_cfg_video_MRT_WATER = "0"
+g_cfg_video_MRT_WEATHERLAYER = "0"
+g_cfg_video_SHADER = "0"
+g_cfg_video_SHADOW = "0"
+g_cfg_video_SKILLFX = "0"
+g_cfg_video_TERRAIN_DIST = "0"
+g_cfg_video_TEXTURE = "0"
+g_cfg_video_WATER = "0"
+g_cfg_video_screen_res = "1"
+g_chainSkillChangeCooltimeDelay = "0.000"
+g_chainSkillIndicateDelay = "0.000"
+g_chatlog = "0"
+g_client_var = "0"
+g_enableSkillVoice = "0"
+g_fxLevel = "3"
+g_loadSlotState = "3"
+g_minFOV = "60"
+g_radialBlur = "0"
+g_save_preset = "1"
+g_showFPS = "1"
+g_showUIActionMsg = "0"
+g_show_breath = "0"
+g_uiContour = "0"
+g_uiFX = "0"
+g_ui_stillview = "1"
+g_muteMyPet = "1"
+g_openSpecialServerList = "0"
+g_playerprofile = "custom"
+gpu_particle_physics = "1"
+i_direct_input = "1"
+i_mouse_accel = "0"
+i_mouse_inertia = "0"
+i_mouse_smooth = "0"
+i_particleeffects = "0"
+i_precache = "1"
+i_dinputkeys = "1"
+i_direct_input = "1"
+i_rejecteffects = "0"
+i_iceeffects = "0"
+r_AntialiasingMode = "0"
+r_Beams = "0"
+r_Brightness = "0.457455"
+r_CharLodMin = "1"
+r_CharacterLODBias = "3"
+r_Character_LOD_Bias = "3"
+r_ChromaticAberration = "0"
+r_ColorBits = "16"
+r_ColorGrading = "0"
+r_checkSunVis = "0"
+r_DeferredShadingAmbientLights = "0"
+r_DepthBits = "8"
+r_DepthOfField = "0"
+r_Detail = "0"
+r_DetailDistance = "0"
+r_DetailDistance = "0.000000"
+r_DetailNumLayers = "0"
+r_DetailTextures = "0"
+r_DisableSfx = "1"
+r_DrawNearFOV = "60"
+r_DrawNearZRange = "0.08"
+r_DynTexAtlasCloudsMaxSize = "2"
+r_DynTexAtlasSpritesMaxSize = "2"
+r_EnhanceImage = "0"
+r_EnvCMResolution = "3"
+r_EnvCMupdateInterval = "1.0"
+r_EnvTexResolution = "3"
+r_EnvTexUpdateInterval = "1.0"
+r_FSAA_samples = "0"
+r_Flares = "0"
+r_FlaresTessellationRatio = "0"
+r_FullscreenPreemption = "1"
+r_GeomInstancing = "0"
+r_HDRBloomRatio = "0"
+r_HDRBrightLevel = "0"
+r_HDRGrainAmount = "0"
+r_LodBias = "3"
+r_MSAA = "0"
+r_MeshPrecache = "1"
+r_MotionBlur = "0"
+r_MultiGPU = "2"
+r_MultiThreaded = "1"
+r_NoDrawNear = "1"
+r_UseParticlesHalfRes = "1"
+r_ParticlesHalfResBlendMode = "1"
+r_ParticlesTessellation = "0"
+r_TexturesStreamPoolSize = "0"
+r_ParticlesMotionBlur = "0"
+r_PostAA = "0"
+r_PostAAEdgeFilter = "0"
+r_PostProcessEffects = "0"
+r_PostProcessEffectsGameFx = "0"
+r_PostProcessFilters = "0"
+r_PostProcessGameFx = "0"
+r_ProcFlares = "0"
+r_PseudoFullscreen = "0"
+r_Quality_BumpMapping = "0"
+r_SSReflections = "0"
+r_ShaderModel = "0"
+r_ShadersPrecache = "1"
+r_ShadowBlur = "0"
+r_ShadowJittering = "0"
+r_Sharpening = "0"
+r_StencilBits = "8"
+r_SyncVBuf = "0"
+r_DynTexMaxSize = "64"
+r_TexMaxSize = "64"
+r_textureMode = "GL_LINEAR_MIPMAP_NEAREST"
+r_TexBumpResolution = "3"
+r_TexLMResolution = "3"
+r_TexMaxAnisotropy = "0"
+r_TexResolution = "0.1"
+r_TexSkyResolution = "3"
+r_TextureBits = "8"
+r_TexturesStreamPoolSize = "0"
+r_TexturesStreamingSkipMips = "1"
+r_TexturesWarmup = "0"
+r_UseParticlesHalfResForce = "1"
+r_UseParticlesMerging = "0"
+r_UseParticlesRefraction = "0"
+r_UseSoftParticles = "0"
+r_VSync = "0"
+r_VegetationSpritesTexRes = "3"
+r_Vegetation_PerpixelLight = "0"
+r_WaterCaustics = "0"
+r_WaterGodRays = "0"
+r_WaterReflections = "0"
+r_WaterReflections_MaxViewDist = "0.000000"
+r_WaterUpdateDistance = "0"
+r_fogShadowsWater = "0"
+r_fx_draw = "0"
+r_mrt_initdetect = "1"
+r_rain = "0"
+r_ssao = "0"
+r_ssdo = "0"
+r_sunshafts = "0"
+r_TextureStreaming = "0"
+p_lightrange = "16"
+s_FormatSampleRate = "44100"
+s_MasterVolume = "0.750000"
+s_MusicIgnoreGameStatus = "1"
+s_MusicMute = "1"
+s_MusicPlayOnce = "1"
+s_NCPing_Enable = "1"
+s_HRTFEnable = "0"
+s_BatterySave_Enable = "0"
+s_PriorityThreshold = "0"
+s_SFXVolume_COMMENT_GOSSIP = "1.000000"
+s_SFXVolume_COMMENT_NPC = "0.377564"
+s_SFXVolume_COMMENT_QUEST = "1.000000"
+s_SFXVolume_COMMENT_SYSTEM = "0.600000"
+s_SFXVolume_ENV = "0.350000"
+s_SFXVolume_FX = "0.188782"
+s_SFXVolume_UI = "0.232347"
+sys_DeactivateConsole = "0"
+sys_job_system_enable = "0"
+sys_SSInfo = "0"
+sys_StreamCompressionMask = "0"
+sys_WER = "0"
+sys_maxFPS = "-1"
+sys_FixedFrame = "0"
+sys_LowSpecPak = "1"
+sys_physics_CPU = "3"
+sys_preload = "1"
+sys_spec_VolumetricEffects = "0"
+sys_StreamCallbackTimeBudget = "40000"
+sys_StreamCompressionMask="0"
+sys_warnings = "0"
+sys_AdaptiveCharLOD = "1.000000"
+sys_LowSpecPak = "1"
+sys_skiponlowspec = "1"
+</code></pre></div></div>
+
+			
+									
+						<div id='list_thanks1088'>
+</div>
+<div id='div_post_reput1088'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p2028" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile2028">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="avatar"><img class="avatar" src="download/file189c.gif?avatar=353_1503005081.gif" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search4973.html?author_id=353&amp;sr=posts">114</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Apr 20, 2017 5:05 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="353"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/true.html">31 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="353"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/353/false.html">13 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content2028">
+
+						<h3 ><a href="#p2028">Re: system.cfg - The config value master doc!</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingd2b6.html?mode=quote&amp;f=7&amp;p=2028" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic3ea6.html?p=2028#p2028" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a></strong> &raquo; </span>Sun Dec 31, 2017 5:23 pm
+			</p>
+			
+			
+			
+			<div class="content">Hey thanks for that, I opened the system.cfg and I saw non of the values you have here, do I copy all that and paste it in the file and then save it?<br>
+<br>
+I think I'll also change some values in there that already exist.</div>
+
+			
+									
+						<div id='list_thanks2028'>
+</div>
+<div id='div_post_reput2028'>
+</div>
+			<div id="sig2028" class="signature">I play on NA Server Siel</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p2037" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile2037">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist98b1.html?mode=viewprofile&amp;u=680" class="username">koxy</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search5735.html?author_id=680&amp;sr=posts">1</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jan 02, 2018 12:10 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="680"></dd>
+    <dd class="profile-posts" data-user-receive-id="680"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content2037">
+
+						<h3 ><a href="#p2037">Re: system.cfg - The config value master doc!</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting8661.html?mode=quote&amp;f=7&amp;p=2037" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicf4fa.html?p=2037#p2037" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist98b1.html?mode=viewprofile&amp;u=680" class="username">koxy</a></strong> &raquo; </span>Tue Jan 02, 2018 12:12 pm
+			</p>
+			
+			
+			
+			<div class="content">Got some starnge problem with this config, got 400 fps but my client acts like in slow motion, cant play or bot like that, any solutions?</div>
+
+			
+									
+						<div id='list_thanks2037'>
+</div>
+<div id='div_post_reput2037'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+	
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="postingd313.html?mode=reply&amp;f=7&amp;t=202" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+	
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopicd1f0.html?f=7&amp;t=202&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<form method="post" action="https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=202">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed" />
+				<input type="submit" class="button2" name="sort" value="Go" />
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			3 posts
+							&bull; Page <strong>1</strong> of <strong>1</strong>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="viewforumd42b.html?f=7" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Tutorials”</span>
+		</a>
+	</p>
+	
+		<br /><br />
+	</div>
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 0 guests</p>
+	</div>
+
+				
+			</div>
+
+	<div class="inventea-footer-wrapper">
+		<div id="page-footer" class="inventea-footer" role="contentinfo">
+			<nav role="navigation">
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index-2.html" data-navbar-reference="index"><span>Board index</span></a></span>					</li>
+
+						<li class="small-icon" data-last-responsive="true"><a href="memberlist8733.html?mode=contactadmin" role="menuitem">Contact us</a></li>
+				
+		<li class="small-icon"><a href="ucp033a.html?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+				<li>All times are <span title="UTC">UTC</span></li>
+			</ul>
+</nav>
+
+			<footer class="inventea-credits">
+								Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited<br />
+								Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a> & <a href="http://xeronix.org/" title="phpBB styles and much more">nextgen</a>
+											</footer>
+		</div>
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+	<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="assets/javascript/core5d79.js?assets_version=25"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax5d79.js?assets_version=25"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?p=2037 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:58 GMT -->
+</html>

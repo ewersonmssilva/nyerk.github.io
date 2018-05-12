@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=9&t=7&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Official: Assassin.lua</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Official: Assassin.lua</h2>
+		<p><a href="viewtopicdbfb.html?f=9&amp;t=7">https://www.nyerk.xyz/viewtopic.php?f=9&amp;t=7</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>3</strong></div>
+					<div class="post">
+				<h3>Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Thu Jan 12, 2017 9:37 pm</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">The official Assassin LUA. Please submit any edits and I will implement! <br>
+<br>
+<em class="text-italics">Last updated</em> - <strong class="text-strong"><span style="color: #BF0080">14.03.2017</span></strong><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 agonic &amp; Blastradius &amp; macrokor
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	StateList Contains the state list of the target entity.
+-- @return	int
+
+function _CheckRunes( EntityState )
+
+	if EntityState ~= nil then
+		-- Using numeric identifiers because there are multiple entries of this kind of skill,
+		-- one for monsters and one for players. We're interested only in what we do, and unfortunately,
+		-- this is the second entry.
+		if EntityState:GetState( 8307 ) ~= nil then
+			return 5;
+		elseif EntityState:GetState( 8306 ) ~= nil then
+			return 4;
+		elseif EntityState:GetState( 8305 ) ~= nil then
+			return 3;
+		elseif EntityState:GetState( 8304 ) ~= nil then
+			return 2;
+		elseif EntityState:GetState( 8303 ) ~= nil then
+			return 1;
+		end
+	end
+	
+	return 0;
+	
+end
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned )
+
+	-- Check if we are a melee orientated class and the target has reflect!
+	-- NOTE: Removed CheckMelee, so even Sorcerers will take a break here. Some reason, that didn't work.. no clue why!
+
+	----------------------------------------------
+	------------------ContRanged Buffs----------------
+	----------------------------------------------
+		-- Retrieve the entity state.
+		local EntityState = Entity:GetState();
+		
+		-- Retrieve the rune level on the target.
+		local Runes = self:_CheckRunes( EntityState );
+	
+		-- Stunned is overwritten with Spin, but Assassinate needs the real stun status.
+		local ReallyStunned = Stunned;
+
+		-- Check if the enemy is in the spin state, let's assume that's a type of stun!
+		if EntityState ~= nil and EntityState:GetState( "Spin" ) ~= nil then
+			Stunned = true;
+			Spinned = true;
+		else
+			Spinned = false;
+		end
+		
+		
+	----------------------------------------------
+	-----------------Conditionals-----------------
+	----------------------------------------------
+	
+	-- Retrieve the skill from the skill list.
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+			
+	-- Check if this is a valid skill and is a magical skill, in which case we can use Aethertwisting.
+	if Skill ~= nil and Skill:IsMagical() and Helper:CheckAvailable( "Aethertwisting" ) then
+			Helper:CheckExecute( "Aethertwisting" );
+	end
+	if Skill ~= nil and Skill:IsMagical() and Helper:CheckAvailable( "Spelldodging" ) then
+			Helper:CheckExecute( "Spelldodging" );
+	end
+	if Skill ~= nil and Helper:CheckAvailable( "Focused Evasion" ) then	
+			Helper:CheckExecute( "Focused Evasion" );
+	end
+	-- 25m range activation
+	if Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= 25 then
+	--Buff 1: Apply Deadly Poison
+		if Player:GetState():GetState( Helper:CheckName( "Apply Deadly Poison" )) == nil and Helper:CheckAvailable( "Apply Deadly Poison" ) then
+			Helper:CheckExecute( "Apply Deadly Poison" );	
+		end
+	end	
+	-- 10m range activation
+	if Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= 10 then
+		if Helper:CheckAvailable( "Devotion" ) then
+			Helper:CheckExecute( "Devotion" );
+		elseif Helper:CheckAvailable( "Flurry" ) then
+			Helper:CheckExecute( "Flurry" );
+		end
+	end
+	--if Helper:CheckMelee() and Helper:CheckAvailable( "Blinding Burst" ) then
+	--	Helper:CheckExecute( "Blinding Burst");	
+	--end
+	-- Transformation: Slayer
+	-- Buff 2: Transformation: Slayer
+	if Player:GetState():GetState( Helper:CheckName( "Transformation: Slayer" )) == nil and Helper:CheckAvailable( "Transformation: Slayer" ) then
+					Helper:CheckExecute( "Transformation: Slayer" );
+	end
+	-- Transformation: Avatar of Fire
+	-- Buff 3: Compassion of Fire
+	if Player:GetState():GetState( Helper:CheckName( "Compassion of Fire" )) == nil and Helper:CheckAvailable( "Compassion of Fire" ) then
+			Helper:CheckExecute( "Compassion of Fire" );
+	end
+	
+	if Helper:CheckAvailable( "Sneak Ambush" ) then
+		Helper:CheckExecute( "Sneak Ambush" );	
+	end
+	-- Start Chain 1: Killing Spree
+	if Helper:CheckAvailable( "Killing Spree" ) then
+		Helper:CheckExecute( "Killing Spree" );
+	end
+	
+	-- Fang Strike -&gt; Beast Kick
+	if Helper:CheckAvailable( "Beast Kick" ) then
+		Helper:CheckExecute( "Beast Kick" );
+	-- Beast Kick -&gt; Beast Swipe
+	elseif Helper:CheckAvailable( "Beast Swipe" ) then
+		Helper:CheckExecute( "Beast Swipe" );
+	end
+	
+	-- Soul Slash  -&gt; Rune Slash
+	if Helper:CheckAvailable( "Soul Slash"  ) then
+		Helper:CheckExecute( "Soul Slash" );
+	elseif Helper:CheckAvailable( "Rune Slash" ) then
+		Helper:CheckExecute( "Rune Slash" );	
+	end
+	-- Check how long since Entity has been Aetherheld, if above 3 seconds -&gt; Use "Fall"
+	if self._iBindingTime ~= nil and self._iBindingTime &lt; Time() and Helper:CheckAvailable( "Fall" ) then
+		Helper:CheckExecute( "Fall" );
+		self._iBindingTime = nil;
+	end
+	
+	if Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= 2 and not Player:IsMoving() and Helper:CheckAvailable("Back Breaker" ) then
+			local PosE = Entity:GetPosition();
+			local dist = 1;  
+			local Angle = Entity:GetRotation();
+			PosE.X = PosE.X - dist*math.sin(Angle*(math.pi/180));
+			PosE.Y = PosE.Y + dist*math.cos(Angle*(math.pi/180));
+			Player:SetPosition(PosE);
+			Helper:CheckExecute( "Back Breaker" );
+		
+	end
+	-- Stunned -&gt; Shadowfall
+	if Helper:CheckAvailable( "Shadowfall" ) then
+		Helper:CheckExecute( "Shadowfall" );
+	end
+	if Helper:CheckAvailable( "Evasive Boost" ) then
+		Helper:CheckExecute( "Evasive Boost" );	
+	end
+	-- Evasion -&gt; "Whirlwind Slash" or "Counter-Attack"
+	if Helper:CheckAvailable("Whirlwind Slash") then
+		Helper:CheckExecute("Whirlwind Slash");
+	elseif Helper:CheckAvailable( "Cross Slash" ) then
+		Helper:CheckExecute( "Cross Slash" );
+	end
+	
+	-- Evasion -&gt; "Whirlwind Slash" or "Counter-Attack"
+	if Helper:CheckAvailable( "Cross Slash" ) then
+		Helper:CheckExecute( "Cross Slash" );
+	elseif Helper:CheckAvailable("Counter-Attack") then
+		Helper:CheckExecute("Counter-Attack");	
+	end
+
+	if Helper:CheckAvailable( "Ambush Attack" ) then
+		Helper:CheckExecute( "Ambush Attack" );
+	elseif Helper:CheckAvailable(  "Ambush Assault"  ) then
+		Helper:CheckExecute( "Ambush Assault" );
+	end
+	--------------------------------------------
+	----------------Main Attacks----------------
+	--------------------------------------------
+	if Helper:CheckAvailable("Venomous Strike") then
+		Helper:CheckExecute( "Venomous Strike" );
+	end
+	-- First Magical Attack
+	if Helper:CheckAvailable( "Rune Carve" ) then
+			Helper:CheckExecute( "Rune Carve");
+	end
+	-- Start Chain 2: Fang Strike
+	if Helper:CheckAvailable( "Fang Strike" ) then
+		Helper:CheckExecute( "Fang Strike" );
+	
+	end
+	-- Start Chain 3: Swift Edge
+	if Helper:CheckAvailable( "Swift Edge" ) then
+		Helper:CheckExecute( "Swift Edge" );
+	
+	end
+	-- Runes, Attack 4: Swift Edge
+	if Helper:CheckAvailable( "Beast Fang" ) and Runes &lt;= 3  then
+		Helper:CheckExecute( "Beast Fang" );
+	end
+	-- Attack 4: Quickening Doom
+	if Helper:CheckAvailable( "Quickening Doom" ) then
+		Helper:CheckExecute( "Quickening Doom" );
+	end
+	
+	if Helper:CheckAvailable( "Assassination" ) then
+		Helper:CheckExecute( "Assassination" );		
+	end
+	--------------------------------------------
+	-------------------Runes--------------------
+	--------------------------------------------	
+	if Runes &gt;= 5 then
+		if Helper:CheckAvailable( "Signet Silence" ) then
+			Helper:CheckExecute( "Signet Silence" );
+		end
+	elseif Runes &gt;= 5 then
+		if Helper:CheckAvailable( "Binding Rune" ) then
+			_iBindingTime = Time() + 1000;
+			Helper:CheckExecute( "Binding Rune" );
+		end
+	elseif Runes &gt;= 3 then
+		if not Stunned and Helper:CheckAvailable( "Pain Rune" ) then
+			Helper:CheckExecute( "Pain Rune" );
+		end
+	elseif Runes &gt;= 2 then
+		if Helper:CheckAvailable( "Repeated Rune Carve" ) then
+			Helper:CheckExecute( "Repeated Rune Carve" );
+		end
+	end
+	
+	-- Attack 5: Surprise Attack (Spin)
+	if Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= 2 and not Player:IsMoving() and Helper:CheckAvailable("Surprise Attack") then
+			local PosE = Entity:GetPosition();
+			local dist = 1;  
+			local Angle = Entity:GetRotation();
+			PosE.X = PosE.X - dist*math.sin(Angle*(math.pi/180));
+			PosE.Y = PosE.Y + dist*math.cos(Angle*(math.pi/180));
+			Player:SetPosition(PosE);
+			Helper:CheckExecute( "Surprise Attack" );
+	end
+	
+		end
+
+function Pause()
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end
+</code></pre></div>
+
+Changelog:<br>
+<br>
+<span style="text-decoration: underline">v1.0.3 </span>
+<ul>
+<li>Changed from storing variables to making the direct function call for Range related teleporting skills</li>
+<li>Fixed a few minor bugs - incl. using poison and Devotion when targetting a door!</li>
+<li>Created better logic if / elseif chains</li>
+</ul>
+
+<span style="text-decoration: underline">v1.0.2 </span>
+<ul>
+<li>Sorted out the storing of variables (used the appropriate 'local' tag where it will help speed things up!</li>
+<li>Fixed a few minor bugs</li>
+<li>Added Slayer form to buffs</li>
+<li>Created more logic if / elseif chains</li>
+</ul>
+
+<span style="text-decoration: underline">v1.0.1 </span>
+<ul>
+<li>Updated the teleportation behind target IF statements.</li>
+<li>Killing Spree now works (x3 chain after Assassination)</li>
+</ul>
+
+<span style="text-decoration: underline">v1.0.0</span> 
+<ul><li>Released initial LUA</li></ul></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Assassin.lua (Highest DPS)</h3>
+				<div class="date">Posted: <strong>Wed Jan 18, 2017 4:16 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">believe it or not, after several years of tweaking, I have a better one :3<br>
+<br>
+My sin can outdps a geared level 72 sorcerer at level 65... or maybe that sorc just sucks.<br>
+<br>
+In any case, this one is for Gameforge right?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Assassin.lua (Highest DPS)</h3>
+				<div class="date">Posted: <strong>Tue Jan 24, 2017 4:52 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">Oh ofc I believe you! I only used HIGHEST DPS to promote it. I'm missing a few skills to be honest! Its because I used it for support in a shitty PvP situation so I left some space for human interaction.<br>
+<br>
+and with attack speed at 75% I can believe it. Maybe not a FULLY geared Sorc but definately the majority!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Assassin.lua (Highest DPS)</h3>
+				<div class="date">Posted: <strong>Tue Jan 24, 2017 10:12 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic5831.html?p=19#p19" data-post-id="19" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Jan 18, 2017 4:16 pm</div></cite>
+believe it or not, after several years of tweaking, I have a better one :3<br>
+<br>
+My sin can outdps a geared level 72 sorcerer at level 65... or maybe that sorc just sucks.<br>
+<br>
+In any case, this one is for Gameforge right?
+</div></blockquote>
+
+Then share it <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Assassin.lua (Highest DPS)</h3>
+				<div class="date">Posted: <strong>Mon Jan 30, 2017 11:15 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">What Stigmas I Need that this Assassin.lua Works Great?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Assassin.lua (Highest DPS)</h3>
+				<div class="date">Posted: <strong>Wed Feb 22, 2017 1:42 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopic94b0.html?p=48#p48" data-post-id="48" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jan 30, 2017 11:15 pm</div></cite>
+What Stigmas I Need that this Assassin.lua Works Great?
+</div></blockquote>
+
+<a href="https://anon.to/?http://aiondatabase.net/en/item/140001151/" class="postlink">Quickening Doom</a><br>
+<a href="https://anon.to/?http://aiondatabase.net/en/item/140001140/" class="postlink">Dash and Slash</a><br>
+<a href="https://anon.to/?http://aiondatabase.net/en/item/140001145/" class="postlink">Shadowfall</a><br>
+<a href="https://anon.to/?http://aiondatabase.net/en/item/140001147/" class="postlink">Venomous Strike</a><br>
+<a href="https://anon.to/?http://aiondatabase.net/en/item/140001138/" class="postlink">Sensory Boost</a><br>
+<a href="https://anon.to/?http://aiondatabase.net/en/item/140001143/" class="postlink">Oath of Accuracy</a></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Mon Feb 27, 2017 10:40 am</strong></div>
+				<div class="author">by <strong>crazymonkey84</strong></div>
+				<div class="content">i tried this code on my sin, and it just doesnt attack, it only selects the target and the he just change the target again and nothing else<br>
+<br>
+regards</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Mon Feb 27, 2017 11:11 am</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist3892.html?mode=viewprofile&amp;u=81">crazymonkey84</a> wrote: <a href="viewtopicc61d.html?p=265#p265" data-post-id="265" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Feb 27, 2017 10:40 am</div></cite>
+i tried this code on my sin, and it just doesnt attack, it only selects the target and the he just change the target again and nothing else<br>
+<br>
+regards
+</div></blockquote>
+
+The Script Works great on EU i Testet it ;D I Need to add some Skills but it Works Very Good. Thx for sharing it 0x00.<br>
+Use the Newest AionScript. NA or EU Servers?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Mon Feb 27, 2017 11:27 am</strong></div>
+				<div class="author">by <strong>crazymonkey84</strong></div>
+				<div class="content">im using lasted update of AS, and im playin on NA servers<br>
+<br>
+ty</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Mon Feb 27, 2017 3:13 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist3892.html?mode=viewprofile&amp;u=81">crazymonkey84</a> wrote: <a href="viewtopic3786.html?p=267#p267" data-post-id="267" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Feb 27, 2017 11:27 am</div></cite>
+im using lasted update of AS, and im playin on NA servers<br>
+<br>
+ty
+</div></blockquote>
+
+Maybe U have some wrong Stigmas or the Skill Names are wrong in NA</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>3</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=9&t=7&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:12 GMT -->
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=10&t=11&start=30&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Official: Songweaver.lua - Page 4</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Official: Songweaver.lua</h2>
+		<p><a href="viewtopicb1e3.html?f=10&amp;t=11">https://www.nyerk.xyz/viewtopic.php?f=10&amp;t=11</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>4</strong> of <strong>6</strong></div>
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 12:07 pm</strong></div>
+				<div class="author">by <strong>javito</strong></div>
+				<div class="content"><strong class="text-strong">Purifying Paean does not work nothing happens when I have a debuff, Maybe something's wrong with this script. </strong><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function _CheckState( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Retrieve the state for the current entity to inspect.
+	local EntityState = Entity:GetState();
+
+	-- Loop through the states only when we are available to dispel them. We still check for removed states!
+	if EntityState ~= nil and ( self.StateDispelTime == nil or self.StateDispelTime &lt; Time()) then
+
+		-- Create the state array for the global entity storage and undispellable states if it does not exist.
+		if self.StateArray == nil or self.StateUndispellable == nil then
+			self.StateArray = {};
+			self.StateUndispellable = {};
+		end
+
+		-- Create the state array for the current entity if it does not exist.
+		if self.StateArray[Entity:GetID()] == nil then
+			self.StateArray[Entity:GetID()] = {};
+		end
+
+		-- Loop through the states to find which need to be removed.
+		for ID, Skill in DictionaryIterator( EntityState:GetList()) do
+
+			-- Check if the current skill is valid and has not been marked and undispellable.
+			if Skill ~= nil and Skill:IsDebuff() and ( self.StateUndispellable[Skill:GetID()] == nil or self.StateUndispellable[Skill:GetID()] &lt; Time()) then
+
+				-- Check if this entity had the current skill effect on him and hasn't been removed by either Cure Mind or Dispel.
+				if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil and self.StateArray[Entity:GetID()][Skill:GetID()] == 2 then
+					self.StateUndispellable[Skill:GetID()] = Time() + 30000;
+				-- Remove the state from the entity.
+				else
+
+					-- Retrieve the magical state the current skill.
+					local RemoveMagical = Skill:IsMagical();
+
+					-- Check if we are required to change the magical state for the current skill.
+					if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil then
+						RemoveMagical = not RemoveMagical;
+					end
+
+					-- Check if the dispel or cure mind can be executed correctly. The function might need to set the target first!
+					if ( RemoveMagical and Helper:CheckExecute( "Purifying Paean", Entity )) or ( not RemoveMagical and Helper:CheckExecute( "Purifying Paean", Entity )) then
+
+						-- Change the state dispel timer to prevent dispel and cure mind from being used too quickly.
+						self.StateDispelTime = Time() + 500;
+
+						-- Track the current state of the dispel and cure mind to find undispellable states.
+						if self.StateArray[Entity:GetID()][Skill:GetID()] == nil then
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 1;
+							return false;
+						else
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 2;
+							return false;
+						end
+
+					end
+
+				end
+
+			end
+
+		end
+
+		-- Loop through the existing states to find which have been removed correctly.
+		for k,v in pairs( self.StateArray[Entity:GetID()] ) do
+			if v ~= nil and EntityState:GetState( k ) == nil then
+				self.StateArray[Entity:GetID()][k] = nil;
+			end
+		end
+
+	end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 12:48 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">At the moment, I'm not using my bard bot anymore. But there is in tutorial a guide by agonic you can use to fix it quite fast by changing the function <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 2:52 pm</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content">- [string "Songweaver.lua"]:537: attempt to index field 'Songweaver' (a nil value) <br>
+<br>
+ I use script from the top of post but still got this error ( i have lvl 40 )</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 3:00 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopic5f0f.html?p=235#p235" data-post-id="235" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 2:52 pm</div></cite>
+- [string "Songweaver.lua"]:537: attempt to index field 'Songweaver' (a nil value) <br>
+<br>
+ I use script from the top of post but still got this error ( i have lvl 40 )
+</div></blockquote>
+
+Try This one <a href="viewtopic162d.html?f=10&amp;t=11&amp;start=20#p185" class="postlink">viewtopic.php?f=10&amp;t=11&amp;start=20#p185</a></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 3:12 pm</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopic0133.html?p=236#p236" data-post-id="236" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 3:00 pm</div></cite>
+<blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopic5f0f.html?p=235#p235" data-post-id="235" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 2:52 pm</div></cite>
+- [string "Songweaver.lua"]:537: attempt to index field 'Songweaver' (a nil value) <br>
+<br>
+ I use script from the top of post but still got this error ( i have lvl 40 )
+</div></blockquote>
+
+Try This one <a href="viewtopic162d.html?f=10&amp;t=11&amp;start=20#p185" class="postlink">viewtopic.php?f=10&amp;t=11&amp;start=20#p185</a>
+</div></blockquote>
+
+i did this but now i dont got error but is nothing happen , my character stay afk</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 3:15 pm</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopic8a71.html?p=237#p237" data-post-id="237" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 3:12 pm</div></cite>
+<blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopic0133.html?p=236#p236" data-post-id="236" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 3:00 pm</div></cite>
+<blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopic5f0f.html?p=235#p235" data-post-id="235" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 2:52 pm</div></cite>
+- [string "Songweaver.lua"]:537: attempt to index field 'Songweaver' (a nil value) <br>
+<br>
+ I use script from the top of post but still got this error ( i have lvl 40 )
+</div></blockquote>
+
+Try This one <a href="viewtopic162d.html?f=10&amp;t=11&amp;start=20#p185" class="postlink">viewtopic.php?f=10&amp;t=11&amp;start=20#p185</a>
+</div></blockquote>
+
+i did this but now i dont got error but is nothing happen , my character stay afk
+</div></blockquote>
+
+Done its work thx for help !</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 4:55 pm</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content">why my character dont use Battle Variation?<br>
+<br>
+this is code in the script:<br>
+-- Battle Variation<br>
+	if Entity:GetHealth() &gt;= 10 and Helper:CheckAvailable( "Battle Variation" ) and Helper:CheckAvailable( "Tsunami Requiem" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then<br>
+		Helper:CheckExecute( "Battle Variation");<br>
+		return false;</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 5:32 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopic1639.html?p=239#p239" data-post-id="239" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 4:55 pm</div></cite>
+why my character dont use Battle Variation?<br>
+<br>
+this is code in the script:<br>
+-- Battle Variation<br>
+	if Entity:GetHealth() &gt;= 10 and Helper:CheckAvailable( "Battle Variation" ) and Helper:CheckAvailable( "Tsunami Requiem" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then<br>
+		Helper:CheckExecute( "Battle Variation");<br>
+		return false;
+</div></blockquote>
+
+Check the Skill Names maybe they are wrong.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 7:10 pm</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopiccfe0.html?p=240#p240" data-post-id="240" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 5:32 pm</div></cite>
+<blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopic1639.html?p=239#p239" data-post-id="239" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 4:55 pm</div></cite>
+why my character dont use Battle Variation?<br>
+<br>
+this is code in the script:<br>
+-- Battle Variation<br>
+	if Entity:GetHealth() &gt;= 10 and Helper:CheckAvailable( "Battle Variation" ) and Helper:CheckAvailable( "Tsunami Requiem" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then<br>
+		Helper:CheckExecute( "Battle Variation");<br>
+		return false;
+</div></blockquote>
+
+Check the Skill Names maybe they are wrong.
+</div></blockquote>
+
+the name is good</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Songweaver.lua by myself</h3>
+				<div class="date">Posted: <strong>Sun Feb 19, 2017 8:49 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopic1639.html?p=239#p239" data-post-id="239" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Feb 19, 2017 4:55 pm</div></cite>
+why my character dont use Battle Variation?<br>
+<br>
+this is code in the script:<br>
+-- Battle Variation<br>
+	if Entity:GetHealth() &gt;= 10 and Helper:CheckAvailable( "Battle Variation" ) and Helper:CheckAvailable( "Tsunami Requiem" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then<br>
+		Helper:CheckExecute( "Battle Variation");<br>
+		return false;
+</div></blockquote>
+
+Edit it like that<br>
+-- Battle Variation<br>
+	if Entity:GetHealth() &gt;= 10 and Helper:CheckAvailable( "Battle Variation" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then<br>
+		Helper:CheckExecute( "Battle Variation");<br>
+		return false;<br>
+<br>
+it works</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>4</strong> of <strong>6</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=10&t=11&start=30&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:19 GMT -->
+</html>

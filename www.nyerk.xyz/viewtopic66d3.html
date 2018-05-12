@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=96&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; how do check on/off skill in script ? - Page 2</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>how do check on/off skill in script ?</h2>
+		<p><a href="viewtopic3fba.html?f=6&amp;t=96">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=96</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Thu Mar 16, 2017 12:24 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">I added into my script. Then tested it. But, the result is so sad that, this addition freezes the AS.<br>
+Update: It is working for Frenzy for assassins, but powershards.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Thu Mar 16, 2017 5:08 am</strong></div>
+				<div class="author">by <strong>sapibuntinx</strong></div>
+				<div class="content">I used this to enable pet auto-loot, basically, if the value was 0, then I will tell AS to execute skill Auto-Loot.<br>
+I think if you want to turn it off, then tell AS to execute the related skill (for me, execute Auto-Loot skill) if the value is non 0.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Fri Mar 17, 2017 5:13 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">Powershard On<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local ShardAddress = DialogList:GetDialog( "basic_status_dialog/boost_marker" ):GetAddress();
+local Shard = Memory:GetUnsignedInteger(ShardAddress +424) &gt; 1060000000;
+if Entity ~= nil and Entity:IsPlayer() and not Shard then
+	if Helper:CheckAvailable( "Toggle Power Shard" ) then
+		Helper:CheckExecute( "Toggle Power Shard" );
+		return false;
+	end	
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Fri Mar 17, 2017 5:37 am</strong></div>
+				<div class="author">by <strong>sapibuntinx</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopiccc08.html?p=519#p519" data-post-id="519" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Mar 17, 2017 5:13 am</div></cite>
+Powershard On<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local ShardAddress = DialogList:GetDialog( "basic_status_dialog/boost_marker" ):GetAddress();
+local Shard = Memory:GetUnsignedInteger(ShardAddress +424) &gt; 1060000000;
+if Entity ~= nil and Entity:IsPlayer() and not Shard then
+	if Helper:CheckAvailable( "Toggle Power Shard" ) then
+		Helper:CheckExecute( "Toggle Power Shard" );
+		return false;
+	end	
+end</code></pre></div>
+</div></blockquote>
+
+very nice, this is will be very useful to those creating pvp script. thanks for this.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Sat Mar 18, 2017 12:39 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">-- Using of the Loot pet;<br>
+--Put pet and AutoLoot skill on the skillbar. Btw, You can put them wherever you want. It is just an example.<br>
+Now example;
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local CTRL8 = DialogList:GetDialog( "quickbar_dialog_ctrl/0/shortcut8" ):GetAddress();--means Quickbar 2 1 8 = Ctrl+8
+local IsAbilityActive = Memory:GetUnsignedInteger(CTRL8 + 992) &gt; 0 ;
+local CTRL9 = DialogList:GetDialog( "quickbar_dialog_ctrl/0/shortcut9" ):GetAddress();--means Quickbar 2 1 9=Ctrl+9
+local IsLootingActive = Memory:GetUnsignedInteger(CTRL9 + 992) &gt; 0 ;
+if not IsAbilityActive then
+	DialogList:GetDialog( "quickbar_dialog_ctrl/0/shortcut8" ):Click();
+elseif IsAbilityActive and not IsLootingActive then
+	DialogList:GetDialog( "quickbar_dialog_ctrl/0/shortcut9" ):Click();
+end</code></pre></div>
+
+Also you can improvise, like;
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:IsMonster() then --means PVE
+this codes
+end
+
+if Entity:IsPlayer() then --means PVP
+same way via buff pet
+end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>2</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=96&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:28 GMT -->
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=297&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Little error boting for me.</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Little error boting for me.</h2>
+		<p><a href="viewtopic874d.html?f=6&amp;t=297">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=297</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Little error boting for me.</h3>
+				<div class="date">Posted: <strong>Sat Oct 21, 2017 1:06 pm</strong></div>
+				<div class="author">by <strong>Mandy</strong></div>
+				<div class="content">Guys i dont know why, but after kill some mobs the char select him self...and dont atack nothing anymore...i have to select the mob for start again... sometimes it happen... can someone explain what i have to do to stop with it?<br>
+Butw its on Gunner.Lua NA<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius, macrokor, rellis
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+--[[
+
+        --------------------------------------------------
+        Copyright (C) 2013 Smithme08
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+        --------------------------------------------------
+
+]]--
+
+-- Priority list of items to use (first item used first/most important) with conditions.  However, since the conditions check health, mana, etc, its possible that you will use lower level potions first.
+-- If you really prefer to ONLY use the higher level potions, use -- to comment out all the others, OR set the health/mana/etc condition compare_value to higher for lower potions so they still get used in case you
+-- run out of the better ones.
+local m_items_to_use =
+	{
+		{ item_name = "Major Divine Life Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "3680" } } },
+		{ item_name = "Major Divine Mana Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "3450" } } },
+		{ item_name = "Superior Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "2270" } } },
+		{ item_name = "Superior Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1800" } } },
+		{ item_name = "Superior Life Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "2270" } } },
+		{ item_name = "Superior Mana Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1800" } } },
+		{ item_name = "Superior Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "2120" } } },
+		{ item_name = "Superior Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1830" } } },
+		{ item_name = "Greater Divine Life Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "2250" } } },
+		{ item_name = "Greater Divine Mana Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "2350" } } },
+		{ item_name = "Fine Panacea of Life", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1550" } } },
+		{ item_name = "Fine Panacea of Mana", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1340" } } },
+		{ item_name = "Fine Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1940" } } },
+		{ item_name = "Fine Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1680" } } },
+		{ item_name = "Fine Life Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1940" } } },
+		{ item_name = "Fine Mana Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1680" } } },
+		{ item_name = "Fine Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "2120" } } },
+		{ item_name = "Fine Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1830" } } },
+		{ item_name = "Fine Life Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "2120" } } },
+		{ item_name = "Fine Mana Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1830" } } },
+		{ item_name = "Divine Life Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1860" } } },
+		{ item_name = "Divine Mana Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "2170" } } },
+		{ item_name = "Major Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1540" } } },
+		{ item_name = "Major Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1600" } } },
+		{ item_name = "Major Life Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1540" } } },
+		{ item_name = "Major Mana Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1600" } } },
+		{ item_name = "Lesser Divine Life Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1430" } } },
+		{ item_name = "Lesser Divine Mana Serum", cooldown_type = "Divine Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1870" } } },
+		{ item_name = "Major Panacea of Life", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1130" } } },
+		{ item_name = "Major Panacea of Mana", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1180" } } },
+		{ item_name = "Major Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1410" } } },
+		{ item_name = "Major Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1470" } } },
+		{ item_name = "Major Life Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1410" } } },
+		{ item_name = "Major Mana Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1470" } } },
+		{ item_name = "Greater Panacea of Life", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "930" } } },
+		{ item_name = "Greater Panacea of Mana", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1090" } } },
+		{ item_name = "Greater Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1160" } } },
+		{ item_name = "Greater Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1360" } } },
+		{ item_name = "Greater Life Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1160" } } },
+		{ item_name = "Greater Mana Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1360" } } },
+		{ item_name = "Greater Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1270" } } },
+		{ item_name = "Greater Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1480" } } },
+		{ item_name = "Greater Life Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "1270" } } },
+		{ item_name = "Greater Mana Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1480" } } },
+		{ item_name = "Panacea of Life", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "720" } } },
+		{ item_name = "Panacea of Mana", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "940" } } },
+		{ item_name = "Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "890" } } },
+		{ item_name = "Recovery Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1170" } } },
+		{ item_name = "Life Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "890" } } },
+		{ item_name = "Mana Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1170" } } },
+		{ item_name = "Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "970" } } },
+		{ item_name = "Recovery Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1280" } } },
+		{ item_name = "Life Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "970" } } },
+		{ item_name = "Mana Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "1280" } } },
+		{ item_name = "Lesser Panacea of Life", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "490" } } },
+		{ item_name = "Lesser Panacea of Mana", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "720" } } },
+		{ item_name = "Lesser Life Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "610" } } },
+		{ item_name = "Lesser Mana Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "900" } } },
+		{ item_name = "Lesser Life Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "670" } } },
+		{ item_name = "Lesser Mana Potion", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "980" } } },
+		{ item_name = "Minor Panacea of Life", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "270" } } },
+		{ item_name = "Minor Panacea of Mana", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "440" } } },
+		{ item_name = "Minor Life Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "340" } } },
+		{ item_name = "Minor Mana Serum", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "540" } } },
+		{ item_name = "Minor Life Elixir", cooldown_type = "Potion", conditions = { { condition_type = "Player_Health_Needed", compare = "&gt;=", compare_value = "310" } } },
+		{ item_name = "Minor Mana Elixir", cooldown_type = "Potion", conditions = { { condition_type = "Player_Mana_Needed", compare = "&gt;=", compare_value = "500" } } }
+	};
+
+--  Cooldown time for item types, in seconds
+local m_cooldown_per_item_type =
+	{
+		["Potion"] = 60,
+		["Divine Potion"] = 300,
+		["Food"] = nil,
+		["Drink"] = nil,
+		["Scroll"] = nil
+	};
+
+-- Not sure yet whether I will use this....the idea that the cooldown is not actually how often you want to reuse something, like food and drink and scrolls
+local m_reuse_time_per_item_type =
+	{
+		["Food_Very_Short"] = nil,
+		["Food_Short"] = nil,
+		["Food_Long"] = nil,
+		["Drink_Very_Short"] = nil,
+		["Drink_Short"] = nil,
+		["Drink_Long"] = nil
+	};
+	
+-- The actual time, in miliseconds, when the cool down for a certain type of item, since I don't trust Aion and AS regarding Cool Downs sometimes when its between different items etc
+-- Had problems with that regarding skills sometimes, he he he.  So I manage it myself here.
+local m_cooldown_end_timestamps =
+	{
+		["Potion"] = nil,
+		["Divine Potion"] = nil,
+		["Food"] = nil,
+		["Drink"] = nil,
+		["Scroll"] = nil
+	};
+	
+-- This is the class chain information list.  It is NOT a priority list, this is merely to help the class know when it has
+-- started a chain so it knows to only use skills from that chain until the target dies OR until the chain times out.
+local m_chain_info =
+	{
+		["Trunk Shot"] = { "Trunk Shot", "Volley", "Muzzle Flash" },
+		["Gunshot"] = { "Gunshot", "Rapidfire", "Automatic Fire", "Steel Shot" },
+		["Crosstrigger"] = { "Crosstrigger", "Canted Shot", "Aerial Shot" },
+		["Steady Fire"] = { "Steady Fire", "Steady Fire", "Steady Fire", "Steady Fire", "Steady Fire" },
+		["Anti-Enemy Fire"] = { "Anti-Enemy Fire" },
+		["Remove Shock"] = { "Remove Shock", "Steal Health" }
+	};
+
+-- Buffs you want to apply before starting an attack or while traveling.
+local m_pre_attack_buffs =
+	{ 
+		{ skill_name = "Reload", conditions = { { condition_type = "Skill_On_Cooldown", compare = "=", compare_value = "Gunshot" } } },
+		{ skill_name = "Autoload", conditions = { { condition_type = "Skill_On_Cooldown", compare = "=", compare_value = "Gunshot" } } },
+		{ skill_name = "Nature's Favor", conditions = { { condition_type = "Buff_Not_Active" } } }
+		
+	};
+
+-- Buffs or self-skills you want to use in the middle of battle
+local m_attack_buffs = 
+	{ 
+		{ skill_name = "Aion's Favor", conditions = { { condition_type = "Buff_Not_Active" } } },
+		{ skill_name = "Stopping Power", conditions = { { condition_type = "Buff_Not_Active" } } },
+		{ skill_name = "Pressurized Chamber", conditions = { { condition_type = "Buff_Not_Active" } } },
+		
+	};
+
+-- Skills you want to use to START an attack. I do not recommend chain skills here since there is too long of a delay in AS between attacks at this point for some reason and they tend to time-out
+local m_pull_skills = 
+	{ 
+		{ skill_name = "Power Grab"},
+		{ skill_name = "Packed Bomb", conditions = { { condition_type = "arg_range", compare = "&gt;=", compare_value = "10" } } },
+		{ skill_name = "Green Grenade", conditions = { { condition_type = "arg_range", compare = "&gt;=", compare_value = "10"} } },
+		{ skill_name = "Steady Fire" }, 
+		{ skill_name = "Direct Shot" }, 
+		{ skill_name = "Hot Shot" },
+		{ skill_name = "Wing Clip" },
+		{ skill_name = "Spinning Fire" },
+		{ skill_name = "Attack/Chat" }		
+	};
+
+-- Conditional skills are priority skills which rely on special conditions that usually need to be responded to no matter what (like Remove Shock...if its available you probably need it NOW :) )
+local m_conditional_skills = 
+	{ 
+		{ skill_name = "Remove Shock", break_chain = true },
+		{ skill_name = "Anti-Enemy Fire", conditions = { { condition_type = "Player_Health_Percent", compare = "&lt;", compare_value = "50" } }, break_chain = true }
+	};
+	
+-- You MUST list the skills from LAST in chain to first for them to fire properly (Aion reports earlier skills as off CD even if you've moved to next step in chain)
+local m_chain_skills = 
+	{ 
+		{ skill_name = "Muzzle Flash" }, 
+		{ skill_name = "Volley" }, 
+		{ skill_name = "Steel Shot" }, 
+		{ skill_name = "Automatic Fire" }, 
+		{ skill_name = "Rapidfire" }, 
+		{ skill_name = "Aerial Shot" }, 
+		{ skill_name = "Canted Shot" },
+		{ skill_name = "Steal Health" },
+		{ skill_name = "Steady Fire" },
+		{ skill_name = "Steady Fire" },
+		{ skill_name = "Steady Fire" },
+		{ skill_name = "Steady Fire" },
+		{ skill_name = "Steady Fire" }
+		
+	};
+
+-- Skills to use during normal attack (not pull, not chain, just attacking)
+local l_attack_skills = 
+	{ 
+		{ skill_name = "Crosstrigger", conditions = { { condition_type = "Player_Mana_Percent", compare = "&lt;", compare_value = "70" } } },
+		{ skill_name = "Power Grab" } ,
+		{ skill_name = "Packed Bomb", conditions = { { condition_type = "arg_range", compare = "&gt;=", compare_value = "10" } } },
+		{ skill_name = "Green Grenade", conditions = { { condition_type = "arg_range", compare = "&gt;=", compare_value = "10" } } },
+		{ skill_name = "Hemorrhage Shot" },
+		{ skill_name = "Steady Fire" }, 
+		{ skill_name = "Gunshot" }, 
+		{ skill_name = "Dazzling Fire" },
+		{ skill_name = "Hot Shot" }, 
+		{ skill_name = "Reload", conditions = { { condition_type = "Skill_On_Cooldown", compare = "=", compare_value = "Gunshot" } } },
+		{ skill_name = "Autoload", conditions = { { condition_type = "Skill_On_Cooldown", compare = "=", compare_value = "Gunshot" } } },
+		{ skill_name = "Trunk Shot" }, 
+		{ skill_name = "Direct Shot" },
+		{ skill_name = "Wing Clip" },
+		{ skill_name = "Quieting Gale"},
+		{ skill_name = "Attack/Chat" }
+	};
+
+-- Flag telling us when we are mid-chain
+local m_doing_chain_skills = false;
+-- Time to add to "now" to wait for another chain skill to successfully fire before giving up
+local m_chain_timeout_interval = 1500;
+-- Literal time in milliseconds of time when we should give up on current chain of skills
+local m_chain_timeout_time = 0;
+-- Index into the list of skills for last chain skill used
+local m_chain_index = -1;
+-- Holds the list of chain skills
+local m_current_chain = nil;
+-- Skill name of start of current chain
+local m_chain_start_skill = nil;
+
+-- Current target for attack, used to know if we are mid-fight or starting a pull
+local m_target = nil;
+-- Reset all the chain related variables, used when we either killed a target or a chain timed out.
+function _reset_chain_variables()
+	-- Flag telling us when we are mid-chain
+	m_doing_chain_skills = false;
+	-- Timeout to give up on a chain to avoid getting stuck
+	m_chain_timeout_time = 0;
+	-- Index into the list of skills for last chain skill used
+	m_chain_index = -1;
+	-- Holds the list of chain skills
+	m_current_chain = nil;
+	-- Skill name of start of current chain
+	m_chain_start_skill = nil;
+	
+	return true;
+end
+
+-- Check to see if all the conditions specified for a skill have been met
+function _check_conditions( arg_skill_info, arg_target, arg_range, arg_stunned )
+
+	-- Default result if there are no conditions is true...so all skills can be run through here and quickly result in true
+	local l_result = false;
+	local l_player_pos = Player:GetPosition();
+	local l_attack_range = Player:GetAttackRange();
+	local l_player_state = Player:GetState();
+	local l_player_hp_needed = Player:GetHealthMaximum() - Player:GetHealthCurrent();
+	local l_player_mp_needed = Player:GetManaMaximum() - Player:GetManaCurrent();
+	local l_skill_name = arg_skill_info.skill_name;
+	local l_conditions = arg_skill_info.conditions;
+	local l_value_compare_types = 
+		{ 
+			["arg_range"] = true, 
+			["Player_Health_Percent"] = true, 
+			["Player_Health_Needed"] = true, 
+			["Player_Mana_Percent"] = true, 
+			["Player_Mana_Needed"] = true,
+			["Target_Health_Percent"] = true 
+		};
+		
+	-- If there are NO conditions to check then return true
+	if l_conditions == nil then
+		return true;
+	end
+	
+	-- For each set of condition parameters
+	for key, l_condition in ipairs(l_conditions) do		
+		local l_first_value = nil;
+		local l_second_value = nil;
+		local l_compare = nil;
+		local l_condition_type = l_condition.condition_type;
+		-- If the condition type was NOT set to something then write a warning message and return false (no condition is okay, but a condition with a nil type is not good)
+		if (l_condition_type == nil) then
+			Write("Condition type was nil for skill '" .. l_skill_name .. "' so returning false, but this is a bug in your skills list.");
+			return false;			
+		else -- If we got a condition type, then set up the comparison values (first and second) or do any special case tests
+			if 			l_condition_type == "arg_range" then
+				l_first_value = tonumber( l_player_pos:DistanceToPosition( arg_target:GetPosition() ) );
+				l_second_value = tonumber(l_condition.compare_value);
+				
+			elseif		l_condition_type == "Player_Health_Percent" then
+				l_first_value = tonumber(Player:GetHealth());
+				l_second_value = tonumber(l_condition.compare_value);
+
+			elseif 		l_condition_type == "Player_Health_Needed" then
+				l_first_value = l_player_hp_needed;
+				l_second_value = tonumber(l_condition.compare_value);
+				
+			elseif		l_condition_type == "Player_Mana_Percent" then
+				l_first_value = tonumber(Player:GetMana());
+				l_second_value = tonumber(l_condition.compare_value);
+				
+			elseif 		l_condition_type == "Player_Mana_Needed" then
+				l_first_value = l_player_mp_needed;
+				l_second_value = tonumber(l_condition.compare_value);
+				
+			elseif		l_condition_type == "Target_Health_Percent" then
+				l_first_value = tonumber(arg_target:GetHealth());
+				l_second_value = tonumber(l_condition.compare_value);
+				
+			elseif		l_condition_type == "Target_Casting" then
+				if (arg_target:GetSkillID() ~= 0) and (SkillList[arg_target:GetSkillID()]:IsMagical()) and (arg_target:GetSkillTime() &gt;= 500) then
+					l_result = true;
+				end
+				
+			elseif		l_condition_type == "Skill_On_Cooldown" then
+				if (l_condition.compare_value == nil) then
+					Write("Comparison value (should be skill name) was nil for skill '" .. l_skill_name .. "' for skill on cooldown condition so returning false, but this is a bug in your skills list.");
+					return false;
+				else
+					-- The test condition is TRUE if the skill is NOT available, meaning it is on cool down.
+					l_result = not Helper:CheckAvailable(l_condition.compare_value);
+				end
+				
+			elseif 		l_condition_type == "Buff_Not_Active" then
+				local l_target_state = arg_target:GetState();	
+				l_result = (l_target_state:GetState( Helper:CheckName( l_skill_name )) == nil);
+			end
+			
+			-- More efficient way to check if the condition type is one which requires numerically comparing values
+			if l_value_compare_types[l_condition_type] ~= nil then
+				l_compare = l_condition.compare;
+				-- Check to make sure we were given a comparison operator
+				if (l_compare == nil) then
+					Write("Condition comparison operator was nil for skill '" .. l_skill_name .. "' so returning false, but this is a bug in your skills list.");
+					return false;
+				end
+				-- Check to make sure we were given a comparison value to compare the in game variable to
+				if l_second_value == nil then
+					Write(l_condition_type .. " condition for skill '" .. l_skill_name .. "' has nil comparison value so returning false, but this is a bug in your skills list.");
+					return false;
+				end
+				-- Now check which type of comparison operator to use and perform that comparison (first OPERATOR second)
+				if 		l_compare == "&gt;" then
+					l_result = (l_first_value &gt; l_second_value);
+				elseif	l_compare == "&gt;=" then
+					l_result = (l_first_value &gt;= l_second_value);
+				elseif	l_compare == "&lt;" then
+					l_result = (l_first_value &lt; l_second_value);
+				elseif	l_compare == "&lt;=" then
+					l_result = (l_first_value &lt;= l_second_value);
+				elseif	l_compare == "==" then
+					l_result = (l_first_value == l_second_value);
+				end
+			end
+		end
+		-- End the loop as soon as we fail any condition
+		if not l_result then
+			break;
+		end		
+	end
+	
+	return l_result;
+end
+
+
+-- This is called to start a new set of chain skills and is ONLY called if the skill is available and conditions met (pre-tested before this point)
+function _start_chain( arg_skill_name, arg_target)
+	m_doing_chain_skills = true;
+	m_chain_index = 1;
+	m_current_chain = m_chain_info[arg_skill_name];
+	m_chain_start_skill = arg_skill_name;
+	Helper:CheckExecute( arg_skill_name, arg_target );
+	m_chain_timeout_time = Time() + m_chain_timeout_interval;
+end
+
+
+-- This is called to continue a chain skill list and is ONLY called if the skill is available and conditions met (pre-tested before this point)
+function _continue_chain( arg_skill_info, arg_target)
+
+	local l_found_skill_in_chain = false;
+	local l_skill_name = arg_skill_info.skill_name;
+	
+	-- Check if the skill we're considering doing is in the chain and is either at the current level or at the next chain level
+	for chain_index, chain_skill in ipairs(m_current_chain) do
+		-- If skill we are evaluating matches one from the chain list...
+		if l_skill_name == chain_skill then
+			l_found_skill_in_chain = true;
+			-- If the chain level for the skill we are evaluating is at the same level (for repeat skills) or the next/higher level
+			if chain_index &gt;= m_chain_index then
+				m_chain_index = chain_index;
+				Helper:CheckExecute( l_skill_name, arg_target );
+				m_chain_timeout_time = Time() + m_chain_timeout_interval;
+				return false;
+			end
+		end
+	end
+	
+	-- If this skill isn't part of the chain AND the skill has the break_chain flag set to true, then we execute it (this only happens for conditional skills which are critical like Remove Shock, heals, etc.
+	if (not l_found_skill_in_chain) and (arg_skill_info.break_chain == true) then
+		-- Since we are breaking the chain we will clear the variables so we no longer try to continue the chain.
+		self:_reset_chain_variables();
+		Helper:CheckExecute( l_skill_name, arg_target );
+		return false;						
+	end
+
+	-- Indicate nothing done so other actions can potentially be taken this tick.
+	return true;
+end
+
+
+-- Search through the list of skills until one is found which is both available and meets any conditions specified for it, then execute it.
+function _do_skills(arg_skills, arg_target, arg_range, arg_stunned)
+
+	-- Loop through the given skill list checking if the skill is available and any conditions included test as true
+	for key, l_skill_info in ipairs(arg_skills) do
+		local l_skill_name = l_skill_info.skill_name;
+		if (l_skill_name ~= nil) then		
+			local l_conditions_passed = self:_check_conditions( l_skill_info, arg_target, arg_range, arg_stunned );
+			if (l_conditions_passed) then
+				local l_available = Helper:CheckAvailable( l_skill_name );
+				if l_available then
+					-- Check if this is the start of a chain
+					if m_chain_info[l_skill_name] ~= nil then
+						self:_start_chain( l_skill_name, arg_target );
+						return false;
+					elseif m_doing_chain_skills then
+						-- If we are in the middle of a chain, check that THIS skill is in the chain and is at the right chain level, or if the skill has break_chain flag set to true (for critical conditional skills)
+						if not self:_continue_chain( l_skill_info, arg_target ) then
+							return false;
+						end
+					else  -- We are not in the middle of a chain, the skill is available, and all conditions have been met (or there are no conditions).
+						Helper:CheckExecute( l_skill_name, arg_target );
+						return false;
+					end
+				end
+			end
+		end
+	end
+	
+	-- Indicate nothing done so other actions can potentially be taken this tick.
+	return true;
+end
+
+
+-- Check to see if the player has the item, if the item's specific cool down is zero and if the general category cool down is off too
+function _check_item_cooldown( arg_item_info )
+
+	local l_result = false;
+
+	if ( arg_item_info.item_name ~= nil ) then
+		local l_inventory_item = InventoryList:GetInventory( arg_item_info.item_name );
+
+		if ( l_inventory_item ~= nil ) and ( l_inventory_item:GetCooldown() == 0 ) then
+			if ( m_cooldown_end_timestamps[ arg_item_info.cooldown_type ] == nil ) then
+				l_result = true;
+			elseif ( Time() &gt; m_cooldown_end_timestamps[ arg_item_info.cooldown_type ] ) then
+				l_result = true;
+			end
+		end
+	end
+
+	return l_result;
+end
+
+-- Check to see if any of the items in the given list are ready (not on cool down) and meet any conditions required before using them
+function _do_items( arg_items )
+
+	-- Loop through the given skill list checking if the skill is available and any conditions included test as true
+	for key, l_item_info in ipairs(arg_items) do
+		local l_item_name = l_item_info.item_name;
+		if (l_item_name ~= nil) then		
+			local l_conditions_passed = self:_check_conditions( l_item_info, nil, nil, nil );
+			if (l_conditions_passed) then
+				local l_available = self:_check_item_cooldown( l_item_info );
+				if l_available then
+					--Write("Using item '" .. l_item_name .. "'");
+					if PlayerInput:Inventory( l_item_name ) then
+						-- Repeated to ensure it fires
+						PlayerInput:Inventory( l_item_name );
+						m_cooldown_end_timestamps[ l_item_info.cooldown_type ] = Time() + ( m_cooldown_per_item_type[ l_item_info.cooldown_type ] * 1000);
+						return false;
+					end
+				end
+			end
+		end
+	end
+
+	-- Indicate nothing done so other actions can potentially be taken this tick.
+	return true;
+end
+
+--- Perform the attack routine on the selected target.
+--
+-- @param       Entity  Contains the entity we have targeted.
+-- @param       double  Contains the distance to the target
+-- @param       bool    Indicates whether or not the target is stunned.
+-- @return      bool
+function Attack( arg_target, arg_range, arg_stunned )
+
+	if arg_target:IsDead() then
+		self.m_target = nil
+	end
+	
+	
+	-- If we haven't started attacking this entity yet...do pre-attack buffs, then attack buffs, then the actual pull
+	if (self.m_target ~= arg_target:GetID()) and (not arg_target:IsDead()) then
+		--Write ("Starting new pull.");
+		
+		-- If starting a new pull then not doing a chain (even though sometimes Aion will let you finish a chain on a different mob...we will ignore that glitch)
+		self:_reset_chain_variables();
+		
+		-- If we are doing a pre-attack buff, then return false to indicate nothing more can be done until next tick
+		if not self:_do_skills(m_pre_attack_buffs, Player) then
+			return false;
+		end
+		-- If we are doing a mid-attack buff (pre-attack only happens once, but during attack can happen pre-pull or mid attack), then return false to indicate nothing more can be done this tick.
+		if not self:_do_skills(m_attack_buffs, Player) then
+			return false;
+		end
+		-- If we actually manage to execute a pull attack, then return false to indicate nothing more can be done this tick.
+		if not self:_do_skills( m_pull_skills, arg_target, arg_range, arg_stunned ) then
+			self.m_target = arg_target:GetID();
+			return false;
+		end
+	-- Else we HAVE started attacking this entity already so do full attack routine
+	elseif (not arg_target:IsDead()) then
+		-- If we're doing a chain and the chain has timed out (too long between chain skills) then reset to not doing a chain and move on.
+		if ( m_doing_chain_skills ) and ( Time() &gt; m_chain_timeout_time ) then
+			Write("Chain '" .. m_chain_start_skill .. "' timed out so resetting variables, if this happens too often, increase the m_chain_timeout_interval towards the top.");
+			self:_reset_chain_variables();
+		end
+		
+		-- Conditionals override everything...should be critical skills...
+		if not self:_do_skills( m_conditional_skills, arg_target, arg_range, arg_stunned ) then
+			return false;
+		end
+
+		if ( m_doing_chain_skills ) then
+			-- Check to see if we do any chain skills, and return false to indicate nothing more can be done until next tick.
+			if not self:_do_skills( m_chain_skills, arg_target, arg_range, arg_stunned ) then
+				return false;
+			end
+		else
+
+			-- Check to see if we need to use any inventory items like potions, health crystals, or whatever
+			if not self:_do_items( m_items_to_use ) then
+				return false;
+			-- Check to see if we do any chain skills (just in case), and return false to indicate nothing more can be done until next tick.
+			elseif not self:_do_skills( m_chain_skills, arg_target, arg_range, arg_stunned ) then
+				return false;
+			-- Check if need to do any mid-attack buffs, and return false to indicate nothing more can be done until next tick if we perform a buff
+			elseif not self:_do_skills(m_attack_buffs, Player) then
+				return false;
+			-- Check to see if we do any normal attack skills, and return false to indicate nothing more can be done until next tick.
+			elseif not self:_do_skills( l_attack_skills, arg_target, arg_range, arg_stunned ) then
+				return false;
+			end	
+		end
+	end
+	-- Indicate nothing done so other actions can potentially be taken this tick.
+	return true;
+end
+
+
+--- Perform the required pause checks.
+--
+-- @return	bool
+function Pause()
+
+	if not self:_do_skills( m_pre_attack_buffs, Player ) then
+		return false;
+	end
+
+	-- Check to see if we need to use any inventory items like potions, health crystals, or whatever
+	if not self:_do_items( m_items_to_use ) then
+		return false;
+	end
+	
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+
+-- Handle any tasks which should happen when the current target is killed
+function TargetDied(arg_target)
+	
+	m_target = nil;
+	
+	-- Nothing was executed, continue with other functions.
+	return true;
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Little error boting for me.</h3>
+				<div class="date">Posted: <strong>Sat Oct 21, 2017 1:31 pm</strong></div>
+				<div class="author">by <strong>Mandy</strong></div>
+				<div class="content">and  System.NullReferenceException: Object reference not set to an instance of an object.<br>
+   at AionExtension._RunFrame()</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=297&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:13 GMT -->
+</html>

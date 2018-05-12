@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=96&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; how do check on/off skill in script ?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>how do check on/off skill in script ?</h2>
+		<p><a href="viewtopic3fba.html?f=6&amp;t=96">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=96</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Fri Mar 10, 2017 10:10 am</strong></div>
+				<div class="author">by <strong>ll8082</strong></div>
+				<div class="content">how do check on/off skill in script ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Fri Mar 10, 2017 10:02 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Don't know what you mean.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Sat Mar 11, 2017 2:03 am</strong></div>
+				<div class="author">by <strong>ll8082</strong></div>
+				<div class="content">ho do know   a skill is on   or off        as: auto looot;     buff mster  ....</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Sat Mar 11, 2017 7:30 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">There is no support for pet's in that way. You have to do it manually.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Mon Mar 13, 2017 1:57 pm</strong></div>
+				<div class="author">by <strong>sapibuntinx</strong></div>
+				<div class="content">on NA Aion:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Game.Process.GetUnsignedInteger(dialog.GetAddress() + 992) &gt; 0</code></pre></div>
+
+dialog is a variable refering to the shortcut dialog.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Mon Mar 13, 2017 3:56 pm</strong></div>
+				<div class="author">by <strong>sapibuntinx</strong></div>
+				<div class="content">btw here is the example in lua code:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local Shortcut1Address = DialogList:GetDialog( "quickbar_dialog/ctn_shortcut/shortcut1" ):GetAddress()
+local IsAbilityActive = Memory:GetUnsignedInteger(Shortcut1Address + 992) &gt; 0
+</code></pre></div>
+
+this will check if ability shortcut slot 1 dialog is active or not</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Wed Mar 15, 2017 10:21 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">Fantastic piece of information! Nice way to circumvent any LUA variable issue, simply call the offset address manually.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Wed Mar 15, 2017 10:27 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">Example usage; if skill is on the quickbar 1 1 1;<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function Pause()
+local Shortcut1Address = DialogList:GetDialog( "quickbar_dialog/ctn_shortcut/shortcut1" ):GetAddress();--shortcut1 means quickbar 1 1 1
+local IsAbilityActive = Memory:GetUnsignedInteger(Shortcut1Address + 992) &gt; 0 ;
+	if not IsAbilityActive and Helper:CheckAvailable( "Frenzy" ) then
+			Helper:CheckExecute( "Frenzy" );
+			return false;			
+		end
+
+return true;
+end	</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Wed Mar 15, 2017 10:59 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic54a8.html?p=482#p482" data-post-id="482" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 15, 2017 10:27 pm</div></cite>
+Example usage; if skill is on the quickbar 1 1 1;<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function Pause()
+local Shortcut1Address = DialogList:GetDialog( "quickbar_dialog/ctn_shortcut/shortcut1" ):GetAddress();--shortcut1 means quickbar 1 1 1
+local IsAbilityActive = Memory:GetUnsignedInteger(Shortcut1Address + 992) &gt; 0 ;
+	if not IsAbilityActive and Helper:CheckAvailable( "Frenzy" ) then
+			Helper:CheckExecute( "Frenzy" );
+			return false;			
+		end
+
+return true;
+end	</code></pre></div>
+</div></blockquote>
+So, how can we SetValue "0" again ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: how do check on/off skill in script ?</h3>
+				<div class="date">Posted: <strong>Wed Mar 15, 2017 11:25 pm</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic3758.html?p=483#p483" data-post-id="483" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 15, 2017 10:59 pm</div></cite>
+<blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic54a8.html?p=482#p482" data-post-id="482" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 15, 2017 10:27 pm</div></cite>
+Example usage; if skill is on the quickbar 1 1 1;<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function Pause()
+local Shortcut1Address = DialogList:GetDialog( "quickbar_dialog/ctn_shortcut/shortcut1" ):GetAddress();--shortcut1 means quickbar 1 1 1
+local IsAbilityActive = Memory:GetUnsignedInteger(Shortcut1Address + 992) &gt; 0 ;
+	if not IsAbilityActive and Helper:CheckAvailable( "Frenzy" ) then
+			Helper:CheckExecute( "Frenzy" );
+			return false;			
+		end
+
+return true;
+end	</code></pre></div>
+</div></blockquote>
+So, how can we SetValue "0" again ?
+</div></blockquote>
+
+<strong class="text-strong">IsAbilityActive = nil;</strong></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=96&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:13 GMT -->
+</html>

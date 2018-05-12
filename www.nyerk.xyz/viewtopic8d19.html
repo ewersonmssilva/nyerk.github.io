@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=119&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Focus Agent script</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Focus Agent script</h2>
+		<p><a href="viewtopic9461.html?f=8&amp;t=119">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=119</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Focus Agent script</h3>
+				<div class="date">Posted: <strong>Thu Mar 23, 2017 2:48 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CheckFocusAgent()
+
+	if self._iFocusAgentDelay == nil or self._iFocusAgentDelay &lt; Time() then
+		-- Check if we have a positive match and set cooldown.
+			if PlayerInput:Inventory( "Fine Focus Agent") then
+				self._iFocusAgentDelay = Time() + 900000;
+				return false;
+			elseif PlayerInput:Inventory( "Focus Agent") then
+				self._iFocusAgentDelay = Time() + 900000;
+				return false;
+			elseif PlayerInput:Inventory( "Greater Focus Agent") then
+				self._iFocusAgentDelay = Time() + 900000;
+				return false;
+			elseif PlayerInput:Inventory( "Lesser Focus Agent") then
+				self._iFocusAgentDelay = Time() + 900000;
+				return false;
+			elseif PlayerInput:Inventory( "Major Focus Agent") then
+				self._iFocusAgentDelay = Time() + 900000;
+				return false;
+			elseif PlayerInput:Inventory( "Minor Focus Agent") then
+				self._iFocusAgentDelay = Time() + 900000;
+				return false;
+			end
+		
+	end
+	
+	return true;
+end
+</code></pre></div>
+
+An Helper function. I hope be usefull <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Focus Agent script</h3>
+				<div class="date">Posted: <strong>Fri Jul 21, 2017 9:08 pm</strong></div>
+				<div class="author">by <strong>ewerson2</strong></div>
+				<div class="content">This code is OK <br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function Pause()
+  
+if Player:GetState():GetState( 10051 ) == nil then
+        if Helper:CheckAvailableInventory( "Fine Focus Agent" ) then
+            PlayerInput:Inventory( "Fine Focus Agent" );
+            return false;
+        elseif Helper:CheckAvailableInventory( "Major Focus Agent" ) then
+            PlayerInput:Inventory( "Major Focus Agent" );
+            return false;
+        elseif Helper:CheckAvailableInventory( "Greater Focus Agent" ) then
+            PlayerInput:Inventory( "Greater Focus Agent" );
+            return false;
+        elseif Helper:CheckAvailableInventory( "Focus Agent" ) then
+            PlayerInput:Inventory( "Focus Agent" );
+            return false;			
+        elseif Helper:CheckAvailableInventory( "Lesser Focus Agent" ) then
+            PlayerInput:Inventory( "Lesser Focus Agent" );
+            return false;
+        elseif Helper:CheckAvailableInventory( "Minor Focus Agent" ) then
+            PlayerInput:Inventory( "Minor Focus Agent" );
+            return false;			
+       end
+end
+
+if Player:GetState():GetState( 10044 ) == nil then
+        if Helper:CheckAvailableInventory( "Fine Rally Serum" ) then
+            PlayerInput:Inventory( "Fine Rally Serum" );
+            return false;
+        elseif Helper:CheckAvailableInventory( "Major Rally Serum" ) then
+            PlayerInput:Inventory( "Major Rally Serum" );
+            return false;
+        elseif Helper:CheckAvailableInventory( "Greater Rally Serum" ) then
+            PlayerInput:Inventory( "Greater Rally Serum" );
+            return false;
+         elseif Helper:CheckAvailableInventory( "Rally Serum" ) then
+            PlayerInput:Inventory( "Rally Serum" );
+            return false;
+		elseif Helper:CheckAvailableInventory( "Lesser Rally Serum" ) then
+            PlayerInput:Inventory( "Lesser Rally Serum" );
+            return false;
+        elseif Helper:CheckAvailableInventory( "Minor Rally Serum" ) then
+            PlayerInput:Inventory( "Minor Rally Serum" );
+            return false;			
+       end
+end
+    
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Focus Agent script</h3>
+				<div class="date">Posted: <strong>Mon Jul 24, 2017 4:49 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">This easy way ? <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function AttackFood()
+ 
+stateID = {10740,10051,10064,10224,10225,9976,9989};
+foodName = {"Minor Focus Agent","Lesser Focus Agent","Focus Agent","Greater Focus Agent","Major Focus Agent","Fine Focus Agent","Fried fresh Plumbo with Cheese"};
+flag = 0;
+ 
+    for _,v in ipairs(stateID) do
+        if Player:GetState():GetState( v ) ~= nil then
+            flag = flag + 1;
+        end
+    end
+ 
+    if flag == 0 then
+        for a,b in ipairs(foodName) do
+            if Helper:CheckAvailableInventory( b ) then
+                PlayerInput:Inventory( b );
+                break;
+            end
+        end
+    end
+return true;
+ 
+ 
+end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=119&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+</html>

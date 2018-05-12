@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=200&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Trying to create a specific behavior. Can someone help? - Page 2</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Trying to create a specific behavior. Can someone help?</h2>
+		<p><a href="viewtopic7eb2.html?f=6&amp;t=200">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=200</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Fri Jul 28, 2017 2:06 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">scratch that! thanks Nucular and Agonic! I got everything working perfectly now. I just need to remember if I spam teh words on normal chat ill get temporary block cuz flooding chat, but group chat is totally fine ^^<br>
+<br>
+now the 2nd part I need to do is to add the timer, because, oh boy... it really does flood the chat... how do I add timer?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Fri Jul 28, 2017 3:17 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicc30e.html?p=1083#p1083" data-post-id="1083" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:01 pm</div></cite></div></blockquote>
+<blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopicac40.html?p=1079#p1079" data-post-id="1079" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Jul 26, 2017 6:31 pm</div></cite></div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TargetEntity = EntityList:GetEntity( Entity:GetTargetId() );
+
+if TargetEntity ~= nil then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "_SKILL NAME HERE_" ) ~= nil then
+
+	PlayerInput:Console("" .. TargetEntity:GetName() .. " is gonna be hit by " .. Entity:GetName() .. " );
+	end
+
+end</code></pre></div>
+
+so I ended up with this code above as the final results. It works perfectly as how I intended to make them in the first place, but its flooding group chat too fast. how do I fix this to create timer so I wont be spamming it too much?<br>
+<br>
+I tried to combine this with a few lines from agonic's code, like this:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>timer = 0
+wait = 1000
+
+local TargetEntity = EntityList:GetEntity( Entity:GetTargetId() );
+
+if TargetEntity ~= nil then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "_SKILL NAME HERE_" ) ~= nil then
+
+        if Time() &gt; timer then
+
+	PlayerInput:Console("" .. TargetEntity:GetName() .. " is gonna be hit by " .. Entity:GetName() .. " );
+	end
+
+	timer = Time() + wait
+	end
+end</code></pre></div>
+		<br>
+the result is even worse. nothing happened <img class="smilies" src="images/smilies/icon_mad.gif" width="15" height="17" alt=":x" title="Mad"><br>
+im at a loss. what part did I do wrong?<br>
+<br>
+thanks again for all of the great helps!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Fri Jul 28, 2017 1:01 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">Skill name here?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Fri Jul 28, 2017 4:32 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic08f3.html?p=1095#p1095" data-post-id="1095" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 28, 2017 1:01 pm</div></cite>Skill name here?</div></blockquote>
+
+thats just a sample. the skill name here is the part that u change according to skill. like in IS - powerful ide, in IO - Salvo, etc etc...<br>
+<br>
+in any case, theres nothing broken with that part. the only problem now is I dont know how to make a timer thats all...</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Fri Jul 28, 2017 6:52 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TargetEntity = EntityList:GetEntity( Entity:GetTargetId() );
+if TargetEntity ~= nil then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "_SKILL NAME HERE_" ) ~= nil then
+		if ShoutTimer == nil or ShoutTimer &lt; Time() then
+			PlayerInput:Console("" .. TargetEntity:GetName() .. " is gonna be hit by " .. Entity:GetName() .. " );
+			ShoutTimer = Time() + 3000; -- shout limit to 3 seconds
+		end
+	end
+end</code></pre></div>
+
+Should work, i'm kinda sad that no one knows how to do that ....  <img class="smilies" src="images/smilies/icon_e_confused.gif" width="15" height="17" alt=":?" title="Confused"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Sat Jul 29, 2017 3:27 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic21fb.html?p=1097#p1097" data-post-id="1097" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 28, 2017 6:52 pm</div></cite>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TargetEntity = EntityList:GetEntity( Entity:GetTargetId() );
+if TargetEntity ~= nil then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "_SKILL NAME HERE_" ) ~= nil then
+		if ShoutTimer == nil or ShoutTimer &lt; Time() then
+			PlayerInput:Console("" .. TargetEntity:GetName() .. " is gonna be hit by " .. Entity:GetName() .. " );
+			ShoutTimer = Time() + 3000; -- shout limit to 3 seconds
+		end
+	end
+end</code></pre></div>
+
+Should work, i'm kinda sad that no one knows how to do that ....  <img class="smilies" src="images/smilies/icon_e_confused.gif" width="15" height="17" alt=":?" title="Confused">
+</div></blockquote>
+
+this works perfectly as intended now, nucular. thank you very much for this, you have been a super great help!  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> <br>
+this side project has been a major success!</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>2</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=200&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=9&t=7&start=20&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Official: Assassin.lua - Page 3</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Official: Assassin.lua</h2>
+		<p><a href="viewtopicdbfb.html?f=9&amp;t=7">https://www.nyerk.xyz/viewtopic.php?f=9&amp;t=7</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>3</strong> of <strong>3</strong></div>
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 7:28 pm</strong></div>
+				<div class="author">by <strong>maq2285</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6d5e.html?mode=viewprofile&amp;u=429">sergeas</a> wrote: <a href="viewtopic58d1.html?p=1308#p1308" data-post-id="1308" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 6:18 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopica563.html?p=1307#p1307" data-post-id="1307" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 5:48 pm</div></cite>
+Anyone got the updated Slayer form to work? please share your code ^^
+</div></blockquote>
+
+<br>
+NA version:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Transformation: Slayer
+	if Player:GetState():GetState( Helper:CheckName( "Slayer Form I" )) == nil and Helper:CheckAvailable( "Slayer Form I" ) then
+		Helper:CheckExecute( "Slayer Form I" );
+		return false;
+	end</code></pre></div>
+</div></blockquote>
+
+Its called Mist Butcher on EU, would it work to put "Mist Butcher" instead of Slayer Form 1?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Wed Aug 23, 2017 12:20 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopic62d8.html?p=1310#p1310" data-post-id="1310" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 7:28 pm</div></cite>
+<blockquote><div><cite><a href="memberlist6d5e.html?mode=viewprofile&amp;u=429">sergeas</a> wrote: <a href="viewtopic58d1.html?p=1308#p1308" data-post-id="1308" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 6:18 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopica563.html?p=1307#p1307" data-post-id="1307" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 5:48 pm</div></cite>
+Anyone got the updated Slayer form to work? please share your code ^^
+</div></blockquote>
+
+<br>
+NA version:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Transformation: Slayer
+	if Player:GetState():GetState( Helper:CheckName( "Slayer Form I" )) == nil and Helper:CheckAvailable( "Slayer Form I" ) then
+		Helper:CheckExecute( "Slayer Form I" );
+		return false;
+	end</code></pre></div>
+</div></blockquote>
+
+Its called Mist Butcher on EU, would it work to put "Mist Butcher" instead of Slayer Form 1?
+</div></blockquote>
+
+On NA yes, on EU no.<br>
+I have to update skill.xml for EU at some time.<br>
+But then yes it will work. <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Thu Aug 24, 2017 9:06 am</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic29f2.html?p=1316#p1316" data-post-id="1316" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Aug 23, 2017 12:20 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopic62d8.html?p=1310#p1310" data-post-id="1310" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 7:28 pm</div></cite>
+<blockquote><div><cite><a href="memberlist6d5e.html?mode=viewprofile&amp;u=429">sergeas</a> wrote: <a href="viewtopic58d1.html?p=1308#p1308" data-post-id="1308" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 6:18 pm</div></cite>
+<br>
+<br>
+<br>
+NA version:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Transformation: Slayer
+	if Player:GetState():GetState( Helper:CheckName( "Slayer Form I" )) == nil and Helper:CheckAvailable( "Slayer Form I" ) then
+		Helper:CheckExecute( "Slayer Form I" );
+		return false;
+	end</code></pre></div>
+</div></blockquote>
+
+Its called Mist Butcher on EU, would it work to put "Mist Butcher" instead of Slayer Form 1?
+</div></blockquote>
+
+On NA yes, on EU no.<br>
+I have to update skill.xml for EU at some time.<br>
+But then yes it will work. <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink">
+</div></blockquote>
+
+I got no problem with Slayer on EU using this code:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		if Player:GetManaCurrent() &lt; Player:GetManaMaximum() - 2000 and Helper:CheckAvailable( "Transformation: Slayer" ) then
+		Helper:CheckExecute( "Transformation: Slayer" );
+			return false;
+		end</code></pre></div>
+You might want to remove the mana check i use i for sustain.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Thu Aug 24, 2017 10:44 am</strong></div>
+				<div class="author">by <strong>maq2285</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste9a7.html?mode=viewprofile&amp;u=60">unkn0wnus3r</a> wrote: <a href="viewtopiccd93.html?p=1323#p1323" data-post-id="1323" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Aug 24, 2017 9:06 am</div></cite>
+<blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic29f2.html?p=1316#p1316" data-post-id="1316" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Aug 23, 2017 12:20 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopic62d8.html?p=1310#p1310" data-post-id="1310" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 7:28 pm</div></cite>
+<br>
+<br>
+Its called Mist Butcher on EU, would it work to put "Mist Butcher" instead of Slayer Form 1?
+</div></blockquote>
+
+On NA yes, on EU no.<br>
+I have to update skill.xml for EU at some time.<br>
+But then yes it will work. <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink">
+</div></blockquote>
+
+I got no problem with Slayer on EU using this code:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		if Player:GetManaCurrent() &lt; Player:GetManaMaximum() - 2000 and Helper:CheckAvailable( "Transformation: Slayer" ) then
+		Helper:CheckExecute( "Transformation: Slayer" );
+			return false;
+		end</code></pre></div>
+You might want to remove the mana check i use i for sustain.
+</div></blockquote>
+
+I got the normal slayer form to work, but its the high deava Form that doesn't work for me</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Thu Aug 24, 2017 12:08 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopicc1cc.html?p=1324#p1324" data-post-id="1324" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Aug 24, 2017 10:44 am</div></cite>
+<blockquote><div><cite><a href="memberliste9a7.html?mode=viewprofile&amp;u=60">unkn0wnus3r</a> wrote: <a href="viewtopiccd93.html?p=1323#p1323" data-post-id="1323" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Aug 24, 2017 9:06 am</div></cite>
+<blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic29f2.html?p=1316#p1316" data-post-id="1316" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Aug 23, 2017 12:20 pm</div></cite>
+<br>
+<br>
+On NA yes, on EU no.<br>
+I have to update skill.xml for EU at some time.<br>
+But then yes it will work. <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink">
+</div></blockquote>
+
+I got no problem with Slayer on EU using this code:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		if Player:GetManaCurrent() &lt; Player:GetManaMaximum() - 2000 and Helper:CheckAvailable( "Transformation: Slayer" ) then
+		Helper:CheckExecute( "Transformation: Slayer" );
+			return false;
+		end</code></pre></div>
+You might want to remove the mana check i use i for sustain.
+</div></blockquote>
+
+I got the normal slayer form to work, but its the high deava Form that doesn't work for me
+</div></blockquote>
+
+Oh, k then u need to look the skill id up (aiondatabase) and add an entry for it in the skills.xml</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Sun Aug 27, 2017 11:50 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">You can use like this
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if bla bla then
+PlayerInput:Console("/skill Mist Butcher"  )
+end </code></pre></div>
+If you wanna add skill which is not in Skill.xml, you can write as PlayerInput:Console("/skill skill name") instead of Helper execute. And also don't use return. Just end</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Mon Sep 18, 2017 10:07 am</strong></div>
+				<div class="author">by <strong>robertgigant</strong></div>
+				<div class="content">Is this version of the script up to date and final if I did not ask for a script on the EU in advance thank you I'm weak from English.  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"><br>
+And I mean exactly the script that uses the stigma of attack such as Quickening Doom</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Tue Oct 31, 2017 4:30 pm</strong></div>
+				<div class="author">by <strong>darthcroaton</strong></div>
+				<div class="content">hello guys,im new here and i wonder something about this "lua".im trying to figure how to use AS right now and as a sin player i didnt understand this "assassin.lua" how is work ? i mean is it gonna pup up my dps?skills?. i just manage to install and i figure how to use this attack speed and i belive for only pve this is all i need,just pup up attack speed to %40 and will be fine as far as i can understand.if im getting something wrong with this "lua" pls can someone explain me why we need to use it or only open AS without useing any "lua" and just set attack speed at %40 and done for pve instance like narakkalli gok..(u can pm me or just answer here please..)</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>3</strong> of <strong>3</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=9&t=7&start=20&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:19 GMT -->
+</html>

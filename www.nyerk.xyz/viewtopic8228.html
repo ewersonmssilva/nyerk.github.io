@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=153&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Help needed: Logout or escape when enemy is found</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Help needed: Logout or escape when enemy is found</h2>
+		<p><a href="viewtopic2957.html?f=7&amp;t=153">https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=153</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Help needed: Logout or escape when enemy is found</h3>
+				<div class="date">Posted: <strong>Thu May 04, 2017 12:16 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Hello, I hope this makes sense. I have seen in the gathering.lua some options to logout or use escape when you see a specific list of people or enemies etc.<br>
+
+<blockquote class="uncited"><div>		<em class="text-italics">-- Indicates whether or not to suspend activity with an enemy player in the area.</em><br>
+		<strong class="text-strong">ProtectionEnemy </strong>= <span style="color: #0000FF">false</span>,<br>
+		<em class="text-italics">-- Indicates the action when ProtectionEnemy is true and we found an enemy. Console command, i.e. "/Skill Return".</em><br>
+		<strong class="text-strong">ProtectionEnemyEscape </strong>= "<span style="color: #0000FF">/Skill Return</span>",<br>
+		<em class="text-italics">-- Indicates whether or not to suspend activity with a friendly player in the area.</em><br>
+		<strong class="text-strong">ProtectionFriendly </strong>= <span style="color: #0000FF">false</span>,</div></blockquote>
+
+Now there is nothing like this in grinding.lua and it is super weird, if anything when you XP afk this is probably one of the most important ones, so many people were frapsed while afk xping.<br>
+<br>
+The only "security" you can have to run it on "safe mode" where it stops acting in anything if an enemy is found (or a character of the same function) but that is not enough in my opinion, XPing and then suddenly stop while an enemy is near you is still an obvious bot.<br>
+<br>
+I would like to have an option like use an instant scroll or something, or force logout EVEN when a friendly player comes from the same function.<br>
+<br>
+~~~~~~~~~~~~~~<br>
+I am more than sure that simply copying these lines and their functions below in the gathering.lua this wouldn't really work as is. I mean the .lua files all work together. They have "include this" and "include that" etc.<br>
+<br>
+Helper.lua for example is an autonomous file for seeing the HP, MP and use Herb and Mana treatments which are globally available to characters, it is included in Grinder.lua for example.<br>
+<br>
+I could try to do it but I will not be sure it will work until an enemy comes close (or a player from the same function equally). <br>
+<br>
+I am simply asking if anyone has done it and share it with us.<br>
+<br>
+Thanks for your time.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=153&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:31 GMT -->
+</html>

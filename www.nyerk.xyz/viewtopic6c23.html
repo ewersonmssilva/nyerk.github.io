@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=148&p=809 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:20:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>How to use AionScript as Bot - Nyerk</title>
+
+
+	<link rel="canonical" href="viewtopicbceb.html?t=148">
+
+<!--
+	phpBB style name: we_universal
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      nextgen ( http://xeronix.org/ )
+-->
+
+
+<link href="styles/prosilver/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="assets/css/font-awesome.min5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/prosilver/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=25" rel="stylesheet">
+<![endif]-->
+
+
+<link href="ext/gfksx/ThanksForPosts/styles/prosilver/theme/thanks5d79.css?assets_version=25" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="./styles/we_universal/template/html5shiv.min.js"></script>
+<![endif]-->
+
+</head>
+<body id="phpbb" class="nojs notouch section-viewtopic ltr  logged-out">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div class="inventea-headerbar">
+		<nav class="inventea-wrapper inventea-userbar">
+			<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="icon fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+		
+														
+							<li>
+								<a href="index-2.html" role="menuitem">
+									<i class="icon fa fa-fw fa-home" aria-hidden="true"></i><span>Board index</span>
+								</a>
+							</li>		
+							
+							<li data-skip-responsive="true">
+								<a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">
+									<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+								</a>
+							</li>
+							
+													<li>
+								<a href="search.html" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+							
+														
+														
+								
+						
+							<li>
+								<a href="search33a7.html?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="search526f.html?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+	
+						
+							
+            																			<li>
+								<a href="memberlist4bfd.html?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+						            
+				                    </ul>
+    </div>
+</div>
+
+			
+			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+										<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp26c3.html?mode=login" title="Login" accesskey="x" role="menuitem"><i class="icon fa-fw fa-sign-in" aria-hidden="true"></i>Login</a></li>
+											<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp8319.html?mode=register" role="menuitem"><i class="icon fa-fw fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										
+										
+							</ul>
+		</nav>
+	</div>
+
+	<header class="inventea-header">
+			
+		<div class="inventea-dashboard" role="banner">
+						<nav role="navigation">
+	<div class="inventea-posts-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+																			<li><a href="search33a7.html?search_id=unanswered" role="menuitem">Unanswered topics</a></li>
+				<li><a href="search526f.html?search_id=active_topics" role="menuitem">Active topics</a></li>
+			
+					</ul>
+	</div>
+
+	<div class="inventea-forum-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+			<li><a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+			<li><a href="search.html" role="menuitem">Search</a></li>
+											<li><a href="memberlist4bfd.html?mode=team" role="menuitem">The team</a></li>			
+						
+					</ul>
+	</div>
+</nav>
+
+			<div class="inventea-sitename">
+				<h1><a href="index-2.html" title="Board index">Nyerk</a></h1>
+				<span>An Forum about Aion</span>
+			</div>
+		</div>
+			</header>
+
+	<div class="inventea-wrapper inventea-content" role="main">
+		
+		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+			
+									<li class="small-icon breadcrumbs">
+												<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index-2.html" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">Board index</span></a></span>
+														<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="3"><a href="viewforum4d6b.html?f=3" itemprop="url"><span itemprop="title">AionScript</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="7"><a href="viewforumd42b.html?f=7" itemprop="url"><span itemprop="title">Tutorials</span></a></span>
+																</li>
+					</ul>
+
+		
+		
+<h2 class="topic-title"><a href="viewtopic1e7f.html?f=7&amp;t=148">How to use AionScript as Bot</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+
+
+
+<div class="action-bar bar-top">
+	
+			<a href="postingedf2.html?mode=reply&amp;f=7&amp;t=148" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic1e9c.html?f=7&amp;t=148&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://www.nyerk.xyz/search.php">
+			<fieldset>
+				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…" />
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="search.html" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="148" />
+<input type="hidden" name="sf" value="msgonly" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			3 posts
+							&bull; Page <strong>1</strong> of <strong>1</strong>
+					</div>
+		</div>
+
+
+
+
+			<div id="p790" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile790">
+			<dt class="has-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlistd942.html?mode=viewprofile&amp;u=49" class="avatar"><img class="avatar" src="download/file6acc.png?avatar=49_1484091983.png" width="80" height="107" alt="User avatar" /></a>														</div>
+								<a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a>							</dt>
+
+						<dd class="profile-rank">VIP</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchc003.html?author_id=49&amp;sr=posts">105</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jan 10, 2017 11:40 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="49"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/true.html">10 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="49"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/49/false.html">23 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content790">
+
+						<h3 class="first"><a href="#p790">How to use AionScript as Bot</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting2e8b.html?mode=quote&amp;f=7&amp;p=790" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic895e.html?p=790#p790" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a></strong> &raquo; </span>Mon May 01, 2017 11:42 pm
+			</p>
+			
+			
+			
+			<div class="content"><strong class="text-strong"><em class="text-italics"><span style="text-decoration: underline">How to use AionScript as Bot:</span></em></strong><br>
+<br>
+<strong class="text-strong">1.</strong> <strong class="text-strong">Download</strong> the Newest <strong class="text-strong">AionScript</strong> =&gt; <a href="viewforum31e6.html?f=4" class="postlink">viewforum.php?f=4</a> &lt;=<br>
+<br>
+<strong class="text-strong">2.</strong> <strong class="text-strong">Extract</strong> AionScript<br>
+<br>
+<strong class="text-strong">3.</strong> <strong class="text-strong"><span style="text-decoration: underline">Start</span></strong> <strong class="text-strong">AionScript.exe</strong> as <strong class="text-strong"><span style="text-decoration: underline">Admin</span></strong>.<br>
+<br>
+<strong class="text-strong">4.</strong> Then select <strong class="text-strong">OfficialGrinderFramework</strong><br>
+<a href="http://www.directupload.net/file/d/4665/83fxubvy_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170319/temp/83fxubvy.png" class="postimage" alt="Image"></a><br>
+<br>
+<strong class="text-strong">5.</strong> <strong class="text-strong">Create</strong> your <strong class="text-strong">Waypoints </strong>(Rightclick in the empty window under the OfficialGrinderFramework line)<br>
+<a href="http://www.directupload.net/file/d/4665/vkwaapjp_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170319/temp/vkwaapjp.png" class="postimage" alt="Image"></a> <br>
+<br>
+<strong class="text-strong">6.</strong> A <strong class="text-strong">window</strong> will appear requiring you to enter the walk path name.<br>
+<a href="http://www.directupload.net/file/d/4665/ujkx64b7_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170319/temp/ujkx64b7.png" class="postimage" alt="Image"></a><br>
+<br>
+<strong class="text-strong">7.</strong> Go to your grinding spot and Press the <strong class="text-strong">Record </strong>button. Switch back to Your Game Window and create a grind path by moving around. Make an easy/safe way for your professional helper (Bot). Dont run through hundreds of mobs, jumping over obstacles, etc or your Bot will get maybe stuck. When done press Stop.<br>
+<a href="http://www.directupload.net/file/d/4665/85onlt33_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170319/temp/85onlt33.png" class="postimage" alt="Image"></a><br>
+<br>
+<strong class="text-strong">08.</strong> You see a list of rows added.<br>
+<a href="http://www.directupload.net/file/d/4665/qj22it7h_png.htm" class="postlink"><img src="../fs5.directupload.net/images/170319/temp/qj22it7h.png" class="postimage" alt="Image"></a><br>
+Each row represents a walk path node. Depending on the script, the types may have different functions. Generally the functions can be described as<br>
+ • <strong class="text-strong">Action</strong>, this is the node where you will be doing things.<br>
+ • <strong class="text-strong">Rest</strong>, make sure your bots rest.<br>
+ • <strong class="text-strong">Move</strong>, this will make the script immediately continue to the next node.<br>
+<br>
+<strong class="text-strong">9.</strong> <strong class="text-strong"><span style="text-decoration: underline">Save</span></strong> and <strong class="text-strong"><span style="text-decoration: underline">close</span></strong> the walk path.<br>
+<br>
+<strong class="text-strong">10.</strong> Go in <strong class="text-strong">AS\Scripting\OfficialGrinderFramework\Classes</strong> Folder and edit your Gladiator.lua file and save it.<br>
+    or use this one <a href="viewtopicd91b.html?f=11&amp;t=63" class="postlink">viewtopic.php?f=11&amp;t=63</a> (Check Skill Name)<br>
+<br>
+<strong class="text-strong">11.</strong> Press the <strong class="text-strong">Enable</strong> button.<br>
+<br>
+This tutorial is copied from <a href="viewtopic3aaa.html?f=6&amp;t=114" class="postlink">this topic</a>.<br>
+This tutorial is written by <a href="memberlist2a32.html?mode=viewprofile&amp;u=82" class="postlink"><strong class="text-strong">FarAwaY</strong></a></div>
+
+			
+									
+						<div id='list_thanks790'>
+</div>
+<div id='div_post_reput790'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p808" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile808">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist120a.html?mode=viewprofile&amp;u=378" class="username">alexxl30</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchb65f.html?author_id=378&amp;sr=posts">3</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Apr 26, 2017 9:21 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="378"></dd>
+    <dd class="profile-posts" data-user-receive-id="378"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content808">
+
+						<h3 ><a href="#p808">Re: How to use AionScript as Bot</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingaf1e.html?mode=quote&amp;f=7&amp;p=808" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicef2e.html?p=808#p808" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist120a.html?mode=viewprofile&amp;u=378" class="username">alexxl30</a></strong> &raquo; </span>Thu May 04, 2017 6:46 pm
+			</p>
+			
+			
+			
+			<div class="content"><a href="http://rgho.st/6glfKnCLC" class="postlink">http://rgho.st/6glfKnCLC</a> <a href="http://rgho.st/8nHcYTmvR" class="postlink">http://rgho.st/8nHcYTmvR</a> The question is what is wrong I did? Why is not the active window? Or it is necessary to install still that that? <a href="http://rgho.st/6MsXM6dpR" class="postlink">http://rgho.st/6MsXM6dpR</a> i play on eu. win 8.1 64 bit</div>
+
+			
+									
+						<div id='list_thanks808'>
+</div>
+<div id='div_post_reput808'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p809" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile809">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberlist2a32.html?mode=viewprofile&amp;u=82" class="avatar"><img class="avatar" src="download/file4037.jpg?avatar=82_1489692128.jpg" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberlist2a32.html?mode=viewprofile&amp;u=82" class="username">FarAwaY</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchf8e8.html?author_id=82&amp;sr=posts">48</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jan 29, 2017 9:31 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="82"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/82/true.html">22 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="82"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/82/false.html">13 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content809">
+
+						<h3 ><a href="#p809">Re: How to use AionScript as Bot</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postinga176.html?mode=quote&amp;f=7&amp;p=809" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicf53a.html?p=809#p809" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist2a32.html?mode=viewprofile&amp;u=82" class="username">FarAwaY</a></strong> &raquo; </span>Thu May 04, 2017 6:50 pm
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlist120a.html?mode=viewprofile&amp;u=378">alexxl30</a> wrote: <a href="viewtopicef2e.html?p=808#p808" data-post-id="808" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu May 04, 2017 6:46 pm</div></cite>
+<a href="http://rgho.st/6glfKnCLC" class="postlink">http://rgho.st/6glfKnCLC</a> <a href="http://rgho.st/8nHcYTmvR" class="postlink">http://rgho.st/8nHcYTmvR</a> The question is what is wrong I did? Why is not the active window? Or it is necessary to install still that that? <a href="http://rgho.st/6MsXM6dpR" class="postlink">http://rgho.st/6MsXM6dpR</a> i play on eu. win 8.1 64 bit
+</div></blockquote>
+
+5. Create your Waypoints (<strong class="text-strong"><span style="color: #FF0000">Rightclick in the empty window under the OfficialGrinderFramework line</span></strong>)</div>
+
+			
+									
+						<div id='list_thanks809'>
+</div>
+<div id='div_post_reput809'>
+</div>
+			<div id="sig809" class="signature"><img src="../origin.webcdn.theblackdesertonline.net/forum/service_live/monthly_02_2016/red_hawk_signature__2__by_daafstudios-d5j5720.png.acd7ab1726380745d4a832c87f7acc89.png" class="postimage" alt="Image"></div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+	
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="postingedf2.html?mode=reply&amp;f=7&amp;t=148" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+	
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopic1e9c.html?f=7&amp;t=148&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<form method="post" action="https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=148">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed" />
+				<input type="submit" class="button2" name="sort" value="Go" />
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			3 posts
+							&bull; Page <strong>1</strong> of <strong>1</strong>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="viewforumd42b.html?f=7" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Tutorials”</span>
+		</a>
+	</p>
+	
+		<br /><br />
+	</div>
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 1 guest</p>
+	</div>
+
+				
+			</div>
+
+	<div class="inventea-footer-wrapper">
+		<div id="page-footer" class="inventea-footer" role="contentinfo">
+			<nav role="navigation">
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index-2.html" data-navbar-reference="index"><span>Board index</span></a></span>					</li>
+
+						<li class="small-icon" data-last-responsive="true"><a href="memberlist8733.html?mode=contactadmin" role="menuitem">Contact us</a></li>
+				
+		<li class="small-icon"><a href="ucp033a.html?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+				<li>All times are <span title="UTC">UTC</span></li>
+			</ul>
+</nav>
+
+			<footer class="inventea-credits">
+								Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited<br />
+								Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a> & <a href="http://xeronix.org/" title="phpBB styles and much more">nextgen</a>
+											</footer>
+		</div>
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+	<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="assets/javascript/core5d79.js?assets_version=25"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax5d79.js?assets_version=25"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=148&p=809 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:20:39 GMT -->
+</html>

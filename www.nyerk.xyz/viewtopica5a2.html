@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=127&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; FAQ | Known Bugs</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>FAQ | Known Bugs</h2>
+		<p><a href="viewtopic0e77.html?f=7&amp;t=127">https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=127</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>FAQ | Known Bugs</h3>
+				<div class="date">Posted: <strong>Tue Mar 28, 2017 9:34 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><strong class="text-strong">My Bot does not use a certain skill, what can be wrong?</strong><br>
+In some cases Aion uses special whitespace characters for certain skills.<br>
+A few examples: Flame Bolt &amp; Healing Light .<br>
+To get the correct name use the ingame macro editor.<br>
+Create an Macro and edit it.<br>
+Move the desired Skill from the Skill List to the macro editor.<br>
+Now you should have "/use Flame Bolt" inside the macro editor, select the string and use STRG + C to copy it into the clipboard.<br>
+Now paste it inside your lua script.<br>
+The Skill is now correctly encoded and can be used.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: FAQ | Known Bugs</h3>
+				<div class="date">Posted: <strong>Wed Mar 29, 2017 3:27 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicb0f8.html?p=643#p643" data-post-id="643" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Mar 28, 2017 9:34 pm</div></cite>
+<strong class="text-strong">My Bot does not use a certain skill, what can be wrong?</strong><br>
+In some cases Aion uses special whitespace characters for certain skills.<br>
+A few examples: Flame Bolt &amp; Healing Light .<br>
+To get the correct name use the ingame macro editor.<br>
+Create an Macro and edit it.<br>
+Move the desired Skill from the Skill List to the macro editor.<br>
+Now you should have "/use Flame Bolt" inside the macro editor, select the string and use STRG + C to copy it into the clipboard.<br>
+Now paste it inside your lua script.<br>
+The Skill is now correctly encoded and can be used.
+</div></blockquote>
+What I said before and still same problems !!!
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Poison and Helper:CheckAvailable("Skill name like in game") then
+	Helper:CheckExecute( "Skill name like in game" );
+end</code></pre></div>
+
+I guess first rule must be "READ"..</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: FAQ | Known Bugs</h3>
+				<div class="date">Posted: <strong>Sun May 28, 2017 11:52 am</strong></div>
+				<div class="author">by <strong>Skaa</strong></div>
+				<div class="content">Healing Light working with ID 1840</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=127&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:25 GMT -->
+</html>

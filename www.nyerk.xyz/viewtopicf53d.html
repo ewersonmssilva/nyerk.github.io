@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=265&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Teleport to a friend's house at lvl 1.</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Teleport to a friend's house at lvl 1.</h2>
+		<p><a href="viewtopicd58c.html?f=6&amp;t=265">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=265</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Teleport to a friend's house at lvl 1.</h3>
+				<div class="date">Posted: <strong>Fri Sep 08, 2017 5:58 am</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content">Hey guys. I was reading vanilla's forum and I saw he found a way to teleport a character instantly to a friend's house, that way you can use his warehouse, really usefull for berdin's farming.<br>
+<br>
+I wonder if there's a way to do that with AS, here's the code he's using: <br>
+<br>
+Description:<br>
+"This script can be abused with low level toons even with level 1 you can teleport to a friends house and use his warehouse"<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>#IF=%FirstTime,;
+UseSpeed=1;
+MemWrite=%AddrFreeMem10,0,BYTE;
+#ENDIF
+
+FrameAction=373,State,SHOW;
+FrameAction=373,XPos,0;
+FrameAction=373,YPos,0;
+TrayInfo=Hover your mouse over a friend at the window and press "Delete";
+WaitForKey=2E,1;
+_MemReadVar=%AddrMouseX,WORD,1;
+_MemReadVar=%AddrMouseY,WORD,2;
+Delay=1250;
+TrayInfo=Hover your mouse over the "Visit Friend" button and press "Delete";
+WaitForKey=2E,1;
+_MemReadVar=%AddrMouseX,WORD,3;
+_MemReadVar=%AddrMouseY,WORD,4;
+FrameAction=373,State,HIDE;
+TrayInfo=Press "Delete" as soon as you wanna instantly escape;
+
+#DO=9999999999999;
+WaitForKey=2E,1;
+_IFKey=2E,1;
+#IF=%Timer=500,15000;
+FrameAction=373,State,SHOW;
+FrameAction=373,XPos,0;
+FrameAction=373,YPos,0;
+Mouse=%Var1,%Var2;
+Delay=125;
+Mouse=%Var3,%Var4;
+Delay=135;
+SendKey=0x0D;
+FrameAction=373,State,HIDE;
+CreateTimer=500;
+#ENDIF
+_IFKey=77,1;
+MemWrite=%AddrFreeMem10,1,BYTE;
+#ENDIF
+_UNTILMemRead=%AddrFreeMem10,BYTE,=1;</code></pre></div>
+
+Disclaimer:<br>
+<br>
+I'm not supporting or advertising his website/tool, I just got curious about that function and it would be really awesome to have it with AS.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Teleport to a friend's house at lvl 1.</h3>
+				<div class="date">Posted: <strong>Fri Sep 08, 2017 4:54 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">This is Paralys Tool.<br>
+We are here at AionScript.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>DialogList:GetDialog( "housing_buddy_list_dialog" ):SetVisible(true)</code></pre></div>
+
+do your click manually or script it.  <img class="smilies" src="images/smilies/icon_e_surprised.gif" width="15" height="17" alt=":o" title="Surprised"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Teleport to a friend's house at lvl 1.</h3>
+				<div class="date">Posted: <strong>Fri Sep 08, 2017 8:21 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic68ab.html?p=1484#p1484" data-post-id="1484" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Sep 08, 2017 4:54 pm</div></cite>
+This is Paralys Tool.<br>
+We are here at AionScript.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>DialogList:GetDialog( "housing_buddy_list_dialog" ):SetVisible(true)</code></pre></div>
+
+do your click manually or script it.  <img class="smilies" src="images/smilies/icon_e_surprised.gif" width="15" height="17" alt=":o" title="Surprised">
+</div></blockquote>
+
+I dont have his tool, but, by the comments I can tell its a script, you can also use it in the middle of battle and escape to your friend's house inmediately. I'll try to find out how this works.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Teleport to a friend's house at lvl 1.</h3>
+				<div class="date">Posted: <strong>Fri Sep 08, 2017 9:53 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Yes and that's exactly what the line above gives you the ability to.<br>
+You have to figure the rest out for yourself.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Teleport to a friend's house at lvl 1.</h3>
+				<div class="date">Posted: <strong>Wed Sep 13, 2017 7:51 pm</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">oh nice , Is there even more good scripts? like this Script aka Dialog?</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=265&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:17 GMT -->
+</html>

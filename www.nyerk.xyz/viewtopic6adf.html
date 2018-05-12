@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=187&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Aethertapping problem</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Aethertapping problem</h2>
+		<p><a href="viewtopic53d9.html?f=6&amp;t=187">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=187</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Thu Jun 22, 2017 12:58 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Guys I have a problem, when aethertapping my client will crash at some point. This never happens at any other AS usage. I also did some aethertapping manually and nothing occured.<br>
+<br>
+I am more than sure that AS and aethertapping have some problems and that makes the client crash. Does anyone else have the same problem?<br>
+<br>
+~~~~~~~~~~~<br>
+<br>
+There was also an issue in scripting when taking wind serums. It would take a wing serum before it needed it wasting the superior ones. So I changed that. I only have the superior serums on my script as I do not need others, I could change the script for lower chars obviously.<br>
+<br>
+This is my change on it.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Loop through your inventory
+for Inventory in ListIterator( InventoryList:GetList()) do
+	-- Check if this is a wind serum.
+	if Inventory:GetType():ToString() == "Potion" and string.find( Inventory:GetName(), "Wind Serum" ) ~= nil and Inventory:GetCooldown() == 0 then
+		if string.find( Inventory:GetName(), "Superior" ) ~= nil and TotalRecharge &gt;= 84000 then
+			BestInventory = Inventory;
+			BestRecharge = 84000;
+		end
+				
+	end
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Fri Jun 23, 2017 2:30 pm</strong></div>
+				<div class="author">by <strong>Skaa</strong></div>
+				<div class="content">its was ALL times the problem! u can download the framework 4.6 SDK. if u lucky client run 4 - 8 H befor crashing!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Fri Jun 23, 2017 2:32 pm</strong></div>
+				<div class="author">by <strong>Skaa</strong></div>
+				<div class="content">wind serum ? <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"><br>
+make bard. fly 24/7 without pots</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Fri Jun 23, 2017 4:48 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Mhh intresting, do you guys use the  OfficialGathering.lua or some posted lua on this forums.<br>
+OfficialGathering.lua should not crash.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Sun Jun 25, 2017 5:02 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic1834.html?p=984#p984" data-post-id="984" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jun 23, 2017 4:48 pm</div></cite>
+Mhh intresting, do you guys use the  OfficialGathering.lua or some posted lua on this forums.<br>
+OfficialGathering.lua should not crash.
+</div></blockquote>
+
+I am using official gathering.lua and the only thing I changed was the wind serums. I also do not need it really since I am using the Harbinger's Landing buff the one that gives you permanent flight for 1 hour.<br>
+<br>
+I have seen that if you a browser open it will crush much easier, you need to have the client running in the front and have nothing else open in order to have a chance not to crash.<br>
+<br>
+The thing is that there must be something in the AS that makes this happen, because I never ever got a crash while XPing or while running around using it (like Fissure with glide hacks etc).<br>
+<br>
+But sometimes it crashes either way.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Sun Jun 25, 2017 5:03 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistbe6e.html?mode=viewprofile&amp;u=299">Skaa</a> wrote: <a href="viewtopic0849.html?p=982#p982" data-post-id="982" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jun 23, 2017 2:30 pm</div></cite>
+its was ALL times the problem! u can download the framework 4.6 SDK. if u lucky client run 4 - 8 H befor crashing!
+</div></blockquote>
+
+What is SDK? I know framework and I will probably upgrade mine to the latest but is SDK something special I need to search for? Google wasn't very friendly with this search.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Fri Aug 18, 2017 7:15 am</strong></div>
+				<div class="author">by <strong>Skaa</strong></div>
+				<div class="content">aethertapping cash since 2.7. u can make travel delay then its works bit better. when the bot move bit slowly do each node and wait ther 1 - 3 sec. but its get crashed randomly anyway xDD <br>
+<br>
+its actualy ok. 4  - 6h 1x client cash is ok. enaught aether in this timeframe.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Fri Aug 18, 2017 6:17 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Last night my character aethertapped for 10 hours and then he got a crash <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> He gets about 730 aether per hour so you make the math.<br>
+<br>
+That was awesome.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Fri Aug 18, 2017 11:36 pm</strong></div>
+				<div class="author">by <strong>Skaa</strong></div>
+				<div class="content">and what u changed  ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Aethertapping problem</h3>
+				<div class="date">Posted: <strong>Mon Sep 04, 2017 4:23 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">...nothing, sometimes it works for hours, sometimes it crashes instantly!!!</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=187&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:18 GMT -->
+</html>

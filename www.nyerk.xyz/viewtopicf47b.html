@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=79&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Fissure of Oblivion Grinder Framework - Page 2</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Fissure of Oblivion Grinder Framework</h2>
+		<p><a href="viewtopic2b68.html?f=6&amp;t=79">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=79</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>3</strong></div>
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Mon Mar 20, 2017 4:55 am</strong></div>
+				<div class="author">by <strong>clouds12</strong></div>
+				<div class="content">Yeah, I tried to figure it out but I can't for the life of me to get any scripts to work good in there. I tried many different things but I'm not as good as some of these people are. If I get something to work I'll be sure to post it for you.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Mar 21, 2017 7:01 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Water Mode is not working, but others should work fine.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local Wind_Skills = 
+	{
+		"Lightning Magnetic Field",
+		"Wind Blast",
+		"Lightning Strike"
+	};
+
+local Water_Skills = 
+	{
+		"Icy Cold Wave",
+		"Frosty Consierd",
+		"Ice Pick",
+		"Healing Rain"
+	};
+
+local Fire_Skills = 
+	{
+		"Red Cleave",
+		"Scorching Attack",
+		"Flare Charge",
+		"Wild Flame Dance",
+	};
+	
+local Earth_Skills = 
+	{
+		"Mighty Leap",
+		"Stonefist",
+		"Floor Smash Strik",
+		"Roar of Earth"
+	};
+
+function _ExecuteSkillFromList(Entity, Skills)
+
+	for k, Skill  in ipairs(Skills) do
+		if string.find(Skill, "Ice Pick") ~=nil and Entity:GetState():GetState( Helper:CheckName( "Statue Level 3" ) ) == nil then
+			return false;
+		end
+
+		if Helper:CheckAvailable( Skill, true ) then
+			Helper:CheckExecute( Skill, Entity );
+			return false;
+		end
+	end
+	return true;
+end
+
+function Attack( Entity )
+	local EntityState = Player:GetState();
+
+	if EntityState:GetState ( "Transformation: Incarnation of Wind" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Wind_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Incarnation of Fire" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Fire_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Incarnation of Earth" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Earth_Skills)) then
+			return false;
+		end
+	end
+
+	if EntityState:GetState ( "Transformation: Incarnation of Water" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Water_Skills)) then
+			return false;
+		end
+	end
+	
+	return false;
+	
+end
+
+function Heal( BeforeForce )
+
+
+	return true;
+	
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Mar 21, 2017 7:10 pm</strong></div>
+				<div class="author">by <strong>clouds12</strong></div>
+				<div class="content">Thanks Nuc, will give it a try now. Not sure if I told you, but you rock.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Tue Mar 21, 2017 7:46 pm</strong></div>
+				<div class="author">by <strong>clouds12</strong></div>
+				<div class="content">Ok think I have all the skills changed for NA..<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local Wind_Skills = 
+	{
+		"Fierce Gale",
+		"Field of Lightning",
+		"Electro Bolts"
+	};
+
+local Water_Skills = 
+	{
+		"Wave of Bitter Cold",
+		"Icewind Gale",
+		"Ice Spike",
+		"Healing Rain"
+	};
+
+local Fire_Skills = 
+	{
+		"Rush of Flames",
+		"Fan of Flames",
+		"Inferno's Embrace",
+		"Horrific Blaze",
+	};
+	
+local Earth_Skills = 
+	{
+		"Powerful Leap",
+		"Rock Punch",
+		"Ground Smash",
+		"Roar of the Earth"
+	};
+
+function _ExecuteSkillFromList(Entity, Skills)
+
+	for k, Skill  in ipairs(Skills) do
+		if string.find(Skill, "Ice Spikee") ~=nil and Entity:GetState():GetState( Helper:CheckName( "Statue Level 3" )) == nil then
+			return false;
+		end
+
+		if Helper:CheckAvailable( Skill, true ) then
+			Helper:CheckExecute( Skill, Entity );
+			return false;
+		end
+	end
+	return true;
+end
+
+function Attack( Entity )
+	local EntityState = Player:GetState();
+
+	if EntityState:GetState ( "Transformation: Avatar of Wind" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Wind_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Avatar of Fire" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Fire_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Avatar of Earth" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Earth_Skills)) then
+			return false;
+		end
+	end
+
+	if EntityState:GetState ( "Transformation: Avatar of Water" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Water_Skills)) then
+			return false;
+		end
+	end
+	
+	return false;
+	
+end
+
+function Heal( BeforeForce )
+
+
+	return true;
+	
+end</code></pre></div> <br>
+<br>
+Everything is working great, Water skills are working pretty good not perfect but still good<br>
+<br>
+Thanks again Nucular</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Fri Mar 24, 2017 4:52 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">oh i havent noticed this. im gonna see how this works. this will be convenient in this weekend triple exp event. thanks!<br>
+-----------------------------------------------<br>
+edit: ok i dunno how u guys do it, but this one is just as buggy as everything else that i tried. im out of idea on how to fix it.<br>
+only some skills triggers when i try to use it. maybe im doing it wrong or something. ill try it again later.<br>
+<br>
+should i include the parts tat u wrote into my class grinder framework or should i create another grinder framework with just these inside it to use in fissure alone.<br>
+<br>
+should i tick auto chain or auto react to use this?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Fri Mar 24, 2017 6:54 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">ok is it supposed to look like this? im quite sure theres a major flaw in this somewhere lol<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2016 Clouds12
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned )
+
+local Wind_Skills = 
+	{
+		"Fierce Gale",
+		"Field of Lightning",
+		"Electro Bolts"
+	};
+
+local Water_Skills = 
+	{
+		"Wave of Bitter Cold",
+		"Icewind Gale",
+		"Ice Spike",
+		"Healing Rain"
+	};
+
+local Fire_Skills = 
+	{
+		"Rush of Flames",
+		"Fan of Flames",
+		"Inferno's Embrace",
+		"Horrific Blaze",
+	};
+	
+local Earth_Skills = 
+	{
+		"Powerful Leap",
+		"Rock Punch",
+		"Ground Smash",
+		"Roar of the Earth"
+	};
+
+function _ExecuteSkillFromList(Entity, Skills)
+
+	for k, Skill  in ipairs(Skills) do
+		if string.find(Skill, "Ice Spikee") ~=nil and Entity:GetState():GetState( Helper:CheckName( "Statue Level 3" )) == nil then
+			return false;
+		end
+
+		if Helper:CheckAvailable( Skill, true ) then
+			Helper:CheckExecute( Skill, Entity );
+			return false;
+		end
+	end
+	return true;
+end
+
+function Attack( Entity )
+	local EntityState = Player:GetState();
+
+	if EntityState:GetState ( "Transformation: Avatar of Wind" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Wind_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Avatar of Fire" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Fire_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Avatar of Earth" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Earth_Skills)) then
+			return false;
+		end
+	end
+
+	if EntityState:GetState ( "Transformation: Avatar of Water" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Water_Skills)) then
+			return false;
+		end
+	end
+	
+	return false;
+	
+end
+
+function Heal( BeforeForce )
+
+
+	return true;
+	
+end
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Fri Mar 24, 2017 6:57 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic3a5c.html?p=568#p568" data-post-id="568" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Mar 21, 2017 7:01 pm</div></cite>
+Water Mode is not working, but others should work fine.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local Wind_Skills = 
+	{
+		"Lightning Magnetic Field",
+		"Wind Blast",
+		"Lightning Strike"
+	};
+
+local Water_Skills = 
+	{
+		"Icy Cold Wave",
+		"Frosty Consierd",
+		"Ice Pick",
+		"Healing Rain"
+	};
+
+local Fire_Skills = 
+	{
+		"Red Cleave",
+		"Scorching Attack",
+		"Flare Charge",
+		"Wild Flame Dance",
+	};
+	
+local Earth_Skills = 
+	{
+		"Mighty Leap",
+		"Stonefist",
+		"Floor Smash Strik",
+		"Roar of Earth"
+	};
+
+function _ExecuteSkillFromList(Entity, Skills)
+
+	for k, Skill  in ipairs(Skills) do
+		if string.find(Skill, "Ice Pick") ~=nil and Entity:GetState():GetState( Helper:CheckName( "Statue Level 3" ) ) == nil then
+			return false;
+		end
+
+		if Helper:CheckAvailable( Skill, true ) then
+			Helper:CheckExecute( Skill, Entity );
+			return false;
+		end
+	end
+	return true;
+end
+
+function Attack( Entity )
+	local EntityState = Player:GetState();
+
+	if EntityState:GetState ( "Transformation: Incarnation of Wind" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Wind_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Incarnation of Fire" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Fire_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Incarnation of Earth" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Earth_Skills)) then
+			return false;
+		end
+	end
+
+	if EntityState:GetState ( "Transformation: Incarnation of Water" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Water_Skills)) then
+			return false;
+		end
+	end
+	
+	return false;
+	
+end
+
+function Heal( BeforeForce )
+
+
+	return true;
+	
+end</code></pre></div>
+</div></blockquote>
+
+can u give me a step by step guide to use this? sorry for being so noob  <img class="smilies" src="images/smilies/icon_e_confused.gif" width="15" height="17" alt=":?" title="Confused"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Fri Mar 24, 2017 7:05 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Add these lua lines as &lt;Replacewithplayername&gt;.lua file inside OfficialGrinderFramework/Players/ .<br>
+It act's as a class script / player script.<br>
+<br>
+A dude i know made this script is only for the fatties which give exp, nothing else.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Fri Mar 24, 2017 8:54 am</strong></div>
+				<div class="author">by <strong>clouds12</strong></div>
+				<div class="content">everything works great for me, I have a separate folder for Fissure I just copied <br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local Wind_Skills = 
+	{
+		"Fierce Gale",
+		"Field of Lightning",
+		"Electro Bolts"
+	};
+
+local Water_Skills = 
+	{
+		"Wave of Bitter Cold",
+		"Icewind Gale",
+		"Ice Spike",
+		"Healing Rain"
+	};
+
+local Fire_Skills = 
+	{
+		"Fan of Flames",
+		"Rush of Flames",
+		"Inferno's Embrace",
+		"Horrific Blaze",
+	};
+	
+local Earth_Skills = 
+	{
+		"Powerful Leap",
+		"Rock Punch",
+		"Ground Smash",
+		"Roar of the Earth"
+	};
+function _ExecuteSkillFromList(Entity, Skills)
+
+	for k, Skill  in ipairs(Skills) do
+		if string.find(Skill, "Ice Spikee") ~=nil and Entity:GetState():GetState( Helper:CheckName( "Statue Level 3" )) == nil then
+			return false;
+		end
+
+		if Helper:CheckAvailable( Skill, true ) then
+			Helper:CheckExecute( Skill, Entity );
+			return false;
+		end
+	end
+	return true;
+end
+
+function Attack( Entity )
+	local EntityState = Player:GetState();
+
+	if EntityState:GetState ( "Transformation: Avatar of Wind" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Wind_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Avatar of Fire" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Fire_Skills)) then
+			return false;
+		end
+	end
+	
+	if EntityState:GetState ( "Transformation: Avatar of Earth" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Earth_Skills)) then
+			return false;
+		end
+	end
+
+	if EntityState:GetState ( "Transformation: Avatar of Water" ) ~= nil then
+		if(not self:_ExecuteSkillFromList(Entity, Water_Skills)) then
+			return false;
+		end
+	end
+	
+	return false;
+	
+end
+
+function Heal( BeforeForce )
+
+
+	return true;
+	
+end</code></pre></div>
+
+into each class folder. I guess your EU so just copy the one with your skill names just as it is in the post don't add that stuff to the top of it. When you open your .Lua file it should only show this code nothing else and it should work fine.<br>
+<br>
+<strong class="text-strong"><span style="text-decoration: underline">BIG PART .... Make sure you are using the most up to date file " AionScript Release 17.03.2017 "</span></strong></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Fissure of Oblivion Grinder Framework</h3>
+				<div class="date">Posted: <strong>Fri Mar 24, 2017 11:21 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">no I play on aion NA. so will the skill works if i use it on mobs other than the fatties?<br>
+because the way I see it, only like 2/4 skills are launched for each transformation. thats what got me so pissed off lol</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>2</strong> of <strong>3</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=79&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:27 GMT -->
+</html>

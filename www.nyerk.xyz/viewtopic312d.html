@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=181&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Animation Markers</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Animation Markers</h2>
+		<p><a href="viewtopic62b2.html?f=7&amp;t=181">https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=181</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Animation Markers</h3>
+				<div class="date">Posted: <strong>Fri Jun 16, 2017 8:44 pm</strong></div>
+				<div class="author">by <strong>Zape</strong></div>
+				<div class="content">Hello. This is not aionscript related but may still prove useful, and I do need some help with it as well.<br>
+<br>
+By unpaking and modifying the contents of the file <strong class="text-strong">lf.xml</strong> in <strong class="text-strong">Data\Animationmarkers\Animationmarkers.pak</strong> or by completely deleting the folder Animationmarkers you will be able to utilize full no animation while maintaining normal attack animations.<br>
+<br>
+You can modify the pak file by either renaming it to anything.RAR, opening it, taking out the file lf.xml from it, editing the file by adding random words at the beginning of it (ex: Animation - &gt; nope Animation) and then replacing the lf.xml inside the archive with the modified lf.xml file, then save archive as Animationmarkers.pak replacing the old one (SAVE BACKUP!!!!!!), or by deleting the specific file completely. You will be able to see the visual animations of other players fine, but unable to see the visuals of your own animations. If you completely delete Animationmarkers you won't see animations or hear most of the animations sounds.<br>
+<br>
+Cons: - Your visuals will be buggy (anyone can help out with this, maybe it needs a specific modification to remove the delay before you start the next animation without affecting the visuals?)<br>
+<br>
+         - Attacks look buggy from your own point of view, and may or may not be perceived as dubious by other players (needs someone with a friend to test this, one with modified Animationmarkers, one without modified pak file).<br>
+<br>
+Pros: - You will be able to see your own animations and notice yourself if they are distorted or not (too fast )<br>
+        - Bypasses packet animation detection (bypasses Aidpsmeter no animation detection)<br>
+<br>
+Anyone willing to help me retain the visuals of your animations while also providing the benefit of forcing new animations before the previous ones are finished? (This is what the mod basically let's you do).</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Animation Markers</h3>
+				<div class="date">Posted: <strong>Sat Jun 17, 2017 6:46 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote class="uncited"><div>Pros: - You will be able to see your own animations and notice yourself if they are distorted or not (too fast )<br>
+- Bypasses packet animation detection (bypasses Aidpsmeter no animation detection)</div></blockquote>
+
+Sorry, but that is wrong. They still can detect you and maybe even better than before with AionScript.<br>
+But still thanks for sharing.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Animation Markers</h3>
+				<div class="date">Posted: <strong>Sat Jun 17, 2017 4:44 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">How to most probably edit this file:<br>
+You have to write a little script, which searches via Regex for animation_length="1.0666667" and when="0.76666665" and replace the respectted values with divided through 10 for example ones.<br>
+So those two Animations will be animation_length="0.1066666" and  when="0.07666665".<br>
+This will work because Animations are described in this file and how they will run.<br>
+<br>
+For example Animation Length is 1,6 seconds after 0,7 seconds do something to the current animation.<br>
+<br>
+  &lt;animation animation_length="1.6666667" name="cfire_polearm_alterfire_001"&gt;<br>
+    &lt;skillfx TOOL_ParamId="28" when="0" /&gt;<br>
+    &lt;hitpoint TOOL_ParamId="40" when="0.69999999" /&gt;<br>
+  &lt;/animation&gt;</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Animation Markers</h3>
+				<div class="date">Posted: <strong>Wed Jul 12, 2017 9:26 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">in notepad++ use:<br>
+<br>
+Find: <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>animation_length="*. " *</code></pre></div>
+Replace with: <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>animation_length="0.5" </code></pre></div>
+
+Tick "Wrap Around"<br>
+<br>
+Change search type to: Regular Expression<br>
+<br>
+Here are the files already edited. I simply changed the animation_length= from whatever it was to "0.5" a a test!<br>
+<br>
+_lm.xml: <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>https://drive.google.com/file/d/0B19yRfWif_hfQ0ZaUDhhSjBuOE0/view?usp=sharing</code></pre></div>
+animationmarkers_X.pak : <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>https://drive.google.com/file/d/0B19yRfWif_hfdlBxZmVoLUo2c0E/view?usp=sharing</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=181&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:39:12 GMT -->
+</html>

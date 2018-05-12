@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=105&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:48:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; my temporary fix for NA 5.3 botting</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>my temporary fix for NA 5.3 botting</h2>
+		<p><a href="viewtopice038.html?f=4&amp;t=105">https://www.nyerk.xyz/viewtopic.php?f=4&amp;t=105</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>my temporary fix for NA 5.3 botting</h3>
+				<div class="date">Posted: <strong>Thu Mar 16, 2017 5:28 pm</strong></div>
+				<div class="author">by <strong>sapibuntinx</strong></div>
+				<div class="content">This is a very noob temporary fix to make bot working again after 5.3 patch. Previously, after using the latest updated AS (15 march 2017), I'am having problems with my bot won't stop moving even-though it's already arrived at the destination position. It seems AS was unable to cancel the move forward action.<br>
+<br>
+I tried to fix the following offsets:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>    &lt;Action&gt;1670&lt;/Action&gt;
+    &lt;ActionStage&gt;1674&lt;/ActionStage&gt;
+    &lt;ActionEntry&gt;167C&lt;/ActionEntry&gt;
+    &lt;ActionReady&gt;1750&lt;/ActionReady&gt;
+</code></pre></div>
+I don't know how to find the offset for ActionCancel, I hope it's not fatal, but at least for now my assassin bot is working.<br>
+<br>
+Just replace the AionInterface.dll with this one until the official fixes is available.<br>
+Hope this helps you guys.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: my temporary fix for NA 5.3 botting</h3>
+				<div class="date">Posted: <strong>Thu Mar 16, 2017 7:38 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">No it's not a noob fix.<br>
+You fixed it correctly. <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"><br>
+<br>
+ActionCancel is currently not used.<br>
+It's part of another Skill Casting System which Lev aka AionScript on epvpers forum implemented, but it isn't used in my versions.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: my temporary fix for NA 5.3 botting</h3>
+				<div class="date">Posted: <strong>Mon Jun 05, 2017 3:43 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicda6e.html?p=502#p502" data-post-id="502" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Mar 16, 2017 7:38 pm</div></cite>
+No it's not a noob fix.<br>
+You fixed it correctly. <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"><br>
+<br>
+ActionCancel is currently not used.<br>
+It's part of another Skill Casting System which Lev aka AionScript on epvpers forum implemented, but it isn't used in my versions.
+</div></blockquote>
+
+Firstly I have to agree with nucular! That's EXACTLY the fix but I guess you mean noob cause you patched it into the file rather than compiled it?<br>
+<br>
+Efforts are MUCH appreciated. Have you seen the idiots that use AionScript? Don't put yourself down! ANY effort is appreciated!<br>
+<br>
+@nucular - That's actually really useful to know for some of scripts I didn't understand why they were not working!</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=105&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:48:52 GMT -->
+</html>

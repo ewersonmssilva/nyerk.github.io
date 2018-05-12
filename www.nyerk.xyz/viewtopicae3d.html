@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=193&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Potion Script 4 all Classes</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Potion Script 4 all Classes</h2>
+		<p><a href="viewtopicd9dc.html?f=8&amp;t=193">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=193</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Potion Script 4 all Classes</h3>
+				<div class="date">Posted: <strong>Thu Jul 13, 2017 11:11 am</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">Does one have a working script for all classes? <br>
+AION Patch 5.0+ Pots<br>
+for example: Sorcerer?<br>
+<br>
+<br>
+thanks :3</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Potion Script 4 all Classes</h3>
+				<div class="date">Posted: <strong>Thu Jul 13, 2017 12:27 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">As far as i remember someone posted a code sample some time ago.<br>
+I tweaked it for my needs:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CheckPotion()
+	        -- Retrieve the  potion item.
+        	local PotionLife = InventoryList:GetInventory( "Enhanced Recovery Serum" );
+		local PotionMana = InventoryList:GetInventory( "[Jakunerk] Mana Serum" );
+		
+		
+		 -- Check if Currenthealth &lt; 0.5 and uses a Life Potion.
+        if Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() / 2 and PotionLife ~= nil and PotionLife:GetCooldown() == 0 then
+           PlayerInput:Inventory( PotionLife:GetName());
+           return false;
+		end
+
+		  -- Check if CurrentMana &lt; 0.5 and uses a Mana Potion.
+        if Player:GetManaCurrent() &lt; Player:GetManaMaximum() / 2 and PotionMana ~= nil and PotionMana:GetCooldown() == 0 then
+           PlayerInput:Inventory( PotionMana:GetName());
+           return false;
+		end
+end</code></pre></div>
+just paste it to the start of your class script and in the attack function execute it through 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>self:CheckPotion();</code></pre></div>
+You will have to change the potion names.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Potion Script 4 all Classes</h3>
+				<div class="date">Posted: <strong>Thu Jul 13, 2017 12:50 pm</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">thanks man :3</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Potion Script 4 all Classes</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 10:09 pm</strong></div>
+				<div class="author">by <strong>Quench</strong></div>
+				<div class="content">why not just modify HelperFunction.lua like this ?  <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Check if this is a life potion
+			if string.find( Inventory:GetName(), "Design" ) == nil and ( string.find( Inventory:GetName(), "Recovery Potion" ) ~= nil or string.find( Inventory:GetName(), "Recovery Potion" ) ~= nil ) then
+				
+				if string.find( Inventory:GetName(), "Fortified" ) ~= nil then
+					if TotalRecharge &gt;= 2480 and BestRecharge &lt; 2480 then
+						BestInventory = Inventory;
+						BestRecharge = 2480;
+					end
+				elseif string.find( Inventory:GetName(), "Enhanced" ) ~= nil then
+					if TotalRecharge &gt;= 1540 and BestRecharge &lt; 1540 then
+						BestInventory = Inventory;
+						BestRecharge = 1540;
+					end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=193&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:09 GMT -->
+</html>

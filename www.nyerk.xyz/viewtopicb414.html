@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=86&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; have shortcut key finction   in script? - Page 2</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>have shortcut key finction   in script?</h2>
+		<p><a href="viewtopicf510.html?f=6&amp;t=86">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=86</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Fri Mar 10, 2017 10:14 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic40e6.html?p=406#p406" data-post-id="406" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Mar 10, 2017 6:08 am</div></cite>
+<blockquote><div><cite><a href="memberlistd942.html?mode=viewprofile&amp;u=49">0x00</a> wrote: <a href="viewtopicca25-2.html?p=354#p354" data-post-id="354" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 08, 2017 9:33 am</div></cite>
+I think he means like the 0verX script i wrote, a button to turn auto attack on and off
+</div></blockquote>
+
+oh yeah regarding those script, i wanna use my mouse wheel button or extra mouse button 1 and 2 to activate the script. do u know what should i write as the activation key?
+</div></blockquote>
+
+You have to bind the mouse click to a key, then you can bind the "pseudo key click" to aionscript.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 15, 2017 10:41 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic40e6.html?p=406#p406" data-post-id="406" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Mar 10, 2017 6:08 am</div></cite>
+<blockquote><div><cite><a href="memberlistd942.html?mode=viewprofile&amp;u=49">0x00</a> wrote: <a href="viewtopicca25-2.html?p=354#p354" data-post-id="354" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 08, 2017 9:33 am</div></cite>
+I think he means like the 0verX script i wrote, a button to turn auto attack on and off
+</div></blockquote>
+
+oh yeah regarding those script, i wanna use my mouse wheel button or extra mouse button 1 and 2 to activate the script. do u know what should i write as the activation key?
+</div></blockquote>
+
+Two things: I actually rewrote the entire framework for that function so, check your PMs - your not VIP, this is a one off. Secondly:<br>
+<br>
+Use the files below and replace them with the originals, it should do what you need to. I've skimmed the script to it's basic concept, which is a start/stop grind shortcut key.<br>
+<br>
+<strong class="text-strong">OfficialGrinderFramework.lua</strong>:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>http://lpaste.net/81206866515853312</code></pre></div>
+
+<strong class="text-strong">OfficialGrinderFramework/GrinderFramework.lua</strong>:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>http://lpaste.net/7542220304173498368</code></pre></div>
+
+To be more specific:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Settings
+    -- Check the key codes here (Member Name): http://msdn.microsoft.com/en-us/library/system.windows.input.key.aspx
+    Register( "AttackHandle", "Oem8" );
+    Register( "UIModHandle", "Insert" );
+    Register( "BuffHandle", "Home" );
+    Register( "AttackSPDCheckEntity", "End" );
+    -- End Settings</code></pre></div>
+
+This sets the keybinds, means its registering to the function <strong class="text-strong">AttackHandle</strong> to the ¬ key, amongst a few other keybinds ( I havent pasted the functions associated with them but I'll leave it here so you get an idea how to make a new keybind).<br>
+<br>
+So when you press ¬, this function is called:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function AttackHandle()
+	
+	if _AttackStarted ~= nil then
+			_AttackStarted = nil;
+		        Write("0verkill Mode: DISABLED!");	
+		else
+			_AttackStarted = true;
+			Write("0verkill Mode: DISABLED!");	
+	end
+end</code></pre></div>
+<em class="text-italics">_AttackStarted</em> is a trigger variable (don't know the official term) - it means if it's been triggered, KEEP running the <strong class="text-strong">OnRun()</strong> function in GrinderFramework.lua<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnRun()
+    
+    if _AttackStarted ~= nil and Player:GetTargetID() ~= 0 then
+        
+        local Entity = EntityList:GetEntity( Player:GetTargetId());
+        
+        if Player:IsDead() then 
+            return false;
+        end
+        if EntityList:GetEntity( Player:GetTargetId()):IsDead() then
+            local AggroEntity = Helper:FindTarget( true, Player:GetPosition());
+            if AggroEntity ~= nil then
+                Player:SetTarget( AggroEntity );
+                Player:SetMove( nil );
+            end
+        return false;
+        end
+        if Entity:IsGatherable() or Entity:IsPet() or Entity:IsFriendly() or Entity:IsObject() then
+            if AggroEntity ~= nil then
+                Player:SetTarget( AggroEntity );
+                Player:SetMove( nil );	
+            end
+            return false;
+        end
+        if Entity:IsHostile() or Entity:IsMonster() or Entity:GetTargetID() == Player:GetID() then
+    
+            if not Player:IsMoving() and Helper:CheckAvailable( "Attack" ) and (Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= 35 and Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &gt;= 5) then
+                    PlayerInput:Ability( "Attack" );
+            elseif Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= 5 then
+                return Controller:Attack( Entity, Entity:GetPosition():DistanceToPosition( Player:GetPosition()), Stunned, true );
+            end
+        end
+
+    end
+end</code></pre></div>
+
+This is the script part that checks if your Player has a target, what the distance of so called Entity (target) is etc, if yes &amp; in range, call the Controller (the attack routine function, i.e execute <em class="text-italics">Players/Playername.lua</em>) or <em class="text-italics">OfficialGrinderFramework\Classes\Yourclass.lua</em><br>
+<br>
+NOW you can bind the ¬ key to your mouse key! This whole procedure is what's necessary to do what you asked. Sorry for the details, just thought I'd use the chance to write up a little LUA HOWTO for anyone who's interested.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>2</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=86&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:14 GMT -->
+</html>

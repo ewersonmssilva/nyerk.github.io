@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=11&t=63&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Official: Gladiator.lua</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Official: Gladiator.lua</h2>
+		<p><a href="viewtopicd91b.html?f=11&amp;t=63">https://www.nyerk.xyz/viewtopic.php?f=11&amp;t=63</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Official: Gladiator.lua</h3>
+				<div class="date">Posted: <strong>Wed Feb 22, 2017 1:47 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">Best one I could find in my archives, I am a complete retard when it comes to Gladi.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 kintarooe &amp; rellis
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned )
+
+	-- Target Casting use Lockdown
+	if Entity:GetSkillID() &gt; 0 and Entity:GetSkillTime() &gt; 1 and Helper:CheckAvailable( "Lockdown" ) then
+		--Write ( "Target using skill ID " .. Entity:GetSkillID() .. " with cast time of " .. Entity:GetSkillTime() .. " using Lockdown." );
+		Helper:CheckExecute( "Lockdown" );
+		return false;
+	end
+	
+
+
+	-- Chain 1: Remove Shock (Care on WE aoe attack)
+	if not Stunned and Helper:CheckAvailable( "Ferocity" ) then
+		Helper:CheckExecute( "Ferocity" );
+		return false;
+	elseif Helper:CheckAvailable( "Wrathful Explosion" ) then 
+		Helper:CheckExecute( "Wrathful Explosion" );
+		return false;
+	elseif Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+	end
+
+	-- Buffs
+	if Entity:GetHealth() &gt;= 50 and Helper:CheckAvailable( "Shadow Rage" ) then
+		Helper:CheckExecute( "Shadow Rage");
+		return false;
+    end
+	
+	--if Entity:GetHealth() &lt; 90 and Helper:CheckAvailable( "Unwavering Devotion" ) then
+	--	Helper:CheckExecute( "Unwavering Devotion" );
+	--	return false;
+	--end
+	
+	if Entity:GetHealth() &gt;= 50 and Player:GetHealth() &lt;= 60 and Helper:CheckAvailable( "Wall of Steel" ) then
+		Helper:CheckExecute( "Wall of Steel" );
+		return false;
+	end
+	
+
+	
+-- BEGIN STATE ACTIVATED SKILLS
+if Entity:GetHealth() &gt;= 50 and Helper:CheckAvailable( "Daevic Fury" ) and Player:GetDP() &gt;=2000 then
+ Helper:CheckExecute( "Daevic Fury");
+return false;
+elseif Helper:CheckAvailable( "Zikel's Threat" ) and Player:GetDP() &gt;=4000 then
+  Helper:CheckExecute( "Zikel's Threat");
+return false;
+end
+
+	-- Successful Parry
+	if Helper:CheckAvailable( "Counter Leech" )  and Range &lt;= 3 then
+		Helper:CheckExecute( "Counter Leech" );
+		return false;
+	end
+	
+	if Helper:CheckAvailable( "Sure Strike" ) and Range &lt;= 3 then
+		Helper:CheckExecute( "Sure Strike" );
+		return false;
+	end
+	if Helper:CheckAvailable( "Piercing Rupture" ) and Range &lt;= 9 then
+			Helper:CheckExecute( "Piercing Rupture" );
+			return false;
+		end
+	if Helper:CheckAvailable( "Draining Sword" ) and Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() - 2550 and Range &lt;= 3 then
+		Helper:CheckExecute( "Draining Sword" );
+		return false;
+	end
+	-- Mob Stumbled Skills
+	-- Check if Health status warrants using Draining Blow
+	if Helper:CheckAvailable( "Draining Blow VIII" ) and Range &lt;= 6  then
+		Helper:CheckExecute( "Draining Blow VIII" );
+		return false;
+	elseif Helper:CheckAvailable( "Crippling Cut" ) and Range &lt;= 6  then
+		Helper:CheckExecute( "Crippling Cut" );
+		return false;
+	elseif Helper:CheckAvailable( "Springing Slice" ) and Range  &gt; 15  then
+		Helper:CheckExecute( "Springing Slice" );
+		return false;
+	end
+	if Helper:CheckAvailable( "Final Strike" )  and Range &lt;= 6  then
+		return false;
+	end
+	
+	-- Mob Aether's Hold
+	if Helper:CheckAvailable( "Final Strike" ) then
+		Helper:CheckExecute( "Final Strike" );
+		return false;
+	elseif Helper:CheckAvailable( "Crashing Blow" ) then
+		Helper:CheckExecute( "Crashing Blow" );
+		return false;
+	end
+	
+-- END STATE ACTIVATED SKILLS
+
+-- BEGIN CHAIN ACTIVATED SKILLS	
+	
+	-- Chain 2: Rupture
+	if Helper:CheckAvailable( "Reckless Strike" ) then
+		Helper:CheckExecute( "Reckless Strike" );
+		return false;
+	end
+
+	
+	-- Chain 6: AoE Chain - Seismic Wave/Absorbing Fury
+	if Helper:CheckAvailable( "Exhausting Wave" ) and Range &lt;= 6 then
+		Helper:CheckExecute( "Exhausting Wave" );
+		return false;
+		end
+	-- Chain 6: AoE Chain - Seismic Wave/Absorbing Fury
+	if Helper:CheckAvailable( "Earthquake Wave" ) and Range &lt;= 6 then
+		Helper:CheckExecute( "Earthquake Wave" );
+		return false;
+		end
+	if Helper:CheckAvailable( "Fury Absorption" ) and Range &lt;= 6 then
+			Helper:CheckExecute( "Fury Absorption" );
+			return false;
+		end
+	-- Chain 2: Ferocious Strike
+	if Helper:CheckAvailable( "Robust Blow" ) then
+		Helper:CheckExecute( "Robust Blow" );
+		return false;
+	--elseif Helper:CheckAvailable( "Rage" ) then
+	--	Helper:CheckExecute( "Rage" );
+	--	return false;
+	end
+
+	-- Chain 2: Robust Blow
+	if Helper:CheckAvailable( "Wrathful Strike" ) then
+		Helper:CheckExecute( "Wrathful Strike" );
+		return false;
+	elseif Helper:CheckAvailable( "Rupture" ) then
+		Helper:CheckExecute( "Rupture" );
+		return false;
+	end
+
+-- END CHAIN ACTIVATED SKILLS
+
+-- BEGIN RANGED SKILLS
+
+	-- Ranged skills
+	if Range &lt;= 20 then
+	
+		-- Ranged Stumbled 1: Springing Slice
+		if Helper:CheckAvailable( "Springing Slice" ) then
+			Helper:CheckExecute( "Springing Slice" );
+			return false;
+		end
+	
+		-- Ranged Chain 2: Great Cleave
+		if Helper:CheckAvailable( "Righteous Cleave" ) then
+			Helper:CheckExecute( "Righteous Cleave" );
+			return false;
+		end
+		
+		-- Ranged Chain 1: Cleave
+		if Helper:CheckAvailable( "Great Cleave" ) then
+			Helper:CheckExecute( "Great Cleave" );
+			return false;
+		elseif Helper:CheckAvailable( "Force Cleave" ) then
+			Helper:CheckExecute( "Force Cleave" );
+			return false;
+		end
+		
+		-- Ranged Attack 1: Cleave
+		if Helper:CheckAvailable( "Cleave" ) then
+			Helper:CheckExecute( "Cleave" );
+			return false;
+		end
+		
+	end
+	
+-- BEGIN PRIMARY ATTACK SKILLS
+
+	
+	-- Severe Weakening Blow
+	if Helper:CheckAvailable( "Weakening Blow" ) then
+		Helper:CheckExecute( "Weakening Blow" );
+		return false;
+	end
+	
+	-- Attack 3: Ferocious Strike
+	if Helper:CheckAvailable( "Ferocious Strike" ) then
+		Helper:CheckExecute( "Ferocious Strike" );
+		return false;
+	end
+	-- Attack 3: Ferocious Strike
+	if Helper:CheckAvailable( "Body Smash" ) then
+		Helper:CheckExecute( "Body Smash" );
+		return false;
+	end
+	-- Attack 3: Ferocious Strike
+	if Helper:CheckAvailable( "Sharp Strike" ) then
+		Helper:CheckExecute( "Sharp Strike" );
+		return false;
+	end
+	-- Attack 4: Aerial Lockdown
+	if Helper:CheckAvailable( "Aerial Lockdown" ) then
+		Helper:CheckExecute( "Aerial Lockdown" );
+		return false;
+	end
+	
+	-- Attack 5: AoE Skills
+	if Settings.Gladiator.AllowAoe and Range &lt;= 6 then
+		--if Helper:CheckAvailable( "Fury Absorption" ) then
+		--	Helper:CheckExecute( "Fury Absorption" );
+		--	return false;
+		--end
+		
+	end
+	
+	-- Chain 2 Attack: Ferocious Strike
+	if self.FerociousTrigger ~= nil and Helper:CheckAvailable( "Ferocious Strike" ) then
+		if Helper:CheckExecute( "Ferocious Strike" ) then
+			self.FerociousTrigger = nil;
+			return false;
+		end
+	end
+
+-- END PRIMARY ATTACK SKILLS
+	
+end
+
+--- Perform healing checks both in and our of combat.
+--
+-- @param	bool	Indicates whether or not the function is running before force checks.
+-- @return	bool
+
+function Heal( BeforeForce )
+		
+
+-- Check if we should recharge our health using recovery spell.
+	if Helper:CheckAvailable( "Second Wind" ) and Player:GetHealth() &lt; 50 then
+		Helper:CheckExecute( "Second Wind");
+		return false;
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end
+
+--- Perform the safety checks before moving to the next target.
+--
+-- @return	bool
+
+function Pause()
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Gladiator.lua</h3>
+				<div class="date">Posted: <strong>Sun Apr 16, 2017 9:21 am</strong></div>
+				<div class="author">by <strong>Player</strong></div>
+				<div class="content">What exactly this script do?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Gladiator.lua</h3>
+				<div class="date">Posted: <strong>Mon May 01, 2017 5:28 am</strong></div>
+				<div class="author">by <strong>markiest</strong></div>
+				<div class="content">How to use this pls? Is this some kind of macro skills? And what does it do?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Gladiator.lua</h3>
+				<div class="date">Posted: <strong>Mon May 01, 2017 11:43 pm</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">Its the Gladiator.lua which combined with the GrinderFramework it casts skills automatically when your character has a target.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=11&t=63&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:19 GMT -->
+</html>

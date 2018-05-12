@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=140&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Resonator Script (EU English client)</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Resonator Script (EU English client)</h2>
+		<p><a href="viewtopic896e.html?f=8&amp;t=140">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=140</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Thu Apr 20, 2017 6:05 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnLoad()
+	Settings = Include( "OfficialGrinderFramework/Settings.lua" );
+	Helper = Include( "OfficialGrinderFramework/HelperFunction.lua" );
+	Settings:Initialize();
+	Class = Include( "OfficialGrinderFramework/Classes/" .. Player:GetClass():ToString() .. ".lua" );
+end
+
+
+
+function OnFrame()
+	-- Check if we are currently moving, when we are, we cannot do this.
+	if not Player:IsMoving() and not Player:IsResting() then
+
+		-- Check if we need to perform kind of healing routine.
+		if Class.Heal ~= nil and not Class:Heal( true ) then
+			return false;
+		end
+		
+		-- Check the force members and see if we have to do anything.
+		if Class.Force ~= nil and not Class:Force() then
+			return false;
+		end
+		
+		-- Check if we need to perform kind of healing routine.
+		if Class.Heal ~= nil and not Class:Heal( false ) then
+			return false;
+		end
+		
+	end
+	
+	-- Initialize the variable that we need to hold the target entity.
+	local Entity = EntityList:GetEntity( Player:GetTargetID());
+	
+	-- Check if the entity is valid and if it is alive.
+	if Entity ~= nil and not Entity:IsDead() and not Entity:IsFriendly() then
+		Class:Attack(Entity, Entity:GetPosition():DistanceToPosition( Player:GetPosition()), false);
+		
+	else
+		for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+			-- Check if the entiy is valid.
+			if Entity ~= nil then
+			
+				-- Check entity name
+				if ResonatorMobCheck( Entity) == true then
+					-- Check distance
+					if Entity:GetPosition():DistanceToPosition( Player:GetPosition()) &lt;= 20 then
+						Player:SetTarget(Entity);
+						Class:Attack(Entity, Entity:GetPosition():DistanceToPosition( Player:GetPosition()), false);
+					end
+				end
+				
+			end
+		end
+	end
+end
+
+-- "Id Resonator", "Elite Siege Cannon of the Hyperion Defence"
+function ResonatorMobCheck(Entity)
+	if Entity ~= nil and not Entity:IsDead() then
+		if Entity:GetName()=="Elite Siege Cannon of the Hyperion Defence" or Entity:GetName()=="Id Resonator" then
+			local EntityState = Entity:GetState();
+			
+			if EntityState:GetState( "Id Aetheric Field" ) == nil then
+				--Write("unita list".. Entity:GetName());
+				return true;
+			end
+		end
+	end
+	
+	return false;
+end
+
+
+function Attack ( Entity, Range, Stunned)
+	return Class:Attack ( Entity, Range, Stunned);
+end
+
+function Heal (CombatEnabled)
+	return Class:Heal(CombatEnabled);
+end
+
+function Pause()
+	return Class:Pause()
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Sat Sep 02, 2017 11:46 am</strong></div>
+				<div class="author">by <strong>robertgigant</strong></div>
+				<div class="content">to what this script</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Sat Sep 02, 2017 2:07 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist7a1d.html?mode=viewprofile&amp;u=499">robertgigant</a> wrote: <a href="viewtopica90d.html?p=1417#p1417" data-post-id="1417" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 02, 2017 11:46 am</div></cite>
+to what this script
+</div></blockquote>
+
+Script for this <a href="https://www.youtube.com/watch?v=Ydv0VlJ6dKA" class="postlink">https://www.youtube.com/watch?v=Ydv0VlJ6dKA</a></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Sat Sep 02, 2017 6:43 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">i will try it thanks</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Sat Sep 02, 2017 7:11 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">can we do solo ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Sat Sep 02, 2017 9:25 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist09a9.html?mode=viewprofile&amp;u=571">Quirunerk</a> wrote: <a href="viewtopic7bbb.html?p=1422#p1422" data-post-id="1422" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 02, 2017 7:11 pm</div></cite>
+can we do solo ?
+</div></blockquote>
+Solo instance? Nope Katalamize/IS is a 12 player instance.<br>
+Take care this script work in Aion EU with client language english.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Sat Sep 02, 2017 9:32 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">i know but can we do solo with 1 lvl account ? And are u getting crash too ? Can nucular make hack for 64 bit ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Sun Sep 03, 2017 1:27 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">don't understand what are you asking. sorry my english <img class="smilies" src="images/smilies/icon_redface.gif" width="15" height="17" alt=":oops:" title="Embarrassed"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Thu Oct 05, 2017 5:32 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic5c93.html?p=1438#p1438" data-post-id="1438" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Sep 03, 2017 1:27 am</div></cite>
+don't understand what are you asking. sorry my english <img class="smilies" src="images/smilies/icon_redface.gif" width="15" height="17" alt=":oops:" title="Embarrassed">
+</div></blockquote>
+
+Forget what he's asking! I have a few questions <img class="smilies" src="images/smilies/icon_razz.gif" width="15" height="17" alt=":P" title="Razz"><br>
+<br>
+I noticed you do not call the OnRun() function in the OnFrame() - I tested it, it's better and more efficient. Why did you do this? I'm asking because it's a good solution!<br>
+<br>
+and as for input - why don't you add this? To allow an on /off feature keybind?<br>
+<br>
+<strong class="text-strong">OnLoad()</strong>:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Settings
+-- Check the key codes here (Member Name): http://msdn.microsoft.com/en-us/library/system.windows.input.key.aspx
+    Register( "AttackHandle", "Oem8" );
+</code></pre></div>
+
+<br>
+<strong class="text-strong">OnFrame()</strong>:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if _AttackStarted ~= nil then
+	-- Check if Buffmanager is enabled TODO
+
+	-- Check if we are currently moving, when we are, we cannot do this.
+	if not Player:IsMoving() and not Player:IsResting() then
+
+		-- Check if we need to perform kind of healing routine.
+		if Class.Heal ~= nil and not Class:Heal( true ) then
+			return false;
+		end
+		
+		-- Check the force members and see if we have to do anything.
+		if Class.Force ~= nil and not Class:Force() then
+			return false;
+		end
+		
+		-- Check if we need to perform kind of healing routine.
+		if Class.Heal ~= nil and not Class:Heal( false ) then
+			return false;
+		end
+		
+	end
+	
+	-- Initialize the variable that we need to hold the target entity.
+	local Entity = EntityList:GetEntity( Player:GetTargetID());
+
+		if Entity == nil or Player:IsDead() then 
+			return false;
+		elseif Entity:IsDead() or Entity:IsFriendly() then
+			return false;
+		elseif not Entity:IsGatherable() and not Entity:IsFriendly() and not Entity:IsDead() then
+				return Class:Attack( Entity, Entity:GetPosition():DistanceToPosition( Player:GetPosition()), Stunned, true );
+				
+			end
+		end
+	end
+</code></pre></div>
+
+<strong class="text-strong">function AttackHandle()</strong>: - (add it at the bottom!)
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	
+	if _AttackStarted ~= nil then
+			_AttackStarted = nil;
+
+			Write("Auto-Attack Mode: DISABLED!");	
+		else
+			_AttackStarted = true;
+			Write("0verkill Mode: ENABLED!");	
+	end
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Resonator Script (EU English client)</h3>
+				<div class="date">Posted: <strong>Thu Oct 05, 2017 3:24 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistd942.html?mode=viewprofile&amp;u=49">0x00</a> wrote: <a href="viewtopic57d5.html?p=1631#p1631" data-post-id="1631" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Oct 05, 2017 5:32 am</div></cite>
+<br>
+I noticed you do not call the OnRun() function in the OnFrame() - I tested it, it's better and more efficient. Why did you do this? I'm asking because it's a good solution!<br>
+<br>
+and as for input - why don't you add this? To allow an on /off feature keybind?<br>
+<br>
+<strong class="text-strong">OnLoad()</strong>:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Settings
+-- Check the key codes here (Member Name): http://msdn.microsoft.com/en-us/library/system.windows.input.key.aspx
+    Register( "AttackHandle", "Oem8" );
+</code></pre></div>
+
+<br>
+<strong class="text-strong">OnFrame()</strong>:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if _AttackStarted ~= nil then
+	-- Check if Buffmanager is enabled TODO
+
+	-- Check if we are currently moving, when we are, we cannot do this.
+	if not Player:IsMoving() and not Player:IsResting() then
+
+		-- Check if we need to perform kind of healing routine.
+		if Class.Heal ~= nil and not Class:Heal( true ) then
+			return false;
+		end
+		
+		-- Check the force members and see if we have to do anything.
+		if Class.Force ~= nil and not Class:Force() then
+			return false;
+		end
+		
+		-- Check if we need to perform kind of healing routine.
+		if Class.Heal ~= nil and not Class:Heal( false ) then
+			return false;
+		end
+		
+	end
+	
+	-- Initialize the variable that we need to hold the target entity.
+	local Entity = EntityList:GetEntity( Player:GetTargetID());
+
+		if Entity == nil or Player:IsDead() then 
+			return false;
+		elseif Entity:IsDead() or Entity:IsFriendly() then
+			return false;
+		elseif not Entity:IsGatherable() and not Entity:IsFriendly() and not Entity:IsDead() then
+				return Class:Attack( Entity, Entity:GetPosition():DistanceToPosition( Player:GetPosition()), Stunned, true );
+				
+			end
+		end
+	end
+</code></pre></div>
+
+<strong class="text-strong">function AttackHandle()</strong>: - (add it at the bottom!)
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	
+	if _AttackStarted ~= nil then
+			_AttackStarted = nil;
+
+			Write("Auto-Attack Mode: DISABLED!");	
+		else
+			_AttackStarted = true;
+			Write("0verkill Mode: ENABLED!");	
+	end
+end
+</code></pre></div>
+</div></blockquote>
+
+To be honest i writed this script with very very low LUA knowledge (like not xD) this script was a mix of copy/paste.<br>
+<br>
+About OnFrame/OnRune question. I write this simply script to understand some difference between OnFrame and OnRune
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>time=Time();
+time2=Time();
+function OnFrame()
+	local t= Time();
+	Write("OnFrame: "..t-time2);
+	time2 = t;
+
+end
+
+function OnRun()
+	local t= Time();
+	Write("OnRun: "..t-time);
+	time = t;
+end</code></pre></div>
+
+This is the result
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Clearing the console window...
+- OnFrame: 12
+- OnRun: 78
+- OnFrame: 68
+- OnFrame: 56
+- OnFrame: 63
+- OnFrame: 60
+- OnFrame: 63
+- OnRun: 310
+- OnFrame: 67
+- OnFrame: 56
+- OnFrame: 65
+- OnFrame: 60
+- OnFrame: 63
+- OnRun: 310
+- OnFrame: 66
+- OnFrame: 58
+- OnFrame: 60
+- OnFrame: 63
+- OnFrame: 62
+- OnRun: 314
+- OnFrame: 71
+- OnFrame: 57
+- OnFrame: 59
+- OnFrame: 62
+- OnFrame: 61
+- OnRun: 306
+- OnFrame: 67
+- OnFrame: 58
+- OnFrame: 63
+- OnFrame: 62
+- OnFrame: 61
+- OnRun: 314</code></pre></div>
+
+So i think OnFrame was better for this IS/Kata script (just need quikly update entity and skill, not need something else).<br>
+<br>
+About "Register key" i notice a strange behaviour (probably my mistake). If i open same scritp in two client RegisterKey work only in one client not both <img class="smilies" src="images/smilies/icon_rolleyes.gif" width="15" height="17" alt=":roll:" title="Rolling Eyes"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=140&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:06 GMT -->
+</html>

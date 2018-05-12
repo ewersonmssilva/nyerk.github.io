@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=331&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; AionInterface.dll Update 17.01.2018 (NA ONLY!)</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>AionInterface.dll Update 17.01.2018 (NA ONLY!)</h2>
+		<p><a href="viewtopic52fa.html?f=4&amp;t=331">https://www.nyerk.xyz/viewtopic.php?f=4&amp;t=331</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Wed Jan 17, 2018 6:30 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">* Added Support for latest NA Client</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Wed Jan 17, 2018 9:30 pm</strong></div>
+				<div class="author">by <strong>sergeas</strong></div>
+				<div class="content">Thanks nucular !!!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Wed Jan 17, 2018 10:38 pm</strong></div>
+				<div class="author">by <strong>Mugetsu</strong></div>
+				<div class="content">Thanks very much nucular !!! you're the best !  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Sat Jan 20, 2018 2:08 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">Bugs: Conditional skills work sometimes, and Multicast skills don't work. I don't know anything about multilevel skills yet.<br>
+What I do is;
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>PlayerInput:Console("/skill Annihilation");
+	if AbilityList:GetAbility( "Blast"):GetCooldown() == 0  then 
+	PlayerInput:Console("/skill Blast");
+	end
+	if AbilityList:GetAbility( "Resonance Haze"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Resonance Haze");
+	end
+	if AbilityList:GetAbility( "Soul Crush"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Soul Crush");
+	end
+	if AbilityList:GetAbility( "Parrying Strike"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Parrying Strike");
+	end
+	if AbilityList:GetAbility( "Splash Swing"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Splash Swing");
+	end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Sat Jan 20, 2018 4:42 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic00bc.html?p=2089#p2089" data-post-id="2089" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Jan 20, 2018 2:08 pm</div></cite>
+Bugs: Conditional skills work sometimes, and Multicast skills don't work. I don't know anything about multilevel skills yet.<br>
+What I do is;
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>PlayerInput:Console("/skill Annihilation");
+	if AbilityList:GetAbility( "Blast"):GetCooldown() == 0  then 
+	PlayerInput:Console("/skill Blast");
+	end
+	if AbilityList:GetAbility( "Resonance Haze"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Resonance Haze");
+	end
+	if AbilityList:GetAbility( "Soul Crush"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Soul Crush");
+	end
+	if AbilityList:GetAbility( "Parrying Strike"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Parrying Strike");
+	end
+	if AbilityList:GetAbility( "Splash Swing"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Splash Swing");
+	end</code></pre></div>
+</div></blockquote>
+
+so hows this solution? is it working so far? my chanter is playing on retard mode now haha<br>
+<br>
+edit* did u find solutions for remove shock not working yet?<br>
+edit 2* are these your workaround for chain skills and conditions skills not working? how are they working so far?<br>
+edit 3* if you know how to get and update skill.xml, maybe i can give a hand</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Sat Jan 20, 2018 6:25 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic9dc4.html?p=2090#p2090" data-post-id="2090" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Jan 20, 2018 4:42 pm</div></cite>
+<blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic00bc.html?p=2089#p2089" data-post-id="2089" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Jan 20, 2018 2:08 pm</div></cite>
+Bugs: Conditional skills work sometimes, and Multicast skills don't work. I don't know anything about multilevel skills yet.<br>
+What I do is;
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>PlayerInput:Console("/skill Annihilation");
+	if AbilityList:GetAbility( "Blast"):GetCooldown() == 0  then 
+	PlayerInput:Console("/skill Blast");
+	end
+	if AbilityList:GetAbility( "Resonance Haze"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Resonance Haze");
+	end
+	if AbilityList:GetAbility( "Soul Crush"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Soul Crush");
+	end
+	if AbilityList:GetAbility( "Parrying Strike"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Parrying Strike");
+	end
+	if AbilityList:GetAbility( "Splash Swing"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Splash Swing");
+	end</code></pre></div>
+</div></blockquote>
+
+so hows this solution? is it working so far? my chanter is playing on retard mode now haha<br>
+<br>
+edit* did u find solutions for remove shock not working yet?<br>
+edit 2* are these your workaround for chain skills and conditions skills not working? how are they working so far?<br>
+edit 3* if you know how to get and update skill.xml, maybe i can give a hand
+</div></blockquote>
+
+1.I wrote using of PlayerInput:Console("/skill Skill Name") before. This almost always works<br>
+2. I have written llike this, when a skill didnt cast<br>
+3.Nucular have a tool extracting skills from .pak to make skill.xml. Ive been waitin for him and his work.<br>
+4. I got a lowbie chanter, Morel likely PlayerInput:Console("/skill Remove Shock I") should work. Try and let me know then.<br>
+I have been leveling my char to help more in future.<br>
+Also I will add new dll having g_maxfps control soon.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Sat Jan 20, 2018 8:03 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote class="uncited"><div>1.I wrote using of PlayerInput:Console("/skill Skill Name") before. This almost always works<br>
+2. I have written llike this, when a skill didnt cast<br>
+3.Nucular have a tool extracting skills from .pak to make skill.xml. Ive been waitin for him and his work.<br>
+4. I got a lowbie chanter, Morel likely PlayerInput:Console("/skill Remove Shock I") should work. Try and let me know then.<br>
+I have been leveling my char to help more in future.<br>
+Also I will add new dll having g_maxfps control soon.<br>
+
+</div></blockquote>
+
+i dun quite get how it works... here is how i do it.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock I" ) then
+		Helper:CheckExecute( "Remove Shock I" );
+        end
+</code></pre></div>
+
+so if I use your code, how will it look like? will it look like this?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock I" ) then
+		PlayerInput:Console("/skill Remove Shock I");
+        end</code></pre></div>
+
+because when i do this, I cant run my lua  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> <br>
+I must be doing it wrong then. can you providde an example on how to use that particular line please?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Sat Jan 20, 2018 9:49 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopicccbb.html?p=2092#p2092" data-post-id="2092" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Jan 20, 2018 8:03 pm</div></cite>
+<blockquote class="uncited"><div>1.I wrote using of PlayerInput:Console("/skill Skill Name") before. This almost always works<br>
+2. I have written llike this, when a skill didnt cast<br>
+3.Nucular have a tool extracting skills from .pak to make skill.xml. Ive been waitin for him and his work.<br>
+4. I got a lowbie chanter, Morel likely PlayerInput:Console("/skill Remove Shock I") should work. Try and let me know then.<br>
+I have been leveling my char to help more in future.<br>
+Also I will add new dll having g_maxfps control soon.<br>
+
+</div></blockquote>
+
+i dun quite get how it works... here is how i do it.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock I" ) then
+		Helper:CheckExecute( "Remove Shock I" );
+        end
+</code></pre></div>
+
+so if I use your code, how will it look like? will it look like this?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Remove Shock
+	if Helper:CheckAvailable( "Remove Shock I" ) then
+		PlayerInput:Console("/skill Remove Shock I");
+        end</code></pre></div>
+
+because when i do this, I cant run my lua  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> <br>
+I must be doing it wrong then. can you providde an example on how to use that particular line please?
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if AbilityList:GetAbility( "Remove Shock I"):GetCooldown() == 0  then 
+PlayerInput:Console("/skill Remove Shock I");
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 6:33 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">I tried this code with my luna farming sin and use it on adma stronghold. these skill strings that i put in my code is making AS stop when I try to start a fight.<br>
+
+<blockquote class="uncited"><div>- [string "Assassin.lua"]:612: attempt to index a nil value</div></blockquote>
+
+these are the code strings that I use for my sin chain skill, can you tell what I am doing wrong here?<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Chain Skill 1 : Swift Edge
+	-- Soulshatter Cleave
+if AbilityList:GetAbility( "Soulshatter Cleave"):GetCooldown() == 0  then 
+PlayerInput:Console("/skill Soulshatter Cleave");
+end
+
+	-- Soul Slash
+if AbilityList:GetAbility( "Soul Slash"):GetCooldown() == 0  then 
+PlayerInput:Console("/skill Soul Slash");
+end
+
+	-- Rune Slash
+if AbilityList:GetAbility( "Rune Slash"):GetCooldown() == 0  then 
+PlayerInput:Console("/skill Rune Slash");
+end
+
+	-- Lightning Slash
+if AbilityList:GetAbility( "Lightning Slash"):GetCooldown() == 0  then 
+PlayerInput:Console("/skill Lightning Slash");
+end</code></pre></div>
+
+my original working strings are like this. the only downside is Rune Slash never triggers no matter what I do...<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Chain Skill 1 : Swift Edge
+	-- Soulshatter Cleave (___)
+	if Helper:CheckAvailable( "Soulshatter Cleave" ) then
+		Helper:CheckExecute( "Soulshatter Cleave" );
+		
+
+	-- Soul Slash (3234)
+	elseif Helper:CheckAvailable( "3234" ) then
+		Helper:CheckExecute( "3234" );
+
+
+	-- Rune Slash (3291)		
+	elseif Helper:CheckAvailable( "3291" ) then
+		Helper:CheckExecute( "3291" );
+
+
+	-- Lightning Slash (3318)
+--	elseif Helper:CheckAvailable( "3318" ) then
+--		Helper:CheckExecute( "3318" );
+
+--	end</code></pre></div>
+
+I interchanged the skill name with skill code when using skill names doesnt work. my strings used to work during 5.6 but now after 5.8 it doesnt work anymore. which is why i was requesting nucular to give an updated skill.xml for aion 5.8 ... also, auto chain and auto react is kinda unresponsive if i enable it on sin, and even if some of them work, it will mess up my skill rotation. thats why i dont like to use it.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 12:05 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">nevermind what I said agonic. I managed to fix everything using your method. You're right. using that style, most of the skills that wont trigger can now be triggered. HUGE HELP.<br>
+<br>
+TYVM agonic!  <img class="smilies" src="images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Laughing"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=331&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:40 GMT -->
+</html>

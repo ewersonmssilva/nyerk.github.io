@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=126&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Logout with nick name check script</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Logout with nick name check script</h2>
+		<p><a href="viewtopic54fb.html?f=8&amp;t=126">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=126</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Logout with nick name check script</h3>
+				<div class="date">Posted: <strong>Tue Mar 28, 2017 4:12 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function LogOutSecurity()
+	-- Check if the ForceLogout value has been set, in which case we have to go.
+	if _ForceLogout ~= nil and not Player:IsBusy() then
+		-- Wait until the alert dialog is shown before closing the script.
+		if DialogList:GetDialog( "quit_alert_dialog" ):IsVisible() then
+			Close();
+			return;
+		end
+		
+		-- Use the console to logout.
+		PlayerInput:Console( "/Logout" );
+	end
+	
+	-- Iterate through all entities
+	for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+		-- Check if the entiy is valid.
+		if Entity ~= nil then
+			-- Check if this is a player.
+			if Entity:IsPlayer() and self:SecurePlayer(Entity:GetName()) == true then
+				_ForceLogout=true;
+				Write("Not secure player: " ..Entity:GetName());
+				return;
+			end
+		end
+	end
+end
+
+function SecurePlayer(name)
+	secureNickName = {"PlayerNick1", "PlayerNick2", "PlayerNick3"} ; 
+
+	-- check nick name
+	for i,v in ipairs(secureNickName) do
+		if name==v then
+			return false;
+		end
+	end   
+
+	return true;
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Logout with nick name check script</h3>
+				<div class="date">Posted: <strong>Fri Mar 31, 2017 10:22 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">I wanna ask something. In this script, why do you check the Entity State ? Because, state was not used.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Logout with nick name check script</h3>
+				<div class="date">Posted: <strong>Sat Apr 01, 2017 1:28 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic63ba.html?p=660#p660" data-post-id="660" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Mar 31, 2017 10:22 am</div></cite>
+I wanna ask something. In this script, why do you check the Entity State ? Because, state was not used.
+</div></blockquote>
+
+My mistake. Not need EntityState.<br>
+Script edited.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Logout with nick name check script</h3>
+				<div class="date">Posted: <strong>Sun Jun 11, 2017 6:04 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Is there a way to logout/ or use return skill a town scroll if we find an enemy (like if I am asmodian, logout if elyos is found)?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Logout with nick name check script</h3>
+				<div class="date">Posted: <strong>Sun Jun 11, 2017 2:24 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353">Diavolakos</a> wrote: <a href="viewtopicefce.html?p=938#p938" data-post-id="938" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Jun 11, 2017 6:04 am</div></cite>
+Is there a way to logout/ or use return skill a town scroll if we find an enemy (like if I am asmodian, logout if elyos is found)?
+</div></blockquote>
+
+Yes look inside AionScript.pdf
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Entity:IsEnemy()</code></pre></div> for friendly player or enemy player
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	if Helper:CheckAvailable( "Return" )  then
+		Helper:CheckExecute( "Return" );
+		return false;
+	end</code></pre></div> for return use this example:</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=126&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+</html>

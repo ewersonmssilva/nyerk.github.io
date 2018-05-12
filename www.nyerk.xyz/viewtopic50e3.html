@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=334&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; EU &amp; NA dll with new features (who wanna use them).</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>EU &amp; NA dll with new features (who wanna use them).</h2>
+		<p><a href="viewtopicc84d.html?f=4&amp;t=334">https://www.nyerk.xyz/viewtopic.php?f=4&amp;t=334</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 2:42 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">-Player:SetFramePerSecond(wanting fps value); It sets g_maxfps.<br>
+-Player:GetKinah(). It checks your kinah amount.<br>
+-Player:GetWhereIAm(). It is for subzone based control. Maybe You wanna use your skills acording to subzone.<br>
+    forexample; 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Player:GetWhereIAm() == "Sea of Life" then</code></pre></div>
+-Player:GetCInventory(). Your current inventory value.<br>
+-Player:GetMInventory(). Your maximum inventory value.<br>
+-For purple dot on radar, NA value is
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>&lt;RadarMark&gt;106D404&lt;/RadarMark&gt;</code></pre></div>
+-And last, commands who dont know how to use them before<br>
+You can set them in your code or in OfficialGrinderFramwork without using cheating2.dll.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Player:SetCryEngineFieldOfViewValue(your value);
+Player:SetCryEngineConsoleMode(1 or 0)
+Player:SetAtackSpeed(your value between 0-1000; 0 is max)
+Player:SetNoGravity(true or false)</code></pre></div>
+
+<br>
+If you have any problem, you can ask.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 3:46 pm</strong></div>
+				<div class="author">by <strong>ugel</strong></div>
+				<div class="content">Hi,<br>
+<br>
+looks nice but .dll does not work for EU, see Error Log:<br>
+System.MissingMethodException: Method not found: "Single AionInterface.Player.GetAttackRange()".<br>
+   at AionExtension._RunFrame()<br>
+   at AionInterface.AionEventHandler.Invoke()<br>
+   at AionInterface.Game._Active()<br>
+   at System.Threading.ThreadHelper.ThreadStart_Context(Object state)<br>
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)<br>
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)<br>
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)<br>
+   at System.Threading.ThreadHelper.ThreadStart()<br>
+<br>
+Regrads,<br>
+Ugel</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 3:55 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist3cd9.html?mode=viewprofile&amp;u=63">ugel</a> wrote: <a href="viewtopic149e.html?p=2097#p2097" data-post-id="2097" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Jan 21, 2018 3:46 pm</div></cite>
+Hi,<br>
+<br>
+looks nice but .dll does not work for EU, see Error Log:<br>
+System.MissingMethodException: Method not found: "Single AionInterface.Player.GetAttackRange()".<br>
+   at AionExtension._RunFrame()<br>
+   at AionInterface.AionEventHandler.Invoke()<br>
+   at AionInterface.Game._Active()<br>
+   at System.Threading.ThreadHelper.ThreadStart_Context(Object state)<br>
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)<br>
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)<br>
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)<br>
+   at System.Threading.ThreadHelper.ThreadStart()<br>
+<br>
+Regrads,<br>
+Ugel
+</div></blockquote>
+Hmm. If you use AttackRange, you have to change or delete them. AttackRange is a dead function already. Nucu has disabled it</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 5:03 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">not quite understand how this new thing u  made work...<br>
+<br>
+in any case ive been trying to fiddle with the scripts to put in scripting folder that basically lets me use specific grinderframework according to where I am, for example if i am in fissure of oblivion, instead of using class script i.e templar.lua i will use another script that is templarfoo.lua for example...<br>
+<br>
+basically what i wanna do is just use the dropdown menu in AS ui, and choose maybe fissure.lua and it will use fissure script instead of class script. i know i can make a specific player name script and put it in folder for player in grinder framework, but keep changing that player name file everytime gets annoying after a while...<br>
+<br>
+get what i mean? i have no idea where to start... should i mess with settings first, or grinder framework first, or helper... im lost haha</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 5:25 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Agonic do you use CheatEngine to search memory address?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 6:07 pm</strong></div>
+				<div class="author">by <strong>ugel</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic29c8.html?p=2098#p2098" data-post-id="2098" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Jan 21, 2018 3:55 pm</div></cite>
+<blockquote><div><cite><a href="memberlist3cd9.html?mode=viewprofile&amp;u=63">ugel</a> wrote: <a href="viewtopic149e.html?p=2097#p2097" data-post-id="2097" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Jan 21, 2018 3:46 pm</div></cite>
+Hi,<br>
+<br>
+looks nice but .dll does not work for EU, see Error Log:<br>
+System.MissingMethodException: Method not found: "Single AionInterface.Player.GetAttackRange()".<br>
+   at AionExtension._RunFrame()<br>
+   at AionInterface.AionEventHandler.Invoke()<br>
+   at AionInterface.Game._Active()<br>
+   at System.Threading.ThreadHelper.ThreadStart_Context(Object state)<br>
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)<br>
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)<br>
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)<br>
+   at System.Threading.ThreadHelper.ThreadStart()<br>
+<br>
+Regrads,<br>
+Ugel
+</div></blockquote>
+Hmm. If you use AttackRange, you have to change or delete them. AttackRange is a dead function already. Nucu has disabled it
+</div></blockquote>
+
+My mistake, it works with the last release AS. <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Sun Jan 21, 2018 9:39 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopice3ee.html?p=2100#p2100" data-post-id="2100" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Jan 21, 2018 5:25 pm</div></cite>
+Agonic do you use CheatEngine to search memory address?
+</div></blockquote>
+Yes mate</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Mon Jan 22, 2018 1:32 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic8acf-2.html?p=2099#p2099" data-post-id="2099" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Jan 21, 2018 5:03 pm</div></cite>
+not quite understand how this new thing u  made work...<br>
+<br>
+in any case ive been trying to fiddle with the scripts to put in scripting folder that basically lets me use specific grinderframework according to where I am, for example if i am in fissure of oblivion, instead of using class script i.e templar.lua i will use another script that is templarfoo.lua for example...<br>
+<br>
+basically what i wanna do is just use the dropdown menu in AS ui, and choose maybe fissure.lua and it will use fissure script instead of class script. i know i can make a specific player name script and put it in folder for player in grinder framework, but keep changing that player name file everytime gets annoying after a while...<br>
+<br>
+get what i mean? i have no idea where to start... should i mess with settings first, or grinder framework first, or helper... im lost haha
+</div></blockquote>
+Basicaly, what i understood is you wanna add into and use lua files in OfGrFr, and dont wanna change the script anymore. Right ?<br>
+if yes, probably  you can. Just add map check before all of the added luas and implement all of them into OnLoad() and OnRun() in OGF.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Mon Jan 22, 2018 2:28 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">So agonic. If i want to do that, i still need to download and use these files u uploaded first?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU &amp; NA dll with new features (who wanna use them).</h3>
+				<div class="date">Posted: <strong>Mon Jan 22, 2018 2:52 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic8f7c.html?p=2108#p2108" data-post-id="2108" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jan 22, 2018 2:28 am</div></cite>
+So agonic. If i want to do that, i still need to download and use these files u uploaded first?
+</div></blockquote>
+you can handle it without mine. but i am not sure wheter it will work or not</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=334&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:41 GMT -->
+</html>

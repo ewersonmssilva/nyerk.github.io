@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=290&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Just moving along waypoints</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Just moving along waypoints</h2>
+		<p><a href="viewtopic7a53.html?f=8&amp;t=290">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=290</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Just moving along waypoints</h3>
+				<div class="date">Posted: <strong>Thu Oct 12, 2017 12:53 am</strong></div>
+				<div class="author">by <strong>RainerWahnsinn</strong></div>
+				<div class="content">Hey,<br>
+<br>
+I'm looging for a script that just let my move the wayponints along. I want my templar to stay in "barricade of steel" and just moving some points and kiting mobs till they die on my reflect shield.<br>
+can someone help me please?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Just moving along waypoints</h3>
+				<div class="date">Posted: <strong>Fri Oct 13, 2017 12:19 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">You can do it.<br>
+<br>
+How to active skill
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>PlayerInput:Ability("Ability name")</code></pre></div>
+
+You can check skill cooldown, retrive to you CD in second
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>AbilityList:GetAbility("Ability name")</code></pre></div>
+
+You can move your character with (can get x,y,z coordinate from Cheating 2.8 Form)
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Player:SetMove(x, y, z)</code></pre></div>
+
+You can start writing your own script now <img class="smilies" src="images/smilies/icon_mrgreen.gif" width="15" height="17" alt=":mrgreen:" title="Mr. Green"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Just moving along waypoints</h3>
+				<div class="date">Posted: <strong>Sat Oct 21, 2017 6:57 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic12a6.html?p=1649#p1649" data-post-id="1649" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Oct 13, 2017 12:19 am</div></cite>
+<br>
+You can move your character with (can get x,y,z coordinate from Cheating 2.8 Form)
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Player:SetMove(x, y, z)</code></pre></div>
+
+</div></blockquote>
+
+Hello cooco, I have a question regarding this command, I'm using it to make my character follow a coordinate list, but its only using the last one of the list.<br>
+<br>
+Example:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>
+	Player:SetMove(400.32, 290.78, 198.64); 
+	Player:SetMove(394.82, 288.41, 198.69);
+	Player:SetMove(387.57, 285.87, 198.63);
+	Player:SetMove(381.20, 283.61, 198.47); 
+	Player:SetMove(374.74, 280.62, 198.20);
+	Player:SetMove(369.45, 276.22, 198.13); 
+	Player:SetMove(365.94, 272.59, 198.11); 
+	Player:SetMove(361.53, 268.92, 197.61); 
+	Player:SetMove(356.11, 265.92, 195.76);
+	Player:SetMove(351.17, 264.39, 194.52); 
+	Player:SetMove(345.48, 263.20, 193.54); 
+	Player:SetMove(340.58, 262.21, 193.05); 
+	Player:SetMove(334.41, 261.32, 193.00); 
+	Player:SetMove(329.28, 260.71, 192.62); 
+	Player:SetMove(323.57, 260.34, 192.32); 
+	Player:SetMove(318.28, 260.06, 191.54); 
+	Player:SetMove(313.29, 259.85, 191.02); 
+	Player:SetMove(307.88, 259.69, 191.02); 
+	Player:SetMove(302.68, 259.60, 191.02); 
+	Player:SetMove(295.79, 259.50, 191.02); 
+	Player:SetMove(289.47, 259.44, 191.02); 
+	Player:SetMove(284.15, 259.39, 191.02); 
+	
+	</code></pre></div>
+
+In this case my character travels directly to 	Player:SetMove(284.15, 259.39, 191.02);.<br>
+<br>
+Is there a way to make it follow each coordinate at a time?.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Just moving along waypoints</h3>
+				<div class="date">Posted: <strong>Sat Oct 21, 2017 10:03 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">You have to check if the target coordinate is reached. For example<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>currentPosition = Player:GetPosition(); -- retrieve the current position (x, y, z)
+
+-- If our distance to target coordinate is less than 1 then move to next coordinate
+if Player:GetPosition():DistanceToPosition(currentPosition) &lt;= 1 then
+	--Move next coordinate
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Just moving along waypoints</h3>
+				<div class="date">Posted: <strong>Sat Oct 21, 2017 10:31 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic3ac4.html?p=1728#p1728" data-post-id="1728" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Oct 21, 2017 10:03 pm</div></cite>
+You have to check if the target coordinate is reached. For example<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>currentPosition = Player:GetPosition(); -- retrieve the current position (x, y, z)
+
+-- If our distance to target coordinate is less than 1 then move to next coordinate
+if Player:GetPosition():DistanceToPosition(currentPosition) &lt;= 1 then
+	--Move next coordinate
+end
+</code></pre></div>
+</div></blockquote>
+
+So every coordinate must be checked individually with that position fuction?, or I can create an array or something to check them all?. <br>
+<br>
+I'm trying to implement that function but it keeps sending me to the last coordinate and then rubberbanding to the original location <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Just moving along waypoints</h3>
+				<div class="date">Posted: <strong>Sat Oct 21, 2017 10:57 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Usually i put coordinate in array
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>coordinate = {}
+coordinate[1] = {x,y,z}
+coordinate[2] = {x,y,z}
+coordinate[3] = {x,y,z}
+coordinate[4] = {x,y,z}</code></pre></div>
+
+then use a counter to loop this array<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>arrayCount = 0</code></pre></div>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>currentPosition = Player:GetPosition(); -- retrieve the current position (x, y, z)
+
+-- If our distance to target coordinate is less than 1 then move to next coordinate
+if Player:GetPosition():DistanceToPosition(currentPosition) &lt;= 1 then
+	arrayCount = arrayCount + 1;
+	Player:SetPosition(coordinate[arrayCount]);
+end</code></pre></div>
+
+Then you need to adapt code for your script <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=290&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:06 GMT -->
+</html>

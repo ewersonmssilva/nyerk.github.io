@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=274&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Anti AFK + Auto Accept Group.</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Anti AFK + Auto Accept Group.</h2>
+		<p><a href="viewtopic783d.html?f=7&amp;t=274">https://www.nyerk.xyz/viewtopic.php?f=7&amp;t=274</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Sat Sep 23, 2017 10:56 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content">Hello guys, I wonder if there's a way to implement an anti-afk and auto accept party script (with or without white and black list) for AS, this could be pretty awesome for group holders, can somebody give me a hand or some tips about how to make it?, thank you.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Sat Sep 23, 2017 11:07 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">while using official grinding script its accepting automaticly i guess</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Sat Sep 23, 2017 11:18 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist09a9.html?mode=viewprofile&amp;u=571">Quirunerk</a> wrote: <a href="viewtopic8fe5.html?p=1559#p1559" data-post-id="1559" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 23, 2017 11:07 pm</div></cite>
+while using official grinding script its accepting automaticly i guess
+</div></blockquote>
+
+True, but this requires a character botting all the time, in a way it will use more resources and also be more dangerous for the accounts.<br>
+<br>
+The reason of why OfficialGrinderFramework accepts groups "automatically" is because it's always spamming Enter while doing the skill chains, thats why it accepts the pop up inmediately.<br>
+<br>
+What I have in mind is to create a script that press the F8 key every 5 minutes, and also press the Enter key every 3 seconds. I know it sounds really simple, but I dont know how to code it into the script  <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Mon Sep 25, 2017 5:33 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopic9fdd.html?p=1560#p1560" data-post-id="1560" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 23, 2017 11:18 pm</div></cite>
+<blockquote><div><cite><a href="memberlist09a9.html?mode=viewprofile&amp;u=571">Quirunerk</a> wrote: <a href="viewtopic8fe5.html?p=1559#p1559" data-post-id="1559" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 23, 2017 11:07 pm</div></cite>
+while using official grinding script its accepting automaticly i guess
+</div></blockquote>
+
+True, but this requires a character botting all the time, in a way it will use more resources and also be more dangerous for the accounts.<br>
+<br>
+The reason of why OfficialGrinderFramework accepts groups "automatically" is because it's always spamming Enter while doing the skill chains, thats why it accepts the pop up inmediately.<br>
+<br>
+What I have in mind is to create a script that press the F8 key every 5 minutes, and also press the Enter key every 3 seconds. I know it sounds really simple, but I don't know how to code it into the script  <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad">
+</div></blockquote>
+
+Well I can write the algorithm for it, but I am missing TWO key things, first how to we command in lua to hit a button like F8 and what is the command to hit "enter"<br>
+<br>
+The below script will write a message in group chat every 3 seconds that it needs to enter (I wrote enter so you can see that this command needs to be replaced by the enter command when we find how to do it)<br>
+<br>
+and every 5 minutes it will write "How do I hit F8 guys?" so to let you know that this is the command we need to replace in order to hit the F8 when we find how to do it.<br>
+<br>
+So copy the below code, save it inside the scripting folder under the name "afk test.lua" and then load AS and run it. The char will spam this in group chat so before you run the script just put this guy into your own group to see the messages (otherwise if the character is not in a group the chat won't appear and you will get the ingame system message "you are not in a group")<br>
+<br>
+The only thing we need here is some light from the admins that know lua commands how to replace those two specific lines. I think the fact it chats is enough to hit "enter" but we want to know the command for future usage as well.<br>
+<br>
+Also to stay anti-AFK we can use the command<br>
+<br>
+<strong class="text-strong">PlayerInput:Console( "/changeweaponset" );</strong><br>
+<br>
+which will toggle the weapons your char has, enough to make an action and keep him online. So if you remove the command where he says "how do I hit F8 guys" and you put this line you will get a toggle weapon action that will surely keep him anti-afk. <br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- this function is run once when the script is loaded and starts playing
+function OnLoad()
+	Write( "Anti AFK test - by Diavolakos" )
+
+	-- This is a variable to test the time we have, timer1 is for 5 minutes and timer2 is for 3 seconds
+	timer1 = 0;
+	timer2 = 0;
+end
+
+--this function is run a few times per second, it is the main body
+function OnRun()
+
+	--Check every 5 minutes (300.000 milliseconds) and hit the F8 you asked, but how do we hit a button in lua I do not know
+	if Time() &gt; ( timer1 + 300000 ) then
+
+		--you asked to hit F8 so it selectes the nearrest target BUT I do not know how to do this command
+		PlayerInput:Console( "/g how do I hit F8 guys?" );
+		timer1 = Time();
+	end
+
+	--Check every 3 seconds (3000 millisecond) and hit Enter so as to accept all invitations
+	if Time() &gt; ( timer2 + 3000 ) then
+
+		--we need to his Enter here, but I do not know the command to do so.
+		PlayerInput:Console( "/g I need to enter" );
+		timer2 = Time();
+	end
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Mon Sep 25, 2017 3:38 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353">Diavolakos</a> wrote: <a href="viewtopic2bee.html?p=1570#p1570" data-post-id="1570" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Sep 25, 2017 5:33 am</div></cite>
+<blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopic9fdd.html?p=1560#p1560" data-post-id="1560" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 23, 2017 11:18 pm</div></cite>
+<blockquote><div><cite><a href="memberlist09a9.html?mode=viewprofile&amp;u=571">Quirunerk</a> wrote: <a href="viewtopic8fe5.html?p=1559#p1559" data-post-id="1559" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 23, 2017 11:07 pm</div></cite>
+while using official grinding script its accepting automaticly i guess
+</div></blockquote>
+
+True, but this requires a character botting all the time, in a way it will use more resources and also be more dangerous for the accounts.<br>
+<br>
+The reason of why OfficialGrinderFramework accepts groups "automatically" is because it's always spamming Enter while doing the skill chains, thats why it accepts the pop up inmediately.<br>
+<br>
+What I have in mind is to create a script that press the F8 key every 5 minutes, and also press the Enter key every 3 seconds. I know it sounds really simple, but I don't know how to code it into the script  <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad">
+</div></blockquote>
+
+Well I can write the algorithm for it, but I am missing TWO key things, first how to we command in lua to hit a button like F8 and what is the command to hit "enter"<br>
+<br>
+The below script will write a message in group chat every 3 seconds that it needs to enter (I wrote enter so you can see that this command needs to be replaced by the enter command when we find how to do it)<br>
+<br>
+and every 5 minutes it will write "How do I hit F8 guys?" so to let you know that this is the command we need to replace in order to hit the F8 when we find how to do it.<br>
+<br>
+So copy the below code, save it inside the scripting folder under the name "afk test.lua" and then load AS and run it. The char will spam this in group chat so before you run the script just put this guy into your own group to see the messages (otherwise if the character is not in a group the chat won't appear and you will get the ingame system message "you are not in a group")<br>
+<br>
+The only thing we need here is some light from the admins that know lua commands how to replace those two specific lines. I think the fact it chats is enough to hit "enter" but we want to know the command for future usage as well.<br>
+<br>
+Also to stay anti-AFK we can use the command<br>
+<br>
+<strong class="text-strong">PlayerInput:Console( "/changeweaponset" );</strong><br>
+<br>
+which will toggle the weapons your char has, enough to make an action and keep him online. So if you remove the command where he says "how do I hit F8 guys" and you put this line you will get a toggle weapon action that will surely keep him anti-afk. <br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- this function is run once when the script is loaded and starts playing
+function OnLoad()
+	Write( "Anti AFK test - by Diavolakos" )
+
+	-- This is a variable to test the time we have, timer1 is for 5 minutes and timer2 is for 3 seconds
+	timer1 = 0;
+	timer2 = 0;
+end
+
+--this function is run a few times per second, it is the main body
+function OnRun()
+
+	--Check every 5 minutes (300.000 milliseconds) and hit the F8 you asked, but how do we hit a button in lua I do not know
+	if Time() &gt; ( timer1 + 300000 ) then
+
+		--you asked to hit F8 so it selectes the nearrest target BUT I do not know how to do this command
+		PlayerInput:Console( "/g how do I hit F8 guys?" );
+		timer1 = Time();
+	end
+
+	--Check every 3 seconds (3000 millisecond) and hit Enter so as to accept all invitations
+	if Time() &gt; ( timer2 + 3000 ) then
+
+		--we need to his Enter here, but I do not know the command to do so.
+		PlayerInput:Console( "/g I need to enter" );
+		timer2 = Time();
+	end
+
+end</code></pre></div>
+</div></blockquote>
+
+Thank you so much for your help man, really, you are awesome.<br>
+<br>
+I followed your advice and replaced the lines with <br>
+<br>
+<strong class="text-strong">"PlayerInput:Console( "/changeweaponset" );"</strong><br>
+<br>
+and also added a second one, since placing a skill will keep it spamming "Enter", as I said before, then I used<br>
+<br>
+<strong class="text-strong">"PlayerInput:Console( "/skill Bandage Heal" );"</strong><br>
+<br>
+This end up with a pretty awesome anti-afk + group holder script, simple, but extremely functional.<br>
+<br>
+PD: I'm still looking for a send KeyPress command for lua, it would be nice for future references.<br>
+<br>
+PD2: There's place for a tweak on this script, we can set a default character name string and then compare it with the player who is inviting you to group, if it matches what you set previously then it continues using the <strong class="text-strong">"PlayerInput:Console( "/skill Bandage Heal" );"</strong>, if not, then make a pause for about 10 - 15 seconds until the invite group pop up dissapears.<br>
+<br>
+I remember @cooco added a similar function to his newly leveling characters project. It would be nice to add the essence of it to this.<br>
+
+<blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopicb140.html?p=1349#p1349" data-post-id="1349" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 29, 2017 4:29 pm</div></cite>
+<br>
+Configure script if u run multiclient.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Configure party members
+	local server = ""; -- If u are intraserver. For example server = "-Urtem" or server = "-Hellion" or server = "-Thor". Empty if are in normal server
+	
+	-- Comment this line if u solo instance
+	FrameworkExp:AddMemberParty("YourCharName1"..server);
+	FrameworkExp:AddMemberParty("YourCharName2"..server);
+</code></pre></div>
+
+</div></blockquote></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Mon Oct 23, 2017 6:51 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">I am glad the script does the thing, yes I forgot that most commands also hit an enter, so I guess the script serves your purpose.<br>
+<br>
+I wish there was documentation on everything in AS, I read the pdf with the command list, and that's it, a list of commands that I don't know how to use. I could make a ton of scripts if I knew how to write in lua and AS.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Sun Oct 29, 2017 9:22 am</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353">Diavolakos</a> wrote: <a href="viewtopicf1b5.html?p=1735#p1735" data-post-id="1735" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 23, 2017 6:51 am</div></cite>
+I am glad the script does the thing, yes I forgot that most commands also hit an enter, so I guess the script serves your purpose.<br>
+<br>
+I wish there was documentation on everything in AS, I read the pdf with the command list, and that's it, a list of commands that I don't know how to use. I could make a ton of scripts if I knew how to write in lua and AS.
+</div></blockquote>
+
+Hello Diavolakos, I have a question about your timer functions. I noticed that right after the script is started all the instructions are executed inmediately and after that then the timer starts working according the seconds set.<br>
+<br>
+Is there a way to execute all the lines in a sequential way right after the start?<br>
+<br>
+In example:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>
+function OnLoad()
+	timer1 = 0;
+	timer2 = 0;
+end
+
+function OnRun()
+
+	if Time() &gt; ( timer1 + 2000 ) then
+		Write( "Hello world 1" );
+		timer1 = Time();
+	end
+
+	if Time() &gt; ( timer2 + 3000 ) then
+		Write( "Hello world 2" );
+		timer2 = Time();
+	end
+
+end
+</code></pre></div>
+
+This code will have the next output:<br>
+<br>
+- Hello world 1 &lt;-- Inmediately after starting the script<br>
+- Hello world 2 &lt;-- Inmediately after starting the script<br>
+- Hello world 1 &lt;-- Message after 2 seconds<br>
+- Hello world 2 &lt;-- Message after 3 seconds<br>
+<br>
+So, in this case I need the output to start after the 2 seconds and not showing the first two lines that are not following the timer instructions. I would appreciate any help you can give me with this. Thank you  <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Sun Oct 29, 2017 3:27 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnLoad()
+	timer1 = Time() + 2000; 
+	timer2 = Time() + 2000;
+end</code></pre></div>
+
+Inizialize timer with already 2 second delay.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Anti AFK + Auto Accept Group.</h3>
+				<div class="date">Posted: <strong>Tue Nov 28, 2017 6:04 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Sorry I was away, and yes cooco gave a good solution. Another way would be to run the commands one time inside <strong class="text-strong">function OnLoad() </strong>command but it is not recommended only for consistency in coding issues, like a general way of writing scripts, don't have main code int he initialization of the script.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=7&t=274&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:58 GMT -->
+</html>

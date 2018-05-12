@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=231&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Ranger Lua with mau I</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Ranger Lua with mau I</h2>
+		<p><a href="viewtopic523b.html?f=6&amp;t=231">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=231</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Ranger Lua with mau I</h3>
+				<div class="date">Posted: <strong>Fri Aug 18, 2017 4:23 pm</strong></div>
+				<div class="author">by <strong>sanane</strong></div>
+				<div class="content">Hello<br>
+<br>
+someone have a Ranger Lua with using mau ? i tried but i failed to change the lua for ranger.<br>
+<br>
+Thanks a lot</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Ranger Lua with mau I</h3>
+				<div class="date">Posted: <strong>Fri Aug 18, 2017 5:56 pm</strong></div>
+				<div class="author">by <strong>sergeas</strong></div>
+				<div class="content">I don't use a ranger but I'm sure the following source code will works fine:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Transformation: Mau
+	if Player:GetState():GetState( Helper:CheckName( "Transformation: Mau" )) == nil and Helper:CheckAvailable( "Transformation: Mau" ) then
+		Helper:CheckExecute( "Transformation: Mau" );
+		return false;
+	end
+</code></pre></div>
+
+In the file Skill.xml (Skill.NA.xml) you will find the rigth name of the skill .. I searched there and I found 2 values for Mau:<br>
+<br>
+Mau Transformation<br>
+Transformation: Mau<br>
+<br>
+If the code doesn't work with "Transformation: Mau" try with "Mau Transformation".<br>
+You can check for the rigth name of the skill in the game client ..</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Ranger Lua with mau I</h3>
+				<div class="date">Posted: <strong>Mon Aug 21, 2017 9:02 am</strong></div>
+				<div class="author">by <strong>sanane</strong></div>
+				<div class="content">thx i will try it</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Ranger Lua with mau I</h3>
+				<div class="date">Posted: <strong>Mon Aug 21, 2017 12:00 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">You can also add <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Player:GetDP() &gt;=2000</code></pre></div> if you char doesnt cast anyhting anymore because some DP skill require it (if not all) otherwise AS will just try to cast Mau also if your char has zero dp.<br>
+-&gt; final code: 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Transformation: Mau
+	if Player:GetDP() &gt;=2000 and Player:GetState():GetState( Helper:CheckName( "Transformation: Mau" )) == nil and Helper:CheckAvailable( "Transformation: Mau" ) then
+		Helper:CheckExecute( "Transformation: Mau" );
+		return false;
+	end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=231&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:45 GMT -->
+</html>

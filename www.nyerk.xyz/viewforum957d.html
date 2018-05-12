@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewforum.php?f=8 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:14:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>LUA Scripting - Nyerk</title>
+
+
+	<link rel="canonical" href="viewforum957d.html?f=8">
+
+<!--
+	phpBB style name: we_universal
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      nextgen ( http://xeronix.org/ )
+-->
+
+
+<link href="styles/prosilver/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="assets/css/font-awesome.min5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/prosilver/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=25" rel="stylesheet">
+<![endif]-->
+
+
+<link href="ext/gfksx/ThanksForPosts/styles/prosilver/theme/thanks5d79.css?assets_version=25" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="./styles/we_universal/template/html5shiv.min.js"></script>
+<![endif]-->
+
+</head>
+<body id="phpbb" class="nojs notouch section-viewforum ltr  logged-out">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div class="inventea-headerbar">
+		<nav class="inventea-wrapper inventea-userbar">
+			<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="icon fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+		
+														
+							<li>
+								<a href="index-2.html" role="menuitem">
+									<i class="icon fa fa-fw fa-home" aria-hidden="true"></i><span>Board index</span>
+								</a>
+							</li>		
+							
+							<li data-skip-responsive="true">
+								<a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">
+									<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+								</a>
+							</li>
+							
+													<li>
+								<a href="search.html" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+							
+														
+														
+								
+						
+							<li>
+								<a href="search33a7.html?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="search526f.html?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+	
+						
+							
+            																			<li>
+								<a href="memberlist4bfd.html?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+						            
+				                    </ul>
+    </div>
+</div>
+
+			
+			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+										<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp26c3.html?mode=login" title="Login" accesskey="x" role="menuitem"><i class="icon fa-fw fa-sign-in" aria-hidden="true"></i>Login</a></li>
+											<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp8319.html?mode=register" role="menuitem"><i class="icon fa-fw fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										
+										
+							</ul>
+		</nav>
+	</div>
+
+	<header class="inventea-header">
+			
+		<div class="inventea-dashboard" role="banner">
+						<nav role="navigation">
+	<div class="inventea-posts-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+																			<li><a href="search33a7.html?search_id=unanswered" role="menuitem">Unanswered topics</a></li>
+				<li><a href="search526f.html?search_id=active_topics" role="menuitem">Active topics</a></li>
+			
+					</ul>
+	</div>
+
+	<div class="inventea-forum-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+			<li><a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+			<li><a href="search.html" role="menuitem">Search</a></li>
+											<li><a href="memberlist4bfd.html?mode=team" role="menuitem">The team</a></li>			
+						
+					</ul>
+	</div>
+</nav>
+
+			<div class="inventea-sitename">
+				<h1><a href="index-2.html" title="Board index">Nyerk</a></h1>
+				<span>An Forum about Aion</span>
+			</div>
+		</div>
+			</header>
+
+	<div class="inventea-wrapper inventea-content" role="main">
+		
+		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+			
+									<li class="small-icon breadcrumbs">
+												<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index-2.html" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">Board index</span></a></span>
+														<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="3"><a href="viewforum4d6b.html?f=3" itemprop="url"><span itemprop="title">AionScript</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="8"><a href="viewforum957d.html?f=8" itemprop="url"><span itemprop="title">LUA Scripting</span></a></span>
+																</li>
+					</ul>
+
+		
+		<h2 class="forum-title"><a href="viewforum957d.html?f=8">LUA Scripting</a></h2>
+
+
+	
+	
+				<div class="forabg">
+			<div class="inner">
+			<ul class="topiclist">
+				<li class="header">
+										<dl class="row-item">
+						<dt><div class="list-inner">Forum</div></dt>
+						<dd class="topics">Statistics</dd>
+						<dd class="lastpost"><span>Last post</span></dd>
+					</dl>
+									</li>
+			</ul>
+			<ul class="topiclist forums">
+		
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforumfdc5.html?f=9" class="forumtitle">Assassin</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>3</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>3</strong><br />
+						Posts: <strong>39</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopic05e5.html?f=9&amp;p=1781#p1781" title="Re: Official: Assassin.lua" class="lastsubject">Re: Official: Assassin.lua</a> <br />
+																	by <a href="memberlist2c3e.html?mode=viewprofile&amp;u=665" class="username">darthcroaton</a>
+																	<a href="viewtopic05e5.html?f=9&amp;p=1781#p1781" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Tue Oct 31, 2017 4:30 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforum15ca.html?f=10" class="forumtitle">Bard</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>3</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>3</strong><br />
+						Posts: <strong>57</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopicb756.html?f=10&amp;p=1373#p1373" title="Re: Official: Songweaver.lua" class="lastsubject">Re: Official: Songweaver.lua</a> <br />
+																	by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>
+																	<a href="viewtopicb756.html?f=10&amp;p=1373#p1373" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Wed Aug 30, 2017 1:42 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforum8a83.html?f=11" class="forumtitle">Gladiator</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>2</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>2</strong><br />
+						Posts: <strong>5</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopicb462.html?f=11&amp;p=791#p791" title="Re: Official: Gladiator.lua" class="lastsubject">Re: Official: Gladiator.lua</a> <br />
+																	by <a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a>
+																	<a href="viewtopicb462.html?f=11&amp;p=791#p791" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Mon May 01, 2017 11:43 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforum01c9.html?f=12" class="forumtitle">Templar</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>1</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>1</strong><br />
+						Posts: <strong>6</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopic46f3.html?f=12&amp;p=92#p92" title="Re: Functional templar LUA" class="lastsubject">Re: Functional templar LUA</a> <br />
+																	by <a href="memberlistc673.html?mode=viewprofile&amp;u=50" class="username">Werasalma</a>
+																	<a href="viewtopic46f3.html?f=12&amp;p=92#p92" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Fri Feb 03, 2017 3:13 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforumeb13.html?f=13" class="forumtitle">Ranger</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>1</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>1</strong><br />
+						Posts: <strong>1</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopic7d42.html?f=13&amp;p=284#p284" title="OFG: Ranger LUA" class="lastsubject">OFG: Ranger LUA</a> <br />
+																	by <a href="memberlist2a32.html?mode=viewprofile&amp;u=82" class="username">FarAwaY</a>
+																	<a href="viewtopic7d42.html?f=13&amp;p=284#p284" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Tue Feb 28, 2017 5:29 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforum9780.html?f=14" class="forumtitle">Spiritmaster</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>1</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>1</strong><br />
+						Posts: <strong>14</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopicf74f.html?f=14&amp;p=1982#p1982" title="Re: Spiritmaster.lua" class="lastsubject">Re: Spiritmaster.lua</a> <br />
+																	by <a href="memberliste9a7.html?mode=viewprofile&amp;u=60" class="username">unkn0wnus3r</a>
+																	<a href="viewtopicf74f.html?f=14&amp;p=1982#p1982" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Tue Dec 19, 2017 12:59 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforumb09f.html?f=15" class="forumtitle">Sorcerer</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>2</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>2</strong><br />
+						Posts: <strong>5</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopicb3a0.html?f=15&amp;p=1013#p1013" title="Re: Sorcerer.lua" class="lastsubject">Re: Sorcerer.lua</a> <br />
+																	by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a>
+																	<a href="viewtopicb3a0.html?f=15&amp;p=1013#p1013" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Tue Jul 04, 2017 2:22 am
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforumf2fa.html?f=16" class="forumtitle">Cleric</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>2</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>2</strong><br />
+						Posts: <strong>2</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopic1055.html?f=16&amp;p=1642#p1642" title="Anyone has updated Cleric Lua?" class="lastsubject">Anyone has updated Cleric Lua?</a> <br />
+																	by <a href="memberlist6dd0.html?mode=viewprofile&amp;u=626" class="username">Mandy</a>
+																	<a href="viewtopic1055.html?f=16&amp;p=1642#p1642" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Tue Oct 10, 2017 9:03 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforum48ab.html?f=17" class="forumtitle">Chanter</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>2</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>2</strong><br />
+						Posts: <strong>18</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopicccf2.html?f=17&amp;p=1068#p1068" title="Re: Official: Chanter.lua" class="lastsubject">Re: Official: Chanter.lua</a> <br />
+																	by <a href="memberlistf8ff.html?mode=viewprofile&amp;u=51" style="color: #0000FF;" class="username-coloured">locatelli</a>
+																	<a href="viewtopicccf2.html?f=17&amp;p=1068#p1068" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Sat Jul 22, 2017 8:19 am
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforuma213.html?f=18" class="forumtitle">Gunner</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>2</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>2</strong><br />
+						Posts: <strong>27</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopic6c67.html?f=18&amp;p=1576#p1576" title="Re: Gunslinger.lua by mnwaxep EU version" class="lastsubject">Re: Gunslinger.lua by mnwaxep…</a> <br />
+																	by <a href="memberliste9a7.html?mode=viewprofile&amp;u=60" class="username">unkn0wnus3r</a>
+																	<a href="viewtopic6c67.html?f=18&amp;p=1576#p1576" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Mon Sep 25, 2017 12:46 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+	
+	
+			
+					<li class="row">
+						<dl title="No unread posts">
+				<dt class="row-item forum_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewforum218b.html?f=19" class="forumtitle">Aethertech</a>
+																		
+												<div class="responsive-show" style="display: none;">
+															Topics: <strong>4</strong>
+													</div>
+											</div>
+				</dd>
+									<dd class="topics">
+						Topics: <strong>4</strong><br />
+						Posts: <strong>11</strong>
+					</dd>
+					<dd class="lastpost">
+						<span>
+																						<dfn>Last post</dfn>
+																										<a href="viewtopic36bd.html?f=19&amp;p=1591#p1591" title="Aethertec Script" class="lastsubject">Aethertec Script</a> <br />
+																	by <a href="memberlistb7e0.html?mode=viewprofile&amp;u=182" class="username">maq2285</a>
+																	<a href="viewtopic36bd.html?f=19&amp;p=1591#p1591" title="View the latest post">
+										<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">View the latest post</span>
+									</a>
+																<br />Tue Sep 26, 2017 7:14 pm
+													</span>
+					</dd>
+							</dl>
+					</li>
+			
+				</ul>
+
+			</div>
+		</div>
+		
+
+	<div class="action-bar bar-top">
+
+				
+		<a href="posting05b6.html?mode=post&amp;f=8" class="button" title="Post a new topic">
+							<span>New Topic</span> <i class="icon fa-pencil fa-fw" aria-hidden="true"></i>
+					</a>
+				
+			<div class="search-box" role="search">
+			<form method="get" id="forum-search" action="https://www.nyerk.xyz/search.php">
+			<fieldset>
+				<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this forum…" />
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="search.html" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="fid[0]" value="8" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+	<div class="pagination">
+				26 topics
+					<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="viewforume1fe.html?f=8&amp;start=25" role="button">2</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="viewforume1fe.html?f=8&amp;start=25" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+			</div>
+
+	</div>
+
+
+
+
+	
+			<div class="forumbg">
+		<div class="inner">
+		<ul class="topiclist">
+			<li class="header">
+				<dl class="row-item">
+					<dt><div class="list-inner">Topics</div></dt>
+					<dd class="posts">Statistics</dd>
+					<dd class="lastpost"><span>Last post</span></dd>
+				</dl>
+			</li>
+		</ul>
+		<ul class="topiclist topics">
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic1f2a.html?f=8&amp;t=357" class="topictitle">Botting EU</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a> &laquo; <a href="viewtopic0641.html?f=8&amp;t=357&amp;p=2295#p2295" title="Go to last post">Sun Apr 01, 2018 4:02 pm</a>
+													</div>
+												
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a> &raquo; Sun Apr 01, 2018 4:02 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>0</strong><br />
+					Views: <strong>43</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a>
+													<a href="viewtopic0641.html?f=8&amp;t=357&amp;p=2295#p2295" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Sun Apr 01, 2018 4:02 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read_hot"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopica60a.html?f=8&amp;t=335" class="topictitle">UnknownProject 23.01.2018</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a> &laquo; <a href="viewtopiced8c.html?f=8&amp;t=335&amp;p=2260#p2260" title="Go to last post">Wed Mar 14, 2018 10:28 am</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>36</strong></span>						
+						<div class="topic-poster responsive-hide">
+														<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>							by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &raquo; Sun Jan 21, 2018 6:44 pm
+													</div>
+
+												<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+															<li><a class="button" href="viewtopica60a.html?f=8&amp;t=335">1</a></li>
+																							<li><a class="button" href="viewtopicf0a3.html?f=8&amp;t=335&amp;start=10">2</a></li>
+																							<li><a class="button" href="viewtopic5515.html?f=8&amp;t=335&amp;start=20">3</a></li>
+																							<li><a class="button" href="viewtopic408c.html?f=8&amp;t=335&amp;start=30">4</a></li>
+																																													</ul>
+						</div>
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>36</strong><br />
+					Views: <strong>400</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a>
+													<a href="viewtopiced8c.html?f=8&amp;t=335&amp;p=2260#p2260" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Wed Mar 14, 2018 10:28 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic2c2f.html?f=8&amp;t=340" class="topictitle">Sorcerer.lua - Need help fixing!</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &laquo; <a href="viewtopic310c.html?f=8&amp;t=340&amp;p=2136#p2136" title="Go to last post">Tue Feb 06, 2018 3:46 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>3</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlist6f62.html?mode=viewprofile&amp;u=61" class="username">creatine</a> &raquo; Mon Feb 05, 2018 5:57 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>3</strong><br />
+					Views: <strong>34</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>
+													<a href="viewtopic310c.html?f=8&amp;t=340&amp;p=2136#p2136" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Tue Feb 06, 2018 3:46 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read_hot"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic0f09.html?f=8&amp;t=248" class="topictitle">Project: Auto leveling new character</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &laquo; <a href="viewtopicf520.html?f=8&amp;t=248&amp;p=2063#p2063" title="Go to last post">Sun Jan 14, 2018 12:10 am</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>86</strong></span>						
+						<div class="topic-poster responsive-hide">
+														<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>							by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &raquo; Tue Aug 29, 2017 4:29 pm
+													</div>
+
+												<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+															<li><a class="button" href="viewtopic0f09.html?f=8&amp;t=248">1</a></li>
+																							<li class="ellipsis"><span>…</span></li>
+																							<li><a class="button" href="viewtopicf5f7.html?f=8&amp;t=248&amp;start=40">5</a></li>
+																							<li><a class="button" href="viewtopic9924.html?f=8&amp;t=248&amp;start=50">6</a></li>
+																							<li><a class="button" href="viewtopic8777.html?f=8&amp;t=248&amp;start=60">7</a></li>
+																							<li><a class="button" href="viewtopica253.html?f=8&amp;t=248&amp;start=70">8</a></li>
+																							<li><a class="button" href="viewtopica538.html?f=8&amp;t=248&amp;start=80">9</a></li>
+																																													</ul>
+						</div>
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>86</strong><br />
+					Views: <strong>1146</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>
+													<a href="viewtopicf520.html?f=8&amp;t=248&amp;p=2063#p2063" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Sun Jan 14, 2018 12:10 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read_hot"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic13ba.html?f=8&amp;t=285" class="topictitle">Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &laquo; <a href="viewtopic87ca.html?f=8&amp;t=285&amp;p=2041#p2041" title="Go to last post">Wed Jan 03, 2018 3:55 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>61</strong></span>						
+						<div class="topic-poster responsive-hide">
+							<i class="icon fa-bar-chart fa-fw" aria-hidden="true"></i>														by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &raquo; Mon Oct 02, 2017 1:24 am
+													</div>
+
+												<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+															<li><a class="button" href="viewtopic13ba.html?f=8&amp;t=285">1</a></li>
+																							<li class="ellipsis"><span>…</span></li>
+																							<li><a class="button" href="viewtopic8e3f.html?f=8&amp;t=285&amp;start=20">3</a></li>
+																							<li><a class="button" href="viewtopic82bc.html?f=8&amp;t=285&amp;start=30">4</a></li>
+																							<li><a class="button" href="viewtopic0dcf.html?f=8&amp;t=285&amp;start=40">5</a></li>
+																							<li><a class="button" href="viewtopicdc4d.html?f=8&amp;t=285&amp;start=50">6</a></li>
+																							<li><a class="button" href="viewtopic7048.html?f=8&amp;t=285&amp;start=60">7</a></li>
+																																													</ul>
+						</div>
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>61</strong><br />
+					Views: <strong>787</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>
+													<a href="viewtopic87ca.html?f=8&amp;t=285&amp;p=2041#p2041" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Wed Jan 03, 2018 3:55 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read_hot"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopicc033.html?f=8&amp;t=302" class="topictitle">Luna weekly Rank A - [Final Version] Updated: 04/12/2017</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a> &laquo; <a href="viewtopice88f.html?f=8&amp;t=302&amp;p=1953#p1953" title="Go to last post">Thu Dec 07, 2017 11:58 am</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>32</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a> &raquo; Sun Oct 29, 2017 5:23 pm
+													</div>
+
+												<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+															<li><a class="button" href="viewtopicc033.html?f=8&amp;t=302">1</a></li>
+																							<li><a class="button" href="viewtopica4ca.html?f=8&amp;t=302&amp;start=10">2</a></li>
+																							<li><a class="button" href="viewtopic7064.html?f=8&amp;t=302&amp;start=20">3</a></li>
+																							<li><a class="button" href="viewtopic8af4.html?f=8&amp;t=302&amp;start=30">4</a></li>
+																																													</ul>
+						</div>
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>32</strong><br />
+					Views: <strong>567</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlistbfa8.html?mode=viewprofile&amp;u=353" class="username">Diavolakos</a>
+													<a href="viewtopice88f.html?f=8&amp;t=302&amp;p=1953#p1953" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Thu Dec 07, 2017 11:58 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic6508.html?f=8&amp;t=310" class="topictitle">Automatic Garden Fly</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a> &laquo; <a href="viewtopic7c5a.html?f=8&amp;t=310&amp;p=1850#p1850" title="Go to last post">Wed Nov 08, 2017 11:14 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>11</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a> &raquo; Sun Nov 05, 2017 3:50 pm
+													</div>
+
+												<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+															<li><a class="button" href="viewtopic6508.html?f=8&amp;t=310">1</a></li>
+																							<li><a class="button" href="viewtopic7dde.html?f=8&amp;t=310&amp;start=10">2</a></li>
+																																													</ul>
+						</div>
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>11</strong><br />
+					Views: <strong>152</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a>
+													<a href="viewtopic7c5a.html?f=8&amp;t=310&amp;p=1850#p1850" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Wed Nov 08, 2017 11:14 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic3bbf.html?f=8&amp;t=243" class="topictitle">Old OfficialCheatingScript</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlistf643.html?mode=viewprofile&amp;u=662" class="username">giorgis</a> &laquo; <a href="viewtopiccb3d.html?f=8&amp;t=243&amp;p=1787#p1787" title="Go to last post">Thu Nov 02, 2017 3:01 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>1</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlist1a8f.html?mode=viewprofile&amp;u=107" class="username">bionuttt</a> &raquo; Thu Aug 24, 2017 3:08 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>1</strong><br />
+					Views: <strong>101</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlistf643.html?mode=viewprofile&amp;u=662" class="username">giorgis</a>
+													<a href="viewtopiccb3d.html?f=8&amp;t=243&amp;p=1787#p1787" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Thu Nov 02, 2017 3:01 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic4228.html?f=8&amp;t=304" class="topictitle">Entities.dll / Branding PvP+PvE</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &laquo; <a href="viewtopiced90.html?f=8&amp;t=304&amp;p=1776#p1776" title="Go to last post">Tue Oct 31, 2017 1:06 am</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>3</strong></span>						
+						<div class="topic-poster responsive-hide">
+														<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>							by <a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a> &raquo; Mon Oct 30, 2017 11:19 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>3</strong><br />
+					Views: <strong>65</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>
+													<a href="viewtopiced90.html?f=8&amp;t=304&amp;p=1776#p1776" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Tue Oct 31, 2017 1:06 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopicb060.html?f=8&amp;t=298" class="topictitle">Luna weekly AFK [Alpha Version] (Closed).</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a> &laquo; <a href="viewtopicc56d.html?f=8&amp;t=298&amp;p=1757#p1757" title="Go to last post">Sun Oct 29, 2017 5:24 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>2</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a> &raquo; Sat Oct 21, 2017 11:09 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>2</strong><br />
+					Views: <strong>127</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a>
+													<a href="viewtopicc56d.html?f=8&amp;t=298&amp;p=1757#p1757" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Sun Oct 29, 2017 5:24 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic7a53.html?f=8&amp;t=290" class="topictitle">Just moving along waypoints</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &laquo; <a href="viewtopicdaf5.html?f=8&amp;t=290&amp;p=1730#p1730" title="Go to last post">Sat Oct 21, 2017 10:57 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>5</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste508.html?mode=viewprofile&amp;u=144" class="username">RainerWahnsinn</a> &raquo; Thu Oct 12, 2017 12:53 am
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>5</strong><br />
+					Views: <strong>73</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>
+													<a href="viewtopicdaf5.html?f=8&amp;t=290&amp;p=1730#p1730" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Sat Oct 21, 2017 10:57 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic896e.html?f=8&amp;t=140" class="topictitle">Resonator Script (EU English client)</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &laquo; <a href="viewtopicf940.html?f=8&amp;t=140&amp;p=1634#p1634" title="Go to last post">Thu Oct 05, 2017 3:24 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>9</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &raquo; Thu Apr 20, 2017 6:05 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>9</strong><br />
+					Views: <strong>206</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a>
+													<a href="viewtopicf940.html?f=8&amp;t=140&amp;p=1634#p1634" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Thu Oct 05, 2017 3:24 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read_hot"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic9258.html?f=8&amp;t=69" class="topictitle">Death Paths Jimmys Grinder Framework</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a> &laquo; <a href="viewtopic0af0.html?f=8&amp;t=69&amp;p=1100#p1100" title="Go to last post">Fri Jul 28, 2017 9:50 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>36</strong></span>						
+						<div class="topic-poster responsive-hide">
+														<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>							by <a href="memberlist2a32.html?mode=viewprofile&amp;u=82" class="username">FarAwaY</a> &raquo; Tue Feb 28, 2017 3:21 pm
+													</div>
+
+												<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+															<li><a class="button" href="viewtopic9258.html?f=8&amp;t=69">1</a></li>
+																							<li><a class="button" href="viewtopic62b1.html?f=8&amp;t=69&amp;start=10">2</a></li>
+																							<li><a class="button" href="viewtopic11f8.html?f=8&amp;t=69&amp;start=20">3</a></li>
+																							<li><a class="button" href="viewtopic2ceb.html?f=8&amp;t=69&amp;start=30">4</a></li>
+																																													</ul>
+						</div>
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>36</strong><br />
+					Views: <strong>712</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a>
+													<a href="viewtopic0af0.html?f=8&amp;t=69&amp;p=1100#p1100" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Fri Jul 28, 2017 9:50 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopicd9dc.html?f=8&amp;t=193" class="topictitle">Potion Script 4 all Classes</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlist9c3c.html?mode=viewprofile&amp;u=535" class="username">Quench</a> &laquo; <a href="viewtopic165f.html?f=8&amp;t=193&amp;p=1090#p1090" title="Go to last post">Thu Jul 27, 2017 10:09 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>3</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a> &raquo; Thu Jul 13, 2017 11:11 am
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>3</strong><br />
+					Views: <strong>114</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlist9c3c.html?mode=viewprofile&amp;u=535" class="username">Quench</a>
+													<a href="viewtopic165f.html?f=8&amp;t=193&amp;p=1090#p1090" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Thu Jul 27, 2017 10:09 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic9461.html?f=8&amp;t=119" class="topictitle">Focus Agent script</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a> &laquo; <a href="viewtopicb02b.html?f=8&amp;t=119&amp;p=1076#p1076" title="Go to last post">Mon Jul 24, 2017 4:49 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>2</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &raquo; Thu Mar 23, 2017 2:48 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>2</strong><br />
+					Views: <strong>133</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a>
+													<a href="viewtopicb02b.html?f=8&amp;t=119&amp;p=1076#p1076" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Mon Jul 24, 2017 4:49 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic01fc.html?f=8&amp;t=30" class="topictitle">EU XP Event - Autouse dropped XP Serums</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlistb838.html?mode=viewprofile&amp;u=324" class="username">ewerson2</a> &laquo; <a href="viewtopic501d.html?f=8&amp;t=30&amp;p=1065#p1065" title="Go to last post">Fri Jul 21, 2017 9:27 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>1</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a> &raquo; Thu Feb 02, 2017 7:04 am
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>1</strong><br />
+					Views: <strong>168</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlistb838.html?mode=viewprofile&amp;u=324" class="username">ewerson2</a>
+													<a href="viewtopic501d.html?f=8&amp;t=30&amp;p=1065#p1065" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Fri Jul 21, 2017 9:27 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopica799.html?f=8&amp;t=191" class="topictitle">Missing starterclasses</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberliste9a7.html?mode=viewprofile&amp;u=60" class="username">unkn0wnus3r</a> &laquo; <a href="viewtopica7dc.html?f=8&amp;t=191&amp;p=1027#p1027" title="Go to last post">Wed Jul 12, 2017 9:55 pm</a>
+													</div>
+												
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste9a7.html?mode=viewprofile&amp;u=60" class="username">unkn0wnus3r</a> &raquo; Wed Jul 12, 2017 9:55 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>0</strong><br />
+					Views: <strong>52</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberliste9a7.html?mode=viewprofile&amp;u=60" class="username">unkn0wnus3r</a>
+													<a href="viewtopica7dc.html?f=8&amp;t=191&amp;p=1027#p1027" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Wed Jul 12, 2017 9:55 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic2dcb.html?f=8&amp;t=184" class="topictitle">Botting with a kisk</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlistac96.html?mode=viewprofile&amp;u=480" class="username">sortem</a> &laquo; <a href="viewtopicd37b.html?f=8&amp;t=184&amp;p=973#p973" title="Go to last post">Mon Jun 19, 2017 12:47 am</a>
+													</div>
+												
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlistac96.html?mode=viewprofile&amp;u=480" class="username">sortem</a> &raquo; Mon Jun 19, 2017 12:47 am
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>0</strong><br />
+					Views: <strong>71</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlistac96.html?mode=viewprofile&amp;u=480" class="username">sortem</a>
+													<a href="viewtopicd37b.html?f=8&amp;t=184&amp;p=973#p973" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Mon Jun 19, 2017 12:47 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic54fb.html?f=8&amp;t=126" class="topictitle">Logout with nick name check script</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a> &laquo; <a href="viewtopice2cb.html?f=8&amp;t=126&amp;p=944#p944" title="Go to last post">Sun Jun 11, 2017 2:24 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>4</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &raquo; Tue Mar 28, 2017 4:12 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>4</strong><br />
+					Views: <strong>152</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>
+													<a href="viewtopice2cb.html?f=8&amp;t=126&amp;p=944#p944" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Sun Jun 11, 2017 2:24 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic328f.html?f=8&amp;t=142" class="topictitle">OfficialGrinderFramework</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlist7444.html?mode=viewprofile&amp;u=113" class="username">lalakis</a> &laquo; <a href="viewtopicf6b4.html?f=8&amp;t=142&amp;p=772#p772" title="Go to last post">Fri Apr 28, 2017 11:09 am</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>1</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlista1d6.html?mode=viewprofile&amp;u=370" class="username">smaion40</a> &raquo; Fri Apr 28, 2017 7:06 am
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>1</strong><br />
+					Views: <strong>112</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlist7444.html?mode=viewprofile&amp;u=113" class="username">lalakis</a>
+													<a href="viewtopicf6b4.html?f=8&amp;t=142&amp;p=772#p772" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Fri Apr 28, 2017 11:09 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopicc205-2.html?f=8&amp;t=27" class="topictitle">Change Medals</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlist5c99.html?mode=viewprofile&amp;u=102" class="username">sabin</a> &laquo; <a href="viewtopic172e.html?f=8&amp;t=27&amp;p=646#p646" title="Go to last post">Wed Mar 29, 2017 12:43 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>10</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a> &raquo; Thu Feb 02, 2017 3:21 am
+													</div>
+
+												<div class="pagination">
+							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+							<ul>
+															<li><a class="button" href="viewtopicc205-2.html?f=8&amp;t=27">1</a></li>
+																							<li><a class="button" href="viewtopicfa6d.html?f=8&amp;t=27&amp;start=10">2</a></li>
+																																													</ul>
+						</div>
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>10</strong><br />
+					Views: <strong>258</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlist5c99.html?mode=viewprofile&amp;u=102" class="username">sabin</a>
+													<a href="viewtopic172e.html?f=8&amp;t=27&amp;p=646#p646" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Wed Mar 29, 2017 12:43 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic4284.html?f=8&amp;t=115" class="topictitle">addwaypoints.lua</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlist3cd9.html?mode=viewprofile&amp;u=63" class="username">ugel</a> &laquo; <a href="viewtopic0a37-2.html?f=8&amp;t=115&amp;p=546#p546" title="Go to last post">Sun Mar 19, 2017 7:45 am</a>
+													</div>
+												
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlist3cd9.html?mode=viewprofile&amp;u=63" class="username">ugel</a> &raquo; Sun Mar 19, 2017 7:45 am
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>0</strong><br />
+					Views: <strong>86</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlist3cd9.html?mode=viewprofile&amp;u=63" class="username">ugel</a>
+													<a href="viewtopic0a37-2.html?f=8&amp;t=115&amp;p=546#p546" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Sun Mar 19, 2017 7:45 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic9410.html?f=8&amp;t=112" class="topictitle">Little update for Reflect function</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a> &laquo; <a href="viewtopic2b89.html?f=8&amp;t=112&amp;p=538#p538" title="Go to last post">Fri Mar 17, 2017 10:29 pm</a>
+													</div>
+												
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a> &raquo; Fri Mar 17, 2017 10:29 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>0</strong><br />
+					Views: <strong>68</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlist90d8.html?mode=viewprofile&amp;u=48" style="color: #00AA00;" class="username-coloured">agonic</a>
+													<a href="viewtopic2b89.html?f=8&amp;t=112&amp;p=538#p538" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Fri Mar 17, 2017 10:29 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg2">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopic0af4.html?f=8&amp;t=107" class="topictitle">Delete inventory item</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a> &laquo; <a href="viewtopic3736.html?f=8&amp;t=107&amp;p=527#p527" title="Go to last post">Fri Mar 17, 2017 3:56 pm</a>
+													</div>
+						<span class="responsive-show left-box" style="display: none;">Replies: <strong>2</strong></span>						
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberliste1f0.html?mode=viewprofile&amp;u=161" style="color: #0000FF;" class="username-coloured">cooco</a> &raquo; Thu Mar 16, 2017 8:13 pm
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>2</strong><br />
+					Views: <strong>83</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>
+													<a href="viewtopic3736.html?f=8&amp;t=107&amp;p=527#p527" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Fri Mar 17, 2017 3:56 pm
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+	
+
+	
+	
+				<li class="row bg1">
+						<dl title="No unread posts">
+				<dt class="row-item topic_read"></dt>
+				<dd>
+										<div class="list-inner">
+																		<a href="viewtopicedba.html?f=8&amp;t=55" class="topictitle">Function List - All LUA callable functions.</a>
+																								<br />
+						
+						
+												<div class="responsive-show" style="display: none;">
+							Last post by <a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a> &laquo; <a href="viewtopicf4f6.html?f=8&amp;t=55&amp;p=210#p210" title="Go to last post">Thu Feb 16, 2017 4:29 am</a>
+													</div>
+												
+						<div class="topic-poster responsive-hide">
+																					by <a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a> &raquo; Thu Feb 16, 2017 4:29 am
+													</div>
+
+						
+						    					</div>
+				</dd>
+				<dd class="posts">
+					Replies: <strong>0</strong><br />
+					Views: <strong>148</strong>
+				</dd>
+				<dd class="lastpost">
+					<span><dfn>Last post </dfn>by <a href="memberlistd942.html?mode=viewprofile&amp;u=49" style="color: #00AA00;" class="username-coloured">0x00</a>
+													<a href="viewtopicf4f6.html?f=8&amp;t=55&amp;p=210#p210" title="Go to last post">
+								<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+							</a>
+												<br />Thu Feb 16, 2017 4:29 am
+					</span>
+				</dd>
+			</dl>
+					</li>
+		
+				</ul>
+		</div>
+	</div>
+	
+
+	<div class="action-bar bar-bottom">
+					
+			
+			<a href="posting05b6.html?mode=post&amp;f=8" class="button" title="Post a new topic">
+							<span>New Topic</span> <i class="icon fa-pencil fa-fw" aria-hidden="true"></i>
+						</a>
+
+					
+					<form method="post" action="https://www.nyerk.xyz/viewforum.php?f=8">
+			<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All Topics</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="r">Replies</option><option value="s">Subject</option><option value="v">Views</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a">Ascending</option><option value="d" selected="selected">Descending</option></select></label>
+								<hr class="dashed" />
+				<input type="submit" class="button2" name="sort" value="Go" />
+						</fieldset>
+		</div>
+	</div>
+</div>
+			</form>
+		
+		<div class="pagination">
+						26 topics
+							<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="viewforume1fe.html?f=8&amp;start=25" role="button">2</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="viewforume1fe.html?f=8&amp;start=25" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="index-2.html" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to Board Index</span>
+		</a>
+	</p>
+	
+		<br /><br />
+	</div>
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 1 guest</p>
+	</div>
+
+	<div class="stat-block permissions">
+		<h3>Forum permissions</h3>
+		<p>You <strong>cannot</strong> post new topics in this forum<br />You <strong>cannot</strong> reply to topics in this forum<br />You <strong>cannot</strong> edit your posts in this forum<br />You <strong>cannot</strong> delete your posts in this forum<br />You <strong>cannot</strong> post attachments in this forum<br /></p>
+	</div>
+
+				
+			</div>
+
+	<div class="inventea-footer-wrapper">
+		<div id="page-footer" class="inventea-footer" role="contentinfo">
+			<nav role="navigation">
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index-2.html" data-navbar-reference="index"><span>Board index</span></a></span>					</li>
+
+						<li class="small-icon" data-last-responsive="true"><a href="memberlist8733.html?mode=contactadmin" role="menuitem">Contact us</a></li>
+				
+		<li class="small-icon"><a href="ucp033a.html?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+				<li>All times are <span title="UTC">UTC</span></li>
+			</ul>
+</nav>
+
+			<footer class="inventea-credits">
+								Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited<br />
+								Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a> & <a href="http://xeronix.org/" title="phpBB styles and much more">nextgen</a>
+											</footer>
+		</div>
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+	<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="assets/javascript/core5d79.js?assets_version=25"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax5d79.js?assets_version=25"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewforum.php?f=8 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:14:30 GMT -->
+</html>

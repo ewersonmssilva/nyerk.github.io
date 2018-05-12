@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=53&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; How to make extension?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>How to make extension?</h2>
+		<p><a href="viewtopic9b1a.html?f=6&amp;t=53">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=53</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>How to make extension?</h3>
+				<div class="date">Posted: <strong>Wed Feb 15, 2017 9:20 am</strong></div>
+				<div class="author">by <strong>sapibuntinx</strong></div>
+				<div class="content">Is there any official tutorial on how to create our own extension? In the previous aion-script there was also no documentation on how to make our own extension.<br>
+<br>
+From what I've got from disassembling cheating2 extension:
+<ul>
+<li> add reference to AionInterface.dll</li>
+<li> add reference to Reflex.Memory.dll</li>
+<li> in the root namespace, create a class named: AionExtension</li>
+<li> add OnLoad method in AionExtension class with this signature <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>public Form OnLoad(string zCurrentDirectory, Dictionary&lt;string, string&gt; hSetting)</code></pre></div></li>
+<li> add OnClose method in AionExtension class with this signature <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>public void OnClose(Dictionary&lt;string, string&gt; hSetting)</code></pre></div></li>
+<li> register our extension to handle event on Game.OnFrame and Game.OnPlayer</li>
+<li> set output target as DLL</li>
+</ul>
+
+is this the correct way to implement our own extension?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How to make extension?</h3>
+				<div class="date">Posted: <strong>Tue Jul 18, 2017 10:40 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">I am also looking for a guide, has some one information about this now?<br>
+Would like to create a overlay for HP and MP + Char name so i can see if my bot died or is just resting.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How to make extension?</h3>
+				<div class="date">Posted: <strong>Tue Jul 18, 2017 11:40 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Well i did not write an Extension from scratch, but it should work that way.<br>
+If you encounter problems just let me know, maybe i can help you.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=53&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=285&start=60&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017 - Page 7</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h2>
+		<p><a href="viewtopic13ba.html?f=8&amp;t=285">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=285</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>7</strong> of <strong>7</strong></div>
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Tue Jan 02, 2018 9:40 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic7d12.html?p=2032#p2032" data-post-id="2032" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jan 01, 2018 4:49 pm</div></cite>
+Change this function with this new. Set <strong class="text-strong">escapeOffsetY</strong> (100 should be good)<br>
+NOT TESTED, try it <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function EscapeAggro()
+	--Write("EscapeAggro");
+	local escapeOffsetY=0;
+	if goToStartRoom then
+		local tempTimer = Time();
+		local elapsedTime = tempTimer - offsetTimer;
+	
+		if elapsedTime &gt; updatePositionTime then
+			local d = moveSpeed * updatePositionTime / 1000;
+			
+			local ourCurrentPos = Player:GetPosition();
+			local newY = ourCurrentPos.Y - d;
+			
+			if newY &lt; 190 + escapeOffsetY then
+				Player:SetPosition(centerRoomX, 190 + escapeOffsetY, airZ);
+				weAreAtStartRoomPos = true;
+				goToStartRoom = false;
+				return true;
+			else
+				Player:SetPosition(centerRoomX, newY, airZ);
+			end
+			offsetTimer = tempTimer;
+		end
+	else
+		if MoveToBarricade(10 + escapeOffsetY) then
+			weAreAtStartRoomPos = false;
+			goToStartRoom = true;
+			return true;
+		end
+	end
+
+	return false;
+end</code></pre></div>
+</div></blockquote>
+
+And this actually worked, I put escapeOffsetY=60;<br>
+<br>
+Now the only thing to do is to set the offset back to 0 when the boss has like less than 70% HP, this way all npcs will hit the boss and canons but we are secure the boss will never lose our agro and attack the barricade.<br>
+<br>
+This should be easy to simply check Entity:GetHealt() and if it is lower than a percentage that we will put, the escapeOffsetY should be changed to 0<br>
+<br>
+All my chars got an S-rank, even those unlucky to get the many mobs (you are hearing a lot of footsteps). It just took them more time to finish because of the fact the npcs didn't hit the boss all the time.<br>
+<br>
+~~~~~~~~~<br>
+<br>
+Something like this would work (I will have to test it)<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if ( Entity:GetHealth() &lt; 70 and escapeOffsetY &gt; 0 ) then
+	Write("Changing offset");
+	local escapeOffsetY=0;
+end</code></pre></div>
+
+EDIT: it didn't work it says this:<br>
+- [string "Luna Daily AFK edited offset.lua"]:701: attempt to index global 'Entity' (a nil value)<br>
+<br>
+So the Entity:GetHealth() &lt; 70 doesn't work in here</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna Hell Pass/Contaminated Underpath - Beta 28.10.2017</h3>
+				<div class="date">Posted: <strong>Wed Jan 03, 2018 3:55 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Add this code at start and set your custom value
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>escapeOffsetY=0;</code></pre></div>
+
+then change this code
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- if boss focus us
+			if finalBossEntity:GetTargetID() == playerID then
+				-- One shot entity
+				if CheckAvailable(HellWaveID) and HellWaveTimer &lt; Time() then
+					PlayerInput:Ability(HellWaveID);
+					HellWaveTimer = HellWaveTimer + 5000;
+					--return false;
+				end
+				-- Skill
+				if CheckAvailable(HellStrikeID) then
+					PlayerInput:Ability(HellStrikeID);
+					--return false;
+				end
+
+				if CheckAvailable(MercilessRuptureID) then
+					PlayerInput:Ability(MercilessRuptureID);
+					--return false;
+				end
+
+				--Write("Dist aggro "..Player:GetPosition():DistanceToPosition(finalBossEntity:GetPosition()));
+				if Player:GetPosition():DistanceToPosition(finalBossEntity:GetPosition()) &lt;= 8 then
+					EscapeAggro();
+				end
+				weNeedReturnBack = true;
+				return false;
+			end
+			</code></pre></div> <br>
+With
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- if boss focus us
+			if finalBossEntity:GetTargetID() == playerID then
+				if ( finalBossEntity:GetHealth() &lt; 70 and escapeOffsetY &gt; 0 ) then
+					Write("Changing offset");
+					escapeOffsetY=0;
+				end
+				-- One shot entity
+				if CheckAvailable(HellWaveID) and HellWaveTimer &lt; Time() then
+					PlayerInput:Ability(HellWaveID);
+					HellWaveTimer = HellWaveTimer + 5000;
+					--return false;
+				end
+				-- Skill
+				if CheckAvailable(HellStrikeID) then
+					PlayerInput:Ability(HellStrikeID);
+					--return false;
+				end
+
+				if CheckAvailable(MercilessRuptureID) then
+					PlayerInput:Ability(MercilessRuptureID);
+					--return false;
+				end
+
+				--Write("Dist aggro "..Player:GetPosition():DistanceToPosition(finalBossEntity:GetPosition()));
+				if Player:GetPosition():DistanceToPosition(finalBossEntity:GetPosition()) &lt;= 8 then
+					EscapeAggro();
+				end
+				weNeedReturnBack = true;
+				return false;
+			end
+</code></pre></div>
+
+EscapeAggro function like this<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function EscapeAggro()
+	--Write("EscapeAggro");
+	
+	if goToStartRoom then
+		local tempTimer = Time();
+		local elapsedTime = tempTimer - offsetTimer;
+	
+		if elapsedTime &gt; updatePositionTime then
+			local d = moveSpeed * updatePositionTime / 1000;
+			
+			local ourCurrentPos = Player:GetPosition();
+			local newY = ourCurrentPos.Y - d;
+			
+			if newY &lt; 190 + escapeOffsetY then
+				Player:SetPosition(centerRoomX, 190 + escapeOffsetY, airZ);
+				weAreAtStartRoomPos = true;
+				goToStartRoom = false;
+				return true;
+			else
+				Player:SetPosition(centerRoomX, newY, airZ);
+			end
+			offsetTimer = tempTimer;
+		end
+	else
+		if MoveToBarricade(10 + escapeOffsetY) then
+			weAreAtStartRoomPos = false;
+			goToStartRoom = true;
+			return true;
+		end
+	end
+
+	return false;
+end</code></pre></div>
+
+Should work <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>7</strong> of <strong>7</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=285&start=60&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:02 GMT -->
+</html>

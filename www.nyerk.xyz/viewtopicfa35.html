@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=191&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:30:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Missing starterclasses</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Missing starterclasses</h2>
+		<p><a href="viewtopica799.html?f=8&amp;t=191">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=191</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Missing starterclasses</h3>
+				<div class="date">Posted: <strong>Wed Jul 12, 2017 9:55 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">Hey, <br>
+I wrote some routines for Technist and Muse as they where missing in the version i downloaded.<br>
+Its nothing spezial but it does its job <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"><br>
+Technist has a Potion function (wasnt that at some point integrated in the grinder framework?)<br>
+<br>
+Technist:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+Script by unkn0wnus3r
+
+]]--
+--Self Potion function
+function CheckPotion()
+	        -- Retrieve the  potion item.
+        local PotionLife = InventoryList:GetInventory( "Apprentice's Recovery Potion" );
+
+		 -- Check if Currenthealth &lt; 0.5 and uses a Life Potion.
+        if Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() / 2 and PotionLife ~= nil and PotionLife:GetCooldown() == 0 then
+           PlayerInput:Inventory( PotionLife:GetName());
+           return false;
+		end
+end
+-- Attack function
+function Attack( Entity, Range, Stunned )
+--Protect
+	--Check Potion
+	Self.CheckPostion();
+	
+	--use Shild if under 50%
+	if Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() / 2 and Helper:CheckAvailable( "Materialised Wall Form" ) then
+		Helper:CheckExecute( "Materialised Wall Form" );
+		return false;
+	end
+--Chain
+	if Helper:CheckAvailable( "Repeated Volley" ) then
+		Helper:CheckExecute( "Repeated Volley" );
+		return false;
+	end
+--Attacks
+	--1. Spell
+	if Helper:CheckAvailable( "Disrupter Shot" ) then
+		Helper:CheckExecute( "Disrupter Shot" );
+		return false;
+	end
+	--2. Start Chain
+	if Helper:CheckAvailable( "Pistol Shot" ) then
+		Helper:CheckExecute( "Pistol Shot" );
+		return false;
+	end
+	--3. Spell
+	if Helper:CheckAvailable( "Sighting Shot" ) then
+		Helper:CheckExecute( "Sighting Shot" );
+		return false;
+	end
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+
+end
+</code></pre></div>
+
+Muse:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+Script by unkn0wnus3r
+
+]]--
+
+
+-- Attack function
+function Attack( Entity, Range, Stunned )
+	-- 1. Spell
+	if Helper:CheckAvailable( "Sound of the Breeze" ) then
+		Helper:CheckExecute( "Sound of the Breeze" );
+		return false;
+	-- 2. Spell
+	elseif Helper:CheckAvailable( "Chilling Harmony" ) then
+		Helper:CheckExecute( "Chilling Harmony" );
+		return false;
+	end
+	-- 3. Spell
+	if Helper:CheckAvailable( "Battle Variation" ) then
+		Helper:CheckExecute( "Battle Variation" );
+		return false;
+	end
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+
+end
+
+
+-- Heal function
+function Heal( BeforeForce )
+
+	if BeforeForce then
+	
+		if Helper:CheckAvailable( "Gentle Echo" ) and Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() / 2  then
+			Helper:CheckExecute( "Gentle Echo", Player );
+			return false;
+		end
+		
+	end
+	
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end</code></pre></div>
+
+If you have improvements feel free to comment, i´ll have a lock at it and if i think it makes the bot run better i´ll implement it <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=191&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:30:05 GMT -->
+</html>

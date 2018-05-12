@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=86&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; have shortcut key finction   in script?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>have shortcut key finction   in script?</h2>
+		<p><a href="viewtopicf510.html?f=6&amp;t=86">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=86</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 5:24 am</strong></div>
+				<div class="author">by <strong>ll8082</strong></div>
+				<div class="content">have shortcut key finction   in script?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 8:45 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">You mean like; ?<br>
+function OnLoad()<br>
+Register( "Desired Function", "NumPad9" );<br>
+end</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 9:33 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">I think he means like the 0verX script i wrote, a button to turn auto attack on and off</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 9:40 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistd942.html?mode=viewprofile&amp;u=49">0x00</a> wrote: <a href="viewtopicca25-2.html?p=354#p354" data-post-id="354" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 08, 2017 9:33 am</div></cite>
+I think he means like the 0verX script i wrote, a button to turn auto attack on and off
+</div></blockquote>
+<img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">D</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 10:00 am</strong></div>
+				<div class="author">by <strong>ll8082</strong></div>
+				<div class="content">My mean is   script have a function         use game   shorthcut key?<br>
+<br>
+as:   <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>    sendkey(3);  --- loot 
+    sendkey(1);  ---  accatk  
+    sendkey(2);  ---  skill***
+    sendkey(F1);  ---  select self
+    sendkey(Tab);  ---  next target
+</code></pre></div>
+  i use   PlayerInput:Ability( "Loot" );    alway  have error ,  cant loot  items  .<br>
+when i close window   ,  char dont stand , so  cant use skills.   and   IsrResting()   cant check .</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 10:02 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">Please dont compare to Para's. <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"><br>
+You can use it to start/stop attack. Loot is automatic or you can use keybinding. Others are in keyboard binding</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 10:07 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">for looting, I use pet or <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity ~= nil and Entity:IsMonster() and Entity:IsDead() then
+		PlayerInput:Console("/skill loot")
+	end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 10:08 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist35de.html?mode=viewprofile&amp;u=207">ll8082</a> wrote: <a href="viewtopic18ee.html?p=365#p365" data-post-id="365" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 08, 2017 10:00 am</div></cite>
+My mean is   script have a function         use game   shorthcut key?<br>
+<br>
+as:   <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>    sendkey(3);  --- loot 
+    sendkey(1);  ---  accatk  
+    sendkey(2);  ---  skill***
+    sendkey(F1);  ---  select self
+    sendkey(Tab);  ---  next target
+</code></pre></div>
+  i use   PlayerInput:Ability( "Loot" );    alway  have error ,  cant loot  items  .<br>
+when i close window   ,  char dont stand , so  cant use skills.   and   IsrResting()   cant check .
+</div></blockquote>
+"when i close window , char dont stand , so cant use skills. and IsrResting() cant check ." ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Wed Mar 08, 2017 10:12 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">What I understand;<br>
+If your char is resting without your permission, either Allow.Rest = true in settings or You have added rest code in your code.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: have shortcut key finction   in script?</h3>
+				<div class="date">Posted: <strong>Fri Mar 10, 2017 6:08 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistd942.html?mode=viewprofile&amp;u=49">0x00</a> wrote: <a href="viewtopicca25-2.html?p=354#p354" data-post-id="354" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Mar 08, 2017 9:33 am</div></cite>
+I think he means like the 0verX script i wrote, a button to turn auto attack on and off
+</div></blockquote>
+
+oh yeah regarding those script, i wanna use my mouse wheel button or extra mouse button 1 and 2 to activate the script. do u know what should i write as the activation key?</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=86&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:14 GMT -->
+</html>

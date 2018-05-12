@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=199&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Wind Serums not used anymore?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Wind Serums not used anymore?</h2>
+		<p><a href="viewtopic3f27.html?f=6&amp;t=199">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=199</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Wind Serums not used anymore?</h3>
+				<div class="date">Posted: <strong>Sun Jul 23, 2017 9:56 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Hi, I had the official settings from grinding script. After the 5.6 came out the wind serums are no longer used by the script.<br>
+I tried to play around it but nothing happened.<br>
+<br>
+Did something change? Does anyone else have problems with it or is it just me? And if someone has it working is it the original one or a changed one?<br>
+<br>
+I can download your file if you can share it and it works.<br>
+<br>
+Thank you.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Wind Serums not used anymore?</h3>
+				<div class="date">Posted: <strong>Sun Jul 23, 2017 2:44 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistbfa8.html?mode=viewprofile&amp;u=353">Diavolakos</a> wrote: <a href="viewtopic327d.html?p=1070#p1070" data-post-id="1070" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Jul 23, 2017 9:56 am</div></cite>
+Hi, I had the official settings from grinding script. After the 5.6 came out the wind serums are no longer used by the script.<br>
+I tried to play around it but nothing happened.<br>
+<br>
+Did something change? Does anyone else have problems with it or is it just me? And if someone has it working is it the original one or a changed one?<br>
+<br>
+I can download your file if you can share it and it works.<br>
+<br>
+Thank you.
+</div></blockquote>
+Always use latest release.<br>
+<br>
+<a href="viewtopice158.html?f=4&amp;t=198" class="postlink">viewtopic.php?f=4&amp;t=198</a><br>
+<br>
+Should fix it</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Wind Serums not used anymore?</h3>
+				<div class="date">Posted: <strong>Mon Jul 31, 2017 8:01 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Thank you, it does use the potions for HP and MP now but it still doesn't use the serums. Could it possibly that it cannot see the flight time we have or something?<br>
+<br>
+For now I am using an external macro program to spam the potion every 83 seconds, it works but AS can do it alone in an AI way so it wont' stop the node to get the serum.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Wind Serums not used anymore?</h3>
+				<div class="date">Posted: <strong>Wed Aug 02, 2017 2:34 pm</strong></div>
+				<div class="author">by <strong>oiola</strong></div>
+				<div class="content">its not working for me as well<br>
+i downloaded the latest release but i dont know whats happening</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Wind Serums not used anymore?</h3>
+				<div class="date">Posted: <strong>Wed Aug 02, 2017 4:43 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Well i will have a look at it at the weekend.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Wind Serums not used anymore?</h3>
+				<div class="date">Posted: <strong>Mon Aug 07, 2017 9:37 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">I tried this code in the OnRun() function:<br>
+
+<blockquote class="uncited"><div>	if ( Player:GetFlightTimeMaximum() - Player:GetFlightTimeCurrent() ) &gt;= 84000 then<br>
+		PlayerInput:Console( "/use Superior Wind Serum" );<br>
+	end</div></blockquote>
+
+...and it worked, when I put the exact same code inside FindSerum() function it didn't work.<br>
+<br>
+The problem with this code is that is that it will take a serum even if the character is currently aethertapping a node, so it will stop the aethertapping to take the serum.<br>
+<br>
+~~~~~~~~~~~~<br>
+<br>
+I also put a check in the if statement hoping to make my char not take a serum if he is gathering with this addition:
+<blockquote class="uncited"><div>if <span style="color: #FF0000">not Player:IsBusy() and </span>( Player:GetFlightTimeMaximum() - Player:GetFlightTimeCurrent() ) &gt;= 84000 then</div></blockquote>
+
+...but he still took the serum whenever the time was right, not caring if we were gathering something at that point.<br>
+<br>
+Anyway this solved temporary my problem, but I don't know what else is wrong.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=199&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:47 GMT -->
+</html>

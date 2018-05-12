@@ -1,0 +1,11 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.nyerk.xyz	TRUE	/	FALSE	1999999999	nyerki_u	1
+.nyerk.xyz	TRUE	/	FALSE	1999999999	nyerki_sid	b0312600f4ae2825fe72f361334c16a4
+.discordapp.com	TRUE	/	FALSE	1999999999	__cfduid	d90c0c2e88c989c8ae24d07aad8b885e81526116757
+.hostingpics.net	TRUE	/	FALSE	1999999999	__cfduid	d344d3bbbbe18043e36a082aec52f4a091526116782
+www.hostingpics.net	TRUE	/	FALSE	1999999999	su_imp_2	1
+.prntscr.com	TRUE	/	FALSE	1999999999	__cfduid	d6bbf8ff1f6ee6b959902343e972fe2ea1526117548
+.estat.com	TRUE	/	FALSE	1999999999	e	Wva2OwqAhyYAAAqren0AAAAB
+.puu.sh	TRUE	/	FALSE	1999999999	__cfduid	d922a4d4768f83de898bfc10253d3a7951526118180
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=179&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; How can I save the settings</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>How can I save the settings</h2>
+		<p><a href="viewtopicf5a0.html?f=6&amp;t=179">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=179</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>How can I save the settings</h3>
+				<div class="date">Posted: <strong>Sun Jun 11, 2017 6:46 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">Hello, whenever I log in the hotkeys I put are gone. It used to keep them in the past but now my hotkeys need to be set again<br>
+<br>
+Look at this image to understand.<br>
+<br>
+<img src="../s15.postimg.org/6zyl97upn/Untitled-1.jpg" class="postimage" alt="Image"><br>
+<br>
+thanks in advance</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Sun Jun 11, 2017 2:31 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Works for me. Try to Start AionScript as Adminstrator.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Tue Jun 13, 2017 2:00 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">I am running it as admin otherwise it doesn't work at all.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Wed Jun 14, 2017 5:08 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content">This also happened to me, its kind of a bug and it started after trying the AS teleport function. Download the AS again or delete the "Setting.xml" file and configure it again.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Sun Jun 25, 2017 5:15 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopic1dd2.html?p=958#p958" data-post-id="958" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Jun 14, 2017 5:08 pm</div></cite>
+This also happened to me, its kind of a bug and it started after trying the AS teleport function. Download the AS again or delete the "Setting.xml" file and configure it again.
+</div></blockquote>
+
+Alright here is what happened. I set the keys and go see the changes done in setting.xml<br>
+<br>
+This is what I saw that changed:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>    &lt;extensionMinimize&gt;False&lt;/extensionMinimize&gt;
+    &lt;key1&gt;71,Control&lt;/key1&gt;
+    &lt;key2&gt;
+    &lt;/key2&gt;
+    &lt;key3&gt;
+    &lt;/key3&gt;
+    &lt;key4&gt;90,Control&lt;/key4&gt;
+    &lt;key5&gt;81,Control&lt;/key5&gt;
+    &lt;key6&gt;69,Control&lt;/key6&gt;
+    &lt;key7&gt;87,Control&lt;/key7&gt;
+    &lt;key8&gt;
+    &lt;/key8&gt;
+    &lt;key9&gt;
+    &lt;/key9&gt;
+    &lt;key10&gt;
+    &lt;/key10&gt;
+    &lt;Console&gt;False&lt;/Console&gt;</code></pre></div>
+
+Look at the keys 71,Control must be the "G, Control" I have in the first photo.<br>
+<br>
+The others are also set by themselves. Now I made the setting.xml as "read only" so these changes won't change,  but when I opened AS the key bindings were once again blank.<br>
+<br>
+There must be some sort of thing that happens and sets these keys to blank every time I am opening AS. The rest of the settings like no glide C.D. or SuperGliding are always there as well as the increase player speed and increase attack speed. BUT the Method: Normal or Safe, I always put it in normal and it always resets to safe whenever I open the program.<br>
+<br>
+I am running windows 7, I doubt it is my windows.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Sun Jun 25, 2017 5:49 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Well i will have a look at it.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Tue Jun 27, 2017 2:54 pm</strong></div>
+				<div class="author">by <strong>lalakis</strong></div>
+				<div class="content">i have the same bug months now.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Tue Jun 27, 2017 9:56 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Ok found the issue.<br>
+Until new AionScript is released use this Extension.<br>
+<br>
+If you still have issues, please send me your complete Settings.xml inside the folder Setting.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Mon Jul 03, 2017 7:16 pm</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopiccf8a.html?p=1001#p1001" data-post-id="1001" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Jun 27, 2017 9:56 pm</div></cite>
+Ok found the issue.<br>
+Until new AionScript is released use this Extension.<br>
+<br>
+If you still have issues, please send me your complete Settings.xml inside the folder Setting.
+</div></blockquote>
+
+No this didn't work and now I get an error. I translated the Hellenic part so you get the full text of the problem I get.<br>
+<br>
+<img src="../s4.postimg.org/k66pxmy31/Untitled-2.jpg" class="postimage" alt="Image"><br>
+<br>
+And this is the whole settings.xml file, everytime I open the game it resets somehow.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>&lt;Setting&gt;
+  &lt;Window&gt;
+    &lt;Cheating2.dll&gt;
+      &lt;Left&gt;57&lt;/Left&gt;
+      &lt;Top&gt;340&lt;/Top&gt;
+    &lt;/Cheating2.dll&gt;
+    &lt;Entities.dll&gt;
+      &lt;Left&gt;965&lt;/Left&gt;
+      &lt;Top&gt;891&lt;/Top&gt;
+    &lt;/Entities.dll&gt;
+    &lt;Radar.dll&gt;
+      &lt;Left&gt;7&lt;/Left&gt;
+      &lt;Top&gt;51&lt;/Top&gt;
+    &lt;/Radar.dll&gt;
+  &lt;/Window&gt;
+  &lt;Cheating2.dll&gt;
+    &lt;Safety&gt;True&lt;/Safety&gt;
+    &lt;NoGravitySpeed&gt;True&lt;/NoGravitySpeed&gt;
+    &lt;ESP&gt;False&lt;/ESP&gt;
+    &lt;Flight&gt;True&lt;/Flight&gt;
+    &lt;FlightLock&gt;False&lt;/FlightLock&gt;
+    &lt;Gravity&gt;False&lt;/Gravity&gt;
+    &lt;AttackSpeed&gt;44&lt;/AttackSpeed&gt;
+    &lt;Speed&gt;25&lt;/Speed&gt;
+    &lt;GravitySpeed&gt;34&lt;/GravitySpeed&gt;
+    &lt;sgd&gt;2&lt;/sgd&gt;
+    &lt;acc&gt;5&lt;/acc&gt;
+    &lt;SuperGlinding&gt;True&lt;/SuperGlinding&gt;
+    &lt;Console&gt;False&lt;/Console&gt;
+    &lt;AccurateDistance&gt;False&lt;/AccurateDistance&gt;
+    &lt;minimized&gt;False&lt;/minimized&gt;
+    &lt;fov&gt;92&lt;/fov&gt;
+    &lt;disableDown&gt;False&lt;/disableDown&gt;
+    &lt;disablePVP&gt;False&lt;/disablePVP&gt;
+    &lt;autoChain&gt;False&lt;/autoChain&gt;
+    &lt;autoReact&gt;False&lt;/autoReact&gt;
+    &lt;autoLoot&gt;False&lt;/autoLoot&gt;
+    &lt;padVisible&gt;False&lt;/padVisible&gt;
+    &lt;key11&gt;
+    &lt;/key11&gt;
+    &lt;p_x&gt;0&lt;/p_x&gt;
+    &lt;p_y&gt;0&lt;/p_y&gt;
+    &lt;method&gt;False&lt;/method&gt;
+    &lt;extensionMinimize&gt;False&lt;/extensionMinimize&gt;
+    &lt;key1&gt;
+    &lt;/key1&gt;
+    &lt;key2&gt;
+    &lt;/key2&gt;
+    &lt;key3&gt;
+    &lt;/key3&gt;
+    &lt;key4&gt;
+    &lt;/key4&gt;
+    &lt;key5&gt;
+    &lt;/key5&gt;
+    &lt;key6&gt;
+    &lt;/key6&gt;
+    &lt;key7&gt;
+    &lt;/key7&gt;
+    &lt;key8&gt;
+    &lt;/key8&gt;
+    &lt;key9&gt;
+    &lt;/key9&gt;
+    &lt;key10&gt;
+    &lt;/key10&gt;
+    &lt;CheatConsole&gt;False&lt;/CheatConsole&gt;
+  &lt;/Cheating2.dll&gt;
+  &lt;Entities.dll&gt;
+    &lt;Dead&gt;True&lt;/Dead&gt;
+    &lt;Friendly&gt;True&lt;/Friendly&gt;
+    &lt;Hostile&gt;True&lt;/Hostile&gt;
+    &lt;Kisk&gt;True&lt;/Kisk&gt;
+    &lt;Force&gt;False&lt;/Force&gt;
+    &lt;Panic&gt;False&lt;/Panic&gt;
+  &lt;/Entities.dll&gt;
+  &lt;Radar.dll&gt;
+    &lt;Object&gt;False&lt;/Object&gt;
+    &lt;Gatherable&gt;True&lt;/Gatherable&gt;
+    &lt;Kisk&gt;True&lt;/Kisk&gt;
+    &lt;Monster&gt;True&lt;/Monster&gt;
+    &lt;Force&gt;True&lt;/Force&gt;
+    &lt;PlayerFriendly&gt;True&lt;/PlayerFriendly&gt;
+    &lt;PlayerHostile&gt;True&lt;/PlayerHostile&gt;
+    &lt;Display&gt;80&lt;/Display&gt;
+  &lt;/Radar.dll&gt;
+&lt;/Setting&gt;</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: How can I save the settings</h3>
+				<div class="date">Posted: <strong>Mon Jul 03, 2017 10:11 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Should work now.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=179&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:32 GMT -->
+</html>

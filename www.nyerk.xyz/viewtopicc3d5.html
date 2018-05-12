@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=302&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Luna weekly Rank A - [Final Version] Updated: 04/12/2017</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Luna weekly Rank A - [Final Version] Updated: 04/12/2017</h2>
+		<p><a href="viewtopicc033.html?f=8&amp;t=302">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=302</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>4</strong></div>
+					<div class="post">
+				<h3>Luna weekly Rank A - [Final Version] Updated: 04/12/2017</h3>
+				<div class="date">Posted: <strong>Sun Oct 29, 2017 5:23 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content">Hey guys, this script does some basic combat to get rank A in luna weekly.<br>
+<br>
+<strong class="text-strong">What this script does?:</strong><br>
+<strong class="text-strong">1)</strong> Waits until boss room teleport spawns and uses it.<br>
+<strong class="text-strong">2)</strong> Attacks 1st and 2nd boss with the strongest skill and kills them.<br>
+<strong class="text-strong">3)</strong> Moves to experience beads and kills them.<br>
+<strong class="text-strong">4)</strong> Moves to Quest Box and loots it.<br>
+<strong class="text-strong">5)</strong> Uses teleport to leave the instance. (Optional)<br>
+<strong class="text-strong">6)</strong> Uses healing skill when Hp is lower than 65%<br>
+<strong class="text-strong">7)</strong> Gets A Rank 100% of times  <img class="smilies" src="images/smilies/icon_cool.gif" width="15" height="17" alt="8-)" title="Cool"><br>
+<br>
+<strong class="text-strong">What this script cant do?: </strong><br>
+(To improve later / suggestions are appreciated)<br>
+<br>
+<strong class="text-strong">*</strong> For now it has no support for quest deliver and 7 key-chest looting. So, if you want to loot the chest you need to do it manually, that's why the teleport is "Optional", you can commentate or delete that section of the script if needed.<br>
+<br>
+<strong class="text-strong">*</strong> It cant get Rank S for now. A new version will be released for that.<br>
+<br>
+There is a timer to loot the quest box after 19 minutes, <span style="text-decoration: underline">so its really important to run the script right after you enter the instance for best results</span>. (Hopefully I will remove it soon).<br>
+<br>
+<strong class="text-strong">NA Version:</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--NA Entities and skills:
+BossTeleport= "War Factory Rift"
+Watcher= "Siege Factory Watcher"
+Summons= "Siege Factory Protector"
+Boss1= "Mechaturerk Machine Monster"
+Boss2= "Mechaturerk"
+ExpBeads= "Mechaturerk’s Core Fragment"
+QuestBox="Mechaturerk’s Footlocker"
+ExitTeleport="Corridor to Atreia"
+Skill1= "Soul Scream"
+Skill2= "Wave of Darkness"
+Skill3= "Terror's Restraint"
+Skill4= "Hellish Fissure"
+Skill5= "Cloak of Darkness"
+
+--[[EU Entities and skills:
+BossTeleport= "Dimension Gate to the Weapons Factory"
+Watcher= "Siege Factory Watcher"
+Summons= "Factory Keeper"
+Boss1= "Mechaturerk Machine Monster"
+Boss2= "Mechaturerk"
+ExpBeads= "Mechanerk's Core"
+QuestBox= "Mechanerk's Chest"
+ExitTeleport= "Atreia Corridor"
+Skill1= "Darkness Cry"
+Skill2= "Darkness Wave"
+Skill3= "Horror Shackles"
+Skill4= "Infernal Rift"
+Skill5= "Mantle of Darkness"
+--]]
+
+
+function OnLoad()
+	SoulScream      =  Time(); --0.5Sec
+	WaveOfDarkness  =  Time(); --4  Sec
+	TerrorsRestraint=  Time(); --8  Sec
+	HellishFissure  =  Time(); --30 Sec + 1.5 Casting
+	CloakOfDarkness =  Time(); --80 Sec
+	Coordinate      =  Time(); --Coordinate Allocation
+	LeaveInstance   =  Time(); --Timer after looting Quest Box
+	Looting         =  Time();
+	Write( "Script will start after minute 48:00, please, be patient.")
+end
+
+function OnFrame()
+
+	--Boss Teleport Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == BossTeleport then
+			PlayerInput:Console("/Select "..BossTeleport)
+			PlayerInput:Console("/Attack")
+			Write( "Teleport Spawned!")
+			return true;
+		end
+	end
+
+	--Watcher Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Watcher then
+				PlayerInput:Console("/Select "..Watcher)
+				Player:SetMove(191.99, 258.84, 191.87);
+				if  WaveOfDarkness &lt;Time() then
+					PlayerInput:Console("/skill "..Skill2);
+					WaveOfDarkness = Time() + 5000;
+					return false;					
+				elseif  SoulScream &lt;Time() then
+					PlayerInput:Console("/skill "..Skill1);
+					SoulScream = Time() + 2000;
+					return false;
+                end
+				
+			Write( "Siege Watcher Detected!")
+			return true;
+		end
+	end
+	
+	--Watcher Summon Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Summons then
+			PlayerInput:Console("/Select "..Summons)
+			Player:SetMove(191.99, 258.84, 191.87);
+			if  TerrorsRestraint &lt;Time() then
+				PlayerInput:Console("/skill "..Skill3);
+				TerrorsRestraint = Time() + 9000;
+				return false;
+			elseif  WaveOfDarkness &lt;Time() then
+				PlayerInput:Console("/skill "..Skill2);
+				WaveOfDarkness = Time() + 5000;
+				return false;
+			elseif  SoulScream &lt;Time() then
+				PlayerInput:Console("/skill "..Skill1);
+				SoulScream = Time() + 2000; 
+				return false;		
+			end
+			Write( "Siege Watcher Summons Detected!")
+			return true;
+		end
+	end
+	
+	--First Boss Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Boss1 then
+			PlayerInput:Console("/Select "..Boss1)
+			if  TerrorsRestraint &lt;Time() then
+				PlayerInput:Console("/skill "..Skill3);
+				TerrorsRestraint = Time() + 9000;
+				return false;
+			elseif  HellishFissure &lt;Time() then
+				PlayerInput:Console("/skill "..Skill4);
+				HellishFissure = Time() + 17000;
+				return false;
+			end	
+			Write( "First Boss Detected!")
+			return true;
+		end
+	end
+	
+	--Second Boss Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Boss2 then
+			PlayerInput:Console("/Select "..Boss2)
+			Player:SetMove(172.71, 258.92, 191.87);
+			if  TerrorsRestraint &lt;Time() then
+				PlayerInput:Console("/skill "..Skill3);
+				TerrorsRestraint = Time() + 9000;
+				return false;
+			elseif  HellishFissure &lt;Time() then
+				PlayerInput:Console("/skill "..Skill4);
+				HellishFissure = Time() + 17000;
+				return false;
+			end	
+			Write( "Second Boss Detected!")
+			return true;
+		end
+	end
+	
+	--Instance finished, exp beads were spawned.
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+			if Entity:GetName() == ExpBeads then
+				PlayerInput:Console("/Select "..ExpBeads)
+				Player:SetMove(161.39, 261.83, 192.08);
+				if  TerrorsRestraint &lt;Time() then
+					PlayerInput:Console("/skill "..Skill3);
+					TerrorsRestraint = Time() + 9000;
+					return false;
+				elseif  WaveOfDarkness &lt;Time() then
+					PlayerInput:Console("/skill "..Skill2);
+					WaveOfDarkness = Time() + 5000;
+					return false;
+				elseif  SoulScream &lt;Time() then
+					PlayerInput:Console("/skill "..Skill1);
+					SoulScream = Time() + 20000; 
+					return false;
+				end
+				Write( "Experience Beads Spawned!")
+				return true;
+			end
+	end
+	
+		--Looting Quest Box
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == QuestBox then
+			PlayerInput:Console("/Select "..QuestBox)
+			PlayerInput:Console("/Skill Loot")
+			PlayerInput:Console("/Attack")			
+			Write( "Quest Item should have been looted, please verify.")
+			return true;
+		end
+	end
+
+		--Leaving the Instance. (Still Optional)
+	if  Time() &gt; (LeaveInstance + 1260000) then
+			PlayerInput:Console("/Select "..ExitTeleport)
+			PlayerInput:Console("/Attack")
+			Write( "Script Completed: Leaving the instance.")
+		
+	end
+end
+	
+function OnRun()
+		--Healing Routine when Hp lower than 65%
+	if Player:GetHealth() &lt; 65 and CheckAvailable( Skill5 ) then
+		CheckExecute( Skill5 );
+		Write( "Healing up!")
+		return true;
+	end 
+		--Forced Looting Routine.
+	if Time() &gt; ( Looting + 10000 ) then
+		PlayerInput:Console("/Skill Loot")
+		Looting = Time();
+	end	
+		
+end
+
+--Helper Functions:
+
+function CheckAvailable( Name, SkipActivation )
+	-- Retrieve the ability with the provided name.
+	local Ability = AbilityList:GetAbility( Name );
+	
+	-- Check if the ability is valid and is not in cooldown.
+	if Ability ~= nil and Ability:GetCooldown() == 0 and ( SkipActivation ~= nil or Ability:GetActivated()) then
+		return true;
+	end
+	
+	-- Either we do not have the ability or it is in cooldown.
+	return false;
+end
+
+function CheckExecute( Name, Entity )
+
+	-- Retrieve the ability with the provided name.
+	local Ability = AbilityList:GetAbility( Name );
+	
+	-- Check if the provided ability is available and return when it is not.
+	if Ability == nil or Ability:GetCooldown() ~= 0 then
+		return false;
+	end
+	
+	-- Check if I am currently resting and stop resting when I am!
+	if Player:IsResting() then
+		PlayerInput:Ability( "Toggle Rest" );
+		return false;
+	end
+	
+	-- Check if this is a friendly ability with my own character as the target.
+	if Entity ~= nil and Player:GetID() == Entity:GetID() then
+		
+		-- Retrieve the skill based on the ability identifier.
+		local Skill = SkillList:GetSkill( Ability:GetID());
+	
+		-- It is not possible to perform a hostile skill on my own character.
+		if Skill == nil or Skill:IsAttack() then
+			return false;
+		end
+		
+		-- When no target has been selected we can execute the ability.
+		if Player:GetTargetID() == 0 then
+			return PlayerInput:Ability( Name );
+		end
+		
+		-- Otherwise retrieve the entity we currently have selected.
+		local EntityTarget = EntityList:GetEntity( Player:GetTargetID());
+		
+		-- When the target is valid and is not friendly we can use our ability.
+		if EntityTarget ~= nil and not EntityTarget:IsFriendly() or not EntityTarget:IsObject() then
+			return PlayerInput:Ability( Name );
+		end
+		
+	end
+
+	-- Check if the target entity has been selected and select it when it is needed.
+	if Entity ~= nil and Player:GetTargetID() ~= Entity:GetID() then
+		Player:SetTarget( Entity );
+		return false;
+	end
+	
+	-- Everything seems to be valid 
+	return PlayerInput:Ability( Name );
+	
+end
+</code></pre></div>
+
+<strong class="text-strong">EU Version:</strong>
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[--NA Entities and skills:
+BossTeleport= "War Factory Rift"
+Watcher= "Siege Factory Watcher"
+Summons= "Siege Factory Protector"
+Boss1= "Mechaturerk Machine Monster"
+Boss2= "Mechaturerk"
+ExpBeads= "Mechaturerk’s Core Fragment"
+QuestBox="Mechaturerk’s Footlocker"
+ExitTeleport="Corridor to Atreia"
+Skill1= "Soul Scream"
+Skill2= "Wave of Darkness"
+Skill3= "Terror's Restraint"
+Skill4= "Hellish Fissure"
+Skill5= "Cloak of Darkness"--]]
+
+--EU Entities and skills:
+BossTeleport= "Dimension Gate to the Weapons Factory"
+Watcher= "Factory Guardian"
+Summons= "Factory Keeper"
+Boss1= "Mechanerk's Creature"
+Boss2= "Mechanerk"
+ExpBeads= "Mechanerk's Core"
+QuestBox= "Mechanerk's Chest"
+ExitTeleport= "Atreia Corridor"
+Skill1= "Darkness Cry"
+Skill2= "Darkness Wave"
+Skill3= "Horror Shackles"
+Skill4= "Infernal Rift"
+Skill5= "Mantle of Darkness"
+
+
+
+function OnLoad()
+	SoulScream      =  Time(); --0.5Sec
+	WaveOfDarkness  =  Time(); --4  Sec
+	TerrorsRestraint=  Time(); --8  Sec
+	HellishFissure  =  Time(); --30 Sec + 1.5 Casting
+	CloakOfDarkness =  Time(); --80 Sec
+	Coordinate      =  Time(); --Coordinate Allocation
+	LeaveInstance   =  Time(); --Timer after looting Quest Box
+	Looting         =  Time();
+	Write( "Script will start after minute 48:00, please, be patient.")
+end
+
+function OnFrame()
+
+	--Boss Teleport Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == BossTeleport then
+			PlayerInput:Console("/Select "..BossTeleport)
+			PlayerInput:Console("/Attack")
+			Write( "Teleport Spawned!")
+			return true;
+		end
+	end
+
+	--Watcher Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Watcher then
+				PlayerInput:Console("/Select "..Watcher)
+				Player:SetMove(191.99, 258.84, 191.87);
+				if  WaveOfDarkness &lt;Time() then
+					PlayerInput:Console("/skill "..Skill2);
+					WaveOfDarkness = Time() + 5000;
+					return false;					
+				elseif  SoulScream &lt;Time() then
+					PlayerInput:Console("/skill "..Skill1);
+					SoulScream = Time() + 2000;
+					return false;
+                end
+				
+			Write( "Siege Watcher Detected!")
+			return true;
+		end
+	end
+	
+	--Watcher Summon Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Summons then
+			PlayerInput:Console("/Select "..Summons)
+			Player:SetMove(191.99, 258.84, 191.87);
+			if  TerrorsRestraint &lt;Time() then
+				PlayerInput:Console("/skill "..Skill3);
+				TerrorsRestraint = Time() + 9000;
+				return false;
+			elseif  WaveOfDarkness &lt;Time() then
+				PlayerInput:Console("/skill "..Skill2);
+				WaveOfDarkness = Time() + 5000;
+				return false;
+			elseif  SoulScream &lt;Time() then
+				PlayerInput:Console("/skill "..Skill1);
+				SoulScream = Time() + 2000; 
+				return false;		
+			end
+			Write( "Siege Watcher Summons Detected!")
+			return true;
+		end
+	end
+	
+	--First Boss Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Boss1 then
+			PlayerInput:Console("/Select "..Boss1)
+			if  TerrorsRestraint &lt;Time() then
+				PlayerInput:Console("/skill "..Skill3);
+				TerrorsRestraint = Time() + 9000;
+				return false;
+			elseif  HellishFissure &lt;Time() then
+				PlayerInput:Console("/skill "..Skill4);
+				HellishFissure = Time() + 17000;
+				return false;
+			end	
+			Write( "First Boss Detected!")
+			return true;
+		end
+	end
+	
+	--Second Boss Verification
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == Boss2 then
+			PlayerInput:Console("/Select "..Boss2)
+			Player:SetMove(172.71, 258.92, 191.87);
+			if  TerrorsRestraint &lt;Time() then
+				PlayerInput:Console("/skill "..Skill3);
+				TerrorsRestraint = Time() + 9000;
+				return false;
+			elseif  HellishFissure &lt;Time() then
+				PlayerInput:Console("/skill "..Skill4);
+				HellishFissure = Time() + 17000;
+				return false;
+			end	
+			Write( "Second Boss Detected!")
+			return true;
+		end
+	end
+	
+	--Instance finished, exp beads were spawned.
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+			if Entity:GetName() == ExpBeads then
+				PlayerInput:Console("/Select "..ExpBeads)
+				Player:SetMove(161.39, 261.83, 192.08);
+				if  TerrorsRestraint &lt;Time() then
+					PlayerInput:Console("/skill "..Skill3);
+					TerrorsRestraint = Time() + 9000;
+					return false;
+				elseif  WaveOfDarkness &lt;Time() then
+					PlayerInput:Console("/skill "..Skill2);
+					WaveOfDarkness = Time() + 5000;
+					return false;
+				elseif  SoulScream &lt;Time() then
+					PlayerInput:Console("/skill "..Skill1);
+					SoulScream = Time() + 20000; 
+					return false;
+				end
+				Write( "Experience Beads Spawned!")
+				return true;
+			end
+	end
+	
+		--Looting Quest Box
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == QuestBox then
+			PlayerInput:Console("/Select "..QuestBox)
+			PlayerInput:Console("/Skill Loot")
+			PlayerInput:Console("/Attack")			
+			Write( "Quest Item should have been looted, please verify.")
+			return true;
+		end
+	end
+
+		--Leaving the Instance. (Still Optional)
+	if  Time() &gt; (LeaveInstance + 1260000) then
+			PlayerInput:Console("/Select "..ExitTeleport)
+			PlayerInput:Console("/Attack")
+			Write( "Script Completed: Leaving the instance.")
+		
+	end
+end
+	
+function OnRun()
+		--Healing Routine when Hp lower than 65%
+	if Player:GetHealth() &lt; 65 and CheckAvailable( Skill5 ) then
+		CheckExecute( Skill5 );
+		Write( "Healing up!")
+		return true;
+	end 
+		--Forced Looting Routine.
+	if Time() &gt; ( Looting + 10000 ) then
+		PlayerInput:Console("/Skill Loot")
+		Looting = Time();
+	end	
+		
+end
+
+--Helper Functions:
+
+function CheckAvailable( Name, SkipActivation )
+	-- Retrieve the ability with the provided name.
+	local Ability = AbilityList:GetAbility( Name );
+	
+	-- Check if the ability is valid and is not in cooldown.
+	if Ability ~= nil and Ability:GetCooldown() == 0 and ( SkipActivation ~= nil or Ability:GetActivated()) then
+		return true;
+	end
+	
+	-- Either we do not have the ability or it is in cooldown.
+	return false;
+end
+
+function CheckExecute( Name, Entity )
+
+	-- Retrieve the ability with the provided name.
+	local Ability = AbilityList:GetAbility( Name );
+	
+	-- Check if the provided ability is available and return when it is not.
+	if Ability == nil or Ability:GetCooldown() ~= 0 then
+		return false;
+	end
+	
+	-- Check if I am currently resting and stop resting when I am!
+	if Player:IsResting() then
+		PlayerInput:Ability( "Toggle Rest" );
+		return false;
+	end
+	
+	-- Check if this is a friendly ability with my own character as the target.
+	if Entity ~= nil and Player:GetID() == Entity:GetID() then
+		
+		-- Retrieve the skill based on the ability identifier.
+		local Skill = SkillList:GetSkill( Ability:GetID());
+	
+		-- It is not possible to perform a hostile skill on my own character.
+		if Skill == nil or Skill:IsAttack() then
+			return false;
+		end
+		
+		-- When no target has been selected we can execute the ability.
+		if Player:GetTargetID() == 0 then
+			return PlayerInput:Ability( Name );
+		end
+		
+		-- Otherwise retrieve the entity we currently have selected.
+		local EntityTarget = EntityList:GetEntity( Player:GetTargetID());
+		
+		-- When the target is valid and is not friendly we can use our ability.
+		if EntityTarget ~= nil and not EntityTarget:IsFriendly() or not EntityTarget:IsObject() then
+			return PlayerInput:Ability( Name );
+		end
+		
+	end
+
+	-- Check if the target entity has been selected and select it when it is needed.
+	if Entity ~= nil and Player:GetTargetID() ~= Entity:GetID() then
+		Player:SetTarget( Entity );
+		return false;
+	end
+	
+	-- Everything seems to be valid 
+	return PlayerInput:Ability( Name );
+	
+end
+</code></pre></div>
+
+<strong class="text-strong">Known bugs:</strong><br>
+<br>
+<strong class="text-strong">*</strong> Looting the quest box is taking more than it should, but being looted before leaving the instance.<br>
+<strong class="text-strong">*</strong> It gets Rank B sometimes, it depends on how slow the NPC clear the instance. I'm working to fix it.<br>
+<br>
+<strong class="text-strong">Note:</strong> "Disable click to move" is highly recommended for this script.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Mon Oct 30, 2017 12:17 am</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><strong class="text-strong">Update:</strong> I fixed all the bugs I found, right now its pretty stable but it mostly gets Rank B. I'll explain the reasons of this and how to fix it, maybe somebody could help me with the problems I encountered.<br>
+<br>
+Basically the instance rank is decided after timer reaches minute 48, from all my runs I noticed NPCs finish clearing all the monsters and gate from 48:30:00 to 47:00:00, which leaves you with 5 minutes to make DPS to the 2 last bosses.<br>
+<br>
+Since the teleport spawns at diferent times by the last reason given, I cant be sure when to start moving the character to first boss to make DPS, that's why I decided to use the worst scenario (it spawned at 47:00:00), so, during this process I'm loosing 1 minute and 30 seconds, which is the difference between Rank A and B because it always finishes the instance with 40:40:00 - 40:50:00, and it needs to be done in 41:00:00 or less.<br>
+<br>
+So, what I need is a routine that after "Siege Factory Watcher" is targeted or killed it executes the next instructions, so I can move the character after that and start DPS as soon as possible. Of course, that's needed to make Rank A 100% stable with this script, but it can be changed in any way to follow the method I explained in this thread to get rank A.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Mon Oct 30, 2017 9:31 am</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">EU Version is buggy , and which Mob is this? Mechaturerk Machine? can you link it with this Page : <a href="http://aiondatabase.net/us/" class="postlink">http://aiondatabase.net/us/</a><br>
+then i can give you the English EU Name :3<br>
+<br>
+my Char only stand at the start and wait wait wait ... not more :c</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Mon Oct 30, 2017 1:10 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopice41a.html?p=1759#p1759" data-post-id="1759" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 12:17 am</div></cite>
+<strong class="text-strong">Update:</strong> I fixed all the bugs I found, right now its pretty stable but it mostly gets Rank B. I'll explain the reasons of this and how to fix it, maybe somebody could help me with the problems I encountered.<br>
+<br>
+Basically the instance rank is decided after timer reaches minute 48, from all my runs I noticed NPCs finish clearing all the monsters and gate from 48:30:00 to 47:00:00, which leaves you with 5 minutes to make DPS to the 2 last bosses.<br>
+<br>
+Since the teleport spawns at diferent times by the last reason given, I cant be sure when to start moving the character to first boss to make DPS, that's why I decided to use the worst scenario (it spawned at 47:00:00), so, during this process I'm loosing 1 minute and 30 seconds, which is the difference between Rank A and B because it always finishes the instance with 40:40:00 - 40:50:00, and it needs to be done in 41:00:00 or less.<br>
+<br>
+So, what I need is a routine that after "Siege Factory Watcher" is targeted or killed it executes the next instructions, so I can move the character after that and start DPS as soon as possible. Of course, that's needed to make Rank A 100% stable with this script, but it can be changed in any way to follow the method I explained in this thread to get rank A.
+</div></blockquote>
+
+I don't sure if coulb be usefull but you can check entity with this<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+	if Entity :GetName() == "Siege Factory Watcher" then
+		Entity:IsDead(); -- retrive if entiy is dead or not
+		Player:GetTargetID() == Entity:GetID(); -- to know if you target the entity
+	end
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Mon Oct 30, 2017 5:32 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste9ad.html?mode=viewprofile&amp;u=468">LordSnack</a> wrote: <a href="viewtopic7020.html?p=1761#p1761" data-post-id="1761" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 9:31 am</div></cite>
+EU Version is buggy , and which Mob is this? Mechaturerk Machine? can you link it with this Page : <a href="http://aiondatabase.net/us/" class="postlink">http://aiondatabase.net/us/</a><br>
+then i can give you the English EU Name :3<br>
+<br>
+my Char only stand at the start and wait wait wait ... not more :c
+</div></blockquote>
+
+Maybe it stays still during the whole instance because the boss room teleport name is not correct.<br>
+<br>
+The names that I need from EU are:<br>
+<br>
+War Factory Rift (Teleport to enter boss room - Spawns after minute 48:00)<br>
+<a href="http://aiondatabase.net/us/npc/833989/" class="postlink">http://aiondatabase.net/us/npc/833989/</a><br>
+Siege Factory Watcher (Patrol after gate)<br>
+<a href="http://aiondatabase.net/us/npc/245759/" class="postlink">http://aiondatabase.net/us/npc/245759/</a><br>
+Mechaturerk Machine Monster (First boss)<br>
+<a href="http://aiondatabase.net/us/npc/243663/" class="postlink">http://aiondatabase.net/us/npc/243663/</a><br>
+Mechaturerk (Second boss)<br>
+<a href="http://aiondatabase.net/us/npc/243664/" class="postlink">http://aiondatabase.net/us/npc/243664/</a><br>
+Mechaturerk’s Footlocker (Weekly quest box)<br>
+<a href="http://aiondatabase.net/us/npc/245184/" class="postlink">http://aiondatabase.net/us/npc/245184/</a><br>
+Mechaturerk’s Core Fragment (Experience beads)<br>
+<a href="http://aiondatabase.net/us/npc/245990/" class="postlink">http://aiondatabase.net/us/npc/245990/</a><br>
+Corridor to atreia (Teleport to leave the instance)<br>
+<a href="http://aiondatabase.net/us/npc/833998/" class="postlink">http://aiondatabase.net/us/npc/833998/</a><br>
+<br>
+In theory I could use the ID instead of the name to do the verification, but some of these monsters have diferent IDs with the same name, so I prefer to use the name.<br>
+<br>
+It would be nice to verify the name with "/select Monster Name" inside the instance, to make sure the name is correct, if you can target the monster with that command then is alright.<br>
+<br>
+There are cases with special characters such as: <br>
+<br>
+Terror's Restraint -&gt; it has ( ' )<br>
+Mechaturerk’s Footlocker -&gt; ( ’ ) <br>
+<br>
+That small difference could make the script fail.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Mon Oct 30, 2017 5:49 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic543d.html?p=1764#p1764" data-post-id="1764" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 1:10 pm</div></cite>
+<br>
+I don't sure if coulb be usefull but you can check entity with this<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+	if Entity :GetName() == "Siege Factory Watcher" then
+		Entity:IsDead(); -- retrive if entiy is dead or not
+		Player:GetTargetID() == Entity:GetID(); -- to know if you target the entity
+	end
+end
+</code></pre></div>
+</div></blockquote>
+
+Thank you cooco!, so, after that verification I can call Entity:IsDead() inside any function or loop?<br>
+<br>
+In example:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:IsDead() == true then		
+	Player:SetMove(191.99, 258.84, 191.87); --Moves character to first boss range
+end
+</code></pre></div>
+
+Also, I'm a little confused with Player:GetTargetID() == Entity:GetID(); <br>
+how could I use this to make a verification and call another line of code?<br>
+<br>
+Anyway, I'll be testing that code and adding it to the script, ty <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Mon Oct 30, 2017 10:35 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopic6b5e.html?p=1768#p1768" data-post-id="1768" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 5:32 pm</div></cite>
+In theory I could use the ID instead of the name to do the verification, but some of these monsters have diferent IDs with the same name, so I prefer to use the name.
+</div></blockquote>
+
+How do you get this ID?
+<blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopicb4f0.html?p=1769#p1769" data-post-id="1769" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 5:49 pm</div></cite>
+<br>
+Thank you cooco!, so, after that verification I can call Entity:IsDead() inside any function or loop?<br>
+<br>
+In example:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:IsDead() == true then		
+	Player:SetMove(191.99, 258.84, 191.87); --Moves character to first boss range
+end
+</code></pre></div>
+
+</div></blockquote>
+I suggest you to create a function to check if a certain entity is alive.<br>
+<br>
+This code work only if entity is dead and still in game, if entity disappear afted dead then this code is bad (i dont know how instance work)
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CheckMobIsDead(mobName)
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == mobName and Entity:IsDead() then
+			return true;
+		end
+	end
+	return false;
+end
+</code></pre></div>
+
+<blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopice41a.html?p=1759#p1759" data-post-id="1759" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 12:17 am</div></cite>
+<br>
+<br>
+So, what I need is a routine that after "Siege Factory Watcher" is targeted or killed it executes the next instructions, so I can move the character after that and start DPS as soon as possible. Of course, that's needed to make Rank A 100% stable with this script, but it can be changed in any way to follow the method I explained in this thread to get rank A.
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Player:GetTargetID() == SiegeFactoryWatcherEntity:GetID();
+	-- true only if you are targeting Siege factory watcher
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Tue Oct 31, 2017 12:55 am</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopicca4d.html?p=1770#p1770" data-post-id="1770" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 10:35 pm</div></cite>
+How do you get this ID?
+</div></blockquote>
+
+I use another program called Vanilla tool to get IDs from items, skills and monsters, I believe there must be a way to get them using AS with the same routine you told me to make the target / death verification:<br>
+<br>
+for ID, Entity in DictionaryIterator(EntityList:GetList()) do<br>
+end<br>
+<br>
+and the Entity:GetID();.<br>
+<br>
+You can place it in a variable and then use the command Write ("ID:"...VariableID) to show it on the interface (I'm sorry if I'm saying nonsenses, this is all I can think of  <img class="smilies" src="images/smilies/icon_redface.gif" width="15" height="17" alt=":oops:" title="Embarrassed"> )<br>
+
+<blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopicca4d.html?p=1770#p1770" data-post-id="1770" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 10:35 pm</div></cite>
+I suggest you to create a function to check if a certain entity is alive.<br>
+<br>
+This code work only if entity is dead and still in game, if entity disappear afted dead then this code is bad (i dont know how instance work)
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CheckMobIsDead(mobName)
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		if Entity:GetName() == mobName and Entity:IsDead() then
+			return true;
+		end
+	end
+	return false;
+end
+</code></pre></div>
+</div></blockquote>
+
+The monster I need to target or verify if its dead will dissapear after 1 second because its not looteable, but I guess that as long as the condition is true it will help me to continue with the next lines of codes, so it should be alright.<br>
+<br>
+Thank you for the recommendations cooco, I'll test them all in small scripts and I'll let you know how it goes  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Tue Oct 31, 2017 1:19 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopicae00.html?p=1774#p1774" data-post-id="1774" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Oct 31, 2017 12:55 am</div></cite>
+<br>
+You can place it in a variable and then use the command Write ("ID:"...VariableID) to show it on the interface (I'm sorry if I'm saying nonsenses, this is all I can think of  <img class="smilies" src="images/smilies/icon_redface.gif" width="15" height="17" alt=":oops:" title="Embarrassed"> )
+</div></blockquote>
+
+this show you ALL entity in 100meters range
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnFrame()
+	for ID, Entity in DictionaryIterator(EntityList:GetList()) do
+		Write("Entity name: "..Entity:GetName().." EntityID: "..Entity:GetID().." EntityTypeID() - http://aiondatabase.net/en/npc/"..Entity:GetTypeID());
+	end
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Luna weekly Rank A - [BETA Version] Updated: 29/10/2017</h3>
+				<div class="date">Posted: <strong>Sun Nov 19, 2017 1:30 pm</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopic6b5e.html?p=1768#p1768" data-post-id="1768" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 5:32 pm</div></cite>
+<blockquote><div><cite><a href="memberliste9ad.html?mode=viewprofile&amp;u=468">LordSnack</a> wrote: <a href="viewtopic7020.html?p=1761#p1761" data-post-id="1761" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Oct 30, 2017 9:31 am</div></cite>
+EU Version is buggy , and which Mob is this? Mechaturerk Machine? can you link it with this Page : <a href="http://aiondatabase.net/us/" class="postlink">http://aiondatabase.net/us/</a><br>
+then i can give you the English EU Name :3<br>
+<br>
+my Char only stand at the start and wait wait wait ... not more :c
+</div></blockquote>
+
+Maybe it stays still during the whole instance because the boss room teleport name is not correct.<br>
+<br>
+The names that I need from EU are:<br>
+<br>
+War Factory Rift (Teleport to enter boss room - Spawns after minute 48:00)<br>
+<a href="http://aiondatabase.net/us/npc/833989/" class="postlink">http://aiondatabase.net/us/npc/833989/</a><br>
+Siege Factory Watcher (Patrol after gate)<br>
+<a href="http://aiondatabase.net/us/npc/245759/" class="postlink">http://aiondatabase.net/us/npc/245759/</a><br>
+Mechaturerk Machine Monster (First boss)<br>
+<a href="http://aiondatabase.net/us/npc/243663/" class="postlink">http://aiondatabase.net/us/npc/243663/</a><br>
+Mechaturerk (Second boss)<br>
+<a href="http://aiondatabase.net/us/npc/243664/" class="postlink">http://aiondatabase.net/us/npc/243664/</a><br>
+Mechaturerk’s Footlocker (Weekly quest box)<br>
+<a href="http://aiondatabase.net/us/npc/245184/" class="postlink">http://aiondatabase.net/us/npc/245184/</a><br>
+Mechaturerk’s Core Fragment (Experience beads)<br>
+<a href="http://aiondatabase.net/us/npc/245990/" class="postlink">http://aiondatabase.net/us/npc/245990/</a><br>
+Corridor to atreia (Teleport to leave the instance)<br>
+<a href="http://aiondatabase.net/us/npc/833998/" class="postlink">http://aiondatabase.net/us/npc/833998/</a><br>
+<br>
+In theory I could use the ID instead of the name to do the verification, but some of these monsters have diferent IDs with the same name, so I prefer to use the name.<br>
+<br>
+It would be nice to verify the name with "/select Monster Name" inside the instance, to make sure the name is correct, if you can target the monster with that command then is alright.<br>
+<br>
+There are cases with special characters such as: <br>
+<br>
+Terror's Restraint -&gt; it has ( ' )<br>
+Mechaturerk’s Footlocker -&gt; ( ’ ) <br>
+<br>
+That small difference could make the script fail.
+</div></blockquote>
+
+And the Script is buggy :/ EU Version Char stay at the Dim. Gate and use skills but not more :c no port , nothing... :c<br>
+ <br>
+Here the Names:<br>
+&gt;&gt; <a href="http://aiondatabase.net/en/npc/833989/?sl=1" class="postlink">http://aiondatabase.net/en/npc/833989/?sl=1</a> &lt; Dimension Gate to the Weapons Factory<br>
+&gt;&gt; <a href="http://aiondatabase.net/en/npc/245759/?sl=1" class="postlink">http://aiondatabase.net/en/npc/245759/?sl=1</a> &lt; Factory Guardian<br>
+&gt;&gt; <a href="http://aiondatabase.net/en/npc/243663/?sl=1" class="postlink">http://aiondatabase.net/en/npc/243663/?sl=1</a> &lt; Mechanerk's Creature<br>
+&gt;&gt; <a href="http://aiondatabase.net/en/npc/243664/?sl=1" class="postlink">http://aiondatabase.net/en/npc/243664/?sl=1</a> &lt; Mechanerk<br>
+&gt;&gt; <a href="http://aiondatabase.net/en/npc/245184/?sl=1" class="postlink">http://aiondatabase.net/en/npc/245184/?sl=1</a> &lt; Mechanerk's Chest<br>
+&gt;&gt; <a href="http://aiondatabase.net/en/npc/245990/?sl=1" class="postlink">http://aiondatabase.net/en/npc/245990/?sl=1</a> &lt; Mechanerk's Core<br>
+&gt;&gt; <a href="http://aiondatabase.net/en/npc/833998/?sl=1" class="postlink">http://aiondatabase.net/en/npc/833998/?sl=1</a> &lt; Atreia Corridor</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>4</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=302&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:03 GMT -->
+</html>

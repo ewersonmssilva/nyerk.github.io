@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=360&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Own Speechbubble title</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Own Speechbubble title</h2>
+		<p><a href="viewtopic8868.html?f=6&amp;t=360">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=360</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sat Apr 21, 2018 11:38 am</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">Hey Guys, <br>
+<br>
+Is there an Function/Option to make a own Speechbubble Title (Client side)<br>
+Or to change the Name of the Titles? <br>
+In which file is the Speechbubble titles and more...<br>
+L10n/Eng/XXX<br>
+<br>
+Thanks for Anwsers</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sat Apr 21, 2018 5:54 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste9ad.html?mode=viewprofile&amp;u=468">LordSnack</a> wrote: <a href="viewtopic98d4.html?p=2305#p2305" data-post-id="2305" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Apr 21, 2018 11:38 am</div></cite>
+Hey Guys, <br>
+<br>
+Is there an Function/Option to make a own Speechbubble Title (Client side)<br>
+Or to change the Name of the Titles? <br>
+In which file is the Speechbubble titles and more...<br>
+L10n/Eng/XXX<br>
+<br>
+Thanks for Anwsers
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>using System;
+using AionInterface;
+using System.Runtime.InteropServices;
+
+namespace Ercand
+{
+    public class GenericTesting : IAionInterface
+    {
+        public GenericTesting()
+        { }
+
+        public void OnClose()
+        { }
+
+        public void OnLoad()
+        {
+        }
+		
+		[DllImport("user32.dll")]
+		static extern bool SetWindowText(int hWnd, string text);
+
+		public void OnRun()
+        {
+            SetWindowText((int)Game.Process.ProcessWindowHandle, "Your Title here");
+        }
+    }
+}
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sun Apr 22, 2018 3:35 am</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">How to use it &lt;.&lt;? im new in this things <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"><br>
+<br>
+but thanks bro ! :3<br>
+<br>
+Edit: its this ? (Watch Attachments)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sun Apr 22, 2018 10:35 am</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic10e9.html?p=2307#p2307" data-post-id="2307" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Apr 21, 2018 5:54 pm</div></cite>
+<blockquote><div><cite><a href="memberliste9ad.html?mode=viewprofile&amp;u=468">LordSnack</a> wrote: <a href="viewtopic98d4.html?p=2305#p2305" data-post-id="2305" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Apr 21, 2018 11:38 am</div></cite>
+Hey Guys, <br>
+<br>
+Is there an Function/Option to make a own Speechbubble Title (Client side)<br>
+Or to change the Name of the Titles? <br>
+In which file is the Speechbubble titles and more...<br>
+L10n/Eng/XXX<br>
+<br>
+Thanks for Anwsers
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>using System;
+using AionInterface;
+using System.Runtime.InteropServices;
+
+namespace Ercand
+{
+    public class GenericTesting : IAionInterface
+    {
+        public GenericTesting()
+        { }
+
+        public void OnClose()
+        { }
+
+        public void OnLoad()
+        {
+        }
+		
+		[DllImport("user32.dll")]
+		static extern bool SetWindowText(int hWnd, string text);
+
+		public void OnRun()
+        {
+            SetWindowText((int)Game.Process.ProcessWindowHandle, "Your Title here");
+        }
+    }
+}
+</code></pre></div>
+</div></blockquote>
+
+Can you tell me how to use it o: ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sun Apr 22, 2018 12:08 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste9ad.html?mode=viewprofile&amp;u=468">LordSnack</a> wrote: <a href="viewtopica8b6.html?p=2309#p2309" data-post-id="2309" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Apr 22, 2018 10:35 am</div></cite>
+<blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic10e9.html?p=2307#p2307" data-post-id="2307" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Apr 21, 2018 5:54 pm</div></cite>
+<blockquote><div><cite><a href="memberliste9ad.html?mode=viewprofile&amp;u=468">LordSnack</a> wrote: <a href="viewtopic98d4.html?p=2305#p2305" data-post-id="2305" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Apr 21, 2018 11:38 am</div></cite>
+Hey Guys, <br>
+<br>
+Is there an Function/Option to make a own Speechbubble Title (Client side)<br>
+Or to change the Name of the Titles? <br>
+In which file is the Speechbubble titles and more...<br>
+L10n/Eng/XXX<br>
+<br>
+Thanks for Anwsers
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>using System;
+using AionInterface;
+using System.Runtime.InteropServices;
+
+namespace Ercand
+{
+    public class GenericTesting : IAionInterface
+    {
+        public GenericTesting()
+        { }
+
+        public void OnClose()
+        { }
+
+        public void OnLoad()
+        {
+        }
+		
+		[DllImport("user32.dll")]
+		static extern bool SetWindowText(int hWnd, string text);
+
+		public void OnRun()
+        {
+            SetWindowText((int)Game.Process.ProcessWindowHandle, "Your Title here");
+        }
+    }
+}
+</code></pre></div>
+</div></blockquote>
+
+Can you tell me how to use it o: ?
+</div></blockquote>
+
+Oh no i misunderstand your request <img class="smilies" src="images/smilies/icon_redface.gif" width="15" height="17" alt=":oops:" title="Embarrassed"> .<br>
+I'll try some test later <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sun Apr 22, 2018 1:45 pm</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic01a6.html?p=2310#p2310" data-post-id="2310" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Apr 22, 2018 12:08 pm</div></cite>
+<blockquote><div><cite><a href="memberliste9ad.html?mode=viewprofile&amp;u=468">LordSnack</a> wrote: <a href="viewtopica8b6.html?p=2309#p2309" data-post-id="2309" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Apr 22, 2018 10:35 am</div></cite>
+<blockquote><div><cite><a href="memberliste1f0.html?mode=viewprofile&amp;u=161">cooco</a> wrote: <a href="viewtopic10e9.html?p=2307#p2307" data-post-id="2307" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Apr 21, 2018 5:54 pm</div></cite>
+<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>using System;
+using AionInterface;
+using System.Runtime.InteropServices;
+
+namespace Ercand
+{
+    public class GenericTesting : IAionInterface
+    {
+        public GenericTesting()
+        { }
+
+        public void OnClose()
+        { }
+
+        public void OnLoad()
+        {
+        }
+		
+		[DllImport("user32.dll")]
+		static extern bool SetWindowText(int hWnd, string text);
+
+		public void OnRun()
+        {
+            SetWindowText((int)Game.Process.ProcessWindowHandle, "Your Title here");
+        }
+    }
+}
+</code></pre></div>
+</div></blockquote>
+
+Can you tell me how to use it o: ?
+</div></blockquote>
+
+Oh no i misunderstand your request <img class="smilies" src="images/smilies/icon_redface.gif" width="15" height="17" alt=":oops:" title="Embarrassed"> .<br>
+I'll try some test later <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile">
+</div></blockquote>
+
+ok ok <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> it would be nice , the best is a file that i can put in my client and that load the title all the time when i start the client with all my chars (clientside)</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sun Apr 22, 2018 3:12 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">What exactly is your goal?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Sun Apr 22, 2018 3:24 pm</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">i want a Speechbubble title as example "Worst Chanter Thor" or something like this , and the question is , if its work and how its work.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Mon Apr 23, 2018 12:57 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Sorry Lord i don't know how to help you <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Own Speechbubble title</h3>
+				<div class="date">Posted: <strong>Mon Apr 23, 2018 4:32 am</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">Its ok :/ but thanks for the try :3</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=360&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:38:14 GMT -->
+</html>

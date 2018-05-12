@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=20&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:48:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; AionScript Release 30.01.2017</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>AionScript Release 30.01.2017</h2>
+		<p><a href="viewtopic1b38.html?f=4&amp;t=20">https://www.nyerk.xyz/viewtopic.php?f=4&amp;t=20</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 30, 2017 9:59 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Changes:
+<ul><li>Added Gathering Bot / Aether Bot</li></ul>
+<ul><li>Fixed Performance Issues in LUA Scripting. No more slowdown after 30 Minutes or so.</li></ul>
+<ul><li>Renewed Cooldown System</li></ul>
+<ul><li>Speeded up Chain / Cooldown Detection. Your bot is now on drugs <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"></li></ul>
+<ul><li>Updated Skill List for Chargeable Skills with changing Chargecount.</li></ul>
+
+For existing Users the following files have been updated:
+<ul><li>AionInterface.dll</li></ul>
+<ul><li>AionScript.exe</li></ul>
+<ul><li>Setting/Skill.xml</li></ul>
+<ul><li>Setting/Skill.NA.xml</li></ul>
+<ul><li>Scripting/OfficialGathering.lua</li></ul>
+<ul><li>Scripting/OfficialGrinderFramework/Grinderframework.lua</li></ul>
+
+<strong class="text-strong">Hint:<br>
+</strong><blockquote class="uncited"><div><strong class="text-strong">If you are new please disable Looting and use loot pet for bottin</strong>g.<br>
+File: Scripting/OfficialGrinderFramework/Settings.lua
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		-- Indicates whether or not to allow looting of targets (Requires AllowAttack).
+		self.AllowLoot = false;</code></pre></div>
+</div></blockquote>
+
+Fixed,<br>
+<br>
+please use this AionInterface.dll for Looting Support <a href="viewtopicc69b.html?f=4&amp;t=29" class="postlink">viewtopic.php?f=4&amp;t=29</a></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 30, 2017 10:08 pm</strong></div>
+				<div class="author">by <strong>javito</strong></div>
+				<div class="content"><strong class="text-strong">thanks i will test it <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"></strong></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 30, 2017 10:22 pm</strong></div>
+				<div class="author">by <strong>metsez17</strong></div>
+				<div class="content">thanks .</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 30, 2017 11:11 pm</strong></div>
+				<div class="author">by <strong>javito</strong></div>
+				<div class="content"><strong class="text-strong">Well i can confirm that i got dc every  30min ~ 40min when i start to farm.<br>
+<br>
+I got this menssage <img src="../i63.tinypic.com/2ah9lwk.png" class="postimage" alt="Image"> then my client frezze/crash.<br>
+<br>
+I dont know how to solve this problem.</strong></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 30, 2017 11:15 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist7468.html?mode=viewprofile&amp;u=53">javito</a> wrote: <a href="viewtopic7ea6.html?p=46#p46" data-post-id="46" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jan 30, 2017 11:11 pm</div></cite>
+<strong class="text-strong">Well i can confim that i got dc every  30min ~ 40min when i start to farm.<br>
+<br>
+I got this menssage.<br>
+<br>
+<img src="../i63.tinypic.com/2ah9lwk.png" class="postimage" alt="Image"><br>
+<br>
+I dont know how to solve this problem.</strong>
+</div></blockquote>
+
+Use Loot Pet <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"> And disable Looting.<br>
+<br>
+Scripting/OfficialGrinderFramework/Settings.lua
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		-- Indicates whether or not to allow looting of targets (Requires AllowAttack).
+		self.AllowLoot = false;</code></pre></div>
+
+Ok, that's a bug. But it's not a disconnect. It's an Script error <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"><br>
+Maybe something which is next on my list to get fixed.<br>
+<br>
+I will fix it on next release.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Mon Jan 30, 2017 11:18 pm</strong></div>
+				<div class="author">by <strong>javito</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopiccb30-2.html?p=47#p47" data-post-id="47" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jan 30, 2017 11:15 pm</div></cite>
+<blockquote><div><cite><a href="memberlist7468.html?mode=viewprofile&amp;u=53">javito</a> wrote: <a href="viewtopic7ea6.html?p=46#p46" data-post-id="46" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jan 30, 2017 11:11 pm</div></cite>
+<strong class="text-strong">Well i can confim that i got dc every  30min ~ 40min when i start to farm.<br>
+<br>
+I got this menssage.<br>
+<br>
+<img src="../i63.tinypic.com/2ah9lwk.png" class="postimage" alt="Image"><br>
+<br>
+I dont know how to solve this problem.</strong>
+</div></blockquote>
+
+Use Loot Pet <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"> And disable Looting.<br>
+<br>
+Scripting/OfficialGrinderFramework/Settings.lua
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		-- Indicates whether or not to allow looting of targets (Requires AllowAttack).
+		self.AllowLoot = false;</code></pre></div>
+
+Ok, that's a bug. But it's not a disconnect. It's an Script error <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"><br>
+Maybe something which is next on my list to get fixed.<br>
+<br>
+I will fix it on next release.
+</div></blockquote>
+<strong class="text-strong"> thanks you bro i will try this  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> </strong></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Wed Feb 01, 2017 12:04 pm</strong></div>
+				<div class="author">by <strong>HollyGR</strong></div>
+				<div class="content">Aether-bot working perfectly [will test for 10hours in a row at least to check crashes or so].<br>
+About chains they are meant to be spammed like mad? Sometimes it interrupt on going chains to pass on next one but not really a problem  <img class="smilies" src="images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Laughing"> , for the rest seems all okay!<br>
+<br>
+Only questions I've is about rest on low flight time and serums usage:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- If flight time becomes low, move to the next resting node (in ms).
+		ReturnOnLowFighttime = 20000,</code></pre></div>
+
+It means that bot should get to rest point if flight time will get down to 20seconds total right? Well it goes to rest point quite often even if still have alot of flight time left.<br>
+About flight serum usage, where to setup when need to be used?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 9:11 am</strong></div>
+				<div class="author">by <strong>alkinus</strong></div>
+				<div class="content">Hy , i try to use OfficialGrinderFramework in song acc lvl 67 Na server , but i see in folder Classes your Songweaver.lua have only 1 kb and inside is only <br>
+<br>
+function Attack( Entity, Range, Stunned )<br>
+		<br>
+end<br>
+<br>
+When i start the script after i show the rute  he only select the mobs and dont atack...</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 2:49 pm</strong></div>
+				<div class="author">by <strong>HollyGR</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistee00.html?mode=viewprofile&amp;u=70">alkinus</a> wrote: <a href="viewtopic04cd.html?p=76#p76" data-post-id="76" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Feb 02, 2017 9:11 am</div></cite>
+Hy , i try to use OfficialGrinderFramework in song acc lvl 67 Na server , but i see in folder Classes your Songweaver.lua have only 1 kb and inside is only <br>
+<br>
+function Attack( Entity, Range, Stunned )<br>
+		<br>
+end<br>
+<br>
+When i start the script after i show the rute  he only select the mobs and dont atack...
+</div></blockquote>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2014 VaanC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+
+]]--
+
+
+-- (Private Function) Checks the healing requirements for the provided entity.
+--
+-- @param	Entity	Contains the entity to perform healing on.
+-- @param	double	Contains the
+-- @return	bool
+
+function _CheckHeal( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local EntityState = Entity:GetState();
+
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Check if the entity requires healing and perform the correct healing routine.
+	if Entity:GetHealth() &lt; 90 and ( Settings.Songweaver.AllowApproach or Range &lt;= 23 ) then
+
+		-- Retrieve the local target for certain checks.
+		local Target = EntityList:GetEntity( Player:GetTargetID());
+
+			-- Change the healing routine if I'm healing myself when allowed to attack.
+		if Entity:GetID() == Player:GetID() and Settings.Songweaver.AllowAttack then -- and Target ~= nil and not Target:IsDead() then
+			if Entity:GetHealth() &lt; 60 and Helper:CheckAvailable( "Soothing Melody" ) then
+				Helper:CheckExecute( "Soothing Melody", Entity );
+				return false;
+			elseif Entity:GetHealth() &lt; 40 and Helper:CheckAvailable( "Hymn of Rejuvenation" ) then
+				Helper:CheckExecute( "Hymn of Rejuvenation", Entity );
+				return false;
+			end
+		-- Check if we should heal the provided entity.
+		elseif Entity:GetHealth() &lt; 70 and Helper:CheckAvailable( "Soothing Melody" ) then
+			Helper:CheckExecute( "Soothing Melody", Entity );
+			return false;
+		elseif Entity:GetHealth() &lt; 40 and Helper:CheckAvailable( "Hymn of Rejuvenation" ) then
+			Helper:CheckExecute( "Hymn of Rejuvenation", Entity );
+			return false;
+		end
+
+	end
+
+	--Chain Heal: Soothing Finale
+	if Helper:CheckAvailable( "Soothing Finale" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Soothing Finale" );
+		return false;
+	end
+
+
+	--Chain Heal: Soothing Counterpoint
+	if Helper:CheckAvailable( "Soothing Counterpoint" ) and Player:GetHealth() &lt; 70 then
+		Helper:CheckExecute( "Soothing Counterpoint" );
+		return false;
+	end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+
+
+
+---------------------------------------------------------------------------------------
+---------------------!!!!!!!!! DO NOT TOUCH MANA HEALING!!!!!!!!!!!--------------------
+---------------------------------------------------------------------------------------
+
+--- Checks if the state of the provided entity.
+--
+-- @param	Entity	Contains the entity to check.
+-- @return	bool
+
+function _CheckMana( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local EntityState = Entity:GetState();
+
+	local Force = ForceList:GetForce('') --Change Master name
+
+	local Entity = EntityList:GetEntity(Entity:GetName());
+
+	--Write(Force:GetManaCurrent());
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Check if the entity requires healing and perform the correct healing routine.
+	if Force:GetMana() &lt; 80 and ( Settings.Songweaver.AllowApproach or Range &lt;= 23 ) then
+
+		-- Retrieve the local target for certain checks.
+		local Target = EntityList:GetEntity( Player:GetTargetID());
+
+		-- Change the healing routine if I'm healing myself when allowed to attack.
+		if Entity:GetID() == Player:GetID() and Settings.Songweaver.AllowAttack then --and Target ~= nil and not Target:IsDead() then
+			if Force:GetMana() &lt; 80 and Helper:CheckAvailable( "Resonant Melody" ) then
+				Helper:CheckExecute( "Resonant Melody", Entity );
+				return false;
+			end
+		-- Check if we should heal the provided entity.
+		elseif Force:GetMana() &lt; 80 and Helper:CheckAvailable( "Resonant Melody" ) then
+			Helper:CheckExecute( "Resonant Melody", Entity );
+			return false;
+		end
+
+	end
+
+	--Chain Heal: Soothing Finale
+	if Helper:CheckAvailable( "Resonant Finale" ) and Player:GetMana() &lt; 100 then
+		Helper:CheckExecute( "Resonant Finale" );
+		return false;
+	end
+
+
+	--Chain Heal: Soothing Counterpoint
+	if Helper:CheckAvailable( "Resonant Counterpoint" ) and Player:GetMana() &lt; 100 then
+		Helper:CheckExecute( "Resonant Counterpoint" );
+		return false;
+	end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+
+
+--- Checks if the state of the provided entity.
+--
+-- @param	Entity	Contains the entity to check.
+-- @return	bool
+
+function _CheckState( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Retrieve the state for the current entity to inspect.
+	local EntityState = Entity:GetState();
+
+	-- Loop through the states only when we are available to dispel them. We still check for removed states!
+	if EntityState ~= nil and ( self.StateDispelTime == nil or self.StateDispelTime &lt; Time()) then
+
+		-- Create the state array for the global entity storage and undispellable states if it does not exist.
+		if self.StateArray == nil or self.StateUndispellable == nil then
+			self.StateArray = {};
+			self.StateUndispellable = {};
+		end
+
+		-- Create the state array for the current entity if it does not exist.
+		if self.StateArray[Entity:GetID()] == nil then
+			self.StateArray[Entity:GetID()] = {};
+		end
+
+		-- Loop through the states to find which need to be removed.
+		for ID, Skill in DictionaryIterator( EntityState:GetList()) do
+
+			-- Check if the current skill is valid and has not been marked and undispellable.
+			if Skill ~= nil and Skill:IsDebuff() and ( self.StateUndispellable[Skill:GetID()] == nil or self.StateUndispellable[Skill:GetID()] &lt; Time()) then
+
+				-- Check if this entity had the current skill effect on him and hasn't been removed by either Cure Mind or Dispel.
+				if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil and self.StateArray[Entity:GetID()][Skill:GetID()] == 2 then
+					self.StateUndispellable[Skill:GetID()] = Time() + 30000;
+				-- Remove the state from the entity.
+				else
+
+					-- Retrieve the magical state the current skill.
+					local RemoveMagical = Skill:IsMagical();
+
+					-- Check if we are required to change the magical state for the current skill.
+					if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil then
+						RemoveMagical = not RemoveMagical;
+					end
+
+					-- Check if the dispel or cure mind can be executed correctly. The function might need to set the target first!
+					if ( RemoveMagical and Helper:CheckExecute( "Purifying Paean", Entity )) or ( not RemoveMagical and Helper:CheckExecute( "Purifying Paean", Entity )) then
+
+						-- Change the state dispel timer to prevent dispel and cure mind from being used too quickly.
+						self.StateDispelTime = Time() + 500;
+
+						-- Track the current state of the dispel and cure mind to find undispellable states.
+						if self.StateArray[Entity:GetID()][Skill:GetID()] == nil then
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 1;
+							return false;
+						else
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 2;
+							return false;
+						end
+
+					end
+
+				end
+
+			end
+
+		end
+
+		-- Loop through the existing states to find which have been removed correctly.
+		for k,v in pairs( self.StateArray[Entity:GetID()] ) do
+			if v ~= nil and EntityState:GetState( k ) == nil then
+				self.StateArray[Entity:GetID()][k] = nil;
+			end
+		end
+
+	end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+
+
+
+-----Sleep second target
+function CountMobs( arg_target, Distance )
+
+	local i = 0;
+
+	-- Iterate through all entities
+	for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+		-- Check if the entiy is valid.
+		if Entity ~= nil then
+			-- Retrieve the entity state.
+			local EntityState = Entity:GetState();
+			-- Check if the entity state is valid.
+			if EntityState ~= nil then
+				-- Check if this is a living monster that is in range.
+				if Entity:IsMonster() and not Entity:IsDead() and Entity:IsHostile() and EntityTarget:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= Distance then
+					-- Check if this entity is sleeping
+					if EntityState:GetState( Helper:CheckName( "Freestyle" )) ~= nil then
+						return 0;
+					-- Increment the number.
+					else
+						i = i + 1;
+					end
+				end
+			end
+		end
+	end
+
+	return i;
+
+end
+
+function SleepMultipleAttacker( EntityTarget, AttackRange )
+	-- Check if we have stored a target.
+	if self._SleepTarget ~= nil then
+		-- Check if the current target is the stored target.
+		if self._SleepTarget:GetID() == Player:GetTargetID() then
+			-- Check if Sleep Arrow is available.
+			if Helper:CheckAvailable( "Freestyle" ) then
+				-- Shoot the Sleep Arrow.
+				Helper:CheckExecute( "Freestyle" );
+				-- Indicate we cannot continue attacking.
+				return false;
+			else
+				-- Set the target.
+				Player:SetTarget( self._SleepTargetRestore );
+				-- Indicate we cannot continue attacking.
+				return false;
+			end
+		-- Check if the current target is the original target.
+		elseif not Helper:CheckAvailable( "Freestyle" ) and self._SleepTargetRestore:GetID() == EntityTarget:GetID() then
+			-- Clear the sleep target.
+			self._SleepTarget = nil;
+			-- Indicate we cannot continue attacking.
+			return true;
+		else
+			-- Set the target.
+			Player:SetTarget( self._SleepTarget );
+			-- Indicate we cannot continue attacking.
+			return false;
+		end
+	end
+	-- Check if Sleep Arrow is available.
+	if Helper:CheckAvailable( "Freestyle" ) then
+		-- Loop through the entities.
+		for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+			-- Check if this entity is a monster, is not friendly and decided to attack me (and obviously is not my current target).
+			if not Entity:IsDead() and Entity:IsMonster() and not Entity:IsFriendly() and Entity:GetTargetID() == Player:GetID() and Entity:GetID() ~= EntityTarget:GetID() then
+				-- Check if the entity that is attacking us is within range.
+				if Entity:GetPosition():DistanceToPosition( Player:GetPosition()) &lt;= AttackRange then
+					-- Store the sleep target.
+					self._SleepTarget = Entity;
+					-- Store the restore target.
+					self._SleepTargetRestore = EntityTarget;
+					-- Set the target.
+					Player:SetTarget( Entity );
+					-- Indicate we cannot continue attacking.
+					return false;
+				end
+			end
+		end
+	end
+	-- Indicate we can continue attacking.
+	return true;
+end
+
+
+
+-- This is the class chain information list.  It is NOT a priority list, this is merely to help the class know when it has
+-- started a chain so it knows to only use skills from that chain until the target dies OR until the chain times out.
+local m_chain_info =
+	{
+		["Song of Ice"] = { "Song of Ice", "Song of Fire", "Song of Thronesong","Song of Earth" },
+		["Bright Strike"] = { "Bright Strike", "Bright Stroke", "Quaver", "Bright Flourish" },
+		["Sonic Gust"] = { "Sonic Gust", "Sonic Splash" },
+		["Remove Shock"] = { "Remove Shock", "Hymn of Thanksgiving", "Chorus of Fortitude" }
+	};
+
+-- Buffs you want to apply before starting an attack or while traveling.
+local m_pre_attack_buffs =
+	{
+		{ skill_name = "Protective Ode", conditions = { { condition_type = "Buff_Not_Active" } } },
+		{ skill_name = "Soothing Melody", conditions = { { condition_type = "Player_Health_Percent", compare = "&lt;", compare_value = "80" } } },
+		{ skill_name = "Resonant Melody", conditions = { { condition_type = "Player_Mana_Percent", compare = "&lt;", compare_value = "90" } } },
+		--{ skill_name = "Etude", conditions = { { condition_type = "Buff_Not_Active" } } },
+		{ skill_name = "Resonating Melody", conditions = { { condition_type = "Player_Mana_Percent", compare = "&lt;", compare_value = "60" } } }
+	};
+
+-- Buffs or self-skills you want to use in the middle of battle
+local m_attack_buffs =
+	{
+		{ skill_name = "Resonant Melody", conditions = { { condition_type = "Player_Mana_Percent", compare = "&lt;", compare_value = "70" } } },
+		{ skill_name = "Protective Ode", conditions = { { condition_type = "Buff_Not_Active" } } },
+		{ skill_name = "Resonating Melody", conditions = { { condition_type = "Player_Mana_Percent", compare = "&lt;", compare_value = "60" } } }
+	};
+
+-- Skills you want to use to START an attack. I do not recommend chain skills here since there is too long of a delay in AS between attacks at this point for some reason and they tend to time-out
+local m_pull_skills =
+	{
+		{ skill_name = "Symphony of Destruction", conditions = { { condition_type = "Player_DP", compare = "&gt;=", compare_value = "2000" } } },
+		{ skill_name = "Captivate" },
+		{ skill_name = "Song of Ice" },
+		{ skill_name = "Bright Strike" },
+		{ skill_name = "Pulse" },
+		{ skill_name = "Fluttered Note" },
+		{ skill_name = "Syncopated Echo" },
+		{ skill_name = "Stinging Note" },
+		{ skill_name = "Attack/Chat" }
+	};
+
+-- Conditional skills are priority skills which rely on special conditions that usually need to be responded to no matter what (like Remove Shock...if its available you probably need it NOW :) )
+local m_conditional_skills =
+	{
+		{ skill_name = "Remove Shock", break_chain = true }
+	};
+
+-- You MUST list the skills from LAST in chain to first for them to fire properly (Aion reports earlier skills as off CD even if you've moved to next step in chain)
+local m_chain_skills =
+	{
+		{ skill_name = "Resonant Finale", conditions = { { condition_type = "Player_Mana_Percent", compare = "&lt;", compare_value = "100" } } },
+		{ skill_name = "Resonant Counterpoint", conditions = { { condition_type = "Player_Mana_Percent", compare = "&lt;", compare_value = "100" } } },
+		{ skill_name = "Hymn of Thanksgiving", conditions = { { condition_type = "Player_Health_Percent", compare = "&lt;", compare_value = "40" } } },
+		{ skill_name = "Chorus of Fortitude" },
+		{ skill_name = "Thronesong" },
+		{ skill_name = "Song of Earth" },
+		{ skill_name = "Song of Fire" },
+		{ skill_name = "Quaver" },
+		{ skill_name = "Bright Flourish" },
+		{ skill_name = "Bright Stroke" },
+		{ skill_name = "Sonic Splash" }
+	};
+
+-- Skills to use during normal attack (not pull, not chain, just attacking)
+local l_attack_skills =
+	{
+		{ skill_name = "Minstrel's Flair", conditions = { { condition_type = "Player_DP", compare = "&gt;=", compare_value = "2000" } } },
+		{ skill_name = "Song of Ice" },
+		{ skill_name = "Bright Strike" },
+		{ skill_name = "Pulse" },
+		{ skill_name = "Fluttered Note" },
+		{ skill_name = "Syncopated Echo" },
+		{ skill_name = "Stinging Note" },
+		{ skill_name = "Attack/Chat" }
+	};
+
+-- Flag telling us when we are mid-chain
+local m_doing_chain_skills = false;
+-- Time to add to "now" to wait for another chain skill to successfully fire before giving up
+local m_chain_timeout_interval = 1500;
+-- Literal time in milliseconds of time when we should give up on current chain of skills
+local m_chain_timeout_time = 0;
+-- Index into the list of skills for last chain skill used
+local m_chain_index = -1;
+-- Holds the list of chain skills
+local m_current_chain = nil;
+-- Skill name of start of current chain
+local m_chain_start_skill = nil;
+
+-- Current target for attack, used to know if we are mid-fight or starting a pull
+local m_target = nil;
+-- Reset all the chain related variables, used when we either killed a target or a chain timed out.
+function _reset_chain_variables()
+	-- Flag telling us when we are mid-chain
+	m_doing_chain_skills = false;
+	-- Timeout to give up on a chain to avoid getting stuck
+	m_chain_timeout_time = 0;
+	-- Index into the list of skills for last chain skill used
+	m_chain_index = -1;
+	-- Holds the list of chain skills
+	m_current_chain = nil;
+	-- Skill name of start of current chain
+	m_chain_start_skill = nil;
+
+	return true;
+end
+
+-- Check to see if all the conditions specified for a skill have been met
+function _check_conditions( arg_skill_info, arg_target, arg_range, arg_stunned )
+
+	-- Default result if there are no conditions is true...so all skills can be run through here and quickly result in true
+	local l_result = false;
+	local l_player_pos = Player:GetPosition();
+	local l_range = l_player_pos:DistanceToPosition( arg_target:GetPosition() );
+	local l_target_state = arg_target:GetState();
+	local l_attack_range = Player:GetAttackRange();
+	local l_player_state = Player:GetState();
+	local l_skill_name = arg_skill_info.skill_name;
+	local l_conditions = arg_skill_info.conditions;
+	local l_value_compare_types =
+		{
+			["arg_range"] = true,
+			["Player_Health_Percent"] = true,
+			["Player_Mana_Percent"] = true,
+			["Target_Health_Percent"] = true,
+			["Player_DP"] = true
+		};
+	-- If there are NO conditions to check then return true
+	if l_conditions == nil then
+		return true;
+	end
+
+	-- For each set of condition parameters
+	for key, l_condition in ipairs(l_conditions) do
+		local l_first_value = nil;
+		local l_second_value = nil;
+		local l_compare = nil;
+		local l_condition_type = l_condition.condition_type;
+		-- If the condition type was NOT set to something then write a warning message and return false (no condition is okay, but a condition with a nil type is not good)
+		if (l_condition_type == nil) then
+			--Write("Condition type was nil for skill '" .. l_skill_name .. "' so returning false, but this is a bug in your skills list.");
+			return false;
+		else -- If we got a condition type, then set up the comparison values (first and second) or do any special case tests
+			if 			l_condition_type == "arg_range" then
+				l_first_value = tonumber(l_range);
+				l_second_value = tonumber(l_condition.compare_value);
+
+			elseif		l_condition_type == "Player_Health_Percent" then
+				l_first_value = tonumber(Player:GetHealth());
+				l_second_value = tonumber(l_condition.compare_value);
+
+			elseif		l_condition_type == "Player_Mana_Percent" then
+				l_first_value = tonumber(Player:GetMana());
+				l_second_value = tonumber(l_condition.compare_value);
+
+			elseif		l_condition_type == "Target_Health_Percent" then
+				l_first_value = tonumber(arg_target:GetHealth());
+				l_second_value = tonumber(l_condition.compare_value);
+
+			elseif		l_condition_type == "Target_Casting" then
+				if (arg_target:GetSkillID() ~= 0) and (SkillList[arg_target:GetSkillID()]:IsMagical()) and (arg_target:GetSkillTime() &gt;= 500) then
+					l_result = true;
+				end
+
+			elseif		l_condition_type == "Skill_On_Cooldown" then
+				if (l_condition.compare_value == nil) then
+					--Write("Comparison value (should be skill name) was nil for skill '" .. l_skill_name .. "' for skill on cooldown condition so returning false, but this is a bug in your skills list.");
+					return false;
+				else
+					-- The test condition is TRUE if the skill is NOT available, meaning it is on cool down.
+					l_result = not Helper:CheckAvailable(l_condition.compare_value);
+				end
+
+			elseif 		l_condition_type == "Buff_Not_Active" then
+				local l_target_state = arg_target:GetState();
+				l_result = (l_target_state:GetState( Helper:CheckName( l_skill_name )) == nil);
+			end
+
+			-- More efficient way to check if the condition type is one which requires numerically comparing values
+			if l_value_compare_types[l_condition_type] ~= nil then
+				l_compare = l_condition.compare;
+				-- Check to make sure we were given a comparison operator
+				if (l_compare == nil) then
+					--Write("Condition comparison operator was nil for skill '" .. l_skill_name .. "' so returning false, but this is a bug in your skills list.");
+					return false;
+				end
+				-- Check to make sure we were given a comparison value to compare the in game variable to
+				if l_second_value == nil then
+					--Write(l_condition_type .. " condition for skill '" .. l_skill_name .. "' has nil comparison value so returning false, but this is a bug in your skills list.");
+					return false;
+				end
+				-- Now check which type of comparison operator to use and perform that comparison (first OPERATOR second)
+				if 		l_compare == "&gt;" then
+					l_result = (l_first_value &gt; l_second_value);
+				elseif	l_compare == "&gt;=" then
+					l_result = (l_first_value &gt;= l_second_value);
+				elseif	l_compare == "&lt;" then
+					l_result = (l_first_value &lt; l_second_value);
+				elseif	l_compare == "&lt;=" then
+					l_result = (l_first_value &lt;= l_second_value);
+				elseif	l_compare == "==" then
+					l_result = (l_first_value == l_second_value);
+				end
+			end
+		end
+		-- End the loop as soon as we fail any condition
+		if not l_result then
+			break;
+		end
+	end
+
+	return l_result;
+end
+
+-- Search through the list of skills until one is found which is both available and meets any conditions specified for it, then execute it.
+function _do_skills(arg_skills, arg_target, arg_range, arg_stunned)
+
+	-- Loop through the given skill list checking if the skill is available and any conditions included test as true
+	for key, l_skill_info in ipairs(arg_skills) do
+		local l_skill_name = l_skill_info.skill_name;
+		if (l_skill_name ~= nil) then
+			local l_conditions_passed = self:_check_conditions( l_skill_info, arg_target, arg_range, arg_stunned );
+			if (l_conditions_passed) then
+				local l_available = Helper:CheckAvailable( l_skill_name );
+				if l_available then
+					-- Check if this is the start of a chain
+					if m_chain_info[l_skill_name] ~= nil then
+						m_doing_chain_skills = true;
+						m_chain_index = 1;
+						m_current_chain = m_chain_info[l_skill_name];
+						m_chain_start_skill = l_skill_name;
+						Helper:CheckExecute( l_skill_name, arg_target );
+						m_chain_timeout_time = Time() + m_chain_timeout_interval;
+						return false;
+					elseif m_doing_chain_skills then
+						local l_found_skill_in_chain = false;
+						for chain_index, chain_skill in ipairs(m_current_chain) do
+							if l_skill_name == chain_skill then
+								l_found_skill_in_chain = true;
+								if chain_index &gt;= m_chain_index then
+									m_chain_index = chain_index;
+									Helper:CheckExecute( l_skill_name, arg_target );
+									m_chain_timeout_time = Time() + m_chain_timeout_interval;
+									return false;
+								end
+							end
+						end
+						-- If this skill isn't part of the chain AND the skill has the break_chain flag set to true, then we execute it.
+						if (not l_found_skill_in_chain) and (l_skill_info.break_chain == true) then
+							Helper:CheckExecute( l_skill_name, arg_target );
+							return false;
+						end
+					else
+						Helper:CheckExecute( l_skill_name, arg_target );
+						return false;
+					end
+				end
+			end
+		end
+	end
+	-- Indicate nothing done so other actions can potentially be taken this tick.
+	return true;
+end
+
+
+
+-- Contains the multicast cooldown.
+local MulticastCooldown = {}
+-- Contains the multicast identifier.
+local MulticastId = 0
+-- Contains the multicast level.
+local MulticastLevel = 0
+-- Contains the multicast name.
+local MulticastName = nil
+-- Contains the multicast reuse.
+local MulticastReuse = 0
+-- Contains the multicast target level.
+local MulticastTargetLevel = 0
+
+
+
+--- Perform the attack routine on the selected target.
+--
+-- @param       Entity  Contains the entity we have targeted.
+-- @param       double  Contains the distance to the target
+-- @param       bool    Indicates whether or not the target is stunned.
+-- @return      bool
+function Attack( arg_target, arg_range, arg_stunned )
+
+
+	-- Check if we are allowed to sleep attackers.
+	if Settings.Songweaver.AllowSleep and not self:SleepMultipleAttacker( arg_target, arg_range ) then
+		return false;
+	end
+
+	------------------------
+	--- M U L T I C A S T---
+	------------------------
+
+	-- Check if a multicast level has been set.
+	if MulticastLevel ~= 0 then
+		-- Initialize the skill identifier.
+		local Id = Player:GetSkillId()
+		-- Check if the skill identifier is set.
+		if Id ~= 0 then
+			-- Check if the previous identifier is invalid.
+			if MulticastId == 0 then
+				-- Set the previous identifier.
+				MulticastId = Id
+			-- Otherwise check if the identifier has increased.
+			elseif Id &gt; MulticastId then
+				-- Increment the multicast level.
+				MulticastLevel = MulticastLevel + 1
+				-- Set the previous identifier.
+				MulticastId = Id
+				-- Check if the desired multicast level has been achieved.
+				if MulticastLevel == MulticastTargetLevel then
+					-- End with the Fiery Descadent ability.
+					self:Do(MulticastName)
+					-- Set the cooldown for the multicast skill.
+					MulticastCooldown[MulticastName] = Time() + MulticastReuse
+					-- Reset the multicast level.
+					MulticastLevel = 0
+				end
+			end
+			-- Prevent other responsibilities.
+			return false;
+		end
+	end
+
+	local Position = Player:GetPosition();
+
+	-- Check if Fiery Descant is ready for multicast and the target is not yet pissed.
+	if arg_target:GetHealth() &gt;= 0 and Position:DistanceToPosition( arg_target:GetPosition()) &gt;= 10 and self:Multicast("Fiery Descant", 3, arg_target) then
+	-- Prevent other responsibilities.
+		return false;
+	end
+
+	-- Check if Fiery Descant is ready for multicast and the target is not yet pissed.
+	if arg_target:GetHealth() &gt;= 0 and Position:DistanceToPosition( arg_target:GetPosition()) &gt;= 10 and self:Multicast("Dragon Song", 3, arg_target) then
+	-- Prevent other responsibilities.
+		return false;
+	end
+
+	--Food Checks / Scrolls;
+	if Settings.CritFood then
+		self:CheckCritFood();
+	end
+
+	if Settings.AttackFood then
+		self:CheckAttackFood();
+	end
+
+	if Settings.NaturalHeal then
+		self:CheckNaturalHeal();
+	end
+
+	if Settings.AttackScroll then
+		self:CheckAttackScroll();
+	end
+
+	if Settings.RunScroll then
+		self:CheckRunScroll();
+	end
+
+	if arg_target:IsDead() then
+		self.m_target = nil
+	end
+
+
+	-- If we haven't started attacking this entity yet...do pre-attack buffs, then attack buffs, then the actual pull
+	if (self.m_target ~= arg_target:GetID()) and (not arg_target:IsDead()) then
+		--Write ("Starting new pull.");
+
+		-- If starting a new pull then not doing a chain (even though sometimes Aion will let you finish a chain on a different mob...we will ignore that glitch)
+		self:_reset_chain_variables();
+
+		-- If we are doing a pre-attack buff, then return false to indicate nothing more can be done until next tick
+		if not self:_do_skills(m_pre_attack_buffs, Player) then
+			return false;
+		end
+		-- If we are doing a mid-attack buff (pre-attack only happens once, but during attack can happen pre-pull or mid attack), then return false to indicate nothing more can be done this tick.
+		if not self:_do_skills(m_attack_buffs, Player) then
+			return false;
+		end
+		-- If we actually manage to execute a pull attack, then return false to indicate nothing more can be done this tick.
+		if not self:_do_skills( m_pull_skills, arg_target, arg_range, arg_stunned ) then
+			self.m_target = arg_target:GetID();
+			return false;
+		end
+	-- Else we HAVE started attacking this entity already so do full attack routine
+	elseif (not arg_target:IsDead()) then
+		--Write ("Continuing after pull.");
+
+		-- If we're doing a chain and the chain has timed out (too long between chain skills) then reset to not doing a chain and move on.
+		if ( m_doing_chain_skills ) and ( Time() &gt; m_chain_timeout_time ) then
+			--Write("Chain '" .. m_chain_start_skill .. "' timed out so resetting variables.");
+			self:_reset_chain_variables();
+		end
+
+		if ( m_doing_chain_skills ) then
+			-- Conditionals override everything...should be critical skills...
+			--Write("In middle of chain skill, checking conditional skills.");
+			if not self:_do_skills( m_conditional_skills, arg_target, arg_range, arg_stunned ) then
+				return false;
+			else
+				--Write("In middle of chain skill, checking chain skills.");
+			-- Check to see if we do any chain skills, and return false to indicate nothing more can be done until next tick.
+				if not self:_do_skills( m_chain_skills, arg_target, arg_range, arg_stunned ) then
+					return false;
+				end
+			end
+		else
+			-- Check to see if we do any conditional skills (entity stunned, player stunned, etc etc skills), and return false to indicate nothing more can be done until next tick.
+			if not self:_do_skills( m_conditional_skills, arg_target, arg_range, arg_stunned ) then
+				return false;
+			-- Check to see if we do any chain skills, and return false to indicate nothing more can be done until next tick.
+			elseif not self:_do_skills( m_chain_skills, arg_target, arg_range, arg_stunned ) then
+				return false;
+			-- Check if need to do any mid-attack buffs, and return false to indicate nothing more can be done until next tick if we perform a buff
+			elseif not self:_do_skills(m_attack_buffs, Player) then
+				return false;
+			-- Check to see if we do any normal attack skills, and return false to indicate nothing more can be done until next tick.
+			elseif not self:_do_skills( l_attack_skills, arg_target, arg_range, arg_stunned ) then
+				return false;
+			end
+		end
+
+	end
+	-- Indicate nothing done so other actions can potentially be taken this tick.
+	return true;
+end
+
+
+	-- Perform an ability without condition checking.
+	--
+	function Do(Name)
+		-- Find the ability with the specified name.
+		local Ability = AbilityList:GetAbility(Name)
+		-- Check if the ability is valid.
+		if Ability ~= nil then
+			-- Input the command to do the ability.
+			PlayerInput:Console("/Skill " .. Ability:GetName())
+		end
+	end
+
+	--
+	-- Begin a multicast ability.
+	--
+	function Multicast(Name, TargetLevel)
+		-- Initialize the ability.
+		local Ability = AbilityList:GetAbility(Name)
+		-- Check if the ability is available.
+		if Ability ~= nil then
+			-- Check if the multicast ability is not available.
+			if MulticastCooldown[Ability:GetName()] ~= nil and MulticastCooldown[Ability:GetName()] &gt;= Time() then
+				-- Return false.
+				return false;
+			-- Otherwise execute the multicast ability.
+			elseif Helper:CheckExecute(Ability:GetName()) then
+				-- Initialize the multicast identifier.
+				MulticastId = 0
+				-- Initialize the multicast level.
+				MulticastLevel = 1
+				-- Initialize the multicast name.
+				MulticastName = Ability:GetName()
+				-- Initialize the multicast reuse.
+				MulticastReuse = Ability:GetReuse()
+				-- Initialize the multicast target level.
+				MulticastTargetLevel = TargetLevel
+				-- Return true.
+				return true
+			end
+		end
+		-- Return false.
+		return false
+	end
+
+
+function Heal( BeforeForce )
+
+
+	if BeforeForce and Settings.Songweaver.AllowBuff and ( self.StateBuffTime == nil or self.StateBuffTime &lt; Time()) then
+
+		local EntityState = Player:GetState();
+
+		if EntityState ~= nil then
+
+			-- Check if this entity has the Blessing of Health state.
+			if Helper:CheckAvailable( "Etude I" ) and EntityState:GetState( "Etude I" ) == nil and EntityState:GetState( "Etude II" ) == nil and EntityState:GetState( "Blessing of Health I" ) == nil and EntityState:GetState( "Blessing of Health II" ) == nil then
+				Helper:CheckExecute( "Etude", Entity );
+				return false;
+			end
+		end
+	end
+
+	-- Check if my own character has state modifications that need to be removed.
+	if BeforeForce and not self:_CheckState( Player ) then
+		return false;
+	end
+
+	-- Check if we are allowed to execute our healing routines, after checking the force we can check our own HP.
+	if not BeforeForce and Settings.Songweaver.AllowHealing then
+
+		-- Check the required direct healing for my own character.
+		if not self:_CheckHeal( Player ) then
+			return false;
+		end
+
+	end
+
+	-- Check if we are allowed to execute our healing routines, after checking the force we can check our own HP.
+	if not BeforeForce and Settings.Songweaver.AllowHealingMana then
+
+		-- Check the required direct healing for my own character.
+		if not self:_CheckMana( Player ) then
+			return false;
+		end
+
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+
+--- Perform the required force checks.
+--
+-- @return	void
+
+function Force()
+
+	-- Contains the amount of force members that would benefit from a group heal.
+	local GroupCount = 0;
+
+	-- Contains a list of entities that have been targeted by group members.
+	local PriorityList = {};
+
+	-- Contains a list of entities that should be checked for required healing.
+	local PriorityListHeal = {};
+
+	-- Contains a list of entities that should be checked for required mana.
+	local PriorityListHealMana = {};
+
+	-- Contains the entity belonging to a possible master to assist.
+	local MasterEntity = EntityList:GetEntity( Settings.MasterName );
+
+	-- Step #1 - Prioritize the force members/spirits based on the target's target.
+	for ID, Force in DictionaryIterator( ForceList:GetList()) do
+
+		-- Retrieve the entity for the current force member.
+		local Entity = EntityList:GetEntity( Force:GetID());
+
+		-- Check if the entity is available and is not dead.
+		if Entity ~= nil and not Entity:IsDead() then
+
+			-- Check if the current force member has selected an entity.
+			if Entity:GetTargetID() ~= 0 then
+				PriorityList[Entity:GetTargetID()] = true;
+			end
+
+			-- Check if the current force member would benefit from a group heal.
+			if Settings.Songweaver.AllowHealing and Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt; 25 and ( Entity:GetHealthMaximum() - Entity:GetHealthCurrent()) &gt;= 2300 then
+				GroupCount = GroupCount + 1;
+			end
+
+		end
+
+	end
+
+	-- Check the states of the master entity and add it to the priority healing list to enable further checks.
+	if MasterEntity ~= nil and not MasterEntity:IsDead() then
+		if not self:_CheckState( MasterEntity ) then
+			return false;
+		else
+			PriorityListHeal[MasterEntity:GetID()] = MasterEntity;
+		end
+	end
+
+
+
+	-- Step #1 - Prioritize the force members/spirits based on the target's target.
+	for ID, Force in DictionaryIterator( ForceList:GetList()) do
+
+		-- Retrieve the entity for the current force member.
+		local Entity = EntityList:GetEntity( Force:GetID());
+
+		-- Check if the entity is available and is not dead.
+		if Entity ~= nil and not Entity:IsDead() then
+
+			-- Check if the current force member has selected an entity.
+			if Entity:GetTargetID() ~= 0 then
+				PriorityList[Entity:GetTargetID()] = true;
+			end
+
+			-- Check if the current force member would benefit from a group heal.
+			if Settings.Songweaver.AllowHealingMana and Player:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt; 25 and  ( Force:GetMana()) &lt;= 60 then
+				GroupCount = GroupCount + 1;
+			end
+
+		end
+
+	end
+
+
+	-- Check the states of the master entity and add it to the priority healing list to enable further checks.
+	if MasterEntity ~= nil and not MasterEntity:IsDead() then
+		if not self:_CheckState( MasterEntity ) then
+			return false;
+		else
+			PriorityListHealMana[MasterEntity:GetID()] = MasterEntity;
+		end
+	end
+
+
+
+	-- Step #3 - Check the states of the non-prioritized force members (Dispel/Cure Mind).
+	for ID, Force in DictionaryIterator( ForceList:GetList()) do
+
+		-- Retrieve the entity for the current force member.
+		local Entity = EntityList:GetEntity( Force:GetID());
+
+		-- Check if the current force members has state modifications that need to be removed.
+		if Entity ~= nil and PriorityList[Entity:GetID()] ~= nil and not self:_CheckState( Entity ) then
+			return false;
+		end
+
+	end
+
+	-- Check if we are allowed to run the healing-orientated routines.
+	if Settings.Songweaver.AllowHealing then
+
+		-- Retrieve the target entity.
+		local TargetEntity = EntityList:GetEntity( Player:GetTargetID());
+
+		-- Step #4 - Check the required healing of the prioritized force members/spirits.
+		for k,v in pairs( PriorityListHeal ) do
+
+			-- Check the required direct healing for this force members/spirits.
+			if not self:_CheckHeal( v ) then
+				return false;
+			end
+
+		end
+
+		-- Step #6 - Check the required healing of the non-prioritized force members.
+		for ID, Force in DictionaryIterator( ForceList:GetList()) do
+
+			-- Check if the current force member has already been checked through the priorities.
+			if PriorityListHeal[Force:GetID()] == nil then
+
+				-- Get the entity from the EntityList.
+				local Entity = EntityList:GetEntity( Force:GetID());
+
+				-- Check the required direct healing for this force member.
+				if Entity ~= nil and not self:_CheckHeal( Entity ) then
+					return false;
+				end
+
+			end
+
+		end
+
+	end
+
+
+		-- Check if we are allowed to run the healing-orientated routines.
+	if Settings.Songweaver.AllowHealingMana then
+
+		-- Retrieve the target entity.
+		local TargetEntity = EntityList:GetEntity( Player:GetTargetID());
+
+		-- Step #4 - Check the required healing of the prioritized force members/spirits.
+		for k,v in pairs( PriorityListHealMana ) do
+
+			-- Check the required direct healing for this force members/spirits.
+			if not self:_CheckMana( v ) then
+				return false;
+			end
+
+		end
+
+		-- Step #6 - Check the required healing of the non-prioritized force members.
+		for ID, Force in DictionaryIterator( ForceList:GetList()) do
+
+			-- Check if the current force member has already been checked through the priorities.
+			if PriorityListHealMana[Force:GetID()] == nil then
+
+				-- Get the entity from the EntityList.
+				local Entity = EntityList:GetEntity( Force:GetID());
+
+				-- Check the required direct healing for this force member.
+				if Entity ~= nil and not self:_CheckMana( Entity ) then
+					return false;
+				end
+
+			end
+
+		end
+
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+
+--- Perform the required pause checks.
+--
+-- @return	bool
+
+function Pause()
+
+	if not self:_do_skills( m_pre_attack_buffs, Player ) then
+		return false;
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+
+-- Handle any tasks which should happen when the current target is killed
+function TargetDied(arg_target)
+
+	m_target = nil;
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+end
+
+
+---------------Bufovani-------------
+function CheckCritFood()
+
+stateID = {10224,10225,9976,9989,10051,10064};
+foodName = {"Calydon Meat Dumpling","Wild Ginseng Pickle","Tasty Calydon Meat Dumpling","Tasty Wild Ginseng Pickle","Innesi Herb Dumpling","Poma Wine Herb Dumpling","Tasty Innesi Herb Dumpling","Tasty Poma Wine Herb Dumpling"};
+flag = 0;
+
+    for _,v in ipairs(stateID) do
+        if Player:GetState():GetState( v ) ~= nil then
+            flag = flag + 1;
+        end
+    end
+
+    if flag == 0 then
+        for a,b in ipairs(foodName) do
+            if Helper:CheckAvailableInventory( b ) then
+                PlayerInput:Inventory( b );
+                break;
+            end
+        end
+    end
+
+
+return true;
+end
+
+--------------------------------
+function CheckAttackFood()
+
+stateID = {10051,10064,10224,10225,9976,9989};
+foodName = {"Minor Focus Agent","Lesser Focus Agent","Focus Agent","Greater Focus Agent","Major Focus Agent","Fine Focus Agent"};
+flag = 0;
+
+    for _,v in ipairs(stateID) do
+        if Player:GetState():GetState( v ) ~= nil then
+            flag = flag + 1;
+        end
+    end
+
+    if flag == 0 then
+        for a,b in ipairs(foodName) do
+            if Helper:CheckAvailableInventory( b ) then
+                PlayerInput:Inventory( b );
+                break;
+            end
+        end
+    end
+return true;
+
+
+end
+-----------------------------------
+function CheckNaturalHeal()
+
+stateID = {10044,10094};
+foodName = {"Minor Rally Serum","Lesser Rally Serum","Rally Serum","Greater Rally Serum","Major Rally Serum","Fine Rally Serum","Tasty Ormea Cocktail"};
+flag = 0;
+
+    for _,v in ipairs(stateID) do
+        if Player:GetState():GetState( v ) ~= nil then
+            flag = flag + 1;
+        end
+    end
+
+    if flag == 0 then
+        for a,b in ipairs(foodName) do
+            if Helper:CheckAvailableInventory( b ) then
+                PlayerInput:Inventory( b );
+                break;
+            end
+        end
+    end
+return true;
+
+end
+-------------------------------------
+function CheckAttackScroll()
+
+stateID = {9959};
+foodName = {"Greater Courage Scroll"};
+flag = 0;
+
+    for _,v in ipairs(stateID) do
+        if Player:GetState():GetState( v ) ~= nil then
+            flag = flag + 1;
+        end
+    end
+
+    if flag == 0 then
+        for a,b in ipairs(foodName) do
+            if Helper:CheckAvailableInventory( b ) then
+                PlayerInput:Inventory( b );
+                break;
+            end
+        end
+    end
+return true;
+
+end
+--------------------------
+function CheckRunScroll()
+
+stateID = {9960};
+foodName = {"Greater Running Scroll"};
+flag = 0;
+
+    for _,v in ipairs(stateID) do
+        if Player:GetState():GetState( v ) ~= nil then
+            flag = flag + 1;
+        end
+    end
+
+    if flag == 0 then
+        for a,b in ipairs(foodName) do
+            if Helper:CheckAvailableInventory( b ) then
+                PlayerInput:Inventory( b );
+                break;
+            end
+        end
+    end
+return true;
+
+end
+</code></pre></div>
+
+No clue if still working decently because I am not using bard at all but in past I was using this bard.lua <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionScript Release 30.01.2017</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 3:45 pm</strong></div>
+				<div class="author">by <strong>alkinus</strong></div>
+				<div class="content">I have same song lua , i copy paste in new AS but is not work .... but i find a option in old AS and i copy in new one and now is starting kill mobs and is work ... here is what i do :<br>
+in folder Scripting\OfficialGrinderFramework is Settings.lua,  there i add some option for song  from old AS<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- Initializes the settings in the framework. You can change settings here or in your loaded script.
+--
+-- @return	void
+
+function Initialize()
+
+	-- Indicates whether or not to use the boss-mode settings (Overwrites all configured settings).
+	self.BossMode = false;
+	
+	-- Check if boss mode has been enabled and load default boss settings values when this is the case.
+	if self.BossMode then
+		Write( "WARNING: Boss mode has been enabled!" );
+		self:InitializeBoss();
+	else
+
+		-- Attempt to load a player-specific settings file, which will take priority over the configured values here.
+		local Settings = Include( "OfficialGrinderFramework/Settings/" .. Player:GetName() .. ".lua" );
+		
+		-- Indicates whether or not attacking is allowed.
+		self.AllowAttack = true;
+		-- Indicates whether or not to allow the framework to respond on brands (Requires AllowAttack).
+		self.AllowBranding = true;	
+		-- (NOT RECOMMENDED) Indicates whether or not attack routines are to be ran much and much more often.
+		self.AllowInsaneCpuConsumption = false;
+		-- Indicates whether or not to allow looting of targets (Requires AllowAttack).
+		self.AllowLoot = true;
+		-- Indicates whether or not to allow hitting on damage-reflection based states (Requires AllowAttack).
+		self.AllowReflect = false;
+		-- Indicates whether or not to allow resting (Requires AllowAttack).
+		self.AllowRest = false;
+		-- Indicdates whether or not resurrecting and quitting is allowed.
+		self.AllowRessurectQuit = false;
+		-- Indicates whether or not it is allowed to search for targets (Requires AllowAttack).
+		self.AllowTargetSearch = true;
+		-- Indicates whether or not it is allowed to follow a loaded path.
+		self.AllowTravel = true;
+		-- When enabled, your character will constantly search for aggressive monsters. Disable for performance gain!
+		self.AllowTravelAggressionCheck = true;
+		-- When enabled, your character will run back to each node after searching. Cannot get stuck this way, but may seem more bot-like.
+		self.AllowTravelPerfect = false;
+		-- Indicates whether or not the herb treatment skill is allowed to be used (Requires AllowAttack).
+		self.HerbTreatment = true;
+		-- Contains the treshold before herb treatment is used (In percentages, or 0 to recharge an exact amount).
+		self.HerbTreatmentTreshhold = 40;
+		-- Contains the maximum allowed range to the master, at which point the character will run to the master.
+		self.MasterFollowRange = 19;
+		-- Contains the minimum allowed range to the master, at which point the character will stop moving towards the master.
+		self.MasterMinimumRange = 8;
+		-- Contains the name of the master, whom is to be followed around while avoiding the branding system (Requires AllowAttack).
+		--   This setting should be placed in quotes, for example "Blastradius" or "TheyRot".
+		--   If you do not place the name in quotes, the script will behave as if you did not set anything at all.
+		self.MasterName = nil;
+		-- Indicates whether or not to provide support when the master is attacking an enemy (Requires AllowAttack).
+		self.MasterSupport = true;
+		-- Indicates whether passive or active support is used; In Active mode, each select marks the target, while in passive, attack when the master is attacking.
+		self.MasterSupportActive = false;
+		-- Indicates whether or not potions are allowed (does not use Serums, only Elixir and Potions).
+		self.Potion = true;
+		-- Contains the remaining amount of health required before potions are used (0 = disabled).
+		self.PotionHealth = 80;
+		-- Contains the remaining amount of mana required before potions are used (0 = disabled).
+		self.PotionMana = 40;
+		-- Contains the remaining amount of health and mana required before potions are used (0 = disabled).
+		self.PotionRecovery = 30;
+		-- Contains the remaining amount of health required before resting (Requires AllowRest).
+		self.RestHealth = 50;
+		-- Contains the remaining amount of mana required before resting (Requires AllowRest).
+		self.RestMana = 40;
+		-- Contains the remaining amount of flight time required before resting (Requires AllowRest).
+		self.RestFlight = 60;
+		-- Indicates whether or not the mana treatment skill is allowed to be used (Requires AllowAttack).
+		self.ManaTreatment = true;
+		-- Contains the treshold before mana treatment is used (In percentages, or 0 to recharge an exact amount).
+		self.ManaTreatmentTreshhold = 70;
+		-- Contains the maximum distance of the area in which to search for targets (Requires AllowTargetSearch).
+		self.TargetSearchDistance = 15;
+		-- Contains the minimum delay to wait at each action node (Requires AllowTravel).
+		self.TravelDelay = 0;
+			
+		-- "Protect me and you shall never fall."
+		self.Cleric = {
+			-- Indicates whether or not attacking is allowed. Cleric version to allow following and such.
+			AllowAttack = true,
+			-- Indicates whether or not delaying for a Noble Energy or Holy Servant is required before attacking.
+			AllowAttackDelay = false,
+			-- Indicates whether or not high mana consumption skills such as Enfeebling Burst and Call Lightning.
+			AllowAttackMana = false,
+			-- Indicates whether or not approaching a target is allowed. Auto approach must be enabled for this to work.
+			AllowApproach = false,
+			-- Indicates whether or not buffing force members is allowed. Disable this if you want to run as an assisting script.
+			AllowBuff = true,
+			-- Indicates whether or not buffing force members is allowed.
+			AllowBuffForce = false,
+			-- Indicates whether or not healing is allowed. Disable this if you want to run as an assisting script.
+			AllowHealing = true,
+			-- Indicates whether or not using Rebirth is allowed.
+			AllowRebirth = true,
+			-- Indicates whether or not using Summer Circle is allowed.
+			AllowSummerCircleBuff = true,
+			-- Indicates whether or not using Winter Circle is allowed.
+			AllowWinterCircleBuff = false
+		};
+		
+		-- "Nothing can stand in my way!"
+		self.Gladiator = {
+			-- Indicates whether or not to allow area-of-attack skills.
+			AllowAoe = true,
+			-- Indicates whether or not to allow Taloc's Hollow Skills
+			AllowTalocHollow = true
+		};
+		
+		-- "Chase me or run away. Either way, you'll only die tired."
+		self.Ranger = {
+			-- Indicates whether or not to allow area-of-attack skills.
+			AllowAoe = true,
+			-- Indicates whether Mau Form is allowed when grinding.
+			AllowMauWhenGrinding = true,
+			-- Indicates whether or not to allow trap skills.
+			AllowTraps = true,
+			-- Indicates whether or not sleeping multiple attackers is allowed.
+			AllowSleep = true
+		};
+		
+		-- "This will only hurt for a second."
+		self.Sorcerer = {
+			-- Indicates whether or not to allow boss mode, which uses a different rotation without slow effects.
+			AllowGroupRotation = false,
+			-- Indicates whether MP conservation is allowed (Lumiel's Wisdom).
+			AllowMpConservation = true
+		};
+		
+		-- "Never fight alone."
+		self.SpiritMaster = {
+			-- Indicates whether or not to preserve mana. Damage-over-time skills are not applied after 50%.
+			AllowPreserveMana = true,
+			-- Indicates whehter initial threat with a spirit is prefered.
+			AllowInitialThreat = true
+		};
+		
+		-- "You're only as good as your armor."
+		self.Templar = {
+			-- Indicates whether or not Doom Lure is allowed, which is pointless on bosses.
+			AllowDoomLure = true,
+			-- Indicates whether or not skills using DP are allowed.
+			AllowDpSkills = true,
+			-- Indicates whether or not taunting is allowed and should be performed.
+			AllowTaunting = false,
+			-- Indicates whether or not to taunt without continously spamming it.
+			AllowSmartTaunting = true
+		};
+		-- Songweaver
+		self.Songweaver = {
+			-- Indicates whether or not attacking is allowed. Cleric version to allow following and such.
+			AllowAttack = true,
+			-- Indicates whether or not approaching a target is allowed. Auto approach must be enabled for this to work.
+			AllowApproach = true,
+			-- Indicates whether or not buffing force members is allowed. Disable this if you want to run as an assisting script.
+			AllowBuff = true,
+			-- Indicates whether or not sleeping multiple attackers is allowed.
+			AllowSleep = false,
+			-- Indicates whether or not healing is allowed. Disable this if you want to run as an assisting script.
+			AllowHealing = true,
+			-- Indicates whether or not healing is allowed. Disable this if you want to run as an assisting script.
+			AllowHealingMana = false
+		};		
+		-- Check if the player-specific settings file exists and load values from it.
+		if Settings ~= nil then
+
+			-- Load the settings from the file to allow the configuration of the framework.
+			Settings:Initialize();
+			
+			-- Loop through the keys and values exposed by the Settings object and import them.
+			for k, v in pairs( Settings ) do
+				self[k] = v;
+			end
+			
+		end
+				
+	end
+	
+end
+
+--- Initializes/overwrites existing settings to comply with the standard boss-hunting roles.
+--
+-- @return	void
+
+function InitializeBoss()
+
+	-- Indicates whether or not attacking is allowed.
+	self.AllowAttack = true;
+	-- Indicates whether or not to allow the framework to respond on brands (Requires AllowAttack).
+	self.AllowBranding = true;	
+	-- (NOT RECOMMENDED) Indicates whether or not attack routines are to be ran much and much more often.
+	self.AllowInsaneCpuConsumption = false;
+	-- Indicates whether or not to allow looting of targets (Requires AllowAttack).
+	self.AllowLoot = false;
+	-- Indicates whether or not to allow hitting on damage-reflection based states (Requires AllowAttack).
+	self.AllowReflect = false;
+	-- Indicates whether or not to allow resting (Requires AllowAttack).
+	self.AllowRest = false;
+	-- Indicdates whether or not resurrecting and quitting is allowed.
+	self.AllowRessurectQuit = false;
+	-- Indicates whether or not it is allowed to search for targets (Requires AllowAttack).
+	self.AllowTargetSearch = false;
+	-- Indicates whether or not it is allowed to follow a loaded path.
+	self.AllowTravel = false;
+	-- When enabled, your character will constantly search for aggressive monsters. Disable for performance gain!
+	self.AllowTravelAggressionCheck = false;
+	-- When enabled, your character will run back to each node after searching. Cannot get stuck this way, but may seem more bot-like.
+	self.AllowTravelPerfect = false;
+	-- Indicates whether or not to provide support when the master is attacking an enemy (Requires AllowAttack).
+	self.MasterSupport = false;
+	-- Indicates whether passive or active support is used; In Active mode, each select marks the target, while in passive, attack when the master is attacking.
+	self.MasterSupportActive = false;
+	-- Indicates whether or not potions are allowed (does not use Serums, only Elixir and Potions).
+	self.Potion = true;
+	-- Contains the remaining amount of health required before potions are used (0 = disabled).
+	self.PotionHealth = 80;
+	-- Contains the remaining amount of mana required before potions are used (0 = disabled).
+	self.PotionMana = 40;
+	-- Contains the remaining amount of health and mana required before potions are used (0 = disabled).
+	self.PotionRecovery = 30;
+	-- Indicates whether or not the mana treatment skill is allowed to be used (Requires AllowAttack).
+	self.ManaTreatment = true;
+	-- Contains the treshold before mana treatment is used (In percentages, or 0 to recharge an exact amount).
+	self.ManaTreatmentTreshhold = 70;
+	-- Contains the maximum distance of the area in which to search for targets (Requires AllowTargetSearch).
+	self.TargetSearchDistance = 15;
+	-- Contains the minimum delay to wait at each action node (Requires AllowTravel).
+	self.TravelDelay = 0;
+		
+	-- Classes belonging to the priest-archtype are not expected to attack or rest.
+	if Player:GetClass():ToString() == "Cleric" then
+		self.AllowAttack = false;
+		self.AllowRest = false;
+		self.ManaTreatment = false;
+	end
+	
+	-- "Protect me and you shall never fall."
+	self.Cleric = {
+		-- Indicates whether or not attacking is allowed. Cleric version to allow following and such.
+		AllowAttack = false,
+		-- Indicates whether or not delaying for a Noble Energy or Holy Servant is required before attacking.
+		AllowAttackDelay = true,
+		-- Indicates whether or not high mana consumption skills such as Enfeebling Burst and Call Lightning.
+		AllowAttackMana = false,
+		-- Indicates whether or not approaching a target is allowed. Auto approach must be enabled for this to work.
+		AllowApproach = false,
+		-- Indicates whether or not buffing force members is allowed. Disable this if you want to run as an assisting script.
+		AllowBuff = true,
+		-- Indicates whether or not buffing force members is allowed.
+		AllowBuffForce = true,
+		-- Indicates whether or not healing is allowed. Disable this if you want to run as an assisting script.
+		AllowHealing = true
+	};
+	
+	-- "Nothing can stand in my way!"
+	self.Gladiator = {
+		-- Indicates whether or not to allow area-of-attack skills.
+		AllowAoe = false,
+		-- Indicates whether or not to allow Taloc's Hollow Skills
+		AllowTalocHollow = false
+	};
+	
+	-- "Chase me or run away. Either way, you'll only die tired."
+	self.Ranger = {
+		-- Indicates whether or not to allow area-of-attack skills.
+		AllowAoe = false,
+		-- Indicates whether or not to allow trap skills.
+		AllowTraps = false,
+		-- Indicates whether or not sleeping multiple attackers is allowed.
+		AllowSleep = false
+	};
+	
+	-- "This will only hurt for a second."
+	self.Sorcerer = {
+		-- Indicates whether or not to allow boss mode, which uses a different rotation without slow effects.
+		AllowGroupRotation = true,
+		-- Indicates whether MP conservation is allowed (Lumiel's Wisdom).
+		AllowMpConservation = true
+	};
+	
+	-- "Never fight alone."
+	self.SpiritMaster = {
+		-- Indicates whether or not to preserve mana. Damage-over-time skills are not applied after 50%.
+		AllowPreserveMana = false,
+		-- Indicates whehter initial threat with a spirit is prefered.
+		AllowInitialThreat = false
+	};
+	
+	-- "You're only as good as your armor."
+	self.Templar = {
+		-- Indicates whether or not Doom Lure is allowed, which is pointless on bosses.
+		AllowDoomLure = false,
+		-- Indicates whether or not skills using DP are allowed.
+		AllowDpSkills = false,
+		-- Indicates whether or not taunting is allowed and should be performed.
+		AllowTaunting = true,
+		-- Indicates whether or not to taunt without continously spamming it.
+		AllowSmartTaunting = false
+	};
+  	-- Songweaver
+    self.Songweaver = {
+        -- Indicates whether or not attacking is allowed. Cleric version to allow following and such.
+        AllowAttack = true,
+        -- Indicates whether or not approaching a target is allowed. Auto approach must be enabled for this to work.
+        AllowApproach = true,
+        -- Indicates whether or not buffing force members is allowed. Disable this if you want to run as an assisting script.
+        AllowBuff = true,
+        -- Indicates whether or not sleeping multiple attackers is allowed.
+        AllowSleep = true,
+        -- Indicates whether or not healing is allowed. Disable this if you want to run as an assisting script.
+        AllowHealing = true
+    };				
+end</code></pre></div>
+
+I hope someone needit <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> maibe only for me dont work at begin ... now is fine</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=20&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:48:58 GMT -->
+</html>

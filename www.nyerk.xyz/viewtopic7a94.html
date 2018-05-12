@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=171&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; About HelperFunctions</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>About HelperFunctions</h2>
+		<p><a href="viewtopiccc49.html?f=6&amp;t=171">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=171</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>About HelperFunctions</h3>
+				<div class="date">Posted: <strong>Mon May 29, 2017 10:04 pm</strong></div>
+				<div class="author">by <strong>kirathegod</strong></div>
+				<div class="content">Find out that to get the mana and herb tratament to work i had to modify the helperfunctions <br>
+<br>
+this is how it was <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if self:CheckAvailable( "Mana Treatment III" ) and TotalRecharge &gt;= 535 and self:CheckAvailableInventory( "Greater Odella Powder", 2 ) then
+			self:CheckExecute( "Mana Treatment III" );
+			return false;</code></pre></div>
+
+this is how i tweak it <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if self:CheckAvailable( "MP Recovery" ) and TotalRecharge &gt;= 545 and self:CheckAvailableInventory( "Master Odella Powder", 2 ) then
+			self:CheckExecute( "MP Recovery" );
+			return false;</code></pre></div>
+
+<br>
+my quetion is it safe to delete the other part for the code i mean the one saying I II III Etc... ?<br>
+<br>
+and in this same script do i have to modify the potions part aswell to get the potions working? i play on na so it may be the case that the names arent the same so <br>
+because in my sorc script there are potions to use but the characted dont consume them like for example [Abbey] Fine Recovery Potions</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: About HelperFunctions</h3>
+				<div class="date">Posted: <strong>Tue May 30, 2017 5:35 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Yes, you can delete/change it like that and this is the correct way.<br>
+About potions mhh i think only the names are wrong.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: About HelperFunctions</h3>
+				<div class="date">Posted: <strong>Mon Jun 05, 2017 3:35 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">Thank you! Implemented this into my LUA framework!</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=171&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:13 GMT -->
+</html>

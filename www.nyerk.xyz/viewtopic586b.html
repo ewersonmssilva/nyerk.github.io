@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=30&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; EU XP Event - Autouse dropped XP Serums</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>EU XP Event - Autouse dropped XP Serums</h2>
+		<p><a href="viewtopic01fc.html?f=8&amp;t=30">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=30</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>EU XP Event - Autouse dropped XP Serums</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 7:04 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Hi Guys,<br>
+<br>
+if you play on EU.<br>
+<br>
+Add this to your class script Pause function to auto use the dropped XP serums on EU.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function Pause( )
+	for Inventory in ListIterator( InventoryList:GetList()) do
+	-- Check if this is an xp serum.
+	if string.find( Inventory:GetName(), "Growth Serum" ) ~= nil and Inventory:GetCooldown() == 0 then
+		PlayerInput:Inventory( Inventory:GetName());
+			return false;
+		end
+	end
+	return true;
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: EU XP Event - Autouse dropped XP Serums</h3>
+				<div class="date">Posted: <strong>Fri Jul 21, 2017 9:27 pm</strong></div>
+				<div class="author">by <strong>ewerson2</strong></div>
+				<div class="content">New EventDrop liquid XP<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function Pause()
+
+    if Helper:CheckAvailableInventory( "[Event] Drop of Liquid Experience" ) and Player:GetLevel() &lt;= 64 then
+        PlayerInput:Inventory( "[Event] Drop of Liquid Experience" );
+        return false;
+    end
+	
+    if Helper:CheckAvailableInventory( "[Event] Vial of Liquid Experience" ) and Player:GetLevel() &lt;= 64 then
+        PlayerInput:Inventory( "[Event] Vial of Liquid Experience" );
+        return false;
+    end
+	
+    if Helper:CheckAvailableInventory( "[Event] Bottle of Liquid Experience" ) and Player:GetLevel() &lt;= 64 then
+        PlayerInput:Inventory( "[Event] Bottle of Liquid Experience" );
+        return false;
+    end
+    
+	-- Nothing was executed, continue with other functions.
+	return true;	
+end
+
+</code></pre></div>
+
+08/08 Script clean</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=30&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+</html>

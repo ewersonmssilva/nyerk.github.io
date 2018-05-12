@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=18&t=14&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Gunner.lua</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Gunner.lua</h2>
+		<p><a href="viewtopica0ce.html?f=18&amp;t=14">https://www.nyerk.xyz/viewtopic.php?f=18&amp;t=14</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Gunner.lua</h3>
+				<div class="date">Posted: <strong>Wed Jan 18, 2017 11:50 am</strong></div>
+				<div class="author">by <strong>HollyGR</strong></div>
+				<div class="content">Hello, sharing my gunner.lua - I didn't modified it from a long while since is still working perfectly to me without breaks even for all day long.<br>
+I use it with autochain enabled and never had any problem so far, vision skill to refill HP included and working aswell - maybe code could be improved somehow but since everything working to me I didn't touched at all <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> .<br>
+<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius, macrokor, rellis
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--[[
+KNOWN STATE ID'S 
+- State Name = Stunning Shot II - State ID = 679
+- State Name = Stunned - State ID = 8217
+- State Name = Entangling Shot III - State ID = 676
+- State Name = No Name (Godstone: Deltras's Loyalty) State ID = 8540
+- State Name = Shackle Arrow I - State ID = 672
+- State Name = Sleep Arrow I - State ID = 695
+]]--
+
+function CountMobs( EntityTarget, Distance )
+
+	local i = 0;
+	
+	-- Iterate through all entities
+	for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+		-- Check if the entiy is valid.
+		if Entity ~= nil then
+			-- Retrieve the entity state.
+			local EntityState = Entity:GetState();
+			-- Check if the entity state is valid.
+			if EntityState ~= nil then
+				-- Check if this is a living monster that is in range.
+				if Entity:IsMonster() and not Entity:IsDead() and Entity:IsHostile() and EntityTarget:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= Distance then
+					-- Check if this entity is sleeping
+					if EntityState:GetState( Helper:CheckName( "Sleep Arro" )) ~= nil then
+						return 0;
+					-- Increment the number.
+					else
+						i = i + 1;
+					end
+				end
+			end
+		end
+	end
+	
+	return i;
+	
+end
+
+function SleepMultipleAttacker( EntityTarget, AttackRange )
+	-- Check if we have stored a target.
+	if self._SleepTarget ~= nil then
+		-- Check if the current target is the stored target.
+		if self._SleepTarget:GetID() == Player:GetTargetID() then
+			-- Check if Sleep Arrow is available.
+			if Helper:CheckAvailable( "Sleep Arro" ) then
+				-- Shoot the Sleep Arrow.
+				Helper:CheckExecute( "Sleep Arro" );
+				-- Indicate we cannot continue attacking.
+				return false;
+			else
+				-- Set the target.
+				Player:SetTarget( self._SleepTargetRestore );
+				-- Indicate we cannot continue attacking.
+				return false;
+			end
+		-- Check if the current target is the original target.
+		elseif not Helper:CheckAvailable( "Sleep Arro" ) and self._SleepTargetRestore:GetID() == EntityTarget:GetID() then
+			-- Clear the sleep target.
+			self._SleepTarget = nil;
+			-- Indicate we cannot continue attacking.
+			return true;
+		else
+			-- Set the target.
+			Player:SetTarget( self._SleepTarget );
+			-- Indicate we cannot continue attacking.
+			return false;
+		end
+	end
+	-- Check if Sleep Arrow is available.
+	if Helper:CheckAvailable( "Sleep Arro" ) then
+		-- Loop through the entities.
+		for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+			-- Check if this entity is a monster, is not friendly and decided to attack me (and obviously is not my current target).
+			if not Entity:IsDead() and Entity:IsMonster() and not Entity:IsFriendly() and Entity:GetTargetID() == Player:GetID() and Entity:GetID() ~= EntityTarget:GetID() then
+				-- Check if the entity that is attacking us is within range.
+				if Entity:GetPosition():DistanceToPosition( Player:GetPosition()) &lt;= AttackRange then
+					-- Store the sleep target.
+					self._SleepTarget = Entity;
+					-- Store the restore target.
+					self._SleepTargetRestore = EntityTarget;
+					-- Set the target.
+					Player:SetTarget( Entity );
+					-- Indicate we cannot continue attacking.
+					return false;
+				end
+			end
+		end
+	end
+	-- Indicate we can continue attacking.
+	return true;
+end
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned, SkipFocusedEvasion )
+
+	local TripeedFruit = InventoryList["Tripeed Fruit"];
+	local TripeedSeed = InventoryList["Tripeed Seed"];
+	local AttackRange = Player:GetAttackRange();
+	
+	-- Correct the attack range when using Bestial Fury.
+	if Player:GetState():GetState( Helper:CheckName( "Parting Sho" )) then
+		AttackRange = AttackRange - 5;
+	end
+
+	-- Check if we are allowed to sleep attackers.
+	if Settings.Ranger.AllowSleep and not self:SleepMultipleAttacker( Entity, AttackRange ) then
+		return false;
+	end
+	
+	
+	--------------------------------------------------
+	--     I N I T I A L   A T T A C K (S) (I)      --
+	--------------------------------------------------
+	
+	-- Initial Attack 1: Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+	
+	--------------------------------------------------
+	--        N O R M A L   A T T A C K (S)         --
+	--------------------------------------------------
+	
+	-- Demonstration of using the multicast mechanism on a muse.
+--
+-- ~ By Blastradius
+--
+
+-- Contains the multicast level.
+local Level = 0
+-- Contains the previous identifier.
+local PreviousId = 0
+
+--
+-- Perform a begin to end attack routine.
+--
+function OnRun()
+	-- Find the selected target entity.
+	local Target = EntityList:GetEntity(Player:GetTargetId())
+	-- Check if a selected target is available and is alive.
+	if Target ~= nil and not Target:IsDead() then
+		-- Retrieve the skill identifier.
+		local Id = Player:GetSkillId()
+		-- Check if the skill identifier has not been set.
+		if Id == 0 then
+			-- Initialize the multicast level.
+			Level = 0
+			-- Initialize the previous identifier.
+			PreviousId = 0
+			-- Begin with the Incendiary Shell ability.
+			Do("Incendiary Shell");
+		-- Otherwise check if the previous identifier is invalid.
+		elseif PreviousId == 0 then
+			-- Initialize the multicast level.
+			Level = 1
+			-- Set the previous identifier.
+			PreviousId = Id
+		-- Otherwise check if the identifier has increased.
+		elseif Id &gt; PreviousId then
+			-- Increment the multicast level.
+			Level = Level + 1
+			-- Set the previous identifier.
+			PreviousId = Id
+			-- Check if the desired multicast level has been achieved.
+			if Level == 3 then
+				-- End with the Incendiary Shell ability.
+				Do("Incendiary Shell");
+			end
+		end
+	end
+end
+
+--
+-- Perform an ability without condition checking.
+--
+function Do(Name)
+	-- Find the ability with the specified name.
+	local Ability = AbilityList:GetAbility(Name)
+	-- Check if the ability is valid.
+	if Ability ~= nil then
+		-- Input the command to do the ability.
+		PlayerInput:Console("/Skill " .. Ability:GetName())
+	end
+end
+
+		if Helper:CheckAvailable( "Steal Health" ) then
+		Helper:CheckExecute( "Steal Health" );
+		return false;
+		elseif Helper:CheckAvailable( "Remove Shock" ) then 
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+		end
+    	
+    	if Helper:CheckAvailable( "Spend Success" ) and Player:GetDP() &gt;= 2000 then
+		    Helper:CheckExecute( "Spend Success" );
+		   	return false;
+		end
+		
+		if Helper:CheckAvailable( "Bulletproof" ) then
+	    	Helper:CheckExecute( "Bulletproof", Player );
+	    	return false;
+    	end
+		
+		if Helper:CheckAvailable( "Bullet Resistance" )  and Player:GetHealth() &lt;= 70 then
+		    Helper:CheckExecute( "Bullet Resistance" );
+	    	return false;
+	    end
+		
+	
+		if Helper:CheckAvailable( "Autoload" ) and Player:GetManaCurrent() &lt; Player:GetManaMaximum() - 3000 then
+		Helper:CheckExecute( "Autoload", Entity );
+		return false;
+		end 
+		
+	    if Helper:CheckAvailable( "Nature's Favor" ) then
+	    	Helper:CheckExecute( "Nature's Favor", Player );
+	    	return false;
+    	end
+    	if Helper:CheckAvailable( "Aion's Favor" ) then
+	    	Helper:CheckExecute( "Aion's Favor", Player );
+	    	return false;
+	    end
+		if Helper:CheckAvailable( "Pressurized Chamber" ) then
+			Helper:CheckExecute( "Pressurized Chamber", Player );
+			return false;
+		end
+		
+		-- Skills starts
+		
+		if Helper:CheckAvailable( "Hot Shot" ) then                
+                Helper:CheckExecute( "Hot Shot" )                
+                return false;
+        end
+		
+		if Helper:CheckAvailable( "Green Grenade" ) then                
+                Helper:CheckExecute( "Green Grenade" )                
+                return false;
+        end
+		
+        if Helper:CheckAvailable( "Direct Shot" ) then                
+                Helper:CheckExecute( "Direct Shot" )                
+                return false;
+        end
+		
+        if Helper:CheckAvailable( "Hemorrhage Shot" ) then
+                Helper:CheckExecute( "Hemorrhage Shot" )
+                return false;
+        end
+		
+		-- Chain Attack 1: Crosstrigger
+		if Helper:CheckAvailable( "Crosstrigger" ) then
+		Helper:CheckExecute( "Crosstrigger" );
+		end        
+		
+		if Helper:CheckAvailable( "Reload" ) then
+	    	Helper:CheckExecute( "Reload" );
+	    	return false;
+    	end	
+		
+		if Helper:CheckAvailable( "Spinning Fire" ) then
+	    	Helper:CheckExecute( "Spinning Fire" );
+	    	return false;
+    	end	
+		
+        if Helper:CheckAvailable( "Wing Clip" ) then                
+                Helper:CheckExecute( "Wing Clip" )                
+                return false;
+        end
+		
+     	if Helper:CheckAvailable( "Pulverizer Cannon" ) then
+				Helper:CheckExecute( "Pulverizer Cannon" );
+		end 
+		
+        if Helper:CheckAvailable( "Quieting Gale" ) then
+                Helper:CheckExecute( "Quieting Gale" )                
+                return false;
+        end	
+		               
+        if Helper:CheckAvailable( "Autoload" ) then
+			Helper:CheckExecute( "Autoload" );
+			return false;
+		end
+		
+        if Helper:CheckAvailable( "Steady Fire" ) then
+            Helper:CheckExecute( "Steady Fire" )
+            return false;
+        end	
+		
+		if Helper:CheckAvailable( "Anti-Enemy Fire " ) then
+            Helper:CheckExecute( "Anti-Enemy Fire " )
+            return false;
+        end	
+      	    
+end
+
+--- Perform healing checks both in and our of combat.
+--
+-- @param	bool	Indicates whether or not the function is running before force checks.
+-- @return	bool
+
+function Heal( BeforeForce )
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end
+
+--- Perform the safety checks before moving to the next target.
+--
+-- @return	bool
+
+function Pause()
+	
+	-- Nothing was executed, continue with other functions.
+	return true;
+	
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Wed Feb 01, 2017 8:45 am</strong></div>
+				<div class="author">by <strong>kendhc</strong></div>
+				<div class="content">Hi,<br>
+i was wondering if you had an improved version, and also how to make the gunner bot stay in one place while farming, so it doesnt aggro primordials etc.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Wed Feb 01, 2017 10:08 am</strong></div>
+				<div class="author">by <strong>HollyGR</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist0919.html?mode=viewprofile&amp;u=86">kendhc</a> wrote: <a href="viewtopic8cf7.html?p=51#p51" data-post-id="51" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Feb 01, 2017 8:45 am</div></cite>
+Hi,<br>
+i was wondering if you had an improved version, and also how to make the gunner bot stay in one place while farming, so it doesnt aggro primordials etc.
+</div></blockquote>
+
+I don't have any improved version since it works simply perfectly for me, can kill mobs for whole day long without any break or death at all.<br>
+To put a character into one spot and make it kill the same mob all the time just select the official grinderframework from aionscript without selecting any pathway so it won't move at all and just aggro the mob really next to him, if that will not be enough just go look somewhere into settings.lua of officialgrinderframework about that string and modify it with your personal needs  <img class="smilies" src="images/smilies/icon_mrgreen.gif" width="15" height="17" alt=":mrgreen:" title="Mr. Green"> 
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Contains the maximum distance of the area in which to search for targets (Requires AllowTargetSearch).
+	self.TargetSearchDistance = 15;</code></pre></div>
+
+If you put the character-bot into a cool spot it will not aggro any other entity <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"> .</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Wed Feb 01, 2017 12:52 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">It contains unnecessary Ranger things. I guess you may clear them. also wrong functions etc. For example, in attack function, there are "OnRun" and "Do(Name)". They should be separated functions and they are unnecessary. Also, You use sleep arrow ? <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function SleepMultipleAttacker( EntityTarget, AttackRange )</code></pre></div> Or you use seed ?? <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TripeedFruit = InventoryList["Tripeed Fruit"]; local TripeedSeed = InventoryList["Tripeed Seed"];</code></pre></div>  And you dont use <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CountMobs( EntityTarget, Distance )</code></pre></div> anywhere. Just delete</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Fri Feb 03, 2017 10:36 am</strong></div>
+				<div class="author">by <strong>HollyGR</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic2dc8.html?p=56#p56" data-post-id="56" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Feb 01, 2017 12:52 pm</div></cite>
+It contains unnecessary Ranger things. I guess you may clear them. also wrong functions etc. For example, in attack function, there are "OnRun" and "Do(Name)". They should be separated functions and they are unnecessary. Also, You use sleep arrow ? <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function SleepMultipleAttacker( EntityTarget, AttackRange )</code></pre></div> Or you use seed ?? <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TripeedFruit = InventoryList["Tripeed Fruit"]; local TripeedSeed = InventoryList["Tripeed Seed"];</code></pre></div>  And you dont use <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CountMobs( EntityTarget, Distance )</code></pre></div> anywhere. Just delete
+</div></blockquote>
+
+Well, I just shared what I was and still using since is still working perfectly <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> - is not made by myself and I didn't modified anything beside adding the vision skill  <img class="smilies" src="images/smilies/icon_lol.gif" width="15" height="17" alt=":lol:" title="Laughing"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Fri Feb 10, 2017 2:10 am</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">What Stigmas i Need to add too my gunner that this script works?<br>
+<br>
+thx</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Mon Mar 06, 2017 12:43 pm</strong></div>
+				<div class="author">by <strong>pawelgbw</strong></div>
+				<div class="content">How to check the current gun on himself,<br>
+How can it change?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Mon Mar 06, 2017 12:50 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist30b7.html?mode=viewprofile&amp;u=128">pawelgbw</a> wrote: <a href="viewtopic3cee.html?p=323#p323" data-post-id="323" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Mar 06, 2017 12:43 pm</div></cite>
+How to check the current gun on himself,<br>
+How can it change?
+</div></blockquote>
+
+Check Templar.lua inside Classes folder and make sure you are using "AionScript Release 28.02.2017".</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Mon Mar 06, 2017 4:43 pm</strong></div>
+				<div class="author">by <strong>pawelgbw</strong></div>
+				<div class="content">/Change Weapon - How to do it in AionScript?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Gunner.lua</h3>
+				<div class="date">Posted: <strong>Thu Mar 09, 2017 7:17 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">If you wanna switch use macro command function and then use "/changeweaponset" like this:<br>
+<br>
+PlayerInput:Console("/changeweaponset")<br>
+<br>
+After that check what weapon you have equipped with the function like in Templar.lua.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=18&t=14&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:25 GMT -->
+</html>

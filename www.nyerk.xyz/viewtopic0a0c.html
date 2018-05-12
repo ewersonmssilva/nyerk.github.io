@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=9&t=7&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Official: Assassin.lua - Page 2</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Official: Assassin.lua</h2>
+		<p><a href="viewtopicdbfb.html?f=9&amp;t=7">https://www.nyerk.xyz/viewtopic.php?f=9&amp;t=7</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>3</strong></div>
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Mon Feb 27, 2017 6:44 pm</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content">Updated. The teleport behind target skill has been improved.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Tue Feb 28, 2017 4:01 am</strong></div>
+				<div class="author">by <strong>crazymonkey84</strong></div>
+				<div class="content">oic<br>
+<br>
+<br>
+if i dont have the exact stigma skills u listed above it wont work at all?<br>
+<br>
+i though it should at least use the stigmas i have on, and skip the ones i dont.<br>
+<br>
+Ill change stigmas when i get home and try again<br>
+<br>
+TY 4 ur support</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Tue Feb 28, 2017 4:18 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">Thx 0x00 for your great work. Can U maybe add this under your Apply Deadly Poison Buff Line<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Transformation: Slayer
+	   -- Buff 2: Transformation: Slayer
+	        if Player:GetState():GetState( Helper:CheckName( "Transformation: Slayer" )) == nil and Helper:CheckAvailable( "Transformation: Slayer" ) then
+					Helper:CheckExecute( "Transformation: Slayer" );
+	    end
+		   -- Transformation: Avatar of Fire
+		 -- Buff 3: Compassion of Fire
+	        if Player:GetState():GetState( Helper:CheckName( "Compassion of Fire" )) == nil and Helper:CheckAvailable( "Compassion of Fire" ) then
+					Helper:CheckExecute( "Compassion of Fire" );
+	    end</code></pre></div>
+
+I tested it on EU and it works Great. Maybe NA guys Need to Change the Skill names idk.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Mon Mar 06, 2017 3:25 am</strong></div>
+				<div class="author">by <strong>0x00</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopica8da.html?p=282#p282" data-post-id="282" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Feb 28, 2017 4:18 pm</div></cite>
+Thx 0x00 for your great work. Can U maybe add this under your Apply Deadly Poison Buff Line<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Transformation: Slayer
+	   -- Buff 2: Transformation: Slayer
+	        if Player:GetState():GetState( Helper:CheckName( "Transformation: Slayer" )) == nil and Helper:CheckAvailable( "Transformation: Slayer" ) then
+					Helper:CheckExecute( "Transformation: Slayer" );
+	    end
+		   -- Transformation: Avatar of Fire
+		 -- Buff 3: Compassion of Fire
+	        if Player:GetState():GetState( Helper:CheckName( "Compassion of Fire" )) == nil and Helper:CheckAvailable( "Compassion of Fire" ) then
+					Helper:CheckExecute( "Compassion of Fire" );
+	    end</code></pre></div>
+
+I tested it on EU and it works Great. Maybe NA guys Need to Change the Skill names idk.
+</div></blockquote>
+
+Added. I'm going to add an IF statement to check if it's elyos first!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Thu Aug 17, 2017 5:48 am</strong></div>
+				<div class="author">by <strong>maq2285</strong></div>
+				<div class="content">Im getting This "- [string "Assassin.lua"]:265: '&lt;name&gt;' expected near '&lt;eof&gt;'<br>
+- Unable to find a class or player controller!<br>
+- invalid arguments to method call" message when trying this script, what am i doing wrong?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Thu Aug 17, 2017 12:16 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistd942.html?mode=viewprofile&amp;u=49">0x00</a> wrote: <a href="viewtopice513.html?p=320#p320" data-post-id="320" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Mar 06, 2017 3:25 am</div></cite>
+<blockquote><div><cite><a href="memberlist2a32.html?mode=viewprofile&amp;u=82">FarAwaY</a> wrote: <a href="viewtopica8da.html?p=282#p282" data-post-id="282" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Feb 28, 2017 4:18 pm</div></cite>
+Thx 0x00 for your great work. Can U maybe add this under your Apply Deadly Poison Buff Line<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Transformation: Slayer
+	   -- Buff 2: Transformation: Slayer
+	        if Player:GetState():GetState( Helper:CheckName( "Transformation: Slayer" )) == nil and Helper:CheckAvailable( "Transformation: Slayer" ) then
+					Helper:CheckExecute( "Transformation: Slayer" );
+	    end
+		   -- Transformation: Avatar of Fire
+		 -- Buff 3: Compassion of Fire
+	        if Player:GetState():GetState( Helper:CheckName( "Compassion of Fire" )) == nil and Helper:CheckAvailable( "Compassion of Fire" ) then
+					Helper:CheckExecute( "Compassion of Fire" );
+	    end</code></pre></div>
+
+I tested it on EU and it works Great. Maybe NA guys Need to Change the Skill names idk.
+</div></blockquote>
+
+Added. I'm going to add an IF statement to check if it's elyos first!
+</div></blockquote>
+
+I got no 75 so i dont have fire transformation in my script, but i have Slayer and use it kinda like a mana potion.<br>
+I check if Player misses 2000 mana and then execute Slayer to keep the bot running longer without needing to rest.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		if Player:GetManaCurrent() &lt; Player:GetManaMaximum() - 2000 and Helper:CheckAvailable( "Transformation: Slayer" ) then
+		Helper:CheckExecute( "Transformation: Slayer" );
+			return false;
+		end</code></pre></div>
+Assassination is only used if enemy is poisioned:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Attack 2: Assassination
+	if EntityState:GetState( 9100 ) ~= nil and Helper:CheckAvailable( "Assassination" ) then
+		Helper:CheckExecute( "Assassination" );
+		return false;							  
+	end</code></pre></div>
+Quickening Doom also only makes sence if enemy is poisened
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Check if Deadly Poison procced and then QD enemy
+	if Helper:CheckAvailable( "Quickening Doom" ) and EntityState:GetState( 9100 ) ~= nil then
+		Helper:CheckExecute( "Quickening Doom" );
+		return false;								   
+	end</code></pre></div>
+Blood Rune is also very usefull for more sustain
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Check if we have enough runes carved on the target.
+	if Runes &gt;= 3 then
+		if Helper:CheckAvailable( "Blood Rune" ) and Player:GetHealthCurrent() &lt; Player:GetHealthMaximum() * 0.85 then
+			Helper:CheckExecute( "Blood Rune" );
+			return false;
+		end</code></pre></div>
+As i use some other Stigmas i have more buffs
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		if Helper:CheckAvailable( "Oath of Accuracy" ) then
+			Helper:CheckExecute( "Oath of Accuracy" );
+			return false;
+		end
+		
+		if Helper:CheckAvailable( "Deadly Abandon" ) then
+			Helper:CheckExecute( "Deadly Abandon" );
+			return false;
+		end</code></pre></div>
+Also i got some other tweaks, ill comment some stuff i have changed in my assassin.lua later when im at home or have some free time at work.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Thu Aug 17, 2017 4:00 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">U dont Need to be 75 to have the fire Transformation ^^ from  lvl 66 u get noob fire transformation</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Sun Aug 20, 2017 3:12 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">What it does ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 5:48 pm</strong></div>
+				<div class="author">by <strong>maq2285</strong></div>
+				<div class="content">Anyone got the updated Slayer form to work? please share your code ^^</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Assassin.lua</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 6:18 pm</strong></div>
+				<div class="author">by <strong>sergeas</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb7e0.html?mode=viewprofile&amp;u=182">maq2285</a> wrote: <a href="viewtopica563.html?p=1307#p1307" data-post-id="1307" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 22, 2017 5:48 pm</div></cite>
+Anyone got the updated Slayer form to work? please share your code ^^
+</div></blockquote>
+
+<br>
+NA version:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Transformation: Slayer
+	if Player:GetState():GetState( Helper:CheckName( "Slayer Form I" )) == nil and Helper:CheckAvailable( "Slayer Form I" ) then
+		Helper:CheckExecute( "Slayer Form I" );
+		return false;
+	end</code></pre></div></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>2</strong> of <strong>3</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=9&t=7&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:12 GMT -->
+</html>

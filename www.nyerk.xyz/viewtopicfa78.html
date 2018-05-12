@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=331&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; AionInterface.dll Update 17.01.2018 (NA ONLY!) - Page 2</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>AionInterface.dll Update 17.01.2018 (NA ONLY!)</h2>
+		<p><a href="viewtopic52fa.html?f=4&amp;t=331">https://www.nyerk.xyz/viewtopic.php?f=4&amp;t=331</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Tue Jan 23, 2018 10:48 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic9dc4.html?p=2090#p2090" data-post-id="2090" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Jan 20, 2018 4:42 pm</div></cite>
+<blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic00bc.html?p=2089#p2089" data-post-id="2089" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Jan 20, 2018 2:08 pm</div></cite>
+Bugs: Conditional skills work sometimes, and Multicast skills don't work. I don't know anything about multilevel skills yet.<br>
+What I do is;
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>PlayerInput:Console("/skill Annihilation");
+	if AbilityList:GetAbility( "Blast"):GetCooldown() == 0  then 
+	PlayerInput:Console("/skill Blast");
+	end
+	if AbilityList:GetAbility( "Resonance Haze"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Resonance Haze");
+	end
+	if AbilityList:GetAbility( "Soul Crush"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Soul Crush");
+	end
+	if AbilityList:GetAbility( "Parrying Strike"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Parrying Strike");
+	end
+	if AbilityList:GetAbility( "Splash Swing"):GetCooldown() == 0  then
+	PlayerInput:Console("/skill Splash Swing");
+	end</code></pre></div>
+</div></blockquote>
+
+so hows this solution? is it working so far? my chanter is playing on retard mode now haha<br>
+<br>
+edit* did u find solutions for remove shock not working yet?<br>
+edit 2* are these your workaround for chain skills and conditions skills not working? how are they working so far?<br>
+edit 3* if you know how to get and update skill.xml, maybe i can give a hand
+</div></blockquote>
+
+Multicast of Sorcerer works (Wind Spear)<br>
+Please send me via PM an NA account with chanter on it so i can fix it.<br>
+Also know that there is a certain chance that you will get banned for account sharing due to that i will login from germany.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Wed Jan 24, 2018 2:51 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">its fine now nucular. using agonics method, i managed to fix it. altho not all of it but the more express concerns has been dealt with.<br>
+<br>
+im gonna try on other classes now since i have each of the class. when i find something new, ill have the list here stat! thanks for the offer, ill let u know soon what I find out!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Thu Jan 25, 2018 2:01 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">By the way, auto-chain and react is working on old cheating2.dll</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Wed Jan 31, 2018 8:17 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">u mind sharing the old cheating 2.dll? <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: AionInterface.dll Update 17.01.2018 (NA ONLY!)</h3>
+				<div class="date">Posted: <strong>Thu Feb 01, 2018 1:15 am</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopic77e5.html?p=2131#p2131" data-post-id="2131" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Jan 31, 2018 8:17 am</div></cite>
+u mind sharing the old cheating 2.dll? <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">
+</div></blockquote>
+
+I can <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";)" title="Wink"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>2</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=4&t=331&start=10&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:41:41 GMT -->
+</html>

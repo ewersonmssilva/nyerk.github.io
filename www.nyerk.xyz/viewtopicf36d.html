@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=200&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Trying to create a specific behavior. Can someone help?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Trying to create a specific behavior. Can someone help?</h2>
+		<p><a href="viewtopic7eb2.html?f=6&amp;t=200">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=200</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Wed Jul 26, 2017 3:47 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">So Im trying to create this specific behavior in my grinder framework, something that makes my toon say something. For example, that macro you make when an entity is casting a skill, and you shout out the name of the person being targeted, like in Infinity Shard when fighting Hyperion. <br>
+<br>
+I tried looking up old grinders to find something that has an enemy entity casting this specific skill so I can set what behavior my toon does afterwards, but theres no such things. but ive seen it being done by someone, so I know theres a way to do this.<br>
+<br>
+Basically I wanna make a line in my grinder that will make my character shout something i write in "here" when my target is casting a specific skill to warn people in my party that hes doing that skill.<br>
+<br>
+Can someone help, or this feature is a bit too advanced?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Wed Jul 26, 2017 6:31 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">basically. this is target' target. can add skill warning
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>timer = 0
+wait = 1000
+
+function OnRun()
+
+	local Entity = EntityList:GetEntity( Player:GetTargetID());
+	if Entity ~= nil then
+		local entity = EntityList:GetEntity( Entity:GetTargetID());
+		
+		if Time() &gt; timer then
+			if entity ~= nil then
+				Write(entity:GetName())
+				PlayerInput:Console(entity:GetName().." was Targeted !!" .. " by "..Entity:GetName())
+			end
+		timer = Time() + wait
+		end
+	end	
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 5:24 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopicac40.html?p=1079#p1079" data-post-id="1079" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Wed Jul 26, 2017 6:31 pm</div></cite>
+basically. this is target' target. can add skill warning
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>timer = 0
+wait = 1000
+
+function OnRun()
+
+	local Entity = EntityList:GetEntity( Player:GetTargetID());
+	if Entity ~= nil then
+		local entity = EntityList:GetEntity( Entity:GetTargetID());
+		
+		if Time() &gt; timer then
+			if entity ~= nil then
+				Write(entity:GetName())
+				PlayerInput:Console(entity:GetName().." was Targeted !!" .. " by "..Entity:GetName())
+			end
+		timer = Time() + wait
+		end
+	end	
+end</code></pre></div>
+</div></blockquote>
+
+I dont understand this code. I put it exactly as is in my grinder lua, but it doesnt do anything. Should I edit anything first before I can use it properly? I dont see my toon trying to say anything at all.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 5:39 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">what if I wanna do something like this?<br>
+<br>
+"if entity is casting [insert skill here], say in console "target of skill and say something here"<br>
+<br>
+can we make a code for something like this?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 12:01 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">I know what you wanna do actually i hate cheating in pvp but still i tell you where you find the needed code.<br>
+<br>
+This code could also allow to automate perfect rippling of aoe cc skills like Fear Shrek or Sleep Storm.<br>
+It could also allow to counter instant vision sleep from Sorcerer as a Bard for example.<br>
+You have to iterate over all enemy players and then use:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:GetSkillID() ~= 0 then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "Sleep Storm" ) ~= nil then
+		....
+	end
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 12:26 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicc30e.html?p=1083#p1083" data-post-id="1083" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:01 pm</div></cite>
+I know what you wanna do actually i hate cheating in pvp but still i tell you where you find the needed code.<br>
+<br>
+This code could also allow to automate perfect rippling of aoe cc skills like Fear Shrek or Sleep Storm.<br>
+It could also allow to counter instant vision sleep from Sorcerer as a Bard for example.<br>
+You have to iterate over all enemy players and then use:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:GetSkillID() ~= 0 then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "Sleep Storm" ) ~= nil then
+		....
+	end
+end
+</code></pre></div>
+</div></blockquote>
+
+no i dont pvp in aion. thats too risky lol. i only do pve cuz i use aion as side income. believe it or not, playing aion and just focusing for pve, it pays for all my utility bills every month and some snacks at the side. true story. <br>
+<br>
+not kidding about the pvp part either. i relly dont pvp. too much risk of getting caught :p<br>
+<br>
+so no worries there. even I hold onto some ethics in game as well <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 12:29 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicc30e.html?p=1083#p1083" data-post-id="1083" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:01 pm</div></cite>
+I know what you wanna do actually i hate cheating in pvp but still i tell you where you find the needed code.<br>
+<br>
+This code could also allow to automate perfect rippling of aoe cc skills like Fear Shrek or Sleep Storm.<br>
+It could also allow to counter instant vision sleep from Sorcerer as a Bard for example.<br>
+You have to iterate over all enemy players and then use:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:GetSkillID() ~= 0 then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "Sleep Storm" ) ~= nil then
+		....
+	end
+end
+</code></pre></div>
+</div></blockquote>
+
+so which part do I edit to shout in console, "PLAYER is being targeted by Hyperion, get away" ?<br>
+<br>
+I assume, the sleep storm part, I can change it into any skill name that the mob will cast, for example reflect, then say "stop dps, mob will reflect" or something?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 2:09 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopicbb4b.html?p=1085#p1085" data-post-id="1085" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:29 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicc30e.html?p=1083#p1083" data-post-id="1083" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:01 pm</div></cite>
+I know what you wanna do actually i hate cheating in pvp but still i tell you where you find the needed code.<br>
+<br>
+This code could also allow to automate perfect rippling of aoe cc skills like Fear Shrek or Sleep Storm.<br>
+It could also allow to counter instant vision sleep from Sorcerer as a Bard for example.<br>
+You have to iterate over all enemy players and then use:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:GetSkillID() ~= 0 then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "Sleep Storm" ) ~= nil then
+		....
+	end
+end
+</code></pre></div>
+</div></blockquote>
+
+so which part do I edit to shout in console, "PLAYER is being targeted by Hyperion, get away" ?<br>
+<br>
+I assume, the sleep storm part, I can change it into any skill name that the mob will cast, for example reflect, then say "stop dps, mob will reflect" or something?
+</div></blockquote>
+
+Yes, but it will permanently spam the console with your message.<br>
+You have to add an timer that it will tell you it only every 3 seconds or something like that.<br>
+<br>
+You can replace for example the ... with your wanted Write() or PlayerInput:Console() Function.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Write("Sleep Storm casted on target id " .. Entity:GetTargetId() )</code></pre></div>
+
+To get the Entity Target by Id:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TargetEntity = EntityList:GetEntity( Entity:GetTargetId() );
+if TargetEntity ~= nil then
+	Write("Sleep Storm is casted on " .. TargetEntity:GetName() .. " by " .. Entity:GetName() );
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Thu Jul 27, 2017 2:09 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopicbb4b.html?p=1085#p1085" data-post-id="1085" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:29 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicc30e.html?p=1083#p1083" data-post-id="1083" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:01 pm</div></cite>
+I know what you wanna do actually i hate cheating in pvp but still i tell you where you find the needed code.<br>
+<br>
+This code could also allow to automate perfect rippling of aoe cc skills like Fear Shrek or Sleep Storm.<br>
+It could also allow to counter instant vision sleep from Sorcerer as a Bard for example.<br>
+You have to iterate over all enemy players and then use:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:GetSkillID() ~= 0 then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "Sleep Storm" ) ~= nil then
+		....
+	end
+end
+</code></pre></div>
+</div></blockquote>
+
+so which part do I edit to shout in console, "PLAYER is being targeted by Hyperion, get away" ?<br>
+<br>
+I assume, the sleep storm part, I can change it into any skill name that the mob will cast, for example reflect, then say "stop dps, mob will reflect" or something?
+</div></blockquote>
+
+Yes, but it will permanently spam the console with your message.<br>
+You have to add an timer that it will tell you it only every 3 seconds or something like that.<br>
+<br>
+You can replace for example the ... with your wanted Write() or PlayerInput:Console() Function.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Write("Sleep Storm casted on target id " .. Entity:GetTargetId() )</code></pre></div>
+
+To get the Entity Target by Id:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TargetEntity = EntityList:GetEntity( Entity:GetTargetId() );
+if TargetEntity ~= nil then
+	Write("Sleep Storm is casted on " .. TargetEntity:GetName() .. " by " .. Entity:GetName() );
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Trying to create a specific behavior. Can someone help?</h3>
+				<div class="date">Posted: <strong>Fri Jul 28, 2017 1:34 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopic4413.html?p=1087#p1087" data-post-id="1087" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 2:09 pm</div></cite>
+<blockquote><div><cite><a href="memberlist6f62.html?mode=viewprofile&amp;u=61">creatine</a> wrote: <a href="viewtopicbb4b.html?p=1085#p1085" data-post-id="1085" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:29 pm</div></cite>
+<blockquote><div><cite><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2">nucular</a> wrote: <a href="viewtopicc30e.html?p=1083#p1083" data-post-id="1083" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Jul 27, 2017 12:01 pm</div></cite>
+I know what you wanna do actually i hate cheating in pvp but still i tell you where you find the needed code.<br>
+<br>
+This code could also allow to automate perfect rippling of aoe cc skills like Fear Shrek or Sleep Storm.<br>
+It could also allow to counter instant vision sleep from Sorcerer as a Bard for example.<br>
+You have to iterate over all enemy players and then use:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Entity:GetSkillID() ~= 0 then
+	local Skill = SkillList:GetSkill( Entity:GetSkillID());
+	if Skill ~= nil and string.find( Skill:GetName(), "Sleep Storm" ) ~= nil then
+		....
+	end
+end
+</code></pre></div>
+</div></blockquote>
+
+so which part do I edit to shout in console, "PLAYER is being targeted by Hyperion, get away" ?<br>
+<br>
+I assume, the sleep storm part, I can change it into any skill name that the mob will cast, for example reflect, then say "stop dps, mob will reflect" or something?
+</div></blockquote>
+
+Yes, but it will permanently spam the console with your message.<br>
+You have to add an timer that it will tell you it only every 3 seconds or something like that.<br>
+<br>
+You can replace for example the ... with your wanted Write() or PlayerInput:Console() Function.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>Write("Sleep Storm casted on target id " .. Entity:GetTargetId() )</code></pre></div>
+
+To get the Entity Target by Id:
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>local TargetEntity = EntityList:GetEntity( Entity:GetTargetId() );
+if TargetEntity ~= nil then
+	Write("Sleep Storm is casted on " .. TargetEntity:GetName() .. " by " .. Entity:GetName() );
+end
+</code></pre></div>
+</div></blockquote>
+
+ok thanks. so after mixing ur code with a line of what agonic gave me up there, I manage to make my toon say something when enemy casting a specific skill on me, only problem is, instead of saying the targets name, it says:<br>
+<br>
+"[SKILLNAME] casted on target id 3692...."<br>
+<br>
+it literally put number in place of player name lol. how do I change the number, so my toon says player name instead?</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=200&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:31 GMT -->
+</html>

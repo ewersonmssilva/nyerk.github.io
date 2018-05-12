@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=142&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; OfficialGrinderFramework</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>OfficialGrinderFramework</h2>
+		<p><a href="viewtopic328f.html?f=8&amp;t=142">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=142</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>OfficialGrinderFramework</h3>
+				<div class="date">Posted: <strong>Fri Apr 28, 2017 7:06 am</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content">Hello guys, I started using the GrinderFramework with low level characters &lt;10, I noticed the function that checks Hp / Mana and triggers Togle Rest is not working, it's a little bit problematic for first levels and classes with poor mana management. The current code of GrinderFramework for this is:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>			-- When we are resting, wait until we are back at full health or start attacking when attacked.
+			elseif self._IsResting then
+				
+				if Framework:FindTarget( true, Player:GetPosition()) ~= nil then
+					self._IsResting = false;
+				else
+					-- Check the resting state and toggle rest when we have finished moving.
+					if not Player:IsResting() and not Player:IsMoving() then
+						PlayerInput:Ability( "Toggle Rest" );
+						return false;
+					end
+					
+					-- Nothing seems to be wrong so wait until we are back at full health and mana.
+					if Player:GetHealth() == 100 and Player:GetManaCurrent() == Player:GetManaMaximum() and 		Player:GetFlightTime() == 100 then
+						self._IsResting = false;
+						return false;
+					end
+				end</code></pre></div>
+
+Is there a way to fix this?, for some clases like sorcerer, sm, gunner to rest mana is a must :/</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: OfficialGrinderFramework</h3>
+				<div class="date">Posted: <strong>Fri Apr 28, 2017 11:09 am</strong></div>
+				<div class="author">by <strong>lalakis</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopic7d87.html?p=771#p771" data-post-id="771" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Apr 28, 2017 7:06 am</div></cite>
+Hello guys, I started using the GrinderFramework with low level characters &lt;10, I noticed the function that checks Hp / Mana and triggers Togle Rest is not working, it's a little bit problematic for first levels and classes with poor mana management. The current code of GrinderFramework for this is:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>			-- When we are resting, wait until we are back at full health or start attacking when attacked.
+			elseif self._IsResting then
+				
+				if Framework:FindTarget( true, Player:GetPosition()) ~= nil then
+					self._IsResting = false;
+				else
+					-- Check the resting state and toggle rest when we have finished moving.
+					if not Player:IsResting() and not Player:IsMoving() then
+						PlayerInput:Ability( "Toggle Rest" );
+						return false;
+					end
+					
+					-- Nothing seems to be wrong so wait until we are back at full health and mana.
+					if Player:GetHealth() == 100 and Player:GetManaCurrent() == Player:GetManaMaximum() and 		Player:GetFlightTime() == 100 then
+						self._IsResting = false;
+						return false;
+					end
+				end</code></pre></div>
+
+Is there a way to fix this?, for some clases like sorcerer, sm, gunner to rest mana is a must :/
+</div></blockquote>
+these days i lvl up a lot chars so the bot from lvl 1 works ok. just need to enable rest for hp and mp from settings.lua</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=142&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:10 GMT -->
+</html>

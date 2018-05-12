@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=269&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Can AionScript read chat?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Can AionScript read chat?</h2>
+		<p><a href="viewtopicaf1a.html?f=6&amp;t=269">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=269</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+					<div class="post">
+				<h3>Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Fri Sep 15, 2017 11:20 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Can AionScript read the chat text?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 11:03 am</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">I think it can't but why are u asking ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 11:49 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">To monitoring quest status.<br>
+Some quest ask "kill x mob" and i don't know how to keep count of mob killed. <img class="smilies" src="images/smilies/icon_neutral.gif" width="15" height="17" alt=":|" title="Neutral"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 1:13 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">It can't read but there is a program "Macro Recorder" It can all of them check it</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 2:25 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">i dont think i can read chat with Media recorder</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 2:49 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">aionrainmeter can. also has trigger/warning for specialized chat words/sentences</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 4:19 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">M A D has something similar to rainmeter but i guess there is no way to combine those programms with aion script.<br>
+Lua should be able to read text files (with some libs) so maybe on that way it could read the chatlog.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 4:45 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Hi,<br>
+<br>
+i will add quest support to AionScript.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 4:49 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist90d8.html?mode=viewprofile&amp;u=48">agonic</a> wrote: <a href="viewtopic071e.html?p=1511#p1511" data-post-id="1511" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Sep 16, 2017 2:49 pm</div></cite>
+aionrainmeter can. also has trigger/warning for specialized chat words/sentences
+</div></blockquote>
+
+i can read chat log. The problem is multiclient or Sandiebox. No way to know which character kill a specific mob. Alternative is copy aion folder for each client, hard to do.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Can AionScript read chat?</h3>
+				<div class="date">Posted: <strong>Sat Sep 16, 2017 8:13 pm</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">DumpQuests.lua
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function ListIterator(o)
+	local e = o:GetEnumerator();
+	return function()
+		if e:MoveNext() then
+			return e.Current;
+		end
+	end
+end
+
+Write("Dumping current quests and its progress:")
+for Quest in ListIterator( QuestList:GetList()) do
+	Write( "http://aiondatabase.net/en/quest/" .. Quest:GetID() .. "/ ProgressValue: " .. Quest:GetProgressVar() );
+end
+
+-- example check quest for finished state of quest
+local Quest = QuestList:GetQuest(2002)
+if Quest ~= nil and Quest:GetProgressVar() == "103:30000" then
+	Write("Done with Quest")
+end</code></pre></div>
+
+So how to use it?<br>
+Accept the quest and kill all mobs.<br>
+Now run the script and find the quest and it's progress result.<br>
+<br>
+Have fun <img class="smilies" src="images/smilies/icon_e_wink.gif" width="15" height="17" alt=";-)" title="Wink"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=269&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:16 GMT -->
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=12&t=17&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Functional templar LUA</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Functional templar LUA</h2>
+		<p><a href="viewtopic217e.html?f=12&amp;t=17">https://www.nyerk.xyz/viewtopic.php?f=12&amp;t=17</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Functional templar LUA</h3>
+				<div class="date">Posted: <strong>Sun Jan 29, 2017 8:18 am</strong></div>
+				<div class="author">by <strong>crazymonkey84</strong></div>
+				<div class="content">Hi there i just want to share my templar.lua<br>
+<br>
+I finally made it work, it works well, not perfect but well xD<br>
+
+<div class="inline-attachment">
+			
+		
+		
+				<dl class="file">
+			<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="download/file3a9f.php?id=6">Templar.rar</a></dt>
+			<dd><em>i hope u find it useful (TEMPLAR LUA)</em></dd>			<dd>(3.63 KiB) Downloaded 68 times</dd>
+		</dl>
+		
+		
+			</div>
+
+hope u find it useful!!<br>
+<br>
+Regards</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Functional templar LUA</h3>
+				<div class="date">Posted: <strong>Sun Jan 29, 2017 12:28 pm</strong></div>
+				<div class="author">by <strong>ugel</strong></div>
+				<div class="content">thx  <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> <br>
+<br>
+<br>
+Regrads<br>
+ ++TAG the scripts for NA or EU ,would be nice++</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Functional templar LUA</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 8:52 am</strong></div>
+				<div class="author">by <strong>andres</strong></div>
+				<div class="content">Hello, just download the new AS, but I'm seeing that it does not sit down when the mana or p are low, also uses the potions very rarely, please help me to feel at least a while to recover the mana and hp.<br>
+Here I attached my Templar.lua, comment some lines because it was consuming the mana very fast and is not using well the potions, with the previous AS Kopie update np stopped killing and never died, but frozen many times, I threw send log many times.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function Attack( Entity, Range, Stunned )
+
+if self.AttackStarted ~= Entity:GetID() then
+self.AttackStarted = Entity:GetID();
+Helper:CheckExecute( "Attack/Chat " );
+
+end 
+Helper:CheckExecute( "Attack/Chat" );
+if Helper:CheckAvailable( "Reroute Power" ) and Range &lt;= 6 then
+Helper:CheckExecute( "Reroute Power" );
+
+end
+if Helper:CheckAvailable( "Empyrean Fury" ) and Range &lt;= 6 then
+Helper:CheckExecute( "Empyrean Fury" );
+
+end
+if Helper:CheckAvailable( "Divine Fury" ) and Range &lt;= 6 then
+Helper:CheckExecute( "Divine Fury" );
+
+end
+if Helper:CheckAvailable( "Break Power" ) then
+Helper:CheckExecute( "Break Power" );
+
+end
+if Helper:CheckAvailable( "Pitiless Blow" ) then
+Helper:CheckExecute( "Pitiless Blow" );
+
+end
+if Helper:CheckAvailable( "Courageous Shield" ) then
+Helper:CheckExecute( "Courageous Shield" );
+
+end
+if Helper:CheckAvailable( "Face Smash" ) then
+Helper:CheckExecute( "Face Smash" );
+
+end
+if Helper:CheckAvailable( "Shield Counter" ) then
+Helper:CheckExecute( "Shield Counter" );
+
+end
+if Helper:CheckAvailable( "Face Smash" ) then
+Helper:CheckExecute( "Face Smash" );
+
+end
+if Helper:CheckAvailable( "Avenging Blow" ) then
+Helper:CheckExecute( "Avenging Blow" );
+
+end
+if Helper:CheckAvailable( "Face Smash" ) then
+Helper:CheckExecute( "Face Smash" );
+
+end
+if Helper:CheckAvailable( "Remove Shock" ) then
+Helper:CheckExecute( "Remove Shock" );
+
+end
+if Helper:CheckAvailable( "Refresh Spirit" ) then
+Helper:CheckExecute( "Refresh Spirit" );
+
+end
+
+
+-- ATAQUES CHAIN
+--PRIMER ATAQUE
+if Helper:CheckAvailable( "Dazing Severe Blow" ) then
+self.FerociousTrigger = true;
+Helper:CheckExecute( "Dazing Severe Blow" );
+
+end
+if Helper:CheckAvailable( "Divine Blow" ) then
+Helper:CheckExecute( "Divine Blow" );
+
+end
+if Helper:CheckAvailable( "Judgement" ) then
+Helper:CheckExecute( "Judgement" );
+
+end
+
+
+
+--SEGUNDO ATAQUE
+if Helper:CheckAvailable( "Ferocious Strike" ) then
+Helper:CheckExecute( "Ferocious Strike" );
+
+end
+if Helper:CheckAvailable( "Rage" ) then
+Helper:CheckExecute( "Rage" );
+
+elseif Helper:CheckAvailable( "Robust Blow" ) then
+Helper:CheckExecute( "Robust Blow" );
+
+end
+if Helper:CheckAvailable( "Slash Artery" ) then
+Helper:CheckExecute( "Slash Artery" );
+
+end
+
+if Helper:CheckAvailable( "Wrath Strike" ) then
+Helper:CheckExecute( "Wrath Strike" );
+
+end
+
+--TERCER ATAQUE
+if Helper:CheckAvailable( "Body Smash" ) then
+Helper:CheckExecute( "Body Smash" );
+
+end
+if Helper:CheckAvailable( "Blood Pact" ) then
+Helper:CheckExecute( "Blood Pact" );
+end
+
+--cuarto
+if Helper:CheckAvailable( "Shield Bash" ) then
+Helper:CheckExecute( "Shield Bash" );
+
+end
+if Helper:CheckAvailable( "Shield Shock" ) then
+Helper:CheckExecute( "Shield Shock" );
+
+end
+if Helper:CheckAvailable( "Inquisitor's Blow" ) then
+Helper:CheckExecute( "Inquisitor's Blow" );
+
+end
+if Helper:CheckAvailable( "Punishing Thrust" ) then
+Helper:CheckExecute( "Punishing Thrust" );
+
+end
+if Helper:CheckAvailable( "Swinging Shield Counter" ) then
+Helper:CheckExecute( "Swinging Shield Counter" );
+
+end
+
+if Helper:CheckAvailable( "Holy Punishment" ) then
+Helper:CheckExecute( "Holy Punishment" );
+
+end
+if Helper:CheckAvailable( "Provoking Roar" ) then
+Helper:CheckExecute( "Provoking Roar" );
+
+end
+if Helper:CheckAvailable( "Illusion Chain" ) then
+Helper:CheckExecute( "Illusion Chain" );
+
+end
+if Helper:CheckAvailable( "Aether Leash" ) then
+Helper:CheckExecute( "Aether Leash" );
+
+end
+if Helper:CheckAvailable( "Empyrean Chastisement" ) then
+Helper:CheckExecute( "Empyrean Chastisement" );
+
+end
+if Helper:CheckAvailable( "Sword Storm" ) and Range &lt;= 6 then
+Helper:CheckExecute( "Sword Storm" );
+
+end
+
+
+
+
+end
+function Heal( BeforeForce)
+
+if Helper:CheckAvailable( "Empyrean Armor" ) and Player:GetHealth() &lt;= 75 then
+Helper:CheckExecute( "Empyrean Armor" );
+return false;
+end
+if Helper:CheckAvailable( "Iron Skin" ) and Player:GetHealth() &lt;= 50 then
+Helper:CheckExecute( "Iron Skin" );
+
+end
+
+
+-- Health Recover: Prayer of Resilience
+if Player:GetHealth() &lt;= 70 and Helper:CheckAvailable( "Prayer of Resilience" ) then
+Helper:CheckExecute( "Prayer of Resilience" );
+
+end
+if Helper:CheckAvailable( "Hand of Healing" ) and Player:GetHealth() &lt;= 20 then
+Helper:CheckExecute( "Hand of Healing" );
+return false;
+end
+
+
+
+-- Nothing was executed, continue with other functions.
+return true;
+
+end
+
+
+
+function Pause()
+
+
+-- Nothing was executed, continue with other functions.
+return true;
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Functional templar LUA</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 5:34 pm</strong></div>
+				<div class="author">by <strong>Werasalma</strong></div>
+				<div class="content">Hello, <br>
+at first u you should check and modify following Settings in settings.lua  [Scripting-&gt;Grinderframework-&gt;settings.lua].<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code> 		-- Indicates whether or not to allow resting (Requires AllowAttack).
+		self.AllowRest = true;
+		-- Indicates whether or not potions are allowed (does not use Serums, only Elixir and Potions).
+		self.Potion = true;
+		-- Contains the remaining amount of health required before potions are used (0 = disabled).
+		self.PotionHealth = 70;
+		-- Contains the remaining amount of mana required before potions are used (0 = disabled).
+		self.PotionMana = 60;
+		-- Contains the remaining amount of health and mana required before potions are used (0 = disabled).
+		self.PotionRecovery = 70;
+		-- Contains the remaining amount of health required before resting (Requires AllowRest).
+		self.RestHealth = 40;
+		-- Contains the remaining amount of mana required before resting (Requires AllowRest).
+		self.RestMana = 30;
+		</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Functional templar LUA</h3>
+				<div class="date">Posted: <strong>Thu Feb 02, 2017 11:19 pm</strong></div>
+				<div class="author">by <strong>andres</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistc673.html?mode=viewprofile&amp;u=50">Werasalma</a> wrote: <a href="viewtopic735a.html?p=84#p84" data-post-id="84" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Feb 02, 2017 5:34 pm</div></cite>
+Hello, <br>
+at first u you should check and modify following Settings in settings.lua  [Scripting-&gt;Grinderframework-&gt;settings.lua].<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code> 		-- Indicates whether or not to allow resting (Requires AllowAttack).
+		self.AllowRest = true;
+		-- Indicates whether or not potions are allowed (does not use Serums, only Elixir and Potions).
+		self.Potion = true;
+		-- Contains the remaining amount of health required before potions are used (0 = disabled).
+		self.PotionHealth = 70;
+		-- Contains the remaining amount of mana required before potions are used (0 = disabled).
+		self.PotionMana = 60;
+		-- Contains the remaining amount of health and mana required before potions are used (0 = disabled).
+		self.PotionRecovery = 70;
+		-- Contains the remaining amount of health required before resting (Requires AllowRest).
+		self.RestHealth = 40;
+		-- Contains the remaining amount of mana required before resting (Requires AllowRest).
+		self.RestMana = 30;
+		</code></pre></div>
+</div></blockquote>
+
+<br>
+Now it sit, but dont use potion =(</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Functional templar LUA</h3>
+				<div class="date">Posted: <strong>Fri Feb 03, 2017 3:13 pm</strong></div>
+				<div class="author">by <strong>Werasalma</strong></div>
+				<div class="content">Ok.... the easiest way is to check and edit ur helperfunction [Scripting-&gt;Grinderframework-&gt;HelperFunction.lua].<br>
+-------------------------------------------------------------<br>
+search for:  function CheckPotionMana() <br>
+<br>
+For example: If u want to use "Fortified Recovery Potions" (Gameforge English).  <br>
+<br>
+1. Change "Mana Elixir" to "Recovery Potion" in folowing line:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if string.find( Inventory:GetName(), "Design" ) == nil and ( string.find( Inventory:GetName(), "Mana Elixir" ) ~= nil or string.find( Inventory:GetName(), "Mana Potion" ) ~= nil ) then </code></pre></div>
+
+2. Check and edit the Prefix: Change "Fine" to "Fortified" and the Numbers 1830-&gt;1960
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		......
+if string.find( Inventory:GetName(), "Fine" ) ~= nil then
+	if TotalRecharge &gt;= 1830 and BestRecharge &lt; 1830 then
+		BestInventory = Inventory;
+		BestRecharge = 1830; -- 1530;
+		......
+		......
+		......
+						</code></pre></div>
+---------------------------------------------------------<br>
+Do the same for:  function CheckPotionHeal()</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=12&t=17&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:20 GMT -->
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=303&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Auto Potion and loot</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Auto Potion and loot</h2>
+		<p><a href="viewtopicae38.html?f=6&amp;t=303">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=303</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Auto Potion and loot</h3>
+				<div class="date">Posted: <strong>Mon Oct 30, 2017 4:10 pm</strong></div>
+				<div class="author">by <strong>Mandy</strong></div>
+				<div class="content">Hello guys<br>
+Where i put off the auto loot?<br>
+And someone can explain why never auto potion?<br>
+what i have to do<br>
+Thanks advanced</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion and loot</h3>
+				<div class="date">Posted: <strong>Thu Nov 02, 2017 10:37 am</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content">Hello Mandy, if you are using OfficialGrinderFramework then follow this steps to disable auto loot.<br>
+<br>
+Go to your Aion Script folder, then Scripting &gt; OfficialGrinderFramework.<br>
+<br>
+Look for Settings.lua, and edit the following line from true to false:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Indicates whether or not to allow looting of targets (Requires AllowAttack).
+    self.AllowLoot = false;
+</code></pre></div>
+
+There are other options inside settings.lua that can be changed, such as self.AllowRest = true; to let or not your character rest at certain Hp/Mp level, some others about HerbTreatments and even potions.<br>
+<br>
+You can tweak your settings according your needs.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion and loot</h3>
+				<div class="date">Posted: <strong>Sat Nov 04, 2017 8:12 am</strong></div>
+				<div class="author">by <strong>Mandy</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlista1d6.html?mode=viewprofile&amp;u=370">smaion40</a> wrote: <a href="viewtopicc73b.html?p=1782#p1782" data-post-id="1782" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Nov 02, 2017 10:37 am</div></cite>
+Hello Mandy, if you are using OfficialGrinderFramework then follow this steps to disable auto loot.<br>
+<br>
+Go to your Aion Script folder, then Scripting &gt; OfficialGrinderFramework.<br>
+<br>
+Look for Settings.lua, and edit the following line from true to false:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Indicates whether or not to allow looting of targets (Requires AllowAttack).
+    self.AllowLoot = false;
+</code></pre></div>
+
+There are other options inside settings.lua that can be changed, such as self.AllowRest = true; to let or not your character rest at certain Hp/Mp level, some others about HerbTreatments and even potions.<br>
+<br>
+You can tweak your settings according your needs.
+</div></blockquote>
+
+Ty Bro.. Now i just need know why may bots do not use potions...<br>
+just Superior Recovery Potion</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion and loot</h3>
+				<div class="date">Posted: <strong>Sat Nov 04, 2017 9:28 am</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist6dd0.html?mode=viewprofile&amp;u=626">Mandy</a> wrote: <a href="viewtopiccb44.html?p=1810#p1810" data-post-id="1810" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Nov 04, 2017 8:12 am</div></cite>
+Ty Bro.. Now i just need know why may bots do not use potions...<br>
+just Superior Recovery Potion
+</div></blockquote>
+
+AS counts with a function for both, HP and MP potions, it's inside the HelperFunction.lua<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	function CheckPotionRecovery()
+
+	-- Prepare the variables to contain the best item and recharge.
+	local BestInventory = nil;
+	local BestRecharge = 0;
+	local TotalRechargeHealth = Player:GetHealthMaximum() - Player:GetHealthCurrent();
+	local TotalRechargeMana = Player:GetManaMaximum() - Player:GetManaCurrent();
+	
+	-- Check if a potion is available.
+	if self._iPotionDelay == nil or self._iPotionDelay &lt; Time() then
+		
+		-- Loop through your inventory
+		for Inventory in ListIterator( InventoryList:GetList()) do
+
+			-- Check if this is a life potion
+			if string.find( Inventory:GetName(), "Design" ) == nil and string.find( Inventory:GetName(), "Recovery Potion" ) ~= nil then
+				
+				if string.find( Inventory:GetName(), "Fine" ) ~= nil then
+					if TotalRechargeHealth &gt;= 2120 and TotalRechargeMana &gt;= 1830 and BestRecharge &lt; 2120 then
+						BestInventory = Inventory;
+						BestRecharge = 2120;
+					end
+				elseif string.find( Inventory:GetName(), "Major" ) ~= nil then
+					if TotalRechargeHealth &gt;= 1540 and TotalRechargeMana &gt;= 1600 and BestRecharge &lt; 1540 then
+						BestInventory = Inventory;
+						BestRecharge = 1540;
+					end
+				elseif string.find( Inventory:GetName(), "Greater" ) ~= nil then
+					if TotalRechargeHealth &gt;= 1270 and TotalRechargeMana &gt;= 1480 and BestRecharge &lt; 1270 then
+						BestInventory = Inventory;
+						BestRecharge = 1270;
+					end
+				elseif string.find( Inventory:GetName(), "Lesser" ) ~= nil then
+					if TotalRechargeHealth &gt;= 670 and TotalRechargeMana &gt;= 980 and BestRecharge &lt; 670 then
+						BestInventory = Inventory;
+						BestRecharge = 670;
+					end
+				elseif string.find( Inventory:GetName(), "Minor" ) ~= nil then
+					if TotalRechargeHealth &gt;= 370 and TotalRechargeMana &gt;= 590 and BestRecharge &lt; 370 then
+						BestInventory = Inventory;
+						BestRecharge = 370;
+					end
+				elseif TotalRechargeHealth &gt;= 970 and TotalRechargeMana &gt;= 1280 and BestRecharge &lt; 970 then
+					BestInventory = Inventory;
+					BestRecharge = 970;
+				end
+				
+			end
+
+		end
+		
+		-- Check if we have a positive match and see if the cooldown allows the use of it.
+		if BestInventory ~= nil and BestInventory:GetCooldown() == 0 then
+			if PlayerInput:Inventory( BestInventory:GetName()) then
+				self._iPotionDelay = Time() + BestInventory:GetReuse();
+			end
+			return false;
+		end
+		
+	end
+	
+	-- We have not executed any potion.
+	return true;
+	
+end
+</code></pre></div>
+
+In theory it checks your inventory and looks for all kind of potion names and uses the one that suits best your current Hp/Mp %.<br>
+<br>
+If you ask me, botting with potions isnt the most efficient way, you are wasting a lot of resources in the long term, and you can use the rest option to replenish your HP/MP after it reaches certain level.<br>
+<br>
+For this, just modify the next lines: (these numbers means %).
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>		-- Indicates whether or not to allow resting (Requires AllowAttack).
+		self.AllowRest = true;
+		-- Contains the remaining amount of health required before resting (Requires AllowRest).
+		self.RestHealth = 30;
+		-- Contains the remaining amount of mana required before resting (Requires AllowRest).
+		self.RestMana = 30;
+</code></pre></div>
+
+I hope it can help you.<br>
+<br>
+PD: That HelperFunction script is pretty old, and I think "Superior recovery serums" potions are not supported. Maybe that's your problem.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion and loot</h3>
+				<div class="date">Posted: <strong>Sat Nov 04, 2017 10:48 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">The "problem" with this potion is you need to be low mana and hp at same time, if you are only low HP script don't use Recovery potion.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=303&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:12 GMT -->
+</html>

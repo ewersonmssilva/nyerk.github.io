@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=47&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Auto Potion/Scroll?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Auto Potion/Scroll?</h2>
+		<p><a href="viewtopic0360.html?f=6&amp;t=47">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=47</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Auto Potion/Scroll?</h3>
+				<div class="date">Posted: <strong>Sat Feb 11, 2017 8:12 pm</strong></div>
+				<div class="author">by <strong>javito</strong></div>
+				<div class="content"><strong class="text-strong">How i can make the auto Potions/Scroll working in a AS, With correct code and stateID items for NA<br>
+<br>
+I already tried to add something like this in my class code and it does not work. Help me plz.</strong><br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function CheckRunScroll()
+
+stateID = {9960};
+foodName = {"Greater Running Scroll"};
+flag = 0;
+
+    for _,v in ipairs(stateID) do
+        if Player:GetState():GetState( v ) ~= nil then
+            flag = flag + 1;
+        end
+    end
+
+    if flag == 0 then
+        for a,b in ipairs(foodName) do
+            if Helper:CheckAvailableInventory( b ) then
+                PlayerInput:Inventory( b );
+                break;
+            end
+        end
+    end
+return true;</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion/Scroll?</h3>
+				<div class="date">Posted: <strong>Sat Feb 11, 2017 9:00 pm</strong></div>
+				<div class="author">by <strong>Werasalma</strong></div>
+				<div class="content">Hey, u have to perform ur new function. Add this line in ur attack routine.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>self:CheckRunScroll();</code></pre></div>
+Your function CheckRunScroll looks ok!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion/Scroll?</h3>
+				<div class="date">Posted: <strong>Wed Feb 15, 2017 10:54 am</strong></div>
+				<div class="author">by <strong>javito</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistc673.html?mode=viewprofile&amp;u=50">Werasalma</a> wrote: <a href="viewtopic8e01.html?p=166#p166" data-post-id="166" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Feb 11, 2017 9:00 pm</div></cite>
+Hey, u have to perform ur new function. Add this line in ur attack routine.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>self:CheckRunScroll();</code></pre></div>
+Your function CheckRunScroll looks ok!
+</div></blockquote>
+ thanks works now.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion/Scroll?</h3>
+				<div class="date">Posted: <strong>Sat May 27, 2017 7:36 am</strong></div>
+				<div class="author">by <strong>haihon</strong></div>
+				<div class="content">where do we put the code in?? how do it work? please help i want to made it use superior recovery serum when the hp/mp go to 70%. thankyou</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion/Scroll?</h3>
+				<div class="date">Posted: <strong>Sun Jun 04, 2017 6:41 pm</strong></div>
+				<div class="author">by <strong>haihon</strong></div>
+				<div class="content">where do we put the code in? i tried it doesn't work please help me thx</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion/Scroll?</h3>
+				<div class="date">Posted: <strong>Mon Jul 10, 2017 1:22 pm</strong></div>
+				<div class="author">by <strong>smaion40</strong></div>
+				<div class="content">Hello, I'm wondering how you guys get the StateID for some items, I'm trying to find "Berdin's 100% XP Amulet IV" ID so I can use them automatically  <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"><br>
+<br>
+Also, could you guys please explain how to call that function and from what .lua to make it work?, thank you.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Auto Potion/Scroll?</h3>
+				<div class="date">Posted: <strong>Thu Aug 03, 2017 1:47 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">At this point I really think it would benefit anyone who wants to use scrolls to simply use a sidekick pet that automatically uses scrolls and food on behalf of master.<br>
+<br>
+That sidekick akumu uses up to 5 scrolls and one food + one drink. I do not know how much it costs to your server, but in our server it went as low as 150m and it is permanent.<br>
+<img src="../static.ncsoft.com/aion/store/product/9100253_Lucky_ThumbLg.png" class="postimage" alt="Image"><br>
+<br>
+There are also much cheaper pets that use less scrolls and it would be enough for an at.speed/c.speed scroll and a critical scroll, that is most of what you need to grind.<br>
+<br>
+Sure thing if you have like 10 characters it could be quite some cost. But I have given up most hope for scrolls and item buffs to be auto-used by AS long time ago. Most of the times we didn't know what code the buff had, the state ID (in the above example state ID = 9960) and when we knew the code for it it wouldn't work.<br>
+<br>
+~~~~~~~~~~~<br>
+<br>
+I know this is AS usage and tutorials, but trust me, the moment I gave my bots a sidekick akumu to each one of them I literally saved me a lot of time troubling around scrolls.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=47&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:47:30 GMT -->
+</html>

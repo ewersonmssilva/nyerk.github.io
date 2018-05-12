@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=116&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; What is the best class for bot?</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>What is the best class for bot?</h2>
+		<p><a href="viewtopic4acb.html?f=6&amp;t=116">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=116</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>What is the best class for bot?</h3>
+				<div class="date">Posted: <strong>Sun Mar 19, 2017 5:05 pm</strong></div>
+				<div class="author">by <strong>NiggBusy</strong></div>
+				<div class="content">what u thk guys is the best class for bot? I mean the class that keeps stable and can kill the mobs fast.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: What is the best class for bot?</h3>
+				<div class="date">Posted: <strong>Sun Mar 19, 2017 5:21 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content">Bard is the Best Bot u dont need Mana/Heal Potions and can kill Mobs fast.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: What is the best class for bot?</h3>
+				<div class="date">Posted: <strong>Tue Mar 21, 2017 10:19 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">I only played two classes, but I can tell you some things:<br>
+<br>
+- the GetHealth function doesn't work (maybe only because I'm bad at programming), so Bard script casts dots and charged skills when it shouldn't<br>
+- the Charged skills are being casted also when target is dead (for like 1ms)  and that wastes a lot of time on Bard<br>
+- I can't find a nice way to allow to use attack melody in pause function without it stops to cast it<br>
+<br>
+Considering:<br>
+- Chanter doesn't have mana issues<br>
+- Chanter heals better<br>
+- Chanter benefits more from no animation<br>
+- Chanter does more dmg on Nosra/Esterra mobs (due to their high magic suppression)<br>
+<br>
+I'd bot a chanter</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: What is the best class for bot?</h3>
+				<div class="date">Posted: <strong>Wed Mar 22, 2017 11:17 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistf8ff.html?mode=viewprofile&amp;u=51">locatelli</a> wrote: <a href="viewtopicaa4f.html?p=576#p576" data-post-id="576" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Mar 21, 2017 10:19 pm</div></cite>
+- the GetHealth function doesn't work 
+</div></blockquote>
+It is working. Please, if you think that a function doesn't work, Just write a script under "Scripting", and try them. Forexample;
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>function OnRun()
+local Entity = EntityList:GetEntity( Player:GetTargetID());
+Write(""..Entity:GetName().."  "..Entity:GetHealth())
+end</code></pre></div>
+and click everyone or npc to test.. it works</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: What is the best class for bot?</h3>
+				<div class="date">Posted: <strong>Fri May 12, 2017 9:22 am</strong></div>
+				<div class="author">by <strong>Skaa</strong></div>
+				<div class="content">chanter for sure</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: What is the best class for bot?</h3>
+				<div class="date">Posted: <strong>Sat May 13, 2017 1:06 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">I have boted two classes so far.<br>
+<br>
+1) Sorcerer (my main)<br>
+2) Chanter<br>
+<br>
+~~~~~~~~~~<br>
+<br>
+1) Sorcerer:<br>
+I find sorcerer probably the best to bot when the mobs are not too tough or much higher level than him. I have written my own script for skill rotation and that makes him kill with one shot if the first hit is critical (first hit is always a slow casting ultimate skill, like flame spray, glacial, aetherflame or empyrean fire when DP is ready). And now with the Knowledge manastones I get close to 700 critical spell alone!!! BUT since they made UA mobs from 65 lvl to 72 I find it tough to bo there alone (duo with a chanter is not only possible but very fast, just for the periodic heals). Of course sorcerer needs to be dressed to do it, my sorcerer is my main so you realize he is dressed to kill thus botting for leveling is a piece of cake.<br>
+<br>
+also running out of mana is not an issue, the refracting shard simply fills you in one hit and if it is a critical your mana will float above your ears <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy">. But as I said only in mobs that are easy to kill, like his own level or +1 level than him and preferably not mobs that are doing any ranged attacks.<br>
+<br>
+2) Chanter:<br>
+In my opinion the absolute botting class, mantras, self buffs, amazing healing abilities, dot healing always on, instant skills so no-animation is a big boost, knock downs on skills, plenty of stunning occurs etc. On his own levels he is pretty self sufficient. My chanters could also bot alone in UA but now on the update that they made the mobs 72 it is almost impossible for them mostly due to their lower dmg next to my main.<br>
+<br>
+Since your question is about a botting class, I would say chanter is probably it.</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=116&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:17 GMT -->
+</html>

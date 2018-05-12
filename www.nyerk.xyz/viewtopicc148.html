@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=237&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Buff StateID</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Buff StateID</h2>
+		<p><a href="viewtopic1495.html?f=6&amp;t=237">https://www.nyerk.xyz/viewtopic.php?f=6&amp;t=237</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+					<div class="post">
+				<h3>Buff StateID</h3>
+				<div class="date">Posted: <strong>Mon Aug 21, 2017 5:48 pm</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content">so before this when enabling auto scroll like greater awakening, greater courage, running scroll, I would use code such as:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	if Player:GetState():GetState( 9960 ) == nil and Helper:CheckAvailableInventory ( "Greater Running Scroll" ) then
+ 	PlayerInput:Inventory( "Greater Running Scroll" );
+	end
+	
+	if Player:GetState():GetState( 9959 ) == nil and Helper:CheckAvailableInventory ( "Greater Courage Scroll" ) then
+	PlayerInput:Inventory( "Greater Courage Scroll" );
+	end</code></pre></div>
+
+and this still works. I just wanted to know if anyone has the StateID code for greater awakening scroll, cuz thats the only one that im missing.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Buff StateID</h3>
+				<div class="date">Posted: <strong>Mon Aug 21, 2017 6:52 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">i can't use autoscroll script if  u have can u share it ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Buff StateID</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 5:22 am</strong></div>
+				<div class="author">by <strong>Diavolakos</strong></div>
+				<div class="content">For me these scripts always created problems, they made my char run in a straight line getting many mobs when the scrolsl were taken and he was in currently moving state.<br>
+<br>
+I have since taken pets that take scrolls by themselves and I solved this problem.<br>
+<br>
+If you take the "Tiamat Whelp" pet, it auto loots and also uses 3 scrolls and 1 food and 1 drink.<br>
+<br>
+I do not know how expensive this is to your server, but trust me it literally saves the world having it.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Buff StateID</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 6:52 am</strong></div>
+				<div class="author">by <strong>creatine</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist09a9.html?mode=viewprofile&amp;u=571">Quirunerk</a> wrote: <a href="viewtopice6eb.html?p=1296#p1296" data-post-id="1296" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Aug 21, 2017 6:52 pm</div></cite>
+i can't use autoscroll script if  u have can u share it ?
+</div></blockquote>
+
+just add the codes into your class script</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Buff StateID</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 8:00 am</strong></div>
+				<div class="author">by <strong>nucular</strong></div>
+				<div class="content">Why not use BuffManager?<br>
+<br>
+<a href="viewtopica0a5.html?f=4&amp;t=219" class="postlink">viewtopic.php?f=4&amp;t=219</a><br>
+And by the way you don't have to use state ids
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Player:GetState():GetState( Helper:CheckName("Increase Movement Speed") ) == nil and Helper:CheckAvailableInventory ( "Greater Running Scroll" ) then
+ 	PlayerInput:Inventory( "Greater Running Scroll" );
+end
+	</code></pre></div>
+
+should work</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Buff StateID</h3>
+				<div class="date">Posted: <strong>Tue Aug 22, 2017 12:40 pm</strong></div>
+				<div class="author">by <strong>Quirunerk</strong></div>
+				<div class="content">- [string "af.lua"]:1: attempt to index global 'Helper' (a nil value) im getting this how can i use scroll script actually ?</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=6&t=237&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:46:45 GMT -->
+</html>

@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=14&t=83&p=737 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Spiritmaster.lua - Nyerk</title>
+
+
+	<link rel="canonical" href="viewtopic50cf.html?t=83">
+
+<!--
+	phpBB style name: we_universal
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:      nextgen ( http://xeronix.org/ )
+-->
+
+
+<link href="styles/prosilver/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="assets/css/font-awesome.min5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/stylesheet5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/prosilver/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+<link href="styles/we_universal/theme/responsive5d79.css?assets_version=25" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/prosilver/theme/tweaks.css?assets_version=25" rel="stylesheet">
+<![endif]-->
+
+
+<link href="ext/gfksx/ThanksForPosts/styles/prosilver/theme/thanks5d79.css?assets_version=25" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="./styles/we_universal/template/html5shiv.min.js"></script>
+<![endif]-->
+
+</head>
+<body id="phpbb" class="nojs notouch section-viewtopic ltr  logged-out">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div class="inventea-headerbar">
+		<nav class="inventea-wrapper inventea-userbar">
+			<div class="dropdown-container hidden inventea-mobile-dropdown-menu">
+    <a href="#" class="dropdown-trigger inventea-toggle"><i class="icon fa fa-bars"></i></a>
+    <div class="dropdown hidden">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <ul class="dropdown-contents" role="menubar">
+		
+														
+							<li>
+								<a href="index-2.html" role="menuitem">
+									<i class="icon fa fa-fw fa-home" aria-hidden="true"></i><span>Board index</span>
+								</a>
+							</li>		
+							
+							<li data-skip-responsive="true">
+								<a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">
+									<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+								</a>
+							</li>
+							
+													<li>
+								<a href="search.html" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+							
+														
+														
+								
+						
+							<li>
+								<a href="search33a7.html?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="search526f.html?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+	
+						
+							
+            																			<li>
+								<a href="memberlist4bfd.html?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>The team</span>
+								</a>
+							</li>
+						            
+				                    </ul>
+    </div>
+</div>
+
+			
+			<ul class="linklist bulletin inventea-user-menu" role="menubar">
+										<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp26c3.html?mode=login" title="Login" accesskey="x" role="menuitem"><i class="icon fa-fw fa-sign-in" aria-hidden="true"></i>Login</a></li>
+											<li class="small-icon rightside" data-skip-responsive="true"><a href="ucp8319.html?mode=register" role="menuitem"><i class="icon fa-fw fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										
+										
+							</ul>
+		</nav>
+	</div>
+
+	<header class="inventea-header">
+			
+		<div class="inventea-dashboard" role="banner">
+						<nav role="navigation">
+	<div class="inventea-posts-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+																			<li><a href="search33a7.html?search_id=unanswered" role="menuitem">Unanswered topics</a></li>
+				<li><a href="search526f.html?search_id=active_topics" role="menuitem">Active topics</a></li>
+			
+					</ul>
+	</div>
+
+	<div class="inventea-forum-menu">
+		<ul class="inventea-menu" role="menubar">
+			
+			<li><a href="app.php/help/faq.html" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a></li>
+			<li><a href="search.html" role="menuitem">Search</a></li>
+											<li><a href="memberlist4bfd.html?mode=team" role="menuitem">The team</a></li>			
+						
+					</ul>
+	</div>
+</nav>
+
+			<div class="inventea-sitename">
+				<h1><a href="index-2.html" title="Board index">Nyerk</a></h1>
+				<span>An Forum about Aion</span>
+			</div>
+		</div>
+			</header>
+
+	<div class="inventea-wrapper inventea-content" role="main">
+		
+		<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+			
+									<li class="small-icon breadcrumbs">
+												<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a href="index-2.html" accesskey="h" data-navbar-reference="index" itemprop="url"><span itemprop="title">Board index</span></a></span>
+														<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="3"><a href="viewforum4d6b.html?f=3" itemprop="url"><span itemprop="title">AionScript</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="8"><a href="viewforum957d.html?f=8" itemprop="url"><span itemprop="title">LUA Scripting</span></a></span>
+																			<span class="crumb" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="14"><a href="viewforum9780.html?f=14" itemprop="url"><span itemprop="title">Spiritmaster</span></a></span>
+																</li>
+					</ul>
+
+		
+		
+<h2 class="topic-title"><a href="viewtopic24f8.html?f=14&amp;t=83">Spiritmaster.lua</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+
+
+
+<div class="action-bar bar-top">
+	
+			<a href="posting1d94.html?mode=reply&amp;f=14&amp;t=83" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopiccd92.html?f=14&amp;t=83&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://www.nyerk.xyz/search.php">
+			<fieldset>
+				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…" />
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="search.html" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="83" />
+<input type="hidden" name="sf" value="msgonly" />
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			14 posts
+							<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="viewtopic48b3.html?f=14&amp;t=83&amp;start=10" role="button">2</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="viewtopic48b3.html?f=14&amp;t=83&amp;start=10" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+					</div>
+		</div>
+
+
+
+
+			<div id="p314" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile314">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist3cd9.html?mode=viewprofile&amp;u=63" class="username">ugel</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search1c16.html?author_id=63&amp;sr=posts">14</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Jan 19, 2017 9:42 am</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="63"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/63/true.html">22 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="63"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/63/false.html">4 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content314">
+
+						<h3 class="first"><a href="#p314">Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting5a62.html?mode=quote&amp;f=14&amp;p=314" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic1031.html?p=314#p314" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist3cd9.html?mode=viewprofile&amp;u=63" class="username">ugel</a></strong> &raquo; </span>Sun Mar 05, 2017 5:51 pm
+			</p>
+			
+			
+			
+			<div class="content">Best one I could find in my archives <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"> Feel free rework it
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- Find the spirit that belongs to the provided player.
+--
+-- @param	Integer Contains the player identifier.
+-- @return	Entity
+
+function FindSpirit( ID )
+
+	-- Check the provided identifier to look for, otherwise use my own identifier.
+	if ID == nil then
+		ID = Player:GetID();
+	end
+	
+	-- Loop through the available entities to find the spirit.
+	for EntityID, Entity in DictionaryIterator( EntityList:GetList()) do
+	
+		-- Check if this monster is a spirit and belongs to me!
+		if Entity:GetOwnerID() == ID and string.find( Entity:GetName(), "Spirit" ) ~= nil then
+			return Entity;	
+		end
+		
+	end
+
+	-- Return nothing, the spirit has not been found.
+	return nil;
+	
+end
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @param	mixed	Indicates whether or not to ignore Lumiel's Effect for the fusion chain.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned, Ignore )
+	
+	-- Curse of Water
+	-- Dispel Magic (Enemy has states!)
+	-- Fear
+	-- Sandblaster (AOE, Long Duration)
+	-- Spirit Wrath Position (Shield)
+	
+	-- Stone Skin
+	-- Absorb Energy
+	-- Spirit Absorption (30% mana regen from 10% spirit health)
+	
+	-- Retrieve the entity state of the target.
+	local EntityState = Entity:GetState();
+	
+	-- Retrieve the entity of the player spirit
+	local SpiritEntity = self:FindSpirit();
+	
+	-- Check if the entity state is correct.
+	if EntityState == nil then
+		return;
+	end
+	
+	-- Check if the player spirit is valid.
+	if SpiritEntity == nil then
+		
+		-- Summon 1: Summon Earth Spirit
+		if Helper:CheckAvailable( "Summon Earth Spirit" ) then
+			Helper:CheckExecute( "Summon Earth Spirit" );
+			return false;
+		end
+		
+		-- Cannot continue until a Spirit is available.
+		return false;
+		
+	end
+	
+	-- Summon 2: Replenish Element
+		if SpiritEntity:GetHealth() &lt; 60 and Player:GetHealth() &gt; 70 and Helper:CheckAvailable( "Replenish Element" ) then
+			Helper:CheckExecute( "Replenish Element" );
+			return;
+		end
+		
+		-- Summon 3: Spirit Recovery
+		if SpiritEntity:GetHealth() &lt; 25 and Helper:CheckAvailable( "Spirit Recovery" ) then
+			Helper:CheckExecute( "Spirit Recovery" );
+			return;
+		end
+		
+		-- Summon 4: Healing Spirit
+		if SpiritEntity:GetHealth() &lt; 30 and Helper:CheckAvailable( "Healing Spirit" ) then
+			Helper:CheckExecute( "Healing Spirit" );
+			return;
+		end
+		
+		-- Spirit Buff 01: Elemental Spirit Armor
+		if Helper:CheckAvailable( "Elemental Spirit Armor" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Elemental Spirit Armor" )) == nil then
+			Helper:CheckExecute( "Elemental Spirit Armor" );
+			return false;
+		end
+		
+		-- Spirit Buff 01: Frenzied Spirit
+		if Helper:CheckAvailable( "Frenzied Spirit" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Frenzied Spirit" )) == nil then
+			Helper:CheckExecute( "Frenzied Spirit" );
+			return false;
+		end
+		
+		if Helper:CheckAvailable( "Sympathetic Mind" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Sympathetic Mind" )) == nil then
+			Helper:CheckExecute( "Sympathetic Mind" );
+			return false;
+		end
+		
+		if Helper:CheckAvailable( "Stone Skin" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Stone Skin" )) == nil then
+			Helper:CheckExecute( "Stone Skin" );
+			return false;
+		end
+		
+		-- Spirit Buff 01: Armor Spirit 
+		if Helper:CheckAvailable( "Armor Spirit I" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Armor Spirit" )) == nil then
+			Helper:CheckExecute( "Armor Spirit" );
+			return false;
+		end
+		
+		-- Spirit Buff 02: Spirit Armor of Darkness
+		if ( Settings.SpiritMaster.AllowDP or Entity:IsPlayer()) and not Entity:IsDead() and Player:GetDP() &gt;= 2000 and Helper:CheckAvailable( "Spirit Armor of Light" ) and Player:GetState():GetState( Helper:CheckName( "Spirit Armor of Light" )) == nil then
+	    	Helper:CheckExecute( "Spirit Armor of Light" );
+	    	return false;
+	    end
+		
+		-- Spirit Buff 02: Spirit Armor of Darkness
+		if ( Settings.SpiritMaster.AllowDP or Entity:IsPlayer()) and not Entity:IsDead() and Player:GetDP() &gt;= 2000 and Helper:CheckAvailable( "Spirit Armor of Darkness" ) and Player:GetState():GetState( Helper:CheckName( "Spirit Armor of Darkness" )) == nil then
+	    	Helper:CheckExecute( "Spirit Armor of Darkness" );
+	    	return false;
+	    end
+		
+		-- Buff 02: Spirit Preserve
+	    if Helper:CheckAvailable( "Spirit Preserve" ) and Player:GetHealth() &lt; 20 then
+	    	Helper:CheckExecute( "Spirit Preserve" );
+	    	return false;
+    	end
+	
+    	-- Buff 03: Spirit Substitution
+	    if Helper:CheckAvailable( "Spirit Substitution" ) and Player:GetHealth() &lt; 30 then
+	    	Helper:CheckExecute( "Spirit Substitution" );
+	    	return false;
+	    end 
+		
+		-- Check if this a new target and move the spirit when it is.
+	if self._LastEntity == nil or self._LastEntity ~= Entity:GetID() then
+		
+		-- Check if Spirit Threat is available, do not continue until it is.
+		if not Helper:CheckAvailable( "Spirit Threat" ) then
+			if self._bPrepareThreat then
+				self._LastEntity = Entity:GetID();
+				self._bPrepareThreat = nil;
+			end
+			return false;
+		-- Check if the entity has selected a target.
+		elseif Entity:GetTargetID() ~= 0 then
+			Helper:CheckExecute( "Spirit Threat" );
+			self._bPrepareThreat = true;
+			return false;
+			
+		-- Otherwise send the spirit to attack.
+		elseif self._iClickTime == nil or self._iClickTime &lt; Time() then
+			DialogList:GetDialog( "pet_dialog/pet_cmd1" ):Click();
+			self._iClickTime = Time() + 1000;
+			self._bPrepareThreat = true;
+			return false;
+		-- For now, do nothing.
+		else
+			return false;
+		end
+		
+	end
+	
+	-- Check if this a new target and move the spirit when it is.
+	if self._LastEntity == nil or self._LastEntity ~= Entity:GetID() then
+		
+		-- Check if Spirit Threat is available, do not continue until it is.
+		if not Helper:CheckAvailable( "Spirit Threat" ) then
+			if self._bPrepareThreat then
+				self._LastEntity = Entity:GetID();
+				self._bPrepareThreat = nil;
+			end
+			return false;
+		-- Check if the entity has selected a target.
+		elseif Entity:GetTargetID() ~= 0 then
+			Helper:CheckExecute( "Spirit Threat" );
+			self._bPrepareThreat = true;
+			return false;
+			
+		-- Otherwise send the spirit to attack.
+		elseif self._iClickTime == nil or self._iClickTime &lt; Time() then
+			DialogList:GetDialog( "pet_dialog/pet_cmd1" ):Click();
+			self._iClickTime = Time() + 1000;
+			self._bPrepareThreat = true;
+			return false;
+		-- For now, do nothing.
+		else
+			return false;
+		end
+		
+	end
+	
+	-- Chain 1: Remove Shock
+	if Player:GetHealth() &lt; 70 and Player:GetMana() &lt; 85 and Helper:CheckAvailable( "Vengeful Backdraft" ) then
+		Helper:CheckExecute( "Vengeful Backdraft" );
+		return false;
+	elseif Helper:CheckAvailable( "Flames of Anguish" ) then
+		Helper:CheckExecute( "Flames of Anguish" );
+		return false;
+	elseif Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+	end
+	
+	-- Chain 2: Stone Shock
+	if not Stunned and Helper:CheckAvailable( "Stone Shock" ) then
+		Helper:CheckExecute( "Stone Shock" );
+		return false;
+	end
+	
+	-- Attack 01: Chain of Earth
+	if Entity:GetHealthCurrent() &gt; 1000 and Helper:CheckAvailable( "Chain of Earth" ) and EntityState:GetState( Helper:CheckName( "Chain of Earth" )) == nil then
+		Helper:CheckExecute( "Chain of Earth" );
+		return false;
+	end
+	
+	-- Attack 02: Spirit Thunderbolt Claw
+	if Helper:CheckAvailable( "Spirit Thunderbolt Claw" ) then
+		Helper:CheckExecute( "Spirit Thunderbolt Claw" );
+		return false;
+	end
+	
+	-- Spirit Buff 02: Spirit Wrath Position
+	if Helper:CheckAvailable( "Spirit Wrath Position" ) then 
+		Helper:CheckExecute( "Spirit Wrath Position" );
+		return false;
+	end
+	
+	-- Buff 01: Summoning Alacrity
+	if Helper:CheckAvailable( "Summoning Alacrity" ) then
+		Helper:CheckExecute( "Summoning Alacrity" );
+		return false;
+	end
+	
+	-- Attack 03: Summon Earth Energy
+	if Helper:CheckAvailable( "Summon Elemental Servant" ) then
+		Helper:CheckExecute( "Summon Elemental Servant" );
+		return false;
+	end
+	
+	-- Attack 03: Summon Earth Energy
+	if Helper:CheckAvailable( "Summon Fire Energy" ) then
+		Helper:CheckExecute( "Summon Fire Energy" );
+		return false;
+	end
+	
+	-- Stigma 01: Summon Cyclone Servant
+	if Helper:CheckAvailable( "Summon Wind Servan" ) then
+		Helper:CheckExecute( "Summon Wind Servant" );
+		return false;
+	end
+		
+	-- Attack 03: Summon Earth Energy
+	if Helper:CheckAvailable( "Summon Earth Energy" ) then
+		Helper:CheckExecute( "Summon Earth Energy" );
+		return false;
+	end
+	
+	-- Stigma 01: Summon Cyclone Servant
+	if Helper:CheckAvailable( "Summon Cyclone Servant" ) then
+		Helper:CheckExecute( "Summon Cyclone Servant" );
+		return false;
+	end
+	
+	-- Attack 03: Summon Earth Energy
+	if Helper:CheckAvailable( "Dispel Magic" ) then
+		Helper:CheckExecute( "Dispel Magic" );
+		return false;
+	end
+	
+	-- Indicates whether or not to preserve mana. Damage-over-time skills are not applied after 50%.
+	if not Settings.SpiritMaster.AllowPreserveMana or Entity:GetHealth() &gt;= 50 then
+	
+		-- Attack 04: Erosion
+		if Helper:CheckAvailable( "Erosion" ) and EntityState:GetState( Helper:CheckName( "Erosion" )) == nil then
+			Helper:CheckExecute( "Erosion" );
+			return false;
+		end
+		
+		-- Stigma 02: Cyclone of Wrath
+		if Helper:CheckAvailable( "Cyclone of Wrath" ) and EntityState:GetState( Helper:CheckName( "Cyclone of Wrath" )) == nil then
+			Helper:CheckExecute( "Cyclone of Wrath" );
+			return false;
+		end
+		
+		-- Stigma 03: Infernal Pain
+		if Helper:CheckAvailable( "Infernal Pain" ) then 
+			Helper:CheckExecute( "Infernal Pain" );
+			return false;
+		end
+		
+		 -- Attack 05: Spirit Erosion
+	    if Helper:CheckAvailable( "Spirit Erosion" ) and Entity:GetHealth() &lt;= 700 then
+	        Helper:CheckExecute( "Spirit Erosion" );
+		    return false;
+	   end
+	
+	end
+	
+	-- Attack 05: Spirit Disturbance
+	if Helper:CheckAvailable( "Spirit Disturbance" ) and SpiritEntity:GetHealth() &lt; 80 then
+		Helper:CheckExecute( "Spirit Disturbance" );
+		return false;
+	end
+	
+	-- Attack 06: Backdraft
+	if Helper:CheckAvailable( "Backdraft" ) and Player:GetHealth() &lt; 80 and Player:GetMana() &lt; 90 then
+		Helper:CheckExecute( "Backdraft" );
+		return false;
+	end
+	
+	-- Attack 07: Spirit Detonation Claw
+	if Helper:CheckAvailable( "Spirit Detonation Claw" ) then
+		Helper:CheckExecute( "Spirit Detonation Claw" );
+		return false;
+	end
+	
+	-- Attack 08: Vacuum Choke
+	if Helper:CheckAvailable( "Vacuum Chok" ) then
+		Helper:CheckExecute( "Vacuum Choke" );
+		return false;
+	end
+	
+	-- Attack 08: Vacuum Choke
+	if Helper:CheckAvailable( "Spirit Absorption" ) then
+		Helper:CheckExecute( "Spirit Absorption" );
+		return false;
+	end
+	
+	-- Attack 08: Vacuum Choke
+	if Helper:CheckAvailable( "Absorb Energy" ) then
+		Helper:CheckExecute( "Absorb Energy" );
+		return false;
+	end
+	
+	-- Stigma 04: Weaken Spirit
+	if Helper:CheckAvailable( "Weaken Spirit" ) then
+		Helper:CheckExecute( "Weaken Spirit" );
+		return false;
+	end
+	
+--UTILITY SPELLS
+	
+	-- Stigma 05: Absorb Vitality
+	if Helper:CheckAvailable( "Absorb Vitality" ) and Player:GetHealth() &lt; 75 then
+		Helper:CheckExecute( "Absorb Vitality" );
+		return false;
+	end
+	
+	-- Attack 09: Curse of Fire/Curse of Water
+	if Helper:CheckAvailable( "Curse of Water" ) and Player:GetHealth() &lt; 38 then
+		Helper:CheckExecute( "Curse of Water" );
+		return false;
+	end
+	
+	-- Buff 02: Spirit Preserve
+	if Helper:CheckAvailable( "Spirit Preserve" ) and Player:GetHealth() &lt; 20 then
+		Helper:CheckExecute( "Spirit Preserve" );
+		return false;
+	end
+	
+	-- Buff 03: Spirit Substitution
+	if Helper:CheckAvailable( "Spirit Substitution" ) and Player:GetHealth() &lt; 30 then
+		Helper:CheckExecute( "Spirit Substitution" );
+		return false;
+	end
+	
+	-- Buff 04: Absorb Energy
+	if Helper:CheckAvailable( "Absorb Energy" ) and Player:GetMana() &lt; 90 then
+		Helper:CheckExecute( "Absorb Energy" );
+		return false;
+	end
+	
+	-- Buff 05: Spirit Absorption
+	if Helper:CheckAvailable( "Spirit Absorption" ) and Player:GetMana() &lt; 65 then
+		Helper:CheckExecute( "Spirit Absorption" );
+		return false;
+	end
+
+	-- Check if this entity has the Stone Skin state.
+	if Helper:CheckAvailable( "Sympathetic Mind" ) and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil 
+		and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil then
+		Helper:CheckExecute( "Sympathetic Mind" );
+		return false;
+	end
+	
+	-- Check if this entity has the Stone Skin state.
+	if Helper:CheckAvailable( "Stone Skin" ) and EntityState:GetState( "Stone Skin I" ) == nil and EntityState:GetState( "Stone Skin II" ) == nil 
+		and EntityState:GetState( "Stone Skin III" ) == nil and EntityState:GetState( "Stone Skin IV" ) == nil and EntityState:GetState( "Stone Skin V" ) == nil then
+		Helper:CheckExecute( "Stone Skin" );
+		return false;
+	end
+	
+	-- Buff 04: Absorb Energy
+	if Helper:CheckAvailable( "Absorb Energy" ) and Player:GetManaMaximum() - Player:GetManaCurrent() &gt; 526 then
+		Helper:CheckExecute( "Absorb Energy" );
+		return false;
+	end
+	
+	-- Buff 05: Stone Skin
+	if Helper:CheckAvailable( "Stone Skin" ) and EntityState:GetState( Helper:CheckName( "Stone Skin" )) == nil then
+		Helper:CheckExecute( "Stone Skin" );
+		return false;
+	end
+	
+	-- Buff 09: Fine Rally Serum
+	if Helper:CheckAvailable( "Increase Natural Recovery Serum" ) and EntityState:GetState( Helper:CheckName( "Increase Natural Recovery Serum" )) == nil then
+		Helper:CheckExecute( "Increase Natural Recovery Serum" );
+		return false;
+	end
+	
+	-- Buff 06: Blessing of Fire
+	if Helper:CheckAvailable( "Blessing of Fir" ) and EntityState:GetState( Helper:CheckName( "Blessing of Fire" )) == nil then
+		Helper:CheckExecute( "Blessing of Fire" );
+		return false;
+	end
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Sympathetic Mind" ) and EntityState:GetState( Helper:CheckName( "Sympathetic Mind" )) == nil then
+		Helper:CheckExecute( "Sympathetic Mind" );
+		return false;
+	end
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Spirit Wrath Position" ) and EntityState:GetState( Helper:CheckName( "Spirit Wrath Position" )) == nil then
+		Helper:CheckExecute( "Spirit Wrath Position" );
+		return false;
+	end
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Spirit Armor of Darknes" ) and EntityState:GetState( Helper:CheckName( "Spirit Armor of Darkness" )) == nil then
+		Helper:CheckExecute( "Spirit Armor of Darkness" );
+		return false;
+	end
+	
+	-- Buff 08: Spirit Absorption
+	if Helper:CheckAvailable( "Spirit Absorption" ) and Player:GetMana() &lt; 70 and self:FindSpirit() ~= nil then
+		Helper:CheckExecute( "Spirit Absorption" );
+		return false;
+	end
+end</code></pre></div></div>
+
+			
+									
+						<div id='list_thanks314'>
+</div>
+<div id='div_post_reput314'>
+</div>
+			<div id="sig314" class="signature">Very OLD V.I.P from aionscript.com  orjange bowe  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p737" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile737">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlist1466.html?mode=viewprofile&amp;u=241" class="username">amad</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search18ec.html?author_id=241&amp;sr=posts">26</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Mar 08, 2017 3:09 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="241"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/241/true.html">6 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="241"></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content737">
+
+						<h3 ><a href="#p737">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingd931.html?mode=quote&amp;f=14&amp;p=737" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicc2fc.html?p=737#p737" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlist1466.html?mode=viewprofile&amp;u=241" class="username">amad</a></strong> &raquo; </span>Wed Apr 12, 2017 4:04 pm
+			</p>
+			
+			
+			
+			<div class="content">Hello i'm trying to improve the script cuz actually is pretty outdated,anyone can help me? (actually don't work).<br>
+Here the script :
+ <div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- Find the spirit that belongs to the provided player.
+--
+-- @param	Integer Contains the player identifier.
+-- @return	Entity
+
+function FindSpirit( ID )
+
+	-- Check the provided identifier to look for, otherwise use my own identifier.
+	if ID == nil then
+		ID = Player:GetID();
+	end
+	
+	-- Loop through the available entities to find the spirit.
+	for EntityID, Entity in DictionaryIterator( EntityList:GetList()) do
+	
+		-- Check if this monster is a spirit and belongs to me!
+		if Entity:GetOwnerID() == ID and string.find( Entity:GetName(), "Spirit" ) ~= nil then
+			return Entity;	
+		end
+		
+	end
+
+	-- Return nothing, the spirit has not been found.
+	return nil;
+	
+end
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @param	mixed	Indicates whether or not to ignore Lumiel's Effect for the fusion chain.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned, Ignore )
+	
+	-- Curse of Water
+	-- Dispel Magic (Enemy has states!)
+	-- Fear
+	-- Sandblaster (AOE, Long Duration)
+	-- Spirit Wrath Position (Shield)
+	
+	-- Stone Skin
+	-- Absorb Energy
+	-- Spirit Absorption (30% mana regen from 10% spirit health)
+	
+	-- Retrieve the entity state of the target.
+	local EntityState = Entity:GetState();
+	
+	-- Retrieve the entity of the player spirit
+	local SpiritEntity = self:FindSpirit();
+	
+	-- Check if the entity state is correct.
+	if EntityState == nil then
+		return;
+	end
+	
+	-- Check if the player spirit is valid.
+	if SpiritEntity == nil then
+		
+		-- Summon 1: Summon Earth Spirit
+		if Helper:CheckAvailable( "Summon Earth Spirit" ) then
+			Helper:CheckExecute( "Summon Earth Spirit" );
+			return false;
+		end
+		
+		-- Cannot continue until a Spirit is available.
+		return false;
+		
+	end
+	
+	-- Summon 2: Replenish Element
+		if SpiritEntity:GetHealth() &lt; 60 and Player:GetHealth() &gt; 70 and Helper:CheckAvailable( "Replenish Element" ) then
+			Helper:CheckExecute( "Replenish Element" );
+			return;
+		end
+
+if Helper:CheckAvailable( "Sympathetic Mind" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Sympathetic Mind" )) == nil then
+			Helper:CheckExecute( "Sympathetic Mind" );
+			return false;
+		end
+		
+		if Helper:CheckAvailable( "Stone Skin" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Stone Skin" )) == nil then
+			Helper:CheckExecute( "Stone Skin" );
+			return false;
+		end
+		
+		-- Spirit Buff 01: Armor Spirit 
+		if Helper:CheckAvailable( "Armor Spirit I" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Armor Spirit" )) == nil then
+			Helper:CheckExecute( "Armor Spirit" );
+			return false;
+		end
+		
+		-- Spirit Buff 02: Spirit Armor of Light
+		if ( Settings.SpiritMaster.AllowDP or Entity:IsPlayer()) and not Entity:IsDead() and Player:GetDP() &gt;= 2000 and Helper:CheckAvailable( "Spirit Armor of Light" ) and Player:GetState():GetState( Helper:CheckName( "Spirit Armor of Light" )) == nil then
+	    	Helper:CheckExecute( "Spirit Armor of Light" );
+	    	return false;
+	    end
+		
+		-- Spirit Buff 02: Spirit Armor of Darkness
+		if ( Settings.SpiritMaster.AllowDP or Entity:IsPlayer()) and not Entity:IsDead() and Player:GetDP() &gt;= 2000 and Helper:CheckAvailable( "Spirit Armor of Darkness" ) and Player:GetState():GetState( Helper:CheckName( "Spirit Armor of Darkness" )) == nil then
+	    	Helper:CheckExecute( "Spirit Armor of Darkness" );
+	    	return false;
+	    end
+		
+		-- Buff 02: Spirit Preserve
+	    if Helper:CheckAvailable( "Spirit Preserve" ) and Player:GetHealth() &lt; 20 then
+	    	Helper:CheckExecute( "Spirit Preserve" );
+	    	return false;
+    	end
+		
+		-- Check if this a new target and move the spirit when it is.
+	if self._LastEntity == nil or self._LastEntity ~= Entity:GetID() then
+		-- Otherwise send the spirit to attack.
+		elseif self._iClickTime == nil or self._iClickTime &lt; Time() then
+			DialogList:GetDialog( "pet_dialog/pet_cmd1" ):Click();
+			self._iClickTime = Time() + 1000;
+			self._bPrepareThreat = true;
+			return false;
+		-- For now, do nothing.
+		else
+			return false;
+		end
+		
+	end
+	-- Chain 1: Remove Shock
+	if Player:GetHealth() &lt; 70 and Player:GetMana() &lt; 85 and Helper:CheckAvailable( "Vengeful Backdraft" ) then
+		Helper:CheckExecute( "Vengeful Backdraft" );
+		return false;
+	elseif Helper:CheckAvailable( "Flames of Anguish" ) then
+		Helper:CheckExecute( "Flames of Anguish" );
+		return false;
+	elseif Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+	end
+	
+	-- Chain 2: Stone Shock
+	if not Stunned and Helper:CheckAvailable( "Stone Shock" ) then
+		Helper:CheckExecute( "Stone Shock" );
+		return false;
+	end
+	
+	-- Attack 01: Chain of Earth
+	if Entity:GetHealthCurrent() &gt; 1000 and Helper:CheckAvailable( "Chain of Earth" ) and EntityState:GetState( Helper:CheckName( "Chain of Earth" )) == nil then
+		Helper:CheckExecute( "Chain of Earth" );
+		return false;
+	end
+	
+	-- Spirit Buff 02: Spirit Wrath Position
+	if Helper:CheckAvailable( "Spirit Wrath Position" ) then 
+		Helper:CheckExecute( "Spirit Wrath Position" );
+		return false;
+	end
+	
+	-- Buff 01: Summoning Alacrity
+	if Helper:CheckAvailable( "Summoning Alacrity" ) then
+		Helper:CheckExecute( "Summoning Alacrity" );
+		return false;
+	end
+	-- Indicates whether or not to preserve mana. Damage-over-time skills are not applied after 50%.
+	if not Settings.SpiritMaster.AllowPreserveMana or Entity:GetHealth() &gt;= 50 then
+	
+		-- Attack 04: Erosion
+		if Helper:CheckAvailable( "Erosion" ) and EntityState:GetState( Helper:CheckName( "Erosion" )) == nil then
+			Helper:CheckExecute( "Erosion" );
+			return false;
+		end
+		
+		-- Stigma 02: Cyclone of Wrath
+		if Helper:CheckAvailable( "Cyclone of Wrath" ) and EntityState:GetState( Helper:CheckName( "Cyclone of Wrath" )) == nil then
+			Helper:CheckExecute( "Cyclone of Wrath" );
+			return false;
+		end
+		
+		-- Stigma 03: Infernal Pain
+		if Helper:CheckAvailable( "Infernal Pain" ) then 
+			Helper:CheckExecute( "Infernal Pain" );
+			return false;
+		end
+		
+		 -- Attack 05: Spirit Erosion
+	    if Helper:CheckAvailable( "Spirit Erosion" ) and Entity:GetHealth() &lt;= 700 then
+	        Helper:CheckExecute( "Spirit Erosion" );
+		    return false;
+	   end
+	
+	end
+	
+	-- Attack 05: Spirit Disturbance
+	if Helper:CheckAvailable( "Spirit Disturbance" ) and SpiritEntity:GetHealth() &lt; 80 then
+		Helper:CheckExecute( "Spirit Disturbance" );
+		return false;
+	end
+if Helper:CheckAvailable( "Command: Burn-to-Ashes" )  then
+		Helper:CheckExecute( "Command: Burn-to-Ashes" );
+		return false;
+	end
+if Helper:CheckAvailable( "Order: Elemental Discharge" )  then
+		Helper:CheckExecute( "Order: Elemental Discharge" );
+		return false;
+	end
+	
+	-- Attack 06: Backdraft
+	if Helper:CheckAvailable( "Backdraft" ) and Player:GetHealth() &lt; 80 and Player:GetMana() &lt; 90 then
+		Helper:CheckExecute( "Backdraft" );
+		return false;
+	end
+	-- Attack 08: Vacuum Choke
+	if Helper:CheckAvailable( "Vacuum Choke" ) then
+		Helper:CheckExecute( "Vacuum Choke" );
+		return false;
+	end
+	
+	
+	
+	
+	
+	-- Stigma 04: Weaken Spirit
+	if Helper:CheckAvailable( "Weaken Spirit" ) then
+		Helper:CheckExecute( "Weaken Spirit" );
+		return false;
+	end
+
+if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Wilderness Rage" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Wilderness Rage" );
+		return false;
+end	
+--UTILITY SPELLS
+	
+	
+	
+	-- Attack 09: Curse of Fire/Curse of Water
+	if Helper:CheckAvailable( "Curse of Water" ) and Player:GetHealth() &lt; 38 then
+		Helper:CheckExecute( "Curse of Water" );
+		return false;
+	end
+	
+	-- Buff 02: Spirit Preserve
+	if Helper:CheckAvailable( "Spirit Preserve" ) and Player:GetHealth() &lt; 20 then
+		Helper:CheckExecute( "Spirit Preserve" );
+		return false;
+	end
+	
+	
+	
+	-- Buff 04: Absorb Energy
+	if Helper:CheckAvailable( "Absorb Energy" ) and Player:GetMana() &lt; 90 then
+		Helper:CheckExecute( "Absorb Energy" );
+		return false;
+	end
+	
+	-- Buff 05: Spirit Absorption
+	if Helper:CheckAvailable( "Spirit Absorption" ) and Player:GetMana() &lt; 65 then
+		Helper:CheckExecute( "Spirit Absorption" );
+		return false;
+	end
+
+	-- Check if this entity has the Stone Skin state.
+	if Helper:CheckAvailable( "Sympathetic Mind" ) and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil 
+		and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil then
+		Helper:CheckExecute( "Sympathetic Mind" );
+		return false;
+	end
+	
+	-- Check if this entity has the Stone Skin state.
+	if Helper:CheckAvailable( "Stone Skin" ) and EntityState:GetState( "Stone Skin I" ) == nil and EntityState:GetState( "Stone Skin II" ) == nil 
+		and EntityState:GetState( "Stone Skin III" ) == nil and EntityState:GetState( "Stone Skin IV" ) == nil and EntityState:GetState( "Stone Skin V" ) == nil then
+		Helper:CheckExecute( "Stone Skin" );
+		return false;
+	end
+	
+	
+	
+	-- Buff 05: Stone Skin
+	if Helper:CheckAvailable( "Stone Skin" ) and EntityState:GetState( Helper:CheckName( "Stone Skin" )) == nil then
+		Helper:CheckExecute( "Stone Skin" );
+		return false;
+	end
+	
+	
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Sympathetic Mind" ) and EntityState:GetState( Helper:CheckName( "Sympathetic Mind" )) == nil then
+		Helper:CheckExecute( "Sympathetic Mind" );
+		return false;
+	end
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Spirit Wrath Position" ) and EntityState:GetState( Helper:CheckName( "Spirit Wrath Position" )) == nil then
+		Helper:CheckExecute( "Spirit Wrath Position" );
+		return false;
+	end
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Spirit Armor of Darknes" ) and EntityState:GetState( Helper:CheckName( "Spirit Armor of Darkness" )) == nil then
+		Helper:CheckExecute( "Spirit Armor of Darkness" );
+		return false;
+	end
+	
+	-- Buff 08: Spirit Absorption
+	if Helper:CheckAvailable( "Spirit Absorption" ) and Player:GetMana() &lt; 70 and self:FindSpirit() ~= nil then
+		Helper:CheckExecute( "Spirit Absorption" );
+		return false;
+	end
+end</code></pre></div></div>
+
+			
+									
+						<div id='list_thanks737'>
+</div>
+<div id='div_post_reput737'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p985" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile985">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlistd3d5.html?mode=viewprofile&amp;u=483" class="username">tanzer212002</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchd227.html?author_id=483&amp;sr=posts">5</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Jun 19, 2017 1:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="483"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/483/true.html">2 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="483"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/483/false.html">1 time</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content985">
+
+						<h3 ><a href="#p985">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postinga867.html?mode=quote&amp;f=14&amp;p=985" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicdbf6.html?p=985#p985" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd3d5.html?mode=viewprofile&amp;u=483" class="username">tanzer212002</a></strong> &raquo; </span>Fri Jun 23, 2017 11:59 pm
+			</p>
+			
+			
+			
+			<div class="content">Why does this script not work?  Seems like it has everything but nada.  Is it setup for EU possibly?  Although all the skills look like the NA names so...confused.</div>
+
+			
+									
+						<div id='list_thanks985'>
+</div>
+<div id='div_post_reput985'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p986" class="post has-profile bg1 online">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile986">
+			<dt class="has-profile-rank has-avatar">
+									<div class="inventea-online"><i class="fa fa-power-off"></i> Online</div>
+				
+				<div class="avatar-container">
+																<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" class="avatar"><img class="avatar" src="download/filea2fd.jpg?avatar=2_1484075720.jpg" width="150" height="135" alt="User avatar" /></a>														</div>
+								<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>							</dt>
+
+						<dd class="profile-rank">Site Admin</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search51e1.html?author_id=2&amp;sr=posts">260</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Jan 07, 2017 9:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="2"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/true.html">27 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="2"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/false.html">388 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content986">
+
+						<h3 ><a href="#p986">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingc106-2.html?mode=quote&amp;f=14&amp;p=986" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic80ad.html?p=986#p986" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a></strong> &raquo; </span>Sat Jun 24, 2017 11:37 am
+			</p>
+			
+			
+			
+			<div class="content">If there are NA names you have to edit this file and put EU names in it.^^</div>
+
+			
+									
+						<div id='list_thanks986'>
+</div>
+<div id='div_post_reput986'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p987" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile987">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlistd3d5.html?mode=viewprofile&amp;u=483" class="username">tanzer212002</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchd227.html?author_id=483&amp;sr=posts">5</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Jun 19, 2017 1:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="483"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/483/true.html">2 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="483"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/483/false.html">1 time</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content987">
+
+						<h3 ><a href="#p987">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting789c.html?mode=quote&amp;f=14&amp;p=987" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic3afd.html?p=987#p987" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd3d5.html?mode=viewprofile&amp;u=483" class="username">tanzer212002</a></strong> &raquo; </span>Sat Jun 24, 2017 12:50 pm
+			</p>
+			
+			
+			
+			<div class="content">Oh no I want it for NA lol, not EU.  Was just wondering if EU names were similar to the NA ones because for some reason this profile doesn't work for me at all and I use the NA one.  Just wondering if it's just not working or if it was an EU/NA naming issue.</div>
+
+			
+									
+						<div id='list_thanks987'>
+</div>
+<div id='div_post_reput987'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p988" class="post has-profile bg1 online">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile988">
+			<dt class="has-profile-rank has-avatar">
+									<div class="inventea-online"><i class="fa fa-power-off"></i> Online</div>
+				
+				<div class="avatar-container">
+																<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" class="avatar"><img class="avatar" src="download/filea2fd.jpg?avatar=2_1484075720.jpg" width="150" height="135" alt="User avatar" /></a>														</div>
+								<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>							</dt>
+
+						<dd class="profile-rank">Site Admin</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search51e1.html?author_id=2&amp;sr=posts">260</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Jan 07, 2017 9:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="2"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/true.html">27 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="2"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/false.html">388 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content988">
+
+						<h3 ><a href="#p988">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingf910.html?mode=quote&amp;f=14&amp;p=988" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopicf4ce.html?p=988#p988" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a></strong> &raquo; </span>Sat Jun 24, 2017 1:25 pm
+			</p>
+			
+			
+			
+			<div class="content">Well can't say as i don't own an Spiritmaster.<br>
+But this script should be easily fixable. (Changing Skill Names)</div>
+
+			
+									
+						<div id='list_thanks988'>
+</div>
+<div id='div_post_reput988'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p989" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile989">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlistd3d5.html?mode=viewprofile&amp;u=483" class="username">tanzer212002</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="searchd227.html?author_id=483&amp;sr=posts">5</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Jun 19, 2017 1:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="483"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/483/true.html">2 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="483"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/483/false.html">1 time</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content989">
+
+						<h3 ><a href="#p989">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting5c7b.html?mode=quote&amp;f=14&amp;p=989" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic6dad-2.html?p=989#p989" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistd3d5.html?mode=viewprofile&amp;u=483" class="username">tanzer212002</a></strong> &raquo; </span>Sat Jun 24, 2017 2:51 pm
+			</p>
+			
+			
+			
+			<div class="content">Yeah, I'm messing with it now, I got some of the stuff to work but it's going to take a lot of tweaking.  Thanks for the info though, if I get something that's nice and workable I'll repost here.</div>
+
+			
+									
+						<div id='list_thanks989'>
+</div>
+<div id='div_post_reput989'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p990" class="post has-profile bg1 online">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile990">
+			<dt class="has-profile-rank has-avatar">
+									<div class="inventea-online"><i class="fa fa-power-off"></i> Online</div>
+				
+				<div class="avatar-container">
+																<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" class="avatar"><img class="avatar" src="download/filea2fd.jpg?avatar=2_1484075720.jpg" width="150" height="135" alt="User avatar" /></a>														</div>
+								<a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a>							</dt>
+
+						<dd class="profile-rank">Site Admin</dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search51e1.html?author_id=2&amp;sr=posts">260</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Jan 07, 2017 9:08 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="2"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/true.html">27 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="2"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/2/false.html">388 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content990">
+
+						<h3 ><a href="#p990">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting26a0.html?mode=quote&amp;f=14&amp;p=990" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic4b26.html?p=990#p990" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb2a4.html?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">nucular</a></strong> &raquo; </span>Sat Jun 24, 2017 5:56 pm
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="memberlistd3d5.html?mode=viewprofile&amp;u=483">tanzer212002</a> wrote: <a href="viewtopic6dad-2.html?p=989#p989" data-post-id="989" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Jun 24, 2017 2:51 pm</div></cite>
+Yeah, I'm messing with it now, I got some of the stuff to work but it's going to take a lot of tweaking.  Thanks for the info though, if I get something that's nice and workable I'll repost here.
+</div></blockquote>
+
+Yes, that would be cool</div>
+
+			
+									
+						<div id='list_thanks990'>
+</div>
+<div id='div_post_reput990'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1044" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1044">
+			<dt class="no-profile-rank has-avatar">
+				
+				<div class="avatar-container">
+																<a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="avatar"><img class="avatar" src="download/file3e75.png?avatar=468_1509356961.png" width="150" height="150" alt="User avatar" /></a>														</div>
+								<a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search47f1.html?author_id=468&amp;sr=posts">96</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Jun 13, 2017 10:44 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="468"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/468/true.html">26 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="468"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/468/false.html">10 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1044">
+
+						<h3 ><a href="#p1044">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="posting6501.html?mode=quote&amp;f=14&amp;p=1044" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic13b6.html?p=1044#p1044" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberliste9ad.html?mode=viewprofile&amp;u=468" class="username">LordSnack</a></strong> &raquo; </span>Sun Jul 16, 2017 3:21 pm
+			</p>
+			
+			
+			
+			<div class="content">I have fixed it<br>
+But I do not know how with the pet it works on the mob goes by Spirit Attack Button <br>
+But the script goes even if it is a bad variant but it goes as one needs it<br>
+If one has the fix for the function with the pet please times post or insert directly into the script<br>
+<br>
+Sry 4 Bad English xD its not my Language xD my Language is German :3<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2011 Blastradius
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+	
+]]--
+
+--- Find the spirit that belongs to the provided player.
+--
+-- @param	Integer Contains the player identifier.
+-- @return	Entity
+
+function FindSpirit( ID )
+
+	-- Check the provided identifier to look for, otherwise use my own identifier.
+	if ID == nil then
+		ID = Player:GetID();
+	end
+	
+	-- Loop through the available entities to find the spirit.
+	for EntityID, Entity in DictionaryIterator( EntityList:GetList()) do
+	
+		-- Check if this monster is a spirit and belongs to me!
+		if Entity:GetOwnerID() == ID and string.find( Entity:GetName(), "Spirit" ) ~= nil then
+			return Entity;	
+		end
+		
+	end
+
+	-- Return nothing, the spirit has not been found.
+	return nil;
+	
+end
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @param	mixed	Indicates whether or not to ignore Lumiel's Effect for the fusion chain.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned, Ignore )
+	
+	-- Curse of Water
+	-- Dispel Magic (Enemy has states!)
+	-- Fear
+	-- Sandblaster (AOE, Long Duration)
+	-- Spirit Wrath Position (Shield)
+	
+	-- Stone Skin
+	-- Backdraft
+	-- Spirit Absorption (30% mana regen from 10% spirit health)
+	
+	-- Retrieve the entity state of the target.
+	local EntityState = Entity:GetState();
+	
+	-- Retrieve the entity of the player spirit
+	local SpiritEntity = self:FindSpirit();
+	
+	-- Check if the entity state is correct.
+	if EntityState == nil then
+		return;
+	end
+	
+	-- Check if the player spirit is valid.
+	if SpiritEntity == nil then
+		
+		-- Summon 1: Summon Earth Spirit
+		if Helper:CheckAvailable( "Summon Earth Spirit" ) then
+			Helper:CheckExecute( "Summon Earth Spirit" );
+			return false;
+		end
+		
+		-- Cannot continue until a Spirit is available.
+		return false;
+		
+	end
+	-- Spirit Attack Modus
+	if Helper:CheckAvailable( "Command: Disturbance" ) and Helper:CheckAvailable( "Command: Disturbance") then
+	   Helper:CheckExecute( "Command: Disturbance" );
+	   return;
+	   end
+	   
+	   --Next Spirit Attack
+	if Helper:CheckAvailable( "Command: Ruinous Offensive" ) and Helper:CheckAvailable( "Command: Ruinous Offensive") then
+	   Helper:CheckExecute( "Command: Ruinous Offensive" );
+	   return;
+	   end
+	-- Summon 2: Replenish Element
+		if SpiritEntity:GetHealth() &lt; 60 and Player:GetHealth() &gt; 70 and Helper:CheckAvailable( "Replenish Element" ) then
+			Helper:CheckExecute( "Replenish Element" );
+			return;
+		end
+		
+		-- Summon 3: Healing Spirit
+		if SpiritEntity:GetHealth() &lt; 25 and Helper:CheckAvailable( "Healing Spirit" ) then
+			Helper:CheckExecute( "Healing Spirit" );
+			return;
+		end
+		
+		-- Summon 4: Healing Spirit
+		if SpiritEntity:GetHealth() &lt; 30 and Helper:CheckAvailable( "Healing Spirit" ) then
+			Helper:CheckExecute( "Healing Spirit" );
+			return;
+		end
+		
+		if Helper:CheckAvailable( "Sympathetic Mind" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Sympathetic Mind" )) == nil then
+			Helper:CheckExecute( "Sympathetic Mind" );
+			return false;
+		end
+		
+		if Helper:CheckAvailable( "Stone Skin" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Stone Skin" )) == nil then
+			Helper:CheckExecute( "Stone Skin" );
+			return false;
+		end
+		
+		-- Spirit Buff 01: Armor Spirit 
+		if Helper:CheckAvailable( "Armor Spirit" ) and SpiritEntity:GetState():GetState( Helper:CheckName( "Armor Spirit" )) == nil then
+			Helper:CheckExecute( "Armor Spirit" );
+			return false;
+		end
+		
+		-- Spirit Buff 02: Strengthening Spirit Holy Armor
+		if ( Settings.SpiritMaster.AllowDP or Entity:IsPlayer()) and not Entity:IsDead() and Player:GetDP() &gt;= 2000 and Helper:CheckAvailable( "Strengthening Spirit: Holy Armour" ) and Player:GetState():GetState( Helper:CheckName( "Strengthening Spirit: Holy Armour" )) == nil then
+	    	Helper:CheckExecute( "Strengthening Spirit: Holy Armour" );
+	    	return false;
+	    end
+		
+		
+		-- Check if this a new target and move the spirit when it is.
+	--if self._LastEntity == nil or self._LastEntity ~= Entity:GetID() then
+		
+		-- Check if Spirit Threat is available, do not continue until it is.
+		--if not Helper:CheckAvailable( "Command: Erosion" ) then
+		--	if self._bPrepareThreat then
+		--		self._LastEntity = Entity:GetID();
+		--		self._bPrepareThreat = nil;
+		--	end
+		--	return false;
+		-- Check if the entity has selected a target.
+		--elseif Entity:GetTargetID() ~= 0 then
+		--	Helper:CheckExecute( "Command: Erosion" );
+		--	self._bPrepareThreat = true;
+		--	return false;
+			
+		-- Otherwise send the spirit to attack.
+		--elseif self._iClickTime == nil or self._iClickTime &lt; Time() then
+		--	DialogList:GetDialog( "pet_dialog/pet_cmd1" ):Click();
+		--	self._iClickTime = Time() + 1000;
+		--	self._bPrepareThreat = true;
+		--	return false;
+		-- For now, do nothing.
+		--else
+		--	return false;
+		--end
+		
+	--end
+	
+	-- Check if this a new target and move the spirit when it is.
+	--if self._LastEntity == nil or self._LastEntity ~= Entity:GetID() then
+		
+		-- Check if Spirit Threat is available, do not continue until it is.
+		--if not Helper:CheckAvailable( "Command: Erosion" ) then
+		--	if self._bPrepareThreat then
+		--		self._LastEntity = Entity:GetID();
+		--		self._bPrepareThreat = nil;
+		--	end
+		--	return false;
+		-- Check if the entity has selected a target.
+		--elseif Entity:GetTargetID() ~= 0 then
+		--	Helper:CheckExecute( "Command: Erosion" );
+		--	self._bPrepareThreat = true;
+		--	return false;
+			
+		-- Otherwise send the spirit to attack.
+		--elseif self._iClickTime == nil or self._iClickTime &lt; Time() then
+		--	DialogList:GetDialog( "pet_dialog/pet_cmd1" ):Click();
+		--	self._iClickTime = Time() + 1000;
+		--	self._bPrepareThreat = true;
+		--	return false;
+		-- For now, do nothing.
+		--else
+		--	return false;
+		--end
+		
+	--end
+	
+	-- Chain 1: Remove Shock
+	if Player:GetHealth() &lt; 70 and Player:GetMana() &lt; 85 and Helper:CheckAvailable( "Vengeful Backdraft" ) then
+		Helper:CheckExecute( "Vengeful Backdraft" );
+		return false;
+	elseif Helper:CheckAvailable( "Flames of Anguish" ) then
+		Helper:CheckExecute( "Flames of Anguish" );
+		return false;
+	elseif Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+	end
+	
+	-- Chain 2: Stone Shock
+	if not Stunned and Helper:CheckAvailable( "Stone Shock" ) then
+		Helper:CheckExecute( "Stone Shock" );
+		return false;
+	end
+	
+	-- Attack 01: Chain of Earth
+	if Entity:GetHealthCurrent() &gt; 1000 and Helper:CheckAvailable( "Chain of Earth" ) and EntityState:GetState( Helper:CheckName( "Chain of Earth" )) == nil then
+		Helper:CheckExecute( "Chain of Earth" );
+		return false;
+	end
+	
+	-- Attack 02: Spirit Thunderbolt Claw
+	if Helper:CheckAvailable( "Command: Detonation Claw" ) then
+		Helper:CheckExecute( "Command: Detonation Claw" );
+		return false;
+	end
+	
+	-- Spirit Buff 02: Spirit Wrath Position
+	if Helper:CheckAvailable( "Spirit Wrath Position" ) then 
+		Helper:CheckExecute( "Spirit Wrath Position" );
+		return false;
+	end
+	
+	-- Buff 01: Summoning Alacrity
+	if Helper:CheckAvailable( "Summoning Alacrity" ) then
+		Helper:CheckExecute( "Summoning Alacrity" );
+		return false;
+	end
+	
+	-- Attack 03: Summon Earth Energy
+	--if Helper:CheckAvailable( "Summon Elemental Servant" ) then
+	--	Helper:CheckExecute( "Summon Elemental Servant" );
+	--	return false;
+	--end
+	
+	-- Attack 03: Summon Earth Energy
+	--if Helper:CheckAvailable( "Summon Fire Energy" ) then
+	--	Helper:CheckExecute( "Summon Fire Energy" );
+	--	return false;
+	--end
+	
+	-- Stigma 01: Summon Cyclone Servant
+	if Helper:CheckAvailable( "Summon Wind Servant" ) then
+		Helper:CheckExecute( "Summon Wind Servant" );
+		return false;
+	end
+		
+	-- Attack 03: Summon Earth Energy
+	--if Helper:CheckAvailable( "Summon Earth Energy" ) then
+	--	Helper:CheckExecute( "Summon Earth Energy" );
+	--	return false;
+	--end
+	
+	-- Stigma 01: Summon Cyclone Servant
+	--if Helper:CheckAvailable( "Summon Cyclone Servant" ) then
+	--	Helper:CheckExecute( "Summon Cyclone Servant" );
+	--	return false;
+	--end
+	
+	-- Attack 03: Dispel
+	if Helper:CheckAvailable( "Dispel Magic" ) then
+		Helper:CheckExecute( "Dispel Magic" );
+		return false;
+	end
+	
+	-- Indicates whether or not to preserve mana. Damage-over-time skills are not applied after 50%.
+	if not Settings.SpiritMaster.AllowPreserveMana or Entity:GetHealth() &gt;= 50 then
+	
+		-- Attack 04: Erosion
+		if Helper:CheckAvailable( "Erosion" ) and EntityState:GetState( Helper:CheckName( "Erosion" )) == nil then
+			Helper:CheckExecute( "Erosion" );
+			return false;
+		end
+		
+		-- Stigma 02: Cyclone of Wrath
+		if Helper:CheckAvailable( "Cyclone of Wrath" ) and EntityState:GetState( Helper:CheckName( "Cyclone of Wrath" )) == nil then
+			Helper:CheckExecute( "Cyclone of Wrath" );
+			return false;
+		end
+		
+		-- Stigma 03: Infernal Pain
+		if Helper:CheckAvailable( "Infernal Pain" ) then 
+			Helper:CheckExecute( "Infernal Pain" );
+			return false;
+		end
+		
+		 -- Attack 05: Spirit Erosion
+	    if Helper:CheckAvailable( "Spirit Erosion" ) and Entity:GetHealth() &lt;= 700 then
+	        Helper:CheckExecute( "Spirit Erosion" );
+		    return false;
+	   end
+	
+	end
+	
+	-- Attack 05: Spirit Disturbance
+	if Helper:CheckAvailable( "Spirit Disturbance" ) and SpiritEntity:GetHealth() &lt; 80 then
+		Helper:CheckExecute( "Spirit Disturbance" );
+		return false;
+	end
+	
+	-- Attack 06: Backdraft
+	if Helper:CheckAvailable( "Backdraft" ) and Player:GetHealth() &lt; 80 and Player:GetMana() &lt; 90 then
+		Helper:CheckExecute( "Backdraft" );
+		return false;
+	end
+	
+	-- Attack 07: Spirit Detonation Claw
+	if Helper:CheckAvailable( "Spirit Detonation Claw" ) then
+		Helper:CheckExecute( "Spirit Detonation Claw" );
+		return false;
+	end
+	
+	-- Attack 08: Vacuum Choke
+	if Helper:CheckAvailable( "Vacuum Choke" ) then
+		Helper:CheckExecute( "Vacuum Choke" );
+		return false;
+	end
+	
+	-- Attack 08: Vacuum Choke
+	if Helper:CheckAvailable( "Spirit Absorption" ) then
+		Helper:CheckExecute( "Spirit Absorption" );
+		return false;
+	end
+	
+	-- Attack 08: Vacuum Choke
+	if Helper:CheckAvailable( "Backdraft" ) then
+		Helper:CheckExecute( "Backdraft" );
+		return false;
+	end
+	
+	-- Stigma 04: Weaken Spirit
+	if Helper:CheckAvailable( "Weaken Spirit" ) then
+		Helper:CheckExecute( "Weaken Spirit" );
+		return false;
+	end
+	
+	-- Chain Weaken Spirit
+	if Helper:CheckAvailable("Elemental Smash" ) then
+		Helper:CheckExecute("Element Smash" );
+		return false;
+	end
+		
+--UTILITY SPELLS
+	
+	-- Stigma 05: Absorb Vitality
+	--if Helper:CheckAvailable( "Absorb Vitality" ) and Player:GetHealth() &lt; 75 then
+	--	Helper:CheckExecute( "Absorb Vitality" );
+	--	return false;
+	--end
+	
+	-- Attack 09: Curse of Fire/Curse of Water
+	--if Helper:CheckAvailable( "Curse of Water" ) and Player:GetHealth() &lt; 38 then
+	--	Helper:CheckExecute( "Curse of Water" );
+	--	return false;
+	--end
+	
+	-- Buff 02: Spirit Preserve
+	if Helper:CheckAvailable( "Command: Preserve Spirit" ) and Player:GetHealth() &lt; 20 then
+		Helper:CheckExecute( "Command: Preserve Spirit" );
+		return false;
+	end
+	
+	-- Buff 03: Spirit Substitution
+	if Helper:CheckAvailable( "Command: Protection" ) and Player:GetHealth() &lt; 30 then
+		Helper:CheckExecute( "Command: Protection" );
+		return false;
+	end
+	
+	-- Buff 04: Backdraft
+	if Helper:CheckAvailable( "Backdraft" ) and Player:GetMana() &lt; 90 then
+		Helper:CheckExecute( "Backdraft" );
+		return false;
+	end
+	
+	-- Buff 05: Spirit Absorption
+	--if Helper:CheckAvailable( "Spirit Absorption" ) and Player:GetMana() &lt; 65 then
+	--	Helper:CheckExecute( "Spirit Absorption" );
+	--	return false;
+	--end
+
+	-- Check if this entity has the Stone Skin state.
+	if Helper:CheckAvailable( "Sympathetic Mind" ) and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil 
+		and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil and EntityState:GetState( "Sympathetic Mind" ) == nil then
+		Helper:CheckExecute( "Sympathetic Mind" );
+		return false;
+	end
+	
+	-- Check if this entity has the Stone Skin state.
+	if Helper:CheckAvailable( "Stone Skin" ) and EntityState:GetState( "Stone Skin I" ) == nil and EntityState:GetState( "Stone Skin II" ) == nil 
+		and EntityState:GetState( "Stone Skin III" ) == nil and EntityState:GetState( "Stone Skin IV" ) == nil and EntityState:GetState( "Stone Skin V" ) == nil then
+		Helper:CheckExecute( "Stone Skin" );
+		return false;
+	end
+	
+	-- Buff 04: Backdraft
+	if Helper:CheckAvailable( "Backdraft" ) and Player:GetManaMaximum() - Player:GetManaCurrent() &gt; 526 then
+		Helper:CheckExecute( "Backdraft" );
+		return false;
+	end
+	
+	-- Buff 05: Stone Skin
+	if Helper:CheckAvailable( "Stone Skin" ) and EntityState:GetState( Helper:CheckName( "Stone Skin" )) == nil then
+		Helper:CheckExecute( "Stone Skin" );
+		return false;
+	end
+	
+	-- Buff 09: Fine Rally Serum
+	if Helper:CheckAvailable( "Increase Natural Recovery Serum" ) and EntityState:GetState( Helper:CheckName( "Increase Natural Recovery Serum" )) == nil then
+		Helper:CheckExecute( "Increase Natural Recovery Serum" );
+		return false;
+	end
+	
+	-- Buff 06: Blessing of Fire
+	--if Helper:CheckAvailable( "Blessing of Fire" ) and EntityState:GetState( Helper:CheckName( "Blessing of Fire" )) == nil then
+	--	Helper:CheckExecute( "Blessing of Fire" );
+	--	return false;
+	--end
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Sympathetic Mind" ) and EntityState:GetState( Helper:CheckName( "Sympathetic Mind" )) == nil then
+		Helper:CheckExecute( "Sympathetic Mind" );
+		return false;
+	end
+	
+	-- Buff 07: Sympathetic Mind
+	if Helper:CheckAvailable( "Spirit Wrath Position" ) and EntityState:GetState( Helper:CheckName( "Spirit Wrath Position" )) == nil then
+		Helper:CheckExecute( "Spirit Wrath Position" );
+		return false;
+	end
+	
+	-- Buff 07: Sympathetic Mind
+	--if Helper:CheckAvailable( "Spirit Armor of Darknes" ) and EntityState:GetState( Helper:CheckName( "Spirit Armor of Darkness" )) == nil then
+	--	Helper:CheckExecute( "Spirit Armor of Darkness" );
+	--	return false;
+	--end
+	
+	-- Buff 08: Spirit Absorption
+	if Helper:CheckAvailable( "Spirit Absorption" ) and Player:GetMana() &lt; 70 and self:FindSpirit() ~= nil then
+		Helper:CheckExecute( "Spirit Absorption" );
+		return false;
+	end
+end</code></pre></div></div>
+
+			
+									
+						<div id='list_thanks1044'>
+</div>
+<div id='div_post_reput1044'>
+</div>
+			<div id="sig1044" class="signature">EU Thor - Gameforge | NA - Danaria</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+				<div id="p1151" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1151">
+			<dt class="no-profile-rank no-avatar">
+				
+				<div class="avatar-container">
+																			</div>
+								<a href="memberlistb838.html?mode=viewprofile&amp;u=324" class="username">ewerson2</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="search40dd.html?author_id=324&amp;sr=posts">8</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Apr 11, 2017 12:40 pm</dd>		
+		
+						    <dd class="profile-posts" data-user-give-id="324"><strong>Has&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/324/true.html">4 times</a></dd>
+    <dd class="profile-posts" data-user-receive-id="324"><strong>Been&nbsp;thanked:</strong> <a href="app.php/thankslist/givens/324/false.html">3 times</a></dd>
+
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1151">
+
+						<h3 ><a href="#p1151">Re: Spiritmaster.lua</a></h3>
+													<ul class="post-buttons">
+																																									<li>
+							<a href="postingcca3.html?mode=quote&amp;f=14&amp;p=1151" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+															</ul>
+							
+						<p class="author">
+									<a class="unread" href="viewtopic24d6.html?p=1151#p1151" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="memberlistb838.html?mode=viewprofile&amp;u=324" class="username">ewerson2</a></strong> &raquo; </span>Mon Aug 07, 2017 3:59 pm
+			</p>
+			
+			
+			
+			<div class="content">Temporary solution to the attack of the spirit  <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"> <br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Attack 02: Spirit Attack
+if Entity:GetHealth() == 100 and Entity:GetPosition():DistanceToPosition( SpiritEntity:GetPosition()) &gt;= 12 then
+	PlayerInput:Console( "/Quickbar 1 1 1" );	
+	return false;
+end
+</code></pre></div></div>
+
+			
+									
+						<div id='list_thanks1151'>
+</div>
+<div id='div_post_reput1151'>
+</div>
+			
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider" />
+	
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="posting1d94.html?mode=reply&amp;f=14&amp;t=83" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+	
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="viewtopiccd92.html?f=14&amp;t=83&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<form method="post" action="https://www.nyerk.xyz/viewtopic.php?f=14&amp;t=83">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed" />
+				<input type="submit" class="button2" name="sort" value="Go" />
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			14 posts
+							<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="viewtopic48b3.html?f=14&amp;t=83&amp;start=10" role="button">2</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="viewtopic48b3.html?f=14&amp;t=83&amp;start=10" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="viewforum9780.html?f=14" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Spiritmaster”</span>
+		</a>
+	</p>
+	
+		<br /><br />
+	</div>
+
+	<div class="stat-block online-list">
+		<h3>Who is online</h3>
+		<p>Users browsing this forum: No registered users and 1 guest</p>
+	</div>
+
+				
+			</div>
+
+	<div class="inventea-footer-wrapper">
+		<div id="page-footer" class="inventea-footer" role="contentinfo">
+			<nav role="navigation">
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="index-2.html" data-navbar-reference="index"><span>Board index</span></a></span>					</li>
+
+						<li class="small-icon" data-last-responsive="true"><a href="memberlist8733.html?mode=contactadmin" role="menuitem">Contact us</a></li>
+				
+		<li class="small-icon"><a href="ucp033a.html?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+				<li>All times are <span title="UTC">UTC</span></li>
+			</ul>
+</nav>
+
+			<footer class="inventea-credits">
+								Powered by <a href="https://www.phpbb.com/">phpBB</a>&reg; Forum Software &copy; phpBB Limited<br />
+								Style we_universal created by <a href="https://inventea.com/" title="phpBB styles, HTML5 &amp; CSS3 templates">INVENTEA</a> & <a href="http://xeronix.org/" title="phpBB styles and much more">nextgen</a>
+											</footer>
+		</div>
+	</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+	<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/jquery.min5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="assets/javascript/core5d79.js?assets_version=25"></script>
+
+
+
+<script type="text/javascript" src="styles/prosilver/template/forum_fn5d79.js?assets_version=25"></script>
+<script type="text/javascript" src="styles/prosilver/template/ajax5d79.js?assets_version=25"></script>
+
+
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=14&t=83&p=737 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:50:47 GMT -->
+</html>

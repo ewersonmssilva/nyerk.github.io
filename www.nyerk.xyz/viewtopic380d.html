@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=248&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Project: Auto leveling new character</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Project: Auto leveling new character</h2>
+		<p><a href="viewtopic0f09.html?f=8&amp;t=248">https://www.nyerk.xyz/viewtopic.php?f=8&amp;t=248</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>9</strong></div>
+					<div class="post">
+				<h3>Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Tue Aug 29, 2017 4:29 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Hello community<br>
+<br>
+I'm writing a script for auto leveling new character automatically. This script implement OfficialGrinderFramework to have his own attack, potion, etc.. routine.<br>
+Actually i implement level 1 to 9 and 10 to 25.<br>
+<br>
+<strong class="text-strong">How to use it:</strong><br>
+Download and put the base framework file <strong class="text-strong">LevelingNewCharacter.lua</strong> in Scripting folder.<br>
+<img src="../i.imgur.com/UcI7RKX.jpg" class="postimage" alt="Image"><br>
+<br>
+<strong class="text-strong">Level 1 to 9 Poeta</strong><br>
+Put file <strong class="text-strong">Level 1-9 Poeta.lua</strong> in Scripting folder.<br>
+<br>
+Cause a problem with Pernos need to manually choose Class Path.<br>
+<br>
+This is a video with the script at work.<br>
+<a href="https://www.youtube.com/watch?v=3IEpBg4Dwbw" class="postlink">https://www.youtube.com/watch?v=3IEpBg4Dwbw</a><br>
+<br>
+<strong class="text-strong">Level 10 to 25 - Verteron</strong><br>
+Put file <em class="text-italics">Level 10-25 Verteron.lua</em> in Scripting folder.<br>
+Bind at Verteron Obelisk.<br>
+Take Pink quest and deliver first Verteron campaign quest.<br>
+Run script.<br>
+<br>
+When you reach lvl25 deliver Campaign quest <em class="text-italics"><a href="http://aiondatabase.net/en/quest/14015/" class="postlink">Deeply rooted thirst for vengeance</a></em> in verteron citadel and Santum (unlock first stigma slot). Complete new pink quest too<br>
+<br>
+This is a video with the script at work.<br>
+<a href="https://youtu.be/TRqZm4mt3vI" class="postlink">https://youtu.be/TRqZm4mt3vI</a><br>
+<br>
+<strong class="text-strong">Level 25 to 30 - Nochsana training camp - Beta</strong><br>
+Put file <em class="text-italics">Level 25-30 NochsanaTrainingCamp.lua</em> in Scripting folder.<br>
+Configure script if u run multiclient.
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>	-- Configure party members
+	local server = ""; -- If u are intraserver. For example server = "-Urtem" or server = "-Hellion" or server = "-Thor". Empty if are in normal server
+	
+	-- Comment this line if u solo instance
+	FrameworkExp:AddMemberParty("YourCharName1"..server);
+	FrameworkExp:AddMemberParty("YourCharName2"..server);
+</code></pre></div>
+
+Script take and delivery blue repeatable quest.<br>
+Script should automatically form party and leave when instance is done. Party leader change every time run instance.<br>
+<br>
+This is a video with the script at work.<br>
+<a href="https://youtu.be/S_sl1-eDXME" class="postlink">https://youtu.be/S_sl1-eDXME</a><br>
+<br>
+Still beta version. Feedback if bug <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"><br>
+<br>
+<strong class="text-strong">Level 30 to 37 - Fire Temple</strong><br>
+<br>
+Put file <em class="text-italics">Level 30-37 FireTemple.lua</em> in Scripting folder.<br>
+Setup group like Nochsana training camp.<br>
+Move your chatacter near fire temple entrance then start script.<br>
+<br>
+<strong class="text-strong">Level 37 to 42 - Kromede Trial</strong><br>
+<br>
+Put file <em class="text-italics">Level 37-xxx Kromede Trial.lua</em> in Scripting folder.<br>
+Move your chatacter near Kromede Trial entrance then start script.<br>
+VERY IMPORTANT SETTINGS: Zoom visual like first person. DON'T minimize the client<br>
+<br>
+Any feedback would be greatly appreciated! <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Tue Aug 29, 2017 10:44 pm</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">Very cool idea ill test it soon and report back</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Tue Aug 29, 2017 11:16 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">tnx <img class="smilies" src="images/smilies/icon_e_biggrin.gif" width="15" height="17" alt=":D" title="Very Happy"></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Aug 30, 2017 2:00 am</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">Ive to fix my Priest.lua first, it doesnt use Healing Light for some reason...<br>
+Also if you die at the worgs the script keeps running against the wall.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Aug 30, 2017 2:07 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">I fix priest.lua in this way<br>
+1) Open Macro aion menù<br>
+2) Drag and drop Healing Light skill in macro<br>
+3) Copy paste macro text in priest.lua<br>
+<br>
+I think "Healing Light" isn't space but some other character.<br>
+Look at this post <a href="viewtopic0e77.html?f=7&amp;t=127" class="postlink">viewtopic.php?f=7&amp;t=127</a><br>
+<br>
+Try to enable potion in Settings.lua
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>-- Indicates whether or not potions are allowed (does not use Serums, only Elixir and Potions).
+self.Potion = true;
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Aug 30, 2017 2:37 am</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">Oh ty, fixed it <img class="smilies" src="images/smilies/icon_e_smile.gif" width="15" height="17" alt=":)" title="Smile"><br>
+But it doesnt seem to check for mana/health for resting so my priest runs out of mana and dies.<br>
+Did i miss some option or is there no option?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Aug 30, 2017 11:01 am</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">Your Settings.AllowRest is true?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Aug 30, 2017 11:13 am</strong></div>
+				<div class="author">by <strong>unkn0wnus3r</strong></div>
+				<div class="content">Oh, my falt, i put the scritp in a new AS folder and just copied the class.lua files + nodes, resting is false by default.</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Aug 30, 2017 3:54 pm</strong></div>
+				<div class="author">by <strong>agonic</strong></div>
+				<div class="content">what about the ishalgen ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Project: Auto leveling new character</h3>
+				<div class="date">Posted: <strong>Wed Aug 30, 2017 6:59 pm</strong></div>
+				<div class="author">by <strong>cooco</strong></div>
+				<div class="content">I never play asmodian side <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"></div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>1</strong> of <strong>9</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=8&t=248&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:42:24 GMT -->
+</html>

@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb">
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=10&t=11&start=40&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+
+<title>Nyerk &bull; Official: Songweaver.lua - Page 5</title>
+
+<link href="styles/we_universal/theme/print.html" rel="stylesheet">
+</head>
+<body id="phpbb">
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Nyerk</h1>
+		<p>An Forum about Aion<br /><a href="index.html">https://www.nyerk.xyz/</a></p>
+
+		<h2>Official: Songweaver.lua</h2>
+		<p><a href="viewtopicb1e3.html?f=10&amp;t=11">https://www.nyerk.xyz/viewtopic.php?f=10&amp;t=11</a></p>
+	</div>
+
+	<div id="page-body" class="page-body">
+		<div class="page-number">Page <strong>5</strong> of <strong>6</strong></div>
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Thu Feb 23, 2017 3:30 pm</strong></div>
+				<div class="author">by <strong>HollyGR</strong></div>
+				<div class="content">testing it but it keep spamming self buff even if I put into settings the allow.buff -&gt; false  <img class="smilies" src="images/smilies/icon_e_sad.gif" width="15" height="17" alt=":(" title="Sad"> , any idea? xD<br>
+when is not spamming the buff is just keeping the chat opened all time without doing anything or it seems working but just spam autoattack all the time!</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Thu Feb 23, 2017 4:27 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">Replace buff code with this:<br>
+<br>
+if Player:GetState():GetState( "Melody of Life" ) == nil and Player:GetState():GetState( "Blessing of Rock" ) == nil and Player:GetState():GetState( "Blessing of Stone" ) == nil and Helper:CheckAvailable( "Melody of Life" ) then<br>
+		Helper:CheckExecute( "Melody of Life",  Player )<br>
+		return false;<br>
+	end</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Sat Feb 25, 2017 1:49 pm</strong></div>
+				<div class="author">by <strong>bionuttt</strong></div>
+				<div class="content">hey locatelli what stigma build use for this script ?</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Sat Feb 25, 2017 2:21 pm</strong></div>
+				<div class="author">by <strong>FarAwaY</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlist1a8f.html?mode=viewprofile&amp;u=107">bionuttt</a> wrote: <a href="viewtopicd89d.html?p=261#p261" data-post-id="261" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sat Feb 25, 2017 1:49 pm</div></cite>
+hey locatelli what stigma build use for this script ?
+</div></blockquote>
+
+<a href="http://aiondatabase.net/en/item/140001288/?sl=1" class="postlink">March of the Bees</a><br>
+<a href="http://aiondatabase.net/en/skill/4537/?sl=1" class="postlink">Rejuvenation Melody</a><br>
+<a href="http://aiondatabase.net/en/item/140001282/?sl=1" class="postlink">Mosky Requiem</a><br>
+<a href="http://aiondatabase.net/en/item/140001296/?sl=1" class="postlink">Disharmony</a><br>
+<a href="http://aiondatabase.net/en/item/140001284/?sl=1" class="postlink">Magic Boost Mode</a><br>
+<a href="http://aiondatabase.net/en/item/140001290/?sl=1" class="postlink">Dance of the Jester</a></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Sat Feb 25, 2017 4:03 pm</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">All stigmas can be used, I just didn't add (yet) support to clearing melody, Dance of Jester, Healing variation, Requiem of Oblivion, March of Desolation, and all high daeva skills.<br>
+Attack melody makes script stop to cast it, I tried to add to make it move faster, but doesn't work well :/</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Mon Mar 06, 2017 4:56 pm</strong></div>
+				<div class="author">by <strong>Rorret</strong></div>
+				<div class="content"><blockquote><div><cite><a href="memberlistf8ff.html?mode=viewprofile&amp;u=51">locatelli</a> wrote: <a href="viewtopic0c93.html?p=255#p255" data-post-id="255" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Thu Feb 23, 2017 4:27 pm</div></cite>
+Replace buff code with this:<br>
+<br>
+if Player:GetState():GetState( "Melody of Life" ) == nil and Player:GetState():GetState( "Blessing of Rock" ) == nil and Player:GetState():GetState( "Blessing of Stone" ) == nil and Helper:CheckAvailable( "Melody of Life" ) then<br>
+		Helper:CheckExecute( "Melody of Life",  Player )<br>
+		return false;<br>
+	end
+</div></blockquote>
+
+Your code is missing the chanter non stigma buff. If you replace buff code with this it will not get stuck no matter which buff is applied on it:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>if Player:GetState():GetState( "Melody of Life" ) == nil and Player:GetState():GetState( "Blessing of Rock" ) == nil and Player:GetState():GetState( "Blessing of Stone" ) == nil Player:GetState():GetState( "Prayer of Protection" ) == nil 
+and Helper:CheckAvailable( "Melody of Life" ) then
+		Helper:CheckExecute( "Melody of Life",  Player )
+		return false;
+	end</code></pre></div>
+
+cheers</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Tue Mar 07, 2017 12:37 am</strong></div>
+				<div class="author">by <strong>locatelli</strong></div>
+				<div class="content">Oh well thanks, I'll have to write all the new code soon, but not using my Bard again, just went back to bot cu anteriore, i find it more reliable and faster</div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Tue Mar 07, 2017 1:27 am</strong></div>
+				<div class="author">by <strong>Rorret</strong></div>
+				<div class="content">I will share mine if you don't mind. It's basically yours but I did some tweaking here and there; changed the buffing and also did some changes to optimize rotation on lower level bards.<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2017 Locatelli
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+
+]]--
+
+
+--- (Private Function) Checks the healing requirements for the provided entity.
+--
+-- @param	Entity	Contains the entity to perform healing on.
+-- @param	double	Contains the
+-- @return	bool
+
+function _CheckHeal( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local EntityState = Entity:GetState();
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Check if the entity requires healing and perform the correct healing routine.
+	if Entity:GetHealth() &lt; 80 and ( Settings.Songweaver.AllowApproach or Range &lt;= 23 ) then
+
+		-- Retrieve the local target for certain checks.
+		-- local Target = EntityList:GetEntity( Player:GetTargetID());
+
+    --Complete the Chain
+    if Entity:GetID() == Player:GetID() and Settings.Songweaver.AllowAttack then
+      if Entity:GetHealth() &lt; 90 and Helper:CheckAvailable( "Soft Echo" ) then
+        Helper:CheckExecute ( "Soft Echo", Entity )
+        return false;
+      elseif Entity:GetHealth() &lt; 85 and Helper:CheckAvailable( "Mild Echo" ) then
+        Helper:CheckExecute ( "Mild Echo", Entity )
+        return false;
+      elseif Entity:GetHealth() &lt; 75 and Helper:CheckAvailable( "Gentle Echo" ) then
+        Helper:CheckExecute ( "Gentle Echo", Entity )
+        return false;
+      end
+    end
+    
+		-- Change the healing routine if I'm healing myself when allowed to attack.
+		if Entity:GetID() == Player:GetID() and Settings.Songweaver.AllowAttack then  --and Target ~= nil and not Target:IsDead() then
+			if Entity:GetHealth() &lt; 50 and Helper:CheckAvailable( "Gentle Echo" ) then
+				Helper:CheckExecute( "Gentle Echo", Entity );
+				return false;
+			end
+		-- Check if we should heal the provided entity.
+		elseif Entity:GetHealth() &lt; 40 and Helper:CheckAvailable( "Gentle Echo" ) then
+			Helper:CheckExecute( "Gentle Echo", Entity );
+			return false;
+		end
+
+	end
+	
+	--Heal: Rejuvenation Melody
+	if Helper:CheckAvailable( "Rejuvenation Melody" ) and Entity:GetHealth() &lt; 60 then
+		Helper:CheckExecute( "Rejuvenation Melody", Entity );
+		return false;
+	end
+	
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+
+
+---------------------------------------------------------------------------------------
+---------------------!!!!!!!!! DO NOT TOUCH MANA HEALING!!!!!!!!!!!--------------------
+---------------------------------------------------------------------------------------
+
+--- Checks if the state of the provided entity.
+--
+-- @param	Entity	Contains the entity to check.
+-- @return	bool
+
+function _CheckMana( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local EntityState = Entity:GetState();
+  
+  -- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+  
+  --Complete the Chain
+  if Player:GetMana() &lt; 60 and Helper:CheckAvailable( "Variation of Peace" ) then
+    Helper:CheckExecute ( "Variation of Peace" )
+    return false;
+  end
+
+	-- Check if the entity requires healing and perform the correct mana healing routine.
+	if Entity:GetMana() &lt; 50 and ( Settings.Songweaver.AllowApproach or Range &lt;= 23 ) then
+    if Entity:GetMana() &lt; 45 and Helper:CheckAvailable( "Echo of Clarity" ) then
+      Helper:CheckExecute( "Echo of Clarity", Entity )
+      return false;
+    end
+  end
+  
+  if Player:GetMana() &lt; 50 and Helper:CheckAvailable( "Melody of Reflection" ) then
+    Helper:CheckExecute( "Melody of Reflection" )
+    return false;
+  end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+--------------------------------------------------------------------------------------
+
+
+function _CheckState( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Retrieve the state for the current entity to inspect.
+	local EntityState = Entity:GetState();
+
+	-- Loop through the states only when we are available to dispel them. We still check for removed states!
+	if EntityState ~= nil and ( self.StateDispelTime == nil or self.StateDispelTime &lt; Time()) then
+
+		-- Create the state array for the global entity storage and undispellable states if it does not exist.
+		if self.StateArray == nil or self.StateUndispellable == nil then
+			self.StateArray = {};
+			self.StateUndispellable = {};
+		end
+
+		-- Create the state array for the current entity if it does not exist.
+		if self.StateArray[Entity:GetID()] == nil then
+			self.StateArray[Entity:GetID()] = {};
+		end
+
+		-- Loop through the states to find which need to be removed.
+		for ID, Skill in DictionaryIterator( EntityState:GetList()) do
+
+			-- Check if the current skill is valid and has not been marked and undispellable.
+			if Skill ~= nil and Skill:IsDebuff() and ( self.StateUndispellable[Skill:GetID()] == nil or self.StateUndispellable[Skill:GetID()] &lt; Time()) then
+
+				-- Check if this entity had the current skill effect on him and hasn't been removed by either Cure Mind or Dispel.
+				if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil and self.StateArray[Entity:GetID()][Skill:GetID()] == 2 then
+					self.StateUndispellable[Skill:GetID()] = Time() + 30000;
+				-- Remove the state from the entity.
+				else
+
+					-- Retrieve the magical state the current skill.
+					local RemoveMagical = Skill:IsMagical();
+
+					-- Check if we are required to change the magical state for the current skill.
+					if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil then
+						RemoveMagical = not RemoveMagical;
+					end
+
+					-- Check if the dispel or cure mind can be executed correctly. The function might need to set the target first!
+					if ( RemoveMagical and Helper:CheckExecute( "Melody of Purification", Entity )) or ( not RemoveMagical and Helper:CheckExecute( "Melody of Purification", Entity )) then
+
+						-- Change the state dispel timer to prevent dispel and cure mind from being used too quickly.
+						self.StateDispelTime = Time() + 500;
+
+						-- Track the current state of the dispel and cure mind to find undispellable states.
+						if self.StateArray[Entity:GetID()][Skill:GetID()] == nil then
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 1;
+							return false;
+						else
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 2;
+							return false;
+						end
+
+					end
+
+				end
+
+			end
+
+		end
+
+		-- Loop through the existing states to find which have been removed correctly.
+		for k,v in pairs( self.StateArray[Entity:GetID()] ) do
+			if v ~= nil and EntityState:GetState( k ) == nil then
+				self.StateArray[Entity:GetID()][k] = nil;
+			end
+		end
+
+	end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+
+
+-----Sleep second target
+function CountMobs( EntityTarget, Distance )
+
+	local i = 0;
+
+	-- Iterate through all entities
+	for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+		-- Check if the entiy is valid.
+		if Entity ~= nil then
+			-- Retrieve the entity state.
+			local EntityState = Entity:GetState();
+			-- Check if the entity state is valid.
+			if EntityState ~= nil then
+				-- Check if this is a living monster that is in range.
+				if Entity:IsMonster() and not Entity:IsDead() and Entity:IsHostile() and EntityTarget:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= Distance then
+					-- Check if this entity is sleeping
+					if EntityState:GetState( Helper:CheckName( "March of the Jester" )) ~= nil then
+						return 0;
+					-- Increment the number.
+					else
+						i = i + 1;
+					end
+				end
+			end
+		end
+	end
+
+	return i;
+
+end
+
+function SleepMultipleAttacker( EntityTarget, AttackRange )
+	-- Check if we have stored a target.
+	if self._SleepTarget ~= nil then
+		-- Check if the current target is the stored target.
+		if self._SleepTarget:GetID() == Player:GetTargetID() then
+			-- Check if Sleep Arrow is available.
+			if Helper:CheckAvailable( "March of the Jester" ) then
+				-- Shoot the Sleep Arrow.
+				Helper:CheckExecute( "March of the Jester" );
+				-- Indicate we cannot continue attacking.
+				return false;
+			else
+				-- Set the target.
+				Player:SetTarget( self._SleepTargetRestore );
+				-- Indicate we cannot continue attacking.
+				return false;
+			end
+		-- Check if the current target is the original target.
+		elseif not Helper:CheckAvailable( "March of the Jester" ) and self._SleepTargetRestore:GetID() == EntityTarget:GetID() then
+			-- Clear the sleep target.
+			self._SleepTarget = nil;
+			-- Indicate we cannot continue attacking.
+			return true;
+		else
+			-- Set the target.
+			Player:SetTarget( self._SleepTarget );
+			-- Indicate we cannot continue attacking.
+			return false;
+		end
+	end
+	-- Check if Sleep Arrow is available.
+	if Helper:CheckAvailable( "March of the Jester" ) then
+		-- Loop through the entities.
+		for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+			-- Check if this entity is a monster, is not friendly and decided to attack me (and obviously is not my current target).
+			if not Entity:IsDead() and Entity:IsMonster() and not Entity:IsFriendly() and Entity:GetTargetID() == Player:GetID() and Entity:GetID() ~= EntityTarget:GetID() then
+				-- Check if the entity that is attacking us is within range.
+				if Entity:GetPosition():DistanceToPosition( Player:GetPosition()) &lt;= AttackRange then
+					-- Store the sleep target.
+					self._SleepTarget = Entity;
+					-- Store the restore target.
+					self._SleepTargetRestore = EntityTarget;
+					-- Set the target.
+					Player:SetTarget( Entity );
+					-- Indicate we cannot continue attacking.
+					return false;
+				end
+			end
+		end
+	end
+	-- Indicate we can continue attacking.
+	return true;
+end
+
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned )
+
+  ---enemy position check
+	local Position = Player:GetPosition();
+	--
+	local AttackRange = Player:GetAttackRange();
+	--
+	local EntityState = Entity:GetState();
+
+	local PlayerState = Player:GetState();
+
+	local CaptivateEffect = Entity:GetState():GetState( Helper:CheckName( "Captivate" ));
+
+	-- Check if we are allowed to sleep attackers.
+	if Settings.Songweaver.AllowSleep and not self:SleepMultipleAttacker( Entity, AttackRange ) then
+		return false;
+	end
+
+	-----------------------------------------
+	-------------------Shock-----------------
+	-----------------------------------------
+	
+	-- Use Remove Shock
+	if Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+	end
+	
+	-- Finish the Chain
+  if Helper:CheckAvailable( "Melody of Appreciation" ) and Player:GetHealth() &lt; 50 then
+		Helper:CheckExecute( "Melody of Appreciation" );
+		return false;
+	elseif Helper:CheckAvailable( "Shock Blast" ) then
+		Helper:CheckExecute( "Shock Blast" );
+		return false;
+	end
+  
+    -----------------------------------------
+	--------------Wind Harmony---------------
+	-----------------------------------------
+  
+	-- Wind Hrmony Buff Check here for best farming speed!
+	if Helper:CheckAvailable( "Wind Harmony" ) and Helper:CheckAvailable ( "Chilling Harmony" ) then
+      Helper:CheckExecute( "Chilling Harmony" )
+      return false;
+    end
+  
+  -----------------------------------------
+	-------------Chain Completer-------------
+	-----------------------------------------
+  
+  -- Charged Skills
+	if Helper:CheckAvailable( "Tsunami Requiem" ) then
+		Helper:CheckExecute( "Tsunami Requiem" );
+		return false;
+	end
+	
+	-- Chilling Harmony
+	if Helper:CheckAvailable ( "Wind Harmony" ) then
+      Helper:CheckExecute( "Wind Harmony" )
+      return false;
+    elseif Helper:CheckAvailable( "Earth Harmony" ) then
+      Helper:CheckExecute( "Earth Harmony" );
+      return false;
+    elseif Helper:CheckAvailable( "Flame Harmony" ) then
+      Helper:CheckExecute( "Flame Harmony" );
+      return false;
+    end
+  
+  
+-- Mana Bitch
+		
+	if Player:GetMana() &lt; 50 and Helper:CheckAvailable( "Melody of Reflection" ) then
+    		Helper:CheckExecute( "Melody of Reflection" )
+    		return false;
+  	end
+
+
+-- Soul Harmony
+  if Helper:CheckAvailable( "Harmony of Destruction" ) then
+		Helper:CheckExecute( "Harmony of Destruction" );
+		return false;
+	elseif Helper:CheckAvailable( "Harmony of Death" ) then
+		Helper:CheckExecute( "Harmony of Death" );
+		return false;
+  end
+  
+  -- Attack Resonation
+  if Helper:CheckAvailable( "Acute Grating Sound" ) then
+		Helper:CheckExecute( "Acute Grating Sound" );
+		return false;
+  end
+  
+	-----------------------------------------
+	-----------------Bufovani----------------
+	-----------------------------------------
+
+	-- Emergency!: Snowflower Melody
+	if Helper:CheckAvailable( "Snowflower Melody" ) and Player:GetHealth() &lt; 40 then
+		Helper:CheckExecute( "Snowflower Melody" );
+		return false;
+	end
+
+	-- Shield Melody
+	if Helper:CheckAvailable( "Shield Melody" ) and PlayerState:GetState( "Shield Melody" ) == nil then
+		Helper:CheckExecute( "Shield Melody" );
+		return false;
+	end
+	
+	-- Buff: Melody of Cheer
+	if Helper:CheckAvailable( "Melody of Cheer" ) then
+		Helper:CheckExecute( "Melody of Cheer" );
+		return false;
+	end	
+	    
+	-----------------------------------------
+	--------------Primary Skills-------------
+	-----------------------------------------
+
+	-- Harmony of Silence
+	if Helper:CheckAvailable( "Harmony of Silence" ) and Entity:GetSkillID() ~= 0 and SkillList[Entity:GetSkillID()]:IsMagical() and Entity:GetSkillTime() &gt;= 500 then
+		Helper:CheckExecute( "Harmony of Silence" );
+		return false;
+	end
+	
+	-- Fantastic Variation
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Fantastic Variatio" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Fantastic Variation" );
+		return false;
+	end
+  
+  -- Illusion Variation
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Illusion Variation" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Illusion Variation" );
+		return false;
+	end
+	
+	-- Battle Variation
+	if Entity:GetHealth() &gt;= 40 and Helper:CheckAvailable( "Battle Variation" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 9 then
+		Helper:CheckExecute( "Battle Variation");
+		return false;
+	end
+	
+	-- Ascended Soul Variation
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Ascended Soul Variation" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Ascended Soul Variation" );
+		return false;
+	end
+	
+	-- Sea Variation
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Sea Variation" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Sea Variation" );
+		return false;
+	end
+		
+  -- 2000DP Skill Symphony of Wrath , Symphony of Destruction
+	if Helper:CheckAvailable( "Symphony of Destruction" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Symphony of Destruction");
+		return false;
+	end
+
+	-- DOT Attack : Attack Resonation
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Attack Resonation" ) and Entity ~= nil then
+		Helper:CheckExecute( "Attack Resonation" );
+		return false;
+	end
+
+	-- Chain : Chilling Harmony
+	if Helper:CheckAvailable( "Chilling Harmony" ) then
+		Helper:CheckExecute( "Chilling Harmony" );
+		return false;
+	end	
+	
+	-- Attack : Loud Bang
+	if Helper:CheckAvailable( "Loud Bang" ) then
+		Helper:CheckExecute( "Loud Bang" );
+		return false;
+	end
+	
+	-- 2000 DP Skill Symphony of Wrath 
+	if Entity:GetHealth() &gt;= 50 and Helper:CheckAvailable( "Symphony of Wrath" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Symphony of Wrath");
+		return false;
+	end
+
+	--  Attack : Disharmony
+	if Entity:GetHealth() &gt;= 40 and Helper:CheckAvailable( "Disharmony" ) then
+		Helper:CheckExecute( "Disharmony" );
+	end	
+	
+	-- DOT Attack : Mosky Requiem
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Mosky Requiem" ) then
+		Helper:CheckExecute( "Mosky Requiem" );
+		return false;
+	end
+	
+    -- Attack : Gust Requiem
+	if Helper:CheckAvailable( "Gust Requiem" ) then
+		Helper:CheckExecute( "Gust Requiem" );
+		return false;
+	end
+
+	--Attack : March of the Bees
+	if Entity:GetHealth() &gt;= 80 and Helper:CheckAvailable( "March of the Bees" ) then
+		Helper:CheckExecute( "March of the Bees" );
+		return false;
+	end
+	--Chain attack: Harmony of Death
+	if Helper:CheckAvailable( "Soul Harmony" ) then
+		Helper:CheckExecute( "Soul Harmony" );
+		return false;
+	end
+	
+	-- Attack : Sound of the Breeze
+	if Helper:CheckAvailable( "Sound of the Breeze" ) then
+		Helper:CheckExecute( "Sound of the Breeze" );
+		return false;
+	end
+	
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+end
+
+	
+--- Perform healing checks both in and our of combat.
+--
+-- @param	bool	Indicates whether or not the function is running before force checks.
+-- @return	bool
+
+function Heal( BeforeForce )
+
+	if BeforeForce and Settings.Songweaver.AllowBuff and ( self.StateBuffTime == nil or self.StateBuffTime &lt; Time()) then
+
+		local EntityState = Player:GetState();
+
+		if EntityState ~= nil then
+			if EntityState:GetState( "Melody of Life" ) == nil and EntityState:GetState( "Blessing of stone" ) == nil and EntityState:GetState( "Blessing of Rock" ) == nil and EntityState:GetState( "Prayer of Protection" ) == nil and Helper:CheckAvailable( "Melody of Life" ) then
+			Helper:CheckExecute( "Melody of Life",  Entity )
+			end
+		end
+  
+	end
+
+	-- Check if we are allowed to execute our healing routines, after checking the force we can check our own HP.
+	if not BeforeForce and Settings.Songweaver.AllowHealing then
+
+		-- Check the required direct healing for my own character.
+		if not self:_CheckHeal( Player ) then
+			return false;
+		end
+
+	end
+
+	-- Check if we are allowed to execute our healing routines, after checking the force we can check our own HP.
+	if not BeforeForce and Settings.Songweaver.AllowHealingMana then
+
+		-- Check the required direct healing for my own character.
+		if not self:_CheckMana( Player ) then
+			return false;
+		end
+
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+
+--- Perform the safety checks before moving to the next target.
+--
+-- @return	bool
+
+function Pause()
+  
+  --self:_CheckHeal ( Player )
+  --self:_CheckMana ( Player )
+  
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Tue Apr 11, 2017 1:20 pm</strong></div>
+				<div class="author">by <strong>sapibuntinx</strong></div>
+				<div class="content">My NA translation for the original script:<br>
+
+<div class="codebox"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>--[[
+
+	--------------------------------------------------
+	Copyright (C) 2017 Locatelli
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+	--------------------------------------------------
+
+]]--
+
+
+--- (Private Function) Checks the healing requirements for the provided entity.
+--
+-- @param	Entity	Contains the entity to perform healing on.
+-- @param	double	Contains the
+-- @return	bool
+
+function _CheckHeal( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local EntityState = Entity:GetState();
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Check if the entity requires healing and perform the correct healing routine.
+	if Entity:GetHealth() &lt; 80 and ( Settings.Songweaver.AllowApproach or Range &lt;= 23 ) then
+
+		-- Retrieve the local target for certain checks.
+		-- local Target = EntityList:GetEntity( Player:GetTargetID());
+
+    --Complete the Chain
+    if Entity:GetID() == Player:GetID() and Settings.Songweaver.AllowAttack then
+      if Entity:GetHealth() &lt; 90 and Helper:CheckAvailable( "Joyous Carol" ) then
+        Helper:CheckExecute ( "Joyous Carol", Entity )
+        return false;
+      elseif Entity:GetHealth() &lt; 90 and Helper:CheckAvailable( "Soothing Finale" ) then
+        Helper:CheckExecute ( "Soothing Finale", Entity )
+        return false;
+      elseif Entity:GetHealth() &lt; 90 and Helper:CheckAvailable( "Soothing Counterpoint" ) then
+        Helper:CheckExecute ( "Soothing Counterpoint", Entity )
+        return false;
+      end
+    end
+    
+		-- Change the healing routine if I'm healing myself when allowed to attack.
+		if Entity:GetID() == Player:GetID() and Settings.Songweaver.AllowAttack then  --and Target ~= nil and not Target:IsDead() then
+			if Entity:GetHealth() &lt; 50 and Helper:CheckAvailable( "Soothing Melody" ) then
+				Helper:CheckExecute( "Soothing Melody", Entity );
+				return false;
+			end
+		-- Check if we should heal the provided entity.
+		elseif Entity:GetHealth() &lt; 40 and Helper:CheckAvailable( "Soothing Melody" ) then
+			Helper:CheckExecute( "Soothing Melody", Entity );
+			return false;
+		end
+
+	end
+	
+	--Heal: Hymn of Rejuvenation
+	if Helper:CheckAvailable( "Hymn of Rejuvenation" ) and Entity:GetHealth() &lt; 60 then
+		Helper:CheckExecute( "Hymn of Rejuvenation", Entity );
+		return false;
+	end
+	
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+
+
+---------------------------------------------------------------------------------------
+---------------------!!!!!!!!! DO NOT TOUCH MANA HEALING!!!!!!!!!!!--------------------
+---------------------------------------------------------------------------------------
+
+--- Checks if the state of the provided entity.
+--
+-- @param	Entity	Contains the entity to check.
+-- @return	bool
+
+function _CheckMana( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	local EntityState = Entity:GetState();
+  
+  -- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+  
+  --Complete the Chain
+  if Player:GetMana() &lt; 90 and Helper:CheckAvailable( "Resonant Hymn" ) then
+    Helper:CheckExecute ( "Resonant Hymn" )
+    return false;
+  end
+
+	-- Check if the entity requires healing and perform the correct mana healing routine.
+	if Entity:GetMana() &lt; 50 and ( Settings.Songweaver.AllowApproach or Range &lt;= 23 ) then
+    if Entity:GetMana() &lt; 45 and Helper:CheckAvailable( "Resonant Counterpoint" ) then
+      Helper:CheckExecute( "Resonant Counterpoint", Entity )
+      return false;
+    end
+  end
+  
+  if Player:GetMana() &lt; 50 and Helper:CheckAvailable( "Resonating Melody" ) then
+    Helper:CheckExecute( "Resonating Melody" )
+    return false;
+  end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+--------------------------------------------------------------------------------------
+
+
+function _CheckState( Entity )
+
+	-- Retrieve the range of the entity compared to my own character position.
+	local Range = Player:GetPosition():DistanceToPosition( Entity:GetPosition());
+
+	-- Check if this routine is allowed to be ran under the current circumstances.
+	if Entity:IsDead() or ( not Settings.Songweaver.AllowApproach and Range &gt; 23 ) then
+		return true;
+	end
+
+	-- Retrieve the state for the current entity to inspect.
+	local EntityState = Entity:GetState();
+
+	-- Loop through the states only when we are available to dispel them. We still check for removed states!
+	if EntityState ~= nil and ( self.StateDispelTime == nil or self.StateDispelTime &lt; Time()) then
+
+		-- Create the state array for the global entity storage and undispellable states if it does not exist.
+		if self.StateArray == nil or self.StateUndispellable == nil then
+			self.StateArray = {};
+			self.StateUndispellable = {};
+		end
+
+		-- Create the state array for the current entity if it does not exist.
+		if self.StateArray[Entity:GetID()] == nil then
+			self.StateArray[Entity:GetID()] = {};
+		end
+
+		-- Loop through the states to find which need to be removed.
+		for ID, Skill in DictionaryIterator( EntityState:GetList()) do
+
+			-- Check if the current skill is valid and has not been marked and undispellable.
+			if Skill ~= nil and Skill:IsDebuff() and ( self.StateUndispellable[Skill:GetID()] == nil or self.StateUndispellable[Skill:GetID()] &lt; Time()) then
+
+				-- Check if this entity had the current skill effect on him and hasn't been removed by either Cure Mind or Dispel.
+				if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil and self.StateArray[Entity:GetID()][Skill:GetID()] == 2 then
+					self.StateUndispellable[Skill:GetID()] = Time() + 30000;
+				-- Remove the state from the entity.
+				else
+
+					-- Retrieve the magical state the current skill.
+					local RemoveMagical = Skill:IsMagical();
+
+					-- Check if we are required to change the magical state for the current skill.
+					if self.StateArray[Entity:GetID()][Skill:GetID()] ~= nil then
+						RemoveMagical = not RemoveMagical;
+					end
+
+					-- Check if the dispel or cure mind can be executed correctly. The function might need to set the target first!
+					if ( RemoveMagical and Helper:CheckExecute( "Purifying Paean", Entity )) or ( not RemoveMagical and Helper:CheckExecute( "Purifying Paean", Entity )) then
+
+						-- Change the state dispel timer to prevent dispel and cure mind from being used too quickly.
+						self.StateDispelTime = Time() + 500;
+
+						-- Track the current state of the dispel and cure mind to find undispellable states.
+						if self.StateArray[Entity:GetID()][Skill:GetID()] == nil then
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 1;
+							return false;
+						else
+							self.StateArray[Entity:GetID()][Skill:GetID()] = 2;
+							return false;
+						end
+
+					end
+
+				end
+
+			end
+
+		end
+
+		-- Loop through the existing states to find which have been removed correctly.
+		for k,v in pairs( self.StateArray[Entity:GetID()] ) do
+			if v ~= nil and EntityState:GetState( k ) == nil then
+				self.StateArray[Entity:GetID()][k] = nil;
+			end
+		end
+
+	end
+
+	-- Return true to let the caller know this function completed.
+	return true;
+
+end
+
+
+-----Sleep second target
+function CountMobs( EntityTarget, Distance )
+
+	local i = 0;
+
+	-- Iterate through all entities
+	for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+		-- Check if the entiy is valid.
+		if Entity ~= nil then
+			-- Retrieve the entity state.
+			local EntityState = Entity:GetState();
+			-- Check if the entity state is valid.
+			if EntityState ~= nil then
+				-- Check if this is a living monster that is in range.
+				if Entity:IsMonster() and not Entity:IsDead() and Entity:IsHostile() and EntityTarget:GetPosition():DistanceToPosition( Entity:GetPosition()) &lt;= Distance then
+					-- Check if this entity is sleeping
+					if EntityState:GetState( Helper:CheckName( "Requiem" )) ~= nil then
+						return 0;
+					-- Increment the number.
+					else
+						i = i + 1;
+					end
+				end
+			end
+		end
+	end
+
+	return i;
+
+end
+
+function SleepMultipleAttacker( EntityTarget, AttackRange )
+	-- Check if we have stored a target.
+	if self._SleepTarget ~= nil then
+		-- Check if the current target is the stored target.
+		if self._SleepTarget:GetID() == Player:GetTargetID() then
+			-- Check if Sleep Arrow is available.
+			if Helper:CheckAvailable( "Requiem" ) then
+				-- Shoot the Sleep Arrow.
+				Helper:CheckExecute( "Requiem" );
+				-- Indicate we cannot continue attacking.
+				return false;
+			else
+				-- Set the target.
+				Player:SetTarget( self._SleepTargetRestore );
+				-- Indicate we cannot continue attacking.
+				return false;
+			end
+		-- Check if the current target is the original target.
+		elseif not Helper:CheckAvailable( "Requiem" ) and self._SleepTargetRestore:GetID() == EntityTarget:GetID() then
+			-- Clear the sleep target.
+			self._SleepTarget = nil;
+			-- Indicate we cannot continue attacking.
+			return true;
+		else
+			-- Set the target.
+			Player:SetTarget( self._SleepTarget );
+			-- Indicate we cannot continue attacking.
+			return false;
+		end
+	end
+	-- Check if Sleep Arrow is available.
+	if Helper:CheckAvailable( "Requiem" ) then
+		-- Loop through the entities.
+		for ID, Entity in DictionaryIterator( EntityList:GetList()) do
+			-- Check if this entity is a monster, is not friendly and decided to attack me (and obviously is not my current target).
+			if not Entity:IsDead() and Entity:IsMonster() and not Entity:IsFriendly() and Entity:GetTargetID() == Player:GetID() and Entity:GetID() ~= EntityTarget:GetID() then
+				-- Check if the entity that is attacking us is within range.
+				if Entity:GetPosition():DistanceToPosition( Player:GetPosition()) &lt;= AttackRange then
+					-- Store the sleep target.
+					self._SleepTarget = Entity;
+					-- Store the restore target.
+					self._SleepTargetRestore = EntityTarget;
+					-- Set the target.
+					Player:SetTarget( Entity );
+					-- Indicate we cannot continue attacking.
+					return false;
+				end
+			end
+		end
+	end
+	-- Indicate we can continue attacking.
+	return true;
+end
+
+
+--- Perform the attack routine on the selected target.
+--
+-- @param	Entity	Contains the entity we have targeted.
+-- @param	double	Contains the distance to the target
+-- @param	bool	Indicates whether or not the target is stunned.
+-- @return	bool
+
+function Attack( Entity, Range, Stunned )
+
+  ---enemy position check
+	local Position = Player:GetPosition();
+	--
+	local AttackRange = Player:GetAttackRange();
+	--
+	local EntityState = Entity:GetState();
+
+	local PlayerState = Player:GetState();
+
+	local CaptivateEffect = Entity:GetState():GetState( Helper:CheckName( "Captivate" ));
+
+	-- Check if we are allowed to sleep attackers.
+	if Settings.Songweaver.AllowSleep and not self:SleepMultipleAttacker( Entity, AttackRange ) then
+		return false;
+	end
+
+	-----------------------------------------
+	-------------------Shock-----------------
+	-----------------------------------------
+	
+	-- Use Remove Shock
+	if Helper:CheckAvailable( "Remove Shock" ) then
+		Helper:CheckExecute( "Remove Shock" );
+		return false;
+	end
+	
+	-- Finish the Chain
+  if Helper:CheckAvailable( "Hymn of Thanksgiving" ) and Player:GetHealth() &lt; 50 then
+		Helper:CheckExecute( "Hymn of Thanksgiving" );
+		return false;
+	elseif Helper:CheckAvailable( "Chorus of Fortitude" ) then
+		Helper:CheckExecute( "Chorus of Fortitude" );
+		return false;
+	end
+  
+    -----------------------------------------
+	--------------Thronesong---------------
+	-----------------------------------------
+  
+	-- Wind Hrmony Buff Check here for best farming speed!
+	if Helper:CheckAvailable( "Thronesong" ) and Helper:CheckAvailable ( "Song of Ice" ) then
+      Helper:CheckExecute( "Song of Ice" )
+      return false;
+    end
+  
+  -----------------------------------------
+	-------------Chain Completer-------------
+	-----------------------------------------
+  
+  -- Charged Skills
+	if Helper:CheckAvailable( "Sonic Splash" ) then
+		Helper:CheckExecute( "Sonic Splash" );
+		return false;
+	end
+	
+	-- Song of Ice
+	if Helper:CheckAvailable ( "Thronesong" ) then
+      Helper:CheckExecute( "Thronesong" )
+      return false;
+    elseif Helper:CheckAvailable( "Song of Earth" ) then
+      Helper:CheckExecute( "Song of Earth" );
+      return false;
+    elseif Helper:CheckAvailable( "Song of Fire" ) then
+      Helper:CheckExecute( "Song of Fire" );
+      return false;
+    end
+  
+  -- Bright Strike
+  if Helper:CheckAvailable( "Bright Flourish" ) then
+		Helper:CheckExecute( "Bright Flourish" );
+		return false;
+	elseif Helper:CheckAvailable( "Bright Stroke" ) then
+		Helper:CheckExecute( "Bright Stroke" );
+		return false;
+  end
+  
+  -- Syncopated Echo
+  if Helper:CheckAvailable( "Fluttered Note" ) then
+		Helper:CheckExecute( "Fluttered Note" );
+		return false;
+  end
+  
+	-----------------------------------------
+	-----------------Bufovani----------------
+	-----------------------------------------
+
+	-- Emergency!: Mvt. 4: Winter
+	if Helper:CheckAvailable( "Mvt. 4: Winter" ) and Player:GetHealth() &lt; 40 then
+		Helper:CheckExecute( "Mvt. 4: Winter" );
+		return false;
+	end
+
+	-- Protective Ode
+	if Helper:CheckAvailable( "Protective Ode" ) and PlayerState:GetState( "Protective Ode" ) == nil then
+		Helper:CheckExecute( "Protective Ode" );
+		return false;
+	end
+	
+	-- Buff: Rejuvenating Aria
+	if Helper:CheckAvailable( "Rejuvenating Aria" ) and Entity:GetHealth() &lt; 90 then
+		Helper:CheckExecute( "Rejuvenating Aria" );
+		return false;
+	end	
+	    
+	-----------------------------------------
+	--------------Primary Skills-------------
+	-----------------------------------------
+
+	-- Quaver
+	if Helper:CheckAvailable( "Quaver" ) and Entity:GetSkillID() ~= 0 and SkillList[Entity:GetSkillID()]:IsMagical() and Entity:GetSkillTime() &gt;= 500 then
+		Helper:CheckExecute( "Quaver" );
+		return false;
+	end
+	
+	-- Blazing Requiem
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Blazing Requiem" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Blazing Requiem" );
+		return false;
+	end
+  
+  -- Fiery Requiem
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Fiery Requiem" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Fiery Requiem" );
+		return false;
+	end
+	
+	-- Fiery Descant
+	if Entity:GetHealth() &gt;= 0 and Helper:CheckAvailable( "Fiery Descant" ) and Helper:CheckAvailable( "Sonic Splash" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Fiery Descant");
+		return false;
+	end
+	
+	-- Dragon Song
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Dragon Song" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Dragon Song" );
+		return false;
+	end
+	
+	-- Harpist's Pod
+	if Entity:GetHealth() &gt;= 90 and Helper:CheckAvailable( "Harpist's Pod" ) and Position:DistanceToPosition( Entity:GetPosition()) &gt;= 12 then
+		Helper:CheckExecute( "Harpist's Pod" );
+		return false;
+	end
+		
+  -- 2000DP Skill Minstrel's Flair , Symphony of Destruction
+	if Helper:CheckAvailable( "Symphony of Destruction" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Symphony of Destruction");
+		return false;
+	end
+
+	-- DOT Attack : Syncopated Echo
+	if Entity:GetHealth() &gt;= 80 and Helper:CheckAvailable( "Syncopated Echo" ) and Entity ~= nil then
+		Helper:CheckExecute( "Syncopated Echo" );
+		return false;
+	end
+
+	-- Chain : Song of Ice
+	if Helper:CheckAvailable( "Song of Ice" ) then
+		Helper:CheckExecute( "Song of Ice" );
+		return false;
+	end	
+	
+	-- Attack : Adagio
+	if Helper:CheckAvailable( "Adagio" ) then
+		Helper:CheckExecute( "Adagio" );
+		return false;
+	end
+	
+	-- 2000 DP Skill Minstrel's Flair 
+	if Helper:CheckAvailable( "Minstrel's Flair" ) and Player:GetDP() &gt;=2000 then
+		Helper:CheckExecute( "Minstrel's Flair");
+		return false;
+	end
+
+	--  Attack : Treble Cleave
+	if Entity:GetHealth() &gt;= 25 and Helper:CheckAvailable( "Treble Cleave" ) then
+		Helper:CheckExecute( "Treble Cleave" );
+	end	
+	
+	-- DOT Attack : Paean of Pain
+	if Entity:GetHealth() &gt;= 80 and Helper:CheckAvailable( "Paean of Pain" ) then
+		Helper:CheckExecute( "Paean of Pain" );
+		return false;
+	end
+	
+    -- Attack : Sonic Gust
+	if Helper:CheckAvailable( "Sonic Gust" ) then
+		Helper:CheckExecute( "Sonic Gust" );
+		return false;
+	end
+
+	--Attack : Stinging Note
+	if Helper:CheckAvailable( "Stinging Note" ) then
+		Helper:CheckExecute( "Stinging Note" );
+		return false;
+	end
+	--Chain attack: Bright Stroke
+	if Helper:CheckAvailable( "Bright Strike" ) then
+		Helper:CheckExecute( "Bright Strike" );
+		return false;
+	end
+	
+	-- Attack : Pulse
+	if Helper:CheckAvailable( "Pulse" ) then
+		Helper:CheckExecute( "Pulse" );
+		return false;
+	end
+	
+	-- Initial Attack : Automatic Attack
+	if self.AttackStarted ~= Entity:GetID() then
+		self.AttackStarted = Entity:GetID();
+		Helper:CheckExecute( "Attack/Chat" );
+		return false;
+	end
+
+end
+
+	
+--- Perform healing checks both in and our of combat.
+--
+-- @param	bool	Indicates whether or not the function is running before force checks.
+-- @return	bool
+
+function Heal( BeforeForce )
+
+	if BeforeForce and Settings.Songweaver.AllowBuff and ( self.StateBuffTime == nil or self.StateBuffTime &lt; Time()) then
+
+		local EntityState = Player:GetState();
+
+		if EntityState ~= nil then
+			if EntityState:GetState( "Etude" ) == nil and Helper:CheckAvailable( "Etude" ) then
+			Helper:CheckExecute( "Etude",  Entity )
+			end
+		end
+	end
+
+	-- Check if we are allowed to execute our healing routines, after checking the force we can check our own HP.
+	if not BeforeForce and Settings.Songweaver.AllowHealing then
+
+		-- Check the required direct healing for my own character.
+		if not self:_CheckHeal( Player ) then
+			return false;
+		end
+
+	end
+
+	-- Check if we are allowed to execute our healing routines, after checking the force we can check our own HP.
+	if not BeforeForce and Settings.Songweaver.AllowHealingMana then
+
+		-- Check the required direct healing for my own character.
+		if not self:_CheckMana( Player ) then
+			return false;
+		end
+
+	end
+
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+
+--- Perform the safety checks before moving to the next target.
+--
+-- @return	bool
+
+function Pause()
+  
+  --self:_CheckHeal ( Player )
+  --self:_CheckMana ( Player )
+  
+	-- Nothing was executed, continue with other functions.
+	return true;
+
+end
+</code></pre></div></div>
+			</div>
+			<hr />
+					<div class="post">
+				<h3>Re: Official: Songweaver.lua</h3>
+				<div class="date">Posted: <strong>Tue Jul 04, 2017 6:18 pm</strong></div>
+				<div class="author">by <strong>LordSnack</strong></div>
+				<div class="content">Bot dont Heal himself or heal Mana :c</div>
+			</div>
+			<hr />
+			</div>
+
+	<div id="page-footer" class="page-footer">
+		<div class="page-number">All times are <span title="UTC">UTC</span><br />Page <strong>5</strong> of <strong>6</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Limited<br />https://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.nyerk.xyz/viewtopic.php?f=10&t=11&start=40&view=print by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 May 2018 09:43:22 GMT -->
+</html>
